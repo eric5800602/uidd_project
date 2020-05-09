@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="utf-8">
+      <title>login</title>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet"
+            type="text/css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+      <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">
+      <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body>
+      <div class="left_background">
+            <!-- ... Login in ... -->
+            <h1 class="login_in">LOGIN IN</h1>
+            <div id="login_in_box">
+                  <form id="ajax-form">
+                        <input type="text" name="fName" class="input_form" placeholder="&nbsp;&nbsp;Username"><br>
+                        <input type="password" name="lName" class="input_form" placeholder="&nbsp;&nbsp;Password"><br>
+                        <button type="submit" class="submit_button">Login</button>
+                  </form>
+            </div>
+            <!-- ... sign in with ... -->
+            <div id="sign_in_with">
+                  <h2 class="signin">Sign in with</h2>
+                  <div class="line"></div>
+                  <!-- ... icons ... -->
+                  <a href="#"><img class="icons" src="./res/googleplus.png" style="height=10%;width:10%;"></a>
+                  <a href="#"><img class="icons" src="./res/twitter.png" style="height=10%;width:10%;"></a>
+                  <a href="#"><img class="icons" src="./res/facebook.png" style="height=10%;width:10%;"></a>
+            </div>
+            <!-- ... forget password&register ... -->
+            <div id="forgetpassword"> <a href="#" id="forgetpasswordbutton">Forget Password?</a></div>
+            <div id="register"> <a href="#" data-toggle="modal" data-target="#squarespaceModal">Register</a></div>
+      </div>
+      <div class="right_background"></div>
+      <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h2>Registration</h2>
+                              <button type="button" class="close" data-dismiss="modal"><span
+                                          aria-hidden="true">X</span><span class="sr-only">Close</span></button>
+                        </div>
+                        <div class="modal-body">
+                              <form role="form" action="javascript:completeAndRedirect();" id="register_form" data-toggle="validator" oninput='password_confirmation.setCustomValidity(password.value != password_confirmation.value ? "Passwords do not match." : "")' onsubmit="return check(this);">
+                                    <div class="form-group input-group">
+                                          <div class="input-group-prepend">
+                                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                                </div>
+                                          <input name="name" class="form-control" placeholder="Full name" type="text" required>
+                                          <div class="help-block with-errors"></div>
+                                    </div> <!-- form-group// -->
+                                    <div class="form-group input-group">
+                                          <div class="input-group-prepend">
+                                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                                </div>
+                                          <input name="email" class="form-control" placeholder="Email address" type="email" required>
+                                          <div class="help-block with-errors"></div>
+                                    </div> <!-- form-group// -->
+                                    <div class="form-group input-group">
+                                          <div class="input-group-prepend">
+                                                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                                          </div>
+                                          <select class="custom-select" style="max-width: 120px;">
+                                                <option selected="">+886</option>
+                                                <option value="1">+88</option>
+                                                <option value="2">+852</option>
+                                                <option value="3">+1</option>
+                                          </select>
+                                          <input name="phone" class="form-control" placeholder="Phone number" type="text" required>
+                                    </div> <!-- form-group// -->
+                                    <div class="form-group input-group">
+                                          <div class="input-group-prepend">
+                                                <span class="input-group-text"> <i class="fa fa-transgender-alt"></i> </span>
+                                          </div>
+                                          <select class="form-control" name="gender" required>
+                                                <option selected="">Unknown</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                          </select>
+                                    </div> <!-- form-group end.// -->
+                                    <div class="form-group input-group">
+                                          <div class="input-group-prepend">
+                                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                          </div>
+                                          <input name="password" class="form-control" placeholder="Create password" type="password" required>
+                                    </div> <!-- form-group// -->
+                                    <div class="form-group input-group">
+                                          <div class="input-group-prepend">
+                                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                          </div>
+                                          <input name="password_confirmation" class="form-control" placeholder="Repeat password" type="password" required>
+                                    </div> <!-- form-group// -->                                      
+                                    <div class="form-group">
+                                          <input type="submit" class="btn btn-primary btn-block" value="Create Account"></input>
+                                    </div> <!-- form-group// -->                                                           
+                              </form>
+                        </div>
+                  </div>
+            </div>
+      </div>
+            <!-- ... javascript ... -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="./login.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                  crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                  crossorigin="anonymous"></script>
+</body>
+
+</html>

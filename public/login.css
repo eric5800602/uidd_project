@@ -1,0 +1,117 @@
+body, html{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+	width: 100%;
+}
+/* background */
+.left_background{
+	width: 25vw;
+	height:100vh;
+	background: #D2D4DD;
+	opacity: 1;
+	float:left;
+}
+.right_background{
+	height:100vh;
+	width:75vw;	
+	background-image:url('res/pic.png');
+	opacity: 0.66;
+	float:left;
+	background-size: cover;
+}
+/* login in text */
+.login_in{
+	padding-top:12vh;
+	text-align: center;
+	font:Segoe UI;
+	font-size:2vw;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	text-shadow: 0px 3px 6px #00000029;
+	opacity: 1;
+}
+/* place of form */
+#login_in_box{
+	text-align:center;
+	margin-top:5vh;
+}
+/*  form input  */
+.input_form{
+	background: #FFFFFF;
+	border-radius: 15px;
+	opacity:1;
+	height:4vh;
+	width:20vw;
+	margin-top:5vh;
+	text-align:left;
+	box-shadow: 0px 3px 6px #00000029;
+	border:none;
+	color:#7070708C;
+}
+/* form submit */
+.submit_button{
+	background-color: #8BA9D2;
+	border-radius: 15px;
+	opacity:0.5;
+	height:4vh;
+	width:10vw;
+	margin-top:5vh;
+	margin-right:8vw;
+	box-shadow: 0px 3px 6px #00000029;
+	border:none;
+	color:white;
+}
+/* place of sign in with  */
+#sign_in_with{
+	text-align:center;
+	margin-top:7vh;
+}
+/* sign in with text */
+.signin{
+	color:white;
+	font-size:1.2vw;
+}
+/* sign in with line */
+.line{
+	width:15vw;
+	margin-top:-1vh;
+	border-top: solid #FFFFFF 1px;
+	margin-left:5vw;
+}
+/* sign in with icons */
+.icons{
+	margin-top:2vh;
+	margin-left:2vh;
+}
+/* place of forgetpassword  */
+#forgetpassword {
+	color:white;
+	margin-top:20vh;
+	margin-left:2vw;
+	float:left;
+}
+/* place of register */
+#register {
+	color:white;
+	margin-top:20vh;
+	margin-left:8vw;
+	float:left;
+}
+/* hyperlink of forgetpassword&register */
+a{
+	color:white;
+	text-decoration:underline;
+	font-size:1vw;
+}
+.colorgraph {
+	height: 5px;
+	border-top: 0;
+	background: #c4e17f;
+	border-radius: 5px;
+	background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+		background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+	}
