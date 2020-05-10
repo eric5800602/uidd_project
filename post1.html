@@ -1,94 +1,93 @@
-CTYPE html>
+<!DOCTYPE html>
 <html>
 
-  <head>
-          <meta charset="utf-8">
-                <title>post1</title>
-                      <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet"
-                                  type="text/css">
-                                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">   
-                                              <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-                                                    <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">
-                                                          <link rel="stylesheet" type="text/css" href="post1.css">
-                                                        </head>
-                                                        <body>
-                                                          <header>
-                                                            <div  class=".container-fluid">
-                                                                <div  class="row justify-content-between">
-                                                                      <div class="col-2">
-                                                                             back
-                                                                                 </div>
-                                                                                     <div class="col-8">
-                                                                                             tetto
-                                                                                                 </div>
-                                                                                                     <div class="col-2">
-                                                                                                             <button type="submit" class="submit_button"><b>完成</b></button>
-                                                                                                                 </div>
-                                                                                                                  </div>
-                                                                                                                    </div>
-                                                                                                                      </header>
-                                                                                                                      <div class=".container-fluid">
-                                                                                                                          <div  class="row">
-                                                                                                                                <div class="col">
-                                                                                                                                      <label   class="image-preview-wrapper" for="file-uploader">
-                                                                                                                                            <img id="myimage" src="./res/post1.png"  class="img-thumbnail" data-target="image-preview">
-                                                                                                                                              
-                                                                                                                                                <div class="spinner-wrapper position-absolute" data-target="spinner">
-                                                                                                                                                        <div class="spinner-border text-secondary" role="status">
-                                                                                                                                                                  <span class="sr-only">Loading...</span>
-                                                                                                                                                                        </div></div>
-                                                                                                                                                                          </label>
-                                                                                                                                                                              </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                  </div>
-                                                                                                                                                                                    <div id="post1" class="container">
-                                                                                                                                                                                        <div  class="row">
-                                                                                                                                                                                              <div class="col">
-                                                                                                                                                                                                  <div id="myresult1" class="img-zoom-result"></div>
-                                                                                                                                                                                                      </div> 
-                                                                                                                                                                                                          <div class="col">  
-                                                                                                                                                                                                              <div id="myresult" class="img-zoom-result"></div>
-                                                                                                                                                                                                                  </div> 
-                                                                                                                                                                                                                      <div class="col">
-                                                                                                                                                                                                                              <div class="custom-file">
-                                                                                                                                                                                                                                    <div class="block">
-                                                                                                                                                                                                                                          <label>
-                                                                                                                                                                                                                                                    <input  id="upload_input" type="file" class="custom-file-input" data-target="file-uploader" id="file-uploader">
-                                                                                                                                                                                                                                                        <span class="upload_icon">➕</span>
-                                                                                                                                                                                                                                                                </label>
-                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                  <div  id="post2" class="container custom-container-width">
-                                                                                                                                                                                                                                                                                    <div class="form-group">
-                                                                                                                                                                                                                                                                                      <label for="username" class="col control-label"><b>單品名稱</b></label>
-                                                                                                                                                                                                                                                                                        <form id="ajax-form">
-                                                                                                                                                                                                                                                                                                                  <input type="text" name="fName" class="form-control">
-                                                                                                                                                                                                                                                                                                                              </form>
-                                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                                          <div class="form-group">
-                                                                                                                                                                                                                                                                                                                                              <label for="evaluation" class="col control-label"><b>評價</b></label>
-                                                                                                                                                                                                                                                                                                                                                          <form id="ajax-form1">
-                                                                                                                                                                                                                                                                                                                                                                                    <input type="text" name="lName" class="form-control"></form>
-                                                                                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                                                                                              <div class="form-group">
-                                                                                                                                                                                                                                                                                                                                                                                                <label for="description" class="col control-label"><b>說明</b></label>
-                                                                                                                                                                                                                                                                                                                                                                                                 <form id="ajax-form2">
-                                                                                                                                                                                                                                                                                                                                                                                                                           <input id="itextarea" type="text" name="dName" class="form-control"></form>
-                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                <!-------javascript----->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <script src="./post1.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </html>
-
+<head>
+      <meta charset="utf-8">
+      <title>post1</title>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet"
+            type="text/css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">   
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+      <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">
+      <link rel="stylesheet" type="text/css" href="post1.css">
+</head>
+<body>
+<header>
+<div  class=".container-fluid">
+  <div  class="row justify-content-between">
+    <div class="col-2">
+     back
+    </div>
+    <div class="col-8">
+      tetto
+    </div>
+    <div class="col-2">
+      <button type="submit" class="submit_button"><b>完成</b></button>
+    </div>
+	</div>
+	</div>
+  </header>
+<div class=".container-fluid">
+  <div  class="row">
+    <div class="col">
+    <label   class="image-preview-wrapper" for="file-uploader">
+    <img id="myimage" src="./res/post1.png"  class="img-thumbnail" data-target="image-preview">
+	
+    <div class="spinner-wrapper position-absolute" data-target="spinner">
+      <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div></div>
+  </label>
+    </div>
+	</div>
+	</div>
+	<div id="post1" class="container">
+  <div  class="row">
+    <div class="col">
+  <div id="myresult1" class="img-zoom-result"></div>
+    </div> 
+    <div class="col">  
+  <div id="myresult" class="img-zoom-result"></div>
+    </div> 
+    <div class="col">
+      <div class="custom-file">
+	  <div class="block">
+	  <label>
+        <input  id="upload_input" type="file" class="custom-file-input" data-target="file-uploader" id="file-uploader">
+		<span class="upload_icon">➕</span>
+        </label>
+		</div>
+      </div>
+    </div>
+	</div>
+	</div>
+<div  id="post2" class="container custom-container-width">
+<div class="form-group">
+<label for="username" class="col control-label"><b>單品名稱</b></label>
+	<form id="ajax-form">
+                        <input type="text" name="fName" class="form-control">
+						</form>
+						</div>
+<div class="form-group">
+	<label for="evaluation" class="col control-label"><b>評價</b></label>
+						<form id="ajax-form1">
+                        <input type="text" name="lName" class="form-control"></form>
+						</div>
+<div class="form-group">
+<label for="description" class="col control-label"><b>說明</b></label>
+ <form id="ajax-form2">
+                        <input id="itextarea" type="text" name="dName" class="form-control"></form>
+						</div>
+						</div>
+<!-------javascript----->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="./post1.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
