@@ -1,113 +1,112 @@
-
-verflow: hidden;
+body, html{
+    overflow: hidden;
     margin: 0;
-        padding: 0;
-            height: 100%;
-              width: 100%;
-                font-family: Microsoft JhengHei;
-                  font-size:2vw;
-                }
-                header{
-                  background-color:#E9E9E9;
-                  height:6vh;
-                }
-                .submit_button{
-                    color:black;
-                      background-color:#E9E9E9;
-                        font-size:3vw;
-                          margin-top:2vh;
-                            margin-right:5vw;
-                              border:none;
-                            }
+    padding: 0;
+    height: 100%;
+	width: 100%;
+	font-family: Microsoft JhengHei;
+	font-size:2vw;
+}
+header{
+background-color:#E9E9E9;
+height:6vh;
+}
+.submit_button{
+	color:black;
+	background-color:#E9E9E9;
+	font-size:3vw;
+	margin-top:2vh;
+	margin-right:5vw;
+	border:none;
+}
 
 
-                            .image-preview-wrapper{
-                                padding-top:4vh;
-                                  max-width: 100vw;
-                                    width: 100vw;
-                                      margin: 0 auto;
-                                        position: relative;
-                                          cursor: pointer;
-                                        }
+.image-preview-wrapper{
+  padding-top:4vh;
+  max-width: 100vw;
+  width: 100vw;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+}
 
-                                        .spinner-wrapper {
-                                            opacity: 0;
-                                              margin: 0;
-                                                padding: 0;
-                                                  left: 50%;
-                                                    top: 50%;
-                                                      transform: translate(-50%, -50%);
-                                                    }
+.spinner-wrapper {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
-                                                    .opacity-1 {
-                                                        opacity: 1;
-                                                      }
+.opacity-1 {
+  opacity: 1;
+}
 
-                                                      .img-thumbnail{
-                                                          width:100vw;
-                                                        }
-                                                        .block {
-                                                          position: relative;
-                                                          text-align: center;
-                                                          cursor: pointer;
-                                                          background: #F7F7F7;
+.img-thumbnail{
+	width:100vw;
+}
+.block {
+position: relative;
+text-align: center;
+cursor: pointer;
+background: #F7F7F7;
 
-                                                          /*長寬不知道怎麼用正方形*/
-                                                          width:20vw;
-                                                          height:10vh;
-                                                        }
-                                                        #upload_input {
-                                                          display: none;
-                                                        }
-                                                        .upload_icon {
-                                                          font-weight: bold;
-                                                          font-size: 180%;
-                                                          position: absolute;
-                                                          left: 0;
-                                                          width: 100%;
-                                                          top: 3vh;
-                                                        }
-                                                        #post1{
-                                                            padding-top:3vh;
-                                                          }
-                                                          .img-zoom-lens {
-                                                              position: absolute;
-                                                                /*set the size of the lens:*/
-                                                                width: 200px;
-                                                                  height: 200px;
-                                                                }
+/*長寬不知道怎麼用正方形*/
+width:20vw;
+height:10vh;
+}
+#upload_input {
+display: none;
+}
+.upload_icon {
+font-weight: bold;
+font-size: 180%;
+position: absolute;
+left: 0;
+width: 100%;
+top: 3vh;
+}
+#post1{
+	padding-top:3vh;
+}
+.img-zoom-lens {
+  position: absolute;
+  /*set the size of the lens:*/
+  width: 200px;
+  height: 200px;
+}
 
-                                                                .img-zoom-result {
-                                                                    border: 1px solid #d4d4d4;
-                                                                      /*set the size of the result div:*/
-                                                                      width:20vw;
-                                                                      height:10vh;
-                                                                      position: relative;
-                                                                      text-align: center;
-                                                                    }
-                                                                    #post2{
-                                                                        padding-top:2vh;
-                                                                      }
-                                                                      .posting{
-                                                                        padding-top:1.5vh;  
-                                                                        font-size:4vw;
-                                                                        color:#575757;
-                                                                      }
-                                                                      .container.custom-container-width {
-                                                                            max-width: 90vw;
-                                                                          }
-                                                                          input[type=text]{
-                                                                              background: #F7F7F7;
-                                                                                height:3vh;
-                                                                                  margin-top:1vh;
-                                                                                    text-align:left;
-                                                                                  }
-                                                                                  #itextarea{
-                                                                                      height:8vh;
-                                                                                    }
-                                                                                    .form-group{
-                                                                                      padding-top:2vh;  
-                                                                                      font-size:4vw;
-                                                                                      color:#575757;
-                                                                                    }
-
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width:20vw;
+height:10vh;
+position: relative;
+text-align: center;
+}
+#post2{
+	padding-top:2vh;
+}
+.posting{
+padding-top:1.5vh;	
+font-size:4vw;
+color:#575757;
+}
+.container.custom-container-width {
+    max-width: 90vw;
+}
+input[type=text]{
+	background: #F7F7F7;
+	height:3vh;
+	margin-top:1vh;
+	text-align:left;
+}
+#itextarea{
+	height:8vh;
+}
+.form-group{
+padding-top:2vh;	
+font-size:4vw;
+color:#575757;
+}
