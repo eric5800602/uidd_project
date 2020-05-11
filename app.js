@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const config = require('./config')
 const path = require('path')
 const crypto = require('crypto')
+const cmd=require('node-cmd');
 const url = `mongodb://${config.mongodb.user}:${config.mongodb.password}@${config.mongodb.host}/${config.mongodb.database}`
 const conn = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     if (err) console.log('fail to connect:', err)
@@ -100,6 +101,22 @@ app.get('/', (req, res) => {
 
 app.get('/step1', (req, res) => {
     res.send('hello world')
+})
+
+app.get('/gitpull',(req,res)=>{
+    cmd.get(
+        `
+            git pull
+        `,
+        function(err, data, stderr){
+            if (!err) {
+                res.send(data);
+            } else {
+                res.send(err);
+            }
+ 
+        }
+    );
 })
 
 //login route for user login
