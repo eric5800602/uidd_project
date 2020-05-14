@@ -26,7 +26,7 @@
             //利用split切割，拿到上傳檔案的格式
             var src = file.files[0].name,
                 formart = src.split(".")[1];
-            console.log("123");
+            console.log(sessionStorage.getItem("username"));
             //使用if判斷上傳檔案格式是否符合                                                          
             if (formart == "jpg" || formart == "png" ||
                 formart == "docx" || formart == "txt" ||
