@@ -21,15 +21,18 @@ header {
       .posts_post_detail_title {
         display: inline;
         font-size: 1.165rem;
-        letter-spacing: -0.02rem; }
+        letter-spacing: -0.02rem;
+        color: #707070; }
       .posts_post_detail_account {
         display: inline-flex;
         float: right;
+        margin: 0 0 0 0.4rem;
         padding: 0 1.5rem 0 0; }
         .posts_post_detail_account_id {
           display: inline;
           margin: auto;
-          font-size: 0.75rem; }
+          font-size: 0.75rem;
+          color: #707070; }
         .posts_post_detail_account_img {
           width: 1.563rem;
           border-radius: 50%; }
