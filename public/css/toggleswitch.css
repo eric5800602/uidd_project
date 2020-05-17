@@ -1,0 +1,146 @@
+.switch_containter {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: 4rem;
+  margin: 0.5rem 0 0 0;
+}
+body span.switcher {
+  position: relative; 
+  height: 50px;
+  border-radius: 25px;
+  margin: 20px 0;
+  /*box-shadow:*/ 
+}
+body span.switcher input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 11.5rem;
+  height: 2.67rem;
+  border-radius: 25px;
+  background-color: #1E1E1E;
+  outline: none;
+  font-family: 'Oswald', sans-serif;
+}
+body span.switcher input:before, body span.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #FFFFFF;
+}
+body span.switcher input:before {
+  content: 'Recommend';
+  left: 0.58rem;
+}
+body span.switcher input:after {
+  content: 'Following';
+  right: 0.58rem;
+}
+body span.switcher label {
+  height: 2.17rem;
+  z-index: 1;
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  border-radius: 20px;
+  box-shadow: 0 0.25rem 0.5rem #00000050;
+}
+body span.switcher.switcher-1 input {
+  -webkit-transition: .25s -.1s;
+  transition: .25s -.1s;
+}
+body span.switcher.switcher-1 input:checked {
+  background-color: #C0C0C0;
+}
+body span.switcher.switcher-1 input:checked:before {
+  color: #000000;
+  -webkit-transition: color .5s .2s;
+  transition: color .5s .2s;
+}
+body span.switcher.switcher-1 input:checked:after {
+  color: #FFFFFF;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+body span.switcher.switcher-1 input:checked + label {
+  left: 0.4rem;
+  right: 5rem;
+
+  background: #FFFFFF;
+  -webkit-transition: left .5s, right .4s .2s;
+  transition: left .5s, right .4s .2s;
+}
+body span.switcher.switcher-1 input:not(:checked) {
+  background: #C0C0C0;
+  -webkit-transition: background .5s -.1s;
+  transition: background .5s -.1s;
+}
+body span.switcher.switcher-1 input:not(:checked):before {
+  color: #FFFFFF;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+body span.switcher.switcher-1 input:not(:checked):after {
+  color: #000000;
+  -webkit-transition: color .5s .2s;
+  transition: color .5s .2s;
+}
+body span.switcher.switcher-1 input:not(:checked) + label {
+  left: 6.5rem;
+  right: 0.3rem;
+  background: #FFFFFF;
+  -webkit-transition: left .4s .2s, right .5s, background .35s -.1s;
+  transition: left .4s .2s, right .5s, background .35s -.1s;
+}
+@-webkit-keyframes turn-on {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes turn-on {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@-webkit-keyframes turn-off {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+@keyframes turn-off {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+body span.switcher.switcher-2 label {
+  top: 0px;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+#switcher-1{
+  box-shadow: 0 0.085rem 0.5rem #00000029;
+}
