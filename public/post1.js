@@ -175,6 +175,33 @@ imageZoom("myimage", "myresult1");
 
 //單品敘述
 $(document).ready(function () {
+  $('#ajax-form button[type="submit"]').click((event) => {
+    event.preventDefault()
+    $.post({
+      url: "http://luffy.ee.ncku.edu.tw:7575/add_post",
+      dataType: "json",
+      data: JSON.stringify({
+        username: $('#ajax-form input[name=fName]').val(),
+       evaluation: $('#ajax-form1 input[name=lName]').val(),
+	   description: $('#ajax-form2 input[name=dName]').val()
+      }), 
+      contentType: "application/json",
+      crossDomain: true,
+      xhrFields: {
+        withCredentials: true
+      },
+      "success": true,
+       text": "Post success, test"
+      },
+      //statusCode範例
+      statusCode: {
+        403: function (response) {
+          LocationHerf();
+        }
+      }
+    })
+  })
+/*$(document).ready(function () {
   $('#submitbutton button[type="submit"]').click((event) => {
     event.preventDefault()
     $.post({
@@ -189,7 +216,7 @@ $(document).ready(function () {
        text": "Post success, test"
       /*success: function (msg) {
         console.log(msg);
-        alert(msg.text);*/
+        alert(msg.text);
       },
       //statusCodeç¯„ä¾‹
       statusCode: {
@@ -198,4 +225,5 @@ $(document).ready(function () {
         }
       }
     })
-  })
+}))*/
+);
