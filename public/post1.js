@@ -191,7 +191,7 @@ $(document).ready(function () {
         withCredentials: true
       },
       "success": true,
-       text": "Post success, test"
+       text: "Post success, test"
       },
     })
   })
