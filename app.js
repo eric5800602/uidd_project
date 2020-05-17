@@ -77,10 +77,16 @@ const postSchema = new mongoose.Schema({
     user_icon: String,
     post_icon: String,
     title: String,
+    explanation:String,
+    space:String,
+    room:String,
+    pings:Number,
+    tags:[{
+        type: String
+    }],
     published: Boolean
 }, { collection: postCollectionName });
 const postModel = conn.model(postCollectionName, postSchema);
-
 const saveAll = (data, model) => {
     for (d of data) {
         const m = new model(d)
@@ -293,7 +299,9 @@ app.post('/add_post', (req, res) => {
             "text": "session username is undefined"
           }`))
     } else {
-        data = { 'name': req.session.username, 'user_icon': req.body.user_icon, 'post_icon': req.body.post_icon, 'title': req.body.title ,'published':true}
+        data = { 'name': req.session.username, 'user_icon': req.body.user_icon, 'post_icon': req.body.post_icon,
+        'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
+        'pings':req.body.pings,'tags':req.body.tags,'published':true}
         const m = new postModel(data)
         m.save((err) => {
             if (err) {

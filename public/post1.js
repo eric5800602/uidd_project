@@ -178,22 +178,21 @@ $(document).ready(function () {
   $('#ajax-form button[type="submit"]').click((event) => {
     event.preventDefault()
     $.post({
-      url: "https://symbolwu-login-web.herokuapp.com/login",
+      url: "http://luffy.ee.ncku.edu.tw:7575/add_post",
       dataType: "json",
-      data: {
+      data: JSON.stringify({
         username: $('#ajax-form input[name=fName]').val(),
        evaluation: $('#ajax-form1 input[name=lName]').val(),
 	   description: $('#ajax-form2 input[name=dName]').val()
+      }), 
+      contentType: "application/json",
+      crossDomain: true,
+      xhrFields: {
+        withCredentials: true
       },
-      success: function (msg) {
-        console.log(msg);
-        alert(msg.text);
+      "success": true,
+       text: "Post success, test"
       },
-      //statusCodeç¯„ä¾‹
-      statusCode: {
-        403: function (response) {
-          LocationHerf();
-        }
-      }
-    })
-  })
+    )
+	   })
+  });

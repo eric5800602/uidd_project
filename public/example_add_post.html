@@ -26,9 +26,8 @@
             //利用split切割，拿到上傳檔案的格式
             var src = file.files[0].name,
                 formart = src.split(".")[1];
-            console.log(sessionStorage.getItem("username"));
             //使用if判斷上傳檔案格式是否符合                                                          
-            if (formart == "jpg" || formart == "png" ||
+            if (formart == "jpg" || formart == "png" || formart == "PNG" ||
                 formart == "docx" || formart == "txt" ||
                 formart == "ppt" || formart == "xlsx" ||
                 formart == "zip" || formart == "rar" ||
@@ -51,10 +50,12 @@
                             }
                             console.log(`Url of img: ${data.data}`)
                             // 這裡將msg 追加到你要顯示的區域 
+                            localStorage.setItem("url", data.data)
                         }
                     }})
                     //不滿足上傳格式時 
             }
+            console.log(sessionStorage.getItem("url"));
         }
     </script>
 </body>
