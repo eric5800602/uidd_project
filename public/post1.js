@@ -194,5 +194,4 @@ $(document).ready(function () {
        text: "Post success, test"
       },
     )
-  })
-);
+  });
