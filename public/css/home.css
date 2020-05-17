@@ -35,6 +35,7 @@ header {
           color: #707070; }
         .posts_post_detail_account_img {
           width: 1.563rem;
+          margin: 0 0 0 0.4rem;
           border-radius: 50%; }
 
 .vsc-initialized {
