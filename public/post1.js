@@ -193,6 +193,6 @@ $(document).ready(function () {
       "success": true,
        text: "Post success, test"
       },
-    })
+    )
   })
 );
