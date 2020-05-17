@@ -18,6 +18,8 @@ html, body{
 }
 #id_footer {
     position: relative;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
     height: 10.45%;
     background-color: #F9F9F9F0;
 }
