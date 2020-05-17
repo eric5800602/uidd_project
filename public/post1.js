@@ -191,39 +191,8 @@ $(document).ready(function () {
         withCredentials: true
       },
       "success": true,
-       text": "Post success, test"
+       text: "Post success, test"
       },
-      //statusCode範例
-      statusCode: {
-        403: function (response) {
-          LocationHerf();
-        }
-      }
-    })
+    )
   })
-/*$(document).ready(function () {
-  $('#submitbutton button[type="submit"]').click((event) => {
-    event.preventDefault()
-    $.post({
-      url: "http://luffy.ee.ncku.edu.tw:7575/post",
-      dataType: "json",
-      data: {
-        username: $('#ajax-form input[name=fName]').val(),
-       evaluation: $('#ajax-form1 input[name=lName]').val(),
-	   description: $('#ajax-form2 input[name=dName]').val()
-      },
-	  "success": true,
-       text": "Post success, test"
-      /*success: function (msg) {
-        console.log(msg);
-        alert(msg.text);
-      },
-      //statusCodeç¯„ä¾‹
-      statusCode: {
-        403: function (response) {
-          LocationHerf();
-        }
-      }
-    })
-}))*/
 );
