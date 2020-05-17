@@ -17,10 +17,10 @@ $(document).ready(function() {
         html = html+ `<div class="posts_post">\
             <img class="posts_post_img" src="${data.object[i].post_icon}">\
             <div class="posts_post_detail">\
-              <p class="posts_post_detail_title">Modern room</p>\
+              <p class="posts_post_detail_title">${data.object[i].title}</p>\
               <div class="posts_post_detail_account">\
-                <p class="posts_post_detail_account_id">eric_50336</p>\
-                <img class="posts_post_detail_account_img" src="./res/img/request_1.png">\
+                <p class="posts_post_detail_account_id">${data.object[i].name}</p>\
+                <img class="posts_post_detail_account_img" src="${data.object[i].user_icon}">\
               </div>\
             </div>\
           </div>`
