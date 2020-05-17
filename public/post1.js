@@ -175,19 +175,21 @@ imageZoom("myimage", "myresult1");
 
 //單品敘述
 $(document).ready(function () {
-  $('#ajax-form button[type="submit"]').click((event) => {
+  $('#submitbutton button[type="submit"]').click((event) => {
     event.preventDefault()
     $.post({
-      url: "https://symbolwu-login-web.herokuapp.com/login",
+      url: "http://luffy.ee.ncku.edu.tw:7575/post",
       dataType: "json",
       data: {
         username: $('#ajax-form input[name=fName]').val(),
        evaluation: $('#ajax-form1 input[name=lName]').val(),
 	   description: $('#ajax-form2 input[name=dName]').val()
       },
-      success: function (msg) {
+	  "success": true,
+       text": "Post success, test"
+      /*success: function (msg) {
         console.log(msg);
-        alert(msg.text);
+        alert(msg.text);*/
       },
       //statusCodeç¯„ä¾‹
       statusCode: {
