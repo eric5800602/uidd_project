@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+/* Sticky footer styles
+-------------------------------------------------- */
+html, body{
+    position: relative;
+    height: 100%;
+}
+#id_header {
+    position: relative;
+    height: 10.48%;
+    background-color: #ECECEC;
+}
+#id_content {
+    position: relative;
+    height: 79.07%;
+    background-color: #848484;
+}
+#id_footer {
+    position: relative;
+    height: 10.45%;
+    background-color: #F9F9F9F0;
+}
+#tetto{
+    position: absolute;
+    padding-top:10%;
+    padding-left:38%;
+    text-align: center;
+    font-family: Roboto;
+	font-size: 3.5rem;
+	letter-spacing: 1.5rem;
+	color: #000000;
+	opacity: 1;
+}
+.back{
+    position: absolute;
+    top: 7.5rem;
+    left: 2.5rem;
+    width: 3rem;
+    height: 3rem; 
+	opacity: 1;
+}
+.login_in{
+    /*padding-top:12vh;*/
+    top: 7.5rem;
+	text-align: center;
+	font:Segoe UI;
+	font-size:2vw;
+	letter-spacing: 0px;
+	color: #000000;
+	text-shadow: 0px 3px 6px #00000029;
+	opacity: 1;
+}
+.footer_MainPage{
+    position: absolute;
+    top: 2rem;
+    left: 4.5rem;
+    width: 4rem;
+    height: 4rem; 
+	opacity: 1;
+}
+.text{
+    position: absolute;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+	font-size: 1.75rem;
+	letter-spacing: 0px;
+	color: #707070;
+	opacity: 1;
+}
+.MainPage{
+    top: 6.5rem;
+    left: 4.75rem;
+}
+.footer_Search{
+    position: absolute;
+    top: 2rem;
+    left: 4.5rem;
+    width: 4rem;
+    height: 4rem; 
+	opacity: 1;
+}
+.Search{
+    top: 6.5rem;
+    left: 4.75rem;
+}
+.footer_Category{
+    position: absolute;
+    top: -0.5rem;
+    left: 2.5rem;
+    width: 9rem;
+    height: 9rem; 
+	opacity: 1;
+}
+.Category{
+    top: 6.5rem;
+    left: 5.25rem;
+}
+.footer_Msg{
+    position: absolute;
+    top: 2rem;
+    left: 3.5rem;
+    width: 4rem;
+    height: 4rem; 
+	opacity: 1;
+}
+.Msg{
+    top: 6.5rem;
+    left: 3.75rem;
+}
+.footer_Profile{
+    position: absolute;
+    top: 2rem;
+    left: 3.5rem;
+    width: 4rem;
+    height: 4rem; 
+	opacity: 1;
+}
+.Profile{
+    top: 6.5rem;
+    left: 1.75rem;
+}
