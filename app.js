@@ -88,6 +88,15 @@ const postSchema = new mongoose.Schema({
     published: Boolean
 }, { collection: postCollectionName });
 const postModel = conn.model(postCollectionName, postSchema);
+
+const singleCollectionName = 'single'
+const singleSchema = new mongoose.Schema({
+    name: String,
+    evaluation: String,
+    description: String
+}, { collection: singleCollectionName });
+const singleModel = conn.model(singleCollectionName, singleSchema);
+
 const saveAll = (data, model) => {
     for (d of data) {
         const m = new model(d)
@@ -305,18 +314,20 @@ app.post('/add_post', (req, res) => {
         'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
         'pings':req.body.pings,'tags':req.body.tags,'published':true}
         const m = new postModel(data)
-        m.save((err) => {
-            if (err) {
+        m.save((err,result) => {
+            if (err) { 
                 console.log('fail to insert:', err)
                 res.send(JSON.parse(`{
                     "success": false,
-                    "text": "Sorry, post fail"
+                    "text": "Sorry, post fail",
+                    "id": "undefined"
                 }`))
             } else {
                 // Response
                 res.send(JSON.parse(`{
                     "success": true,
-                    "text": "Post success, ${req.session.username}"
+                    "text": "Post success, ${req.session.username}",
+                    "id":"${result._id}"
                 }`))
             }
         })
@@ -387,3 +398,27 @@ app.post('/upload', upload.single('file'), function (req, res, next) {
       });
     //將其發回客戶端
 });
+
+app.post('/add_single', (req, res) => {
+    data = {
+        'name': req.body.username, 'evaluation': req.body.evaluation, 'description': req.body.description
+    }
+    const m = new singleModel(data)
+    m.save((err,result) => {
+        if (err) {
+            console.log('fail to insert:', err)
+            res.send(JSON.parse(`{
+                "success": false,
+                "text": "Sorry, post single fail",
+                "id": undefined
+              }`))
+        } else {
+            // Response
+            res.send(JSON.parse(`{
+                "success": true,
+                "text": "Post single success, ${result._id}",
+                "id": "${result._id}"
+              }`))
+        }
+    })
+})
