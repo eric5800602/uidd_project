@@ -11,7 +11,7 @@ $(document).ready(function() {
     dataType: "json",
     contentType: "application/json",
     success: function(data){
-      //console.log(data.object.length)
+      console.log(data.object[0])
       var html = ""
       for(i=0; i<data.object.length; i++){
         html = html+ `<div class="posts_post">\
