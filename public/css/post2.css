@@ -1,0 +1,89 @@
+body, html{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+	width: 100%;
+	font-family: Microsoft JhengHei;
+	font-size:2vw;
+}
+#header{
+	background-color:#E9E9E9;
+	height:6vh;
+}
+.col photo{
+	width:100vw;
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    width: 100vw;
+	height:70vh;
+    object-fit: cover;
+	z-index:2;
+}
+#camera--view, #camera--sensor, #camera--output{
+    transform: scaleX(-1);
+    filter: FlipH;/*水平翻轉*/
+}
+#camerasetting{
+	height:30vh;
+	
+	background-color:#E9E9E9;
+	position:fixed;
+	z-index:1;
+	left:0;
+	right:0;
+	bottom:0;
+}
+#camera--trigger{
+    width: 20vw;
+	height:9vh;
+    background-color: gray;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    position: fixed;
+    bottom: 10vh;
+    left: calc(50% - 100px);
+}
+.taken{
+    height: 200px!important;
+    width: 200px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 8vh;
+    left: 3vw;
+    z-index: 2;
+}
+.block {
+position: fixed;
+bottom: 10vh;
+margin-left:5vw;
+text-align: center;
+cursor: pointer;
+background: white;
+z-index:3;
+/*長寬不知道怎麼用正方形*/
+width:20vw;
+height:10vh;
+}
+#upload_input {
+display: none;
+}
+.upload_icon {
+font-weight: bold;
+font-size: 180%;
+position: absolute;
+left: 0;
+width: 100%;
+top: 3vh;
+}
+.cameraturn{
+z-index:3;
+/*長寬不知道怎麼用正方形*/
+width:15vw;
+padding-left:1vw;	
+position: fixed;
+bottom: 12vh;
+}
