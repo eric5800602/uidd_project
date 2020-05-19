@@ -68,6 +68,12 @@ const userSchema = new mongoose.Schema({
     suite: Boolean,
     tags: [{
         type: String
+    }],
+    space: [{
+        type: String
+    }],
+    single: [{
+        type: String
     }]
 }, { collection: userCollectionName });
 const userModel = conn.model(userCollectionName, userSchema);
@@ -171,7 +177,7 @@ app.post('/login', async (req, res) => {
                         console.log(res.name + ' have students ' + res.password)
                         req.session.username = res.name;
                         //console.log(res.tags.length == 0);
-                        if (res.tags.length === 0) {
+                        if (res.tags.length === 0 || res.space.length === 0 || res.single.length === 0) {
                             resolve('first')
                         } else {
                             resolve(true)
@@ -279,6 +285,8 @@ app.post('/modify_tags', (req, res) => {
                         }
                         else {
                             res.tags = req.body.tags;
+                            res.space = req.body.space;
+                            res.single = req.body.single;
                             res.save(function (err) {
                                 if (err) {
                                     console.log(err);
