@@ -65,15 +65,10 @@ $(document).ready(function () {
       }
     })
   })
-<<<<<<< HEAD
   $('#ajax-form button[type="signup"]').click((event) => {
     event.preventDefault();
   })
   
-=======
-  
-  /*
->>>>>>> e5abab3e46f8cefa9d3deeeb00484f079e86bbd7
   $('#register_form button[type="signup"]').click((event) => {
     console.log(check());
     console.log($('#register_form input[name=name]').val(),$('#register_form input[name=email]').val(),$('#register_form input[name=phone]').val(),$('#register_form select[name=gender]').val(),$('#register_form input[name=password]').val());
