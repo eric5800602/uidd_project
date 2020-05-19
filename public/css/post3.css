@@ -1,0 +1,74 @@
+body, html{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+	width: 100%;
+	font-family: Microsoft JhengHei;
+	font-size:4vw;
+}
+header{
+background-color:#E9E9E9;
+height:6vh;
+}
+/*#id_header {
+    position: relative;
+    height: 10.48%;
+    background-color: #ECECEC;
+}
+#tetto{
+    position: absolute;
+    padding-top:10%;
+    padding-left:38%;
+    text-align: center;
+    font-family: Roboto!important;
+	font-size: 3.5rem;
+	letter-spacing: 1.5rem;
+	color: #000000;
+	opacity: 1;
+}
+
+.back{
+    position: absolute;
+    top: 7.5rem;
+    left: 2.5rem;
+    width: 3rem;
+    height: 3rem; 
+	opacity: 1;
+}*/
+.container.custom-container-width {
+    max-width:95vw;
+	padding-top:2vh;
+}
+.myimage{
+	height: 10vh!important;
+    width: 25vw!important;
+    top: 8vh;
+    left: 3vw;
+    z-index: 2;
+}
+input[type=text]{
+	background: #F7F7F7;
+	height:3vh;
+	margin-top:1vh;
+	text-align:left;
+}
+#itextarea{
+	height:10vh;
+}
+.form-control{
+	background: #CCCCCC;
+}
+a {
+	background: #CCCCCC;
+	color:black;
+	padding-top:1vh;
+	padding-bottom:1vh;
+	padding-left:2vw;
+	padding-left:3vw;
+	margin-left:2vw;
+	border-radius:10px;
+}
+label{
+	font-weight:bold;
+}
