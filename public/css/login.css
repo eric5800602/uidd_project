@@ -1,124 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
-/* Sticky footer styles
--------------------------------------------------- */
-html, body{
-    position: relative;
-    height: 100%;
-}
-#id_header {
-    position: relative;
-    height: 10.48%;
-    background-color: #ECECEC;
-}
-#id_content {
-    position: relative;
-    height: 79.07%;
-    background-color: #848484;
-}
-#id_footer {
-    position: relative;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    height: 10.45%;
-    background-color: #F9F9F9F0;
-}
-#tetto{
-    position: absolute;
-    padding-top:10%;
-    padding-left:38%;
+/* Login in with text */
+.login_in{
+    padding-top:25%;
     text-align: center;
     font-family: Roboto;
-	font-size: 3.5rem;
-	letter-spacing: 1.5rem;
+    font-weight: 380;
+	font-size: 4.3rem;
+    letter-spacing: 0.5rem;
+    text-shadow: 0px 3px 6px #00000029;
 	color: #000000;
 	opacity: 1;
 }
-.back{
-    position: absolute;
-    top: 7.5rem;
-    left: 2.5rem;
-    width: 3rem;
-    height: 3rem; 
-	opacity: 1;
+/* place of form */
+#login_in_box{
+	text-align:center;
+	margin-top:4vh;
 }
-.login_in{
-    /*padding-top:12vh;*/
-    top: 7.5rem;
-	text-align: center;
+
+/*  form input  */
+.input_form{
+	background: #FFFFFF;
+	border-radius: 50px;
+	opacity:1;
+	height:5.2rem;
+	width:50rem;
+    text-align:left;
+    font-family: "Segoe UI";
+    font-weight:400;
+	box-shadow: 0px 3px 6px #00000029;
+	border:none;
+    color: #FFFFFF;
+    padding-top:1.5em;
+}.Password_form{
+	margin-top:4vh;
+}
+.Username_form{
+	margin-top:3vh;
+}
+::placeholder {
+    color: #7070708C;
+    font-size:2.5rem;
+    padding-left:1em;
+    
+}
+#submit_box{
+	text-align:left;
+}
+
+/* form submit */
+.button{
+	border-radius: 50px;
+	opacity:1;
+	height:5rem;
+	width:18rem;
+	margin-top:5vh;
+	margin-left:16vw;
+	box-shadow: 0px 3px 6px #00000029;
+    border:none;
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    font-size: 2.6rem;
+	color:white;
+}
+.login_button{
+    background-color: #8BA9D2;
+}
+.signup_button{
+    background-color: #D28B8B;
+}
+/* place of sign in with */
+#sign_in_with{
+	text-align:center;
+	margin-top:7vh;
+}
+/* sign in with text */
+.signin{
+	color:white;
+	font-size:4vw;
 	font:Segoe UI;
-	font-size:2vw;
-	letter-spacing: 0px;
-	color: #000000;
-	text-shadow: 0px 3px 6px #00000029;
-	opacity: 1;
 }
-.footer_MainPage{
-    position: absolute;
-    top: 2rem;
-    left: 4.5rem;
-    width: 4rem;
-    height: 4rem; 
-	opacity: 1;
+/* sign in with line */
+.login_line{
+	width:50vw;
+	border-top: solid #FFFFFF 2px;
+	margin-left:25vw;
 }
-.text{
-    position: absolute;
-    text-align: center;
-    font-family: 'Noto Sans TC', sans-serif;
-	font-size: 1.75rem;
-	letter-spacing: 0px;
-	color: #707070;
-	opacity: 1;
+/* sign in with icons */
+.icons{
+	margin-top:2vh;
+	margin-left:3vh;
+	
+	height:9%;
+	width:9%;
 }
-.MainPage{
-    top: 6.5rem;
-    left: 4.75rem;
+/* place of forgetpassword  */
+
+.forgetpassword {
+	text-align:left;
+	margin-top:10vh;
+	margin-left:60vw;
 }
-.footer_Search{
-    position: absolute;
-    top: 2rem;
-    left: 4.5rem;
-    width: 4rem;
-    height: 4rem; 
-	opacity: 1;
+.forgetpassword_color{
+	color:white;
+	font:Segoe UI;
+	font-size:3.5vw;
 }
-.Search{
-    top: 6.5rem;
-    left: 4.75rem;
-}
-.footer_Category{
-    position: absolute;
-    top: -0.5rem;
-    left: 2.5rem;
-    width: 9rem;
-    height: 9rem; 
-	opacity: 1;
-}
-.Category{
-    top: 6.5rem;
-    left: 5.25rem;
-}
-.footer_Msg{
-    position: absolute;
-    top: 2rem;
-    left: 3.5rem;
-    width: 4rem;
-    height: 4rem; 
-	opacity: 1;
-}
-.Msg{
-    top: 6.5rem;
-    left: 3.75rem;
-}
-.footer_Profile{
-    position: absolute;
-    top: 2rem;
-    left: 3.5rem;
-    width: 4rem;
-    height: 4rem; 
-	opacity: 1;
-}
-.Profile{
-    top: 6.5rem;
-    left: 1.75rem;
+.forget_line{
+	width:27vw;
+	margin-top:-0.3vh;
+	border-top: solid #FFFFFF 2px;
 }
