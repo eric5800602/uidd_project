@@ -33,7 +33,7 @@ $(document).ready(function() {
   });
 
   $(document).on("click",".posts_post", function(){
-    window.location.replace= "./post.html"
+    window.location= "./post.html"
     
   });
 
