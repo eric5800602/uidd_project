@@ -24,10 +24,25 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+	setTimeout(function () {
+		$("#div1").css('display','none');
+	}, 1000);
+	setTimeout(function () {
+	$("#posting").css('opacity','1');
+	}, 1000);
 };
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
+/*
+cameraTrigger.addEventListener("click",function(){
+	
+})
+*/
+function stop(){
+clearTimeout(timer);
+}
+/*
 //上傳照片
         var file = $("#file")[0];
         //這裡使用的是onchange事件，所以當你選擇完檔案之後，就觸發事件上傳
@@ -69,4 +84,4 @@ window.addEventListener("load", cameraStart, false);
                     //不滿足上傳格式時 
             }
             console.log(sessionStorage.getItem("url"));
-        }
+        }*/
