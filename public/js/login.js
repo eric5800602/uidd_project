@@ -83,6 +83,11 @@ $(document).ready(function () {
       success: function (data) {
         alert(data.text);
       },
+      statusCode: {
+        403: function (response) {
+          LocationHerf();
+        }
+      },
       error: function(data){
         console.log(data);
       }
