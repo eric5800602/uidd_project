@@ -85,15 +85,32 @@ const postSchema = new mongoose.Schema({
     tags:[{
         type: String
     }],
+    like:Number,
+    request:Number,
+    object:[mongoose.SchemaTypes.ObjectId],
     published: Boolean
 }, { collection: postCollectionName });
 const postModel = conn.model(postCollectionName, postSchema);
 
+const pointSchema = new mongoose.Schema({
+    type: {
+      type: String,
+      enum: ['Point']
+    },
+    coordinates: {
+      type: [Number]
+    }
+  });
+
 const singleCollectionName = 'single'
 const singleSchema = new mongoose.Schema({
     name: String,
-    evaluation: String,
-    description: String
+    evaluation: Number,
+    description: String,
+    img:String,
+    position:{
+        type: pointSchema
+      }
 }, { collection: singleCollectionName });
 const singleModel = conn.model(singleCollectionName, singleSchema);
 
@@ -312,7 +329,7 @@ app.post('/add_post', (req, res) => {
     } else {
         data = { 'name': req.session.username, 'user_icon': req.body.user_icon, 'post_icon': req.body.post_icon,
         'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
-        'pings':req.body.pings,'tags':req.body.tags,'published':true}
+        'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
         const m = new postModel(data)
         m.save((err,result) => {
             if (err) { 
@@ -350,7 +367,8 @@ app.get('/recommend', (req, res) => {
                                 'name': r.name,
                                 'user_icon': r.user_icon,
                                 'post_icon': r.post_icon,
-                                'title': r.title
+                                'title': r.title,
+                                'id': r._id
                             })
                         })
                         data = JSON.stringify(data);
@@ -376,7 +394,8 @@ app.get('/recommend', (req, res) => {
         else if (r === false) {
             res.send(JSON.parse(`{
                 "success": false,
-                "text": "Sorry, query fail"
+                "text": "Sorry, query fail",
+                "object":"undefined"
               }`))
         }
     })
@@ -401,7 +420,8 @@ app.post('/upload', upload.single('file'), function (req, res, next) {
 
 app.post('/add_single', (req, res) => {
     data = {
-        'name': req.body.username, 'evaluation': req.body.evaluation, 'description': req.body.description
+        'name': req.body.username, 'evaluation': Number(req.body.evaluation), 'description': String(req.body.description),'img':req.body.img,
+        'position':{"type" : "Point","coordinates" : [Number(req.body.x),Number(req.body.y)]}
     }
     const m = new singleModel(data)
     m.save((err,result) => {
@@ -421,4 +441,44 @@ app.post('/add_single', (req, res) => {
               }`))
         }
     })
+})
+async function query(r){
+    return new Promise(async (resolve, reject) => {
+        await singleModel.findById(mongoose.Types.ObjectId(r)).exec(async(err, res) => {
+            if (err) {
+                console.log('fail to query:', err)
+            }
+            else{
+                resolve(res);
+            }
+        })
+    })
+}
+app.post('/get_post', (req, res) => {
+    postModel.findOne({ '_id': req.body.id }).exec(async (err, r) => {
+        if (err) {
+            console.log('fail to query:', err)
+            res.send({
+                "success": false,
+                "text": "Get post fail",
+                "post": undefined,
+                "single":undefined
+            })
+        }
+        else {
+            var object = [];
+            for(i in r.object){
+                var m = await query(r.object[i]);
+                console.log(m);
+                await object.push(m);
+            }
+            res.send({
+                "success": false,
+                "text": "Get post fail",
+                "post": r,
+                'single': object
+            })
+        }
+    });
+
 })
