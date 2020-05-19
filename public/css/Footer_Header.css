@@ -34,13 +34,13 @@ html, body{
     z-index: 200;
 }
 .tetto{
-    padding-top: 6.6vh;
+    padding-top: 6.4vh;
     /*padding-left:38%;*/
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-	font-size: 5.6vw;
-	letter-spacing: 3.3vw;
+	font-size: 5.5vw;
+	letter-spacing: 3.1vw;
     color: #000000;
     font-weight: bolder;
 	opacity: 1;
@@ -49,8 +49,8 @@ html, body{
     position: absolute;
     top: 6.6vh;
     left: -3vw;
-    width: 20%;
-    height: 20%; 
+    width: 22%;
+    height: 22%; 
 	opacity: 1;
 }
 .footer_MainPage{
