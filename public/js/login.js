@@ -91,7 +91,6 @@ $(document).ready(function () {
       }
     })
   })
-  */
   $('#forgetpasswordbutton').click((event) => {
     console.log();
   });
