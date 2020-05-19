@@ -48,3 +48,9 @@ header {
 body {
   overflow: auto;
   overflow-x: hidden; }
+
+#id_header {
+  width: 100%; }
+
+.tetto {
+  padding-left: 5vw; }

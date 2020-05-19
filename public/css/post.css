@@ -174,3 +174,9 @@ header {
   .request_content {
     margin: 0 0 0 1.1rem;
     letter-spacing: 0.1rem; }
+
+#id_header {
+  width: 100%; }
+
+.tetto {
+  padding-left: 5vw; }
