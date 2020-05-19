@@ -1,95 +1,114 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
+<!-- html -->  
+<!-- The Modal -->   
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+      <p class="modal_signup">Sign up</p>
+      <p class="create_account">Create your account</p>
+      <div id="modal_login_in_box">
+          <form id="ajax-form_modal_input">
+                <input type="text" name="fName" class="modal_input_form modal_Username_form" placeholder="&nbsp;&nbsp;Username"><br>
+                <input type="password" name="lName" class="modal_input_form Botton_form"  placeholder="&nbsp;&nbsp;Password"><br>
+                <input type="password" name="lName" class="modal_input_form Botton_form"  placeholder="&nbsp;&nbsp;Password"><br>
+          </form>
+      </div>
+      <div id="submit_box">
+          <form id="ajax-form_modal_button">
+              <button type="cancel" class="modal_button Cancel_button">Cancel</button>
+              <button type="next" class="modal_button Next_button" id="Next_button">Next</button>
+          </form>
+      </div>
+  </div>
+</div>
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+<!-- css -->  
+
+/* place of form */
+#modal_login_in_box{
+	text-align:center;
+}
+/*  form input  */
+.modal_input_form{
+	background: #FFFFFF;
+	border-radius: 50px;
+	opacity:1;
+	height:3vh;
+	width: 60.58vw;
+    text-align:left;
+    font-family: "Segoe UI";
+    font-weight:400;
+	box-shadow: 0px 3px 6px #00000029;
+	border:none;
+    padding-top: 1vh;
+}
+.modal_Username_form{
+	margin-top:2vh;
+}
+.Botton_form{
+	margin-top:3vh;
+}
+#modal_submit_box{
+	text-align:left;
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+/* form submit */
+.modal_button{
+	border-radius: 50px;
+	opacity:1;
+	height: 2vh;
+	width: 15vw;
+	margin-top:5vh;
+	margin-left:10vw;
+	box-shadow: 0px 3px 6px #00000029;
+    border:none;
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    font-size: 3.72vw;
+	color:white;
+}
+.Cancel_button{
+    background-color: #8BA9D2;
+}
+.Next_button{
+    background-color: #D28B8B;
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
 }
-</style>
-</head>
-<body>
 
-<h2>Modal Example</h2>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
-
-<script>
+<!-- js -->
 // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+window.onload = function () {
+  var modal = document.getElementById("myModal");
+  // Get the button that opens the modal
+  var btn = document.getElementById("button_signup");
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
 }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
-</script>
-
-</body>
-</html>
