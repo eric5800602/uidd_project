@@ -1,0 +1,53 @@
+@-webkit-keyframes want_2pink {
+  to {
+    background-color: #FF9A9A; } }
+
+@-moz-keyframes want_2pink {
+  to {
+    background-color: #FF9A9A; } }
+
+@-ms-keyframes want_2pink {
+  to {
+    background-color: #FF9A9A; } }
+
+@keyframes want_2pink {
+  to {
+    background-color: #FF9A9A; } }
+
+@-webkit-keyframes want_2blue {
+  to {
+    background-color: #8BA9D2; } }
+
+@-moz-keyframes want_2blue {
+  to {
+    background-color: #8BA9D2; } }
+
+@-ms-keyframes want_2blue {
+  to {
+    background-color: #8BA9D2; } }
+
+@keyframes want_2blue {
+  to {
+    background-color: #8BA9D2; } }
+
+.want_2pink {
+  -webkit-animation: want_2pink;
+  -moz-animation: want_2pink;
+  -o-animation: want_2pink;
+  animation: want_2pink;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+.want_2blue {
+  -webkit-animation: want_2blue;
+  -moz-animation: want_2blue;
+  -o-animation: want_2blue;
+  animation: want_2blue;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+.pink {
+  background-color: #FF9A9A; }
+
+.blue {
+  background-color: #8BA9D2; }
