@@ -484,7 +484,7 @@ app.post('/get_post', (req, res) => {
 })
 
 app.get('/users/:name', function (req, res) {
-    res.send(render('login.html', {
+    res.render('login', {
       name: "123"
-    }));
+    });
   })
