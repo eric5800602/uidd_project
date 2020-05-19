@@ -1,6 +1,6 @@
 /* Login in with text */
 .login_in{
-    padding-top:25%;
+    padding-top:15%;
     text-align: center;
     font-family: Roboto;
     font-weight: 380;
@@ -28,9 +28,9 @@
     font-weight:400;
 	box-shadow: 0px 3px 6px #00000029;
 	border:none;
-    color: #FFFFFF;
     padding-top: 1vh;
-}.Password_form{
+}
+.Password_form{
 	margin-top:4vh;
 }
 .Username_form{
@@ -108,4 +108,11 @@
 	width:27vw;
 	margin-top:-0.3vh;
 	border-top: solid #FFFFFF 2px;
+}
+#box{
+	height: 50%;
+	top: 30vh;
+	z-index: 51;
+	background-color: #FFFFFF;
+    /*opacity: 0.4;*/
 }

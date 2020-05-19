@@ -9,29 +9,36 @@
 html, body{
     position: relative;
     height: 100%;
+    min-height: 100%;
     overflow: hidden;
 }
 #id_header {
-    position: relative;
-    height: 10.48%;
+    position: fixed;
+    height: 10vh;
+    top: 0;
     background-color: #ECECEC;
     overflow:hidden;
     z-index: 199;
 }
 #id_content {
     position: relative;
-    height: 79.07%;
+    height: 100%;
+    padding-bottom: 40vh;
+    padding:10vh 0 11vh 0; /* Header height and footer height */
     background-color: #848484;
+    box-sizing: border-box;
     overflow-y: auto;
     z-index: 1;
-    flex: 1;
 }
 #id_footer {
     position: fixed;
-    height: 10.45%;
+    height: 11vh;
     background-color: #F9F9F9F0;
+    top:auto;
+    bottom: 0;
     overflow:hidden;
     z-index: 200;
+    opacity: 1;
 }
 .tetto{
     padding-top: 6.4vh;
@@ -46,15 +53,11 @@ html, body{
 	opacity: 1;
 }
 .back{
-    position: absolute;/*
-    top: 6.6vh;
-    left: -5vw;*/
+    position: absolute;
     top: 7vh;
     left: 3.58vw;
     width: 5.01vw;
-    height: 2.35vh; /*
-    width: 4.29vw;
-    height: 2.02vh; */
+    height: 2.35vh; 
 	opacity: 1;
 }
 
