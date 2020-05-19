@@ -26,7 +26,7 @@ $(document).ready(function() {
       document.getElementById("want_btn_0").innerHTML="已加入通知!"
       document.getElementById("want_number_0").innerHTML=num+1
     }
-  $('.back').click(function(){
+  $('#back').click(function(){
     window.location= "./home.html"
   })
 
