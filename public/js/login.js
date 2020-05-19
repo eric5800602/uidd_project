@@ -118,7 +118,7 @@ $(document).ready(function () {
   
 });
 var LocationHerf = function () {
-  window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
+  window.location.href = "https://luffy.ee.ncku.edu.tw:7575/home.html";
 };
 
 
