@@ -49,7 +49,7 @@ html, body{
     position: absolute;
     top: 6.6vh;
     left: -5vw;
-    width: 22%;
+    width: 4.29vw;
     height: 22%; 
 	opacity: 1;
 }
@@ -69,7 +69,8 @@ html, body{
     position: absolute;
     top: 1.3vh;
     left: 6.44vw;
-    width: 29%;
+    width: 5.73vw;
+    height: 2.69vh; 
 	opacity: 1;
 }
 .MainPage{
@@ -79,7 +80,8 @@ html, body{
     position: absolute;
     top: 1.3vh;
     left: 6.44vw;
-    width: 27%;
+    width: 5.73vw;
+    height: 2.69vh; 
 	opacity: 1;
 }
 .Search{
@@ -87,9 +89,10 @@ html, body{
 }
 .footer_Category{
     position: absolute;
-    top: 1vh;
+    top: -4vh;
     left: 3.58vw;
-    width: 65%;
+    width: 12.88vw;
+    height: 13.4vh; 
 	opacity: 1;
 }
 .Category{
@@ -100,7 +103,8 @@ html, body{
     position: absolute;
     top: 1.3vh;
     left: 5.01vw;
-    width: 28%;
+    width: 5.73vw;
+    height: 2.69vh; 
 	opacity: 1;
 }
 .Msg{
@@ -110,7 +114,8 @@ html, body{
     position: absolute;
     top: 1.3vh;
     left: 5.01vw;
-    width: 28%;
+    width: 5.73vw;
+    height: 2.69vh; 
 	opacity: 1;
 }
 .Profile{
