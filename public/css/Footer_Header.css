@@ -46,11 +46,15 @@ html, body{
 	opacity: 1;
 }
 .back{
-    position: absolute;
+    position: absolute;/*
     top: 6.6vh;
-    left: -5vw;
+    left: -5vw;*/
+    top: 7vh;
+    left: 3.58vw;
+    width: 5.01vw;
+    height: 2.35vh; /*
     width: 4.29vw;
-    height: 22%; 
+    height: 2.02vh; */
 	opacity: 1;
 }
 
