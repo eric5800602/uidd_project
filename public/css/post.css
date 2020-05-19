@@ -13,6 +13,7 @@ header {
     margin: 1.1rem 1.2rem 0 1.2rem; }
   .title_account {
     display: flex;
+    width: 27%;
     float: right;
     margin: 1.2rem 1.42rem 0 0; }
     .title_account_id {
@@ -21,7 +22,8 @@ header {
       height: 100%;
       margin: auto;
       font-size: 1rem;
-      text-overflow: ellipsis; }
+      text-overflow: ellipsis;
+      overflow: hidden; }
     .title_account_photo {
       width: 2.5rem;
       margin: 0 0 0 0.58rem;
