@@ -2,8 +2,7 @@
 .login_in{
     padding-top:15%;
     text-align: center;
-    font-family: Roboto;
-    font-weight: 380;
+    font-family: 'Roboto_Regular';
 	font-size: 6.16vw;
     letter-spacing: 0.72vw;
     text-shadow: 0px 3px 6px #00000029;
@@ -24,10 +23,11 @@
 	width: 71.58vw;
     text-align:left;
     font-family: "Segoe UI";
-    font-weight:400;
+	font-weight:400;
+	font-size: 3vmin;
 	box-shadow: 0px 3px 6px #00000029;
 	border:none;
-    padding-top: 1vh;
+    padding-top: 1vmin;
 }
 .Password_form{
 	margin-top:4vh;
@@ -37,7 +37,7 @@
 }
 ::placeholder {
     color: #7070708C;
-    font-size: 3vw;
+    font-size: 3vmin;
     padding-left: 3vw;
 }
 #submit_box{
@@ -55,8 +55,7 @@
 	box-shadow: 0px 3px 6px #00000029;
     border:none;
     text-align:center;
-    font-family: 'Roboto', sans-serif;
-    font-weight:400;
+    font-family: 'Roboto_Regular';
     font-size: 3.72vw;
 	color:white;
 }
