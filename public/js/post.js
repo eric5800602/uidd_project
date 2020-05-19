@@ -41,25 +41,14 @@ $(document).ready(function() {
     }), 
    contentType: "application/json",
    success: function(data){
-     console.log(data);
-     //console.log(data.object.length)
-    //  var html = ""
-    //  for(i=0; i<data.object.length; i++){
-    //    html = html+ `<div class="posts_post">\
-    //        <img class="posts_post_img" src="${data.object[i].post_icon}">\
-    //        <div class="posts_post_detail">\
-    //          <p class="posts_post_detail_title">Modern room</p>\
-    //          <div class="posts_post_detail_account">\
-    //            <p class="posts_post_detail_account_id">eric_50336</p>\
-    //            <img class="posts_post_detail_account_img" src="./res/img/request_1.png">\
-    //          </div>\
-    //        </div>\
-    //      </div>`
-    //  }
-    //    $('#posts').html(html)
-       // data.object.forEach(element => console.log(element));
-       // $("#post_img").attr("src",data.object[0].post_icon)
-       // $("#user_img").attr("src",data.object[0].user_icon)
+      console.log(data);
+      $("#title").text(data.post.title);
+      $("#user").text(data.post.name);
+      $("#user_icon").attr("src",data.post.user_icon);
+      $("#post_icon").attr("src",data.post.post_icon);
+      $("#like").val(data.post.like);
+      $("#pen").val(data.post.request);
+      $("#content").text(data.post.explanation)
    }
  });
 });
