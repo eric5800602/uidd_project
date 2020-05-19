@@ -31,4 +31,12 @@ $(document).ready(function() {
         // $("#user_img").attr("src",data.object[0].user_icon)
     }
   });
+
+  $(document).on("click",".posts_post", function({
+    window.location= "./post.html"
+    
+  });
+
 });
+
+
