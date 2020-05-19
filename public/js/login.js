@@ -65,7 +65,9 @@ $(document).ready(function () {
       }
     })
   })
-  
+  $('#ajax-form button[type="signup"]').click((event) => {
+    event.preventDefault();
+  })
   
   $('#register_form button[type="signup"]').click((event) => {
     console.log(check());
