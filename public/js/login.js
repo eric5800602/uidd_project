@@ -66,7 +66,7 @@ $(document).ready(function () {
     })
   })
   
-  
+  /*
   $('#register_form button[type="signup"]').click((event) => {
     console.log(check());
     console.log($('#register_form input[name=name]').val(),$('#register_form input[name=email]').val(),$('#register_form input[name=phone]').val(),$('#register_form select[name=gender]').val(),$('#register_form input[name=password]').val());
@@ -82,7 +82,6 @@ $(document).ready(function () {
       },
       success: function (data) {
         alert(data.text);
-        LocationHerf();
       },
       
       error: function(data){
@@ -90,6 +89,7 @@ $(document).ready(function () {
       }
     })
   })
+  */
   $('#forgetpasswordbutton').click((event) => {
     console.log();
   });
