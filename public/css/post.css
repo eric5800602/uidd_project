@@ -180,3 +180,7 @@ header {
 
 .tetto {
   padding-left: 5vw; }
+
+body {
+  overflow: auto;
+  overflow-x: hidden; }
