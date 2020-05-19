@@ -82,7 +82,9 @@ $(document).ready(function () {
       success: function (msg) {
         console.log(msg);
         alert(msg.text);
-        LocationHerf();
+        if(msg.success){
+          LocationHerf();
+        }
       }
     })
   })
