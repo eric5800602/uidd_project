@@ -473,8 +473,8 @@ app.post('/get_post', (req, res) => {
                 await object.push(m);
             }
             res.send({
-                "success": false,
-                "text": "Get post fail",
+                "success": true,
+                "text": "Get post success",
                 "post": r,
                 'single': object
             })
@@ -482,3 +482,9 @@ app.post('/get_post', (req, res) => {
     });
 
 })
+
+app.get('/users/:name', function (req, res) {
+    res.send(render('login.html', {
+      name: "123"
+    }));
+  })

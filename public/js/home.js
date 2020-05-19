@@ -14,13 +14,13 @@ $(document).ready(function() {
       console.log(data.object[0])
       var html = ""
       for(i=0; i<data.object.length; i++){
-        html = html+ `<div class="posts_post">\
+        html = html+ `<div class="posts_post" id="${data.object[i].id}">\
             <img class="posts_post_img" src="${data.object[i].post_icon}">\
             <div class="posts_post_detail">\
-              <p class="posts_post_detail_title">Modern room</p>\
+              <p class="posts_post_detail_title">${data.object[i].title}</p>\
               <div class="posts_post_detail_account">\
-                <p class="posts_post_detail_account_id">eric_50336</p>\
-                <img class="posts_post_detail_account_img" src="./res/img/request_1.png">\
+                <p class="posts_post_detail_account_id">${data.object[i].name}</p>\
+                <img class="posts_post_detail_account_img" src="${data.object[i].user_icon}">\
               </div>\
             </div>\
           </div>`
@@ -33,6 +33,7 @@ $(document).ready(function() {
   });
 
   $(document).on("click",".posts_post", function(){
+    localStorage.setItem("object_id",this.id);
     window.location= "./post.html"
     
   });
