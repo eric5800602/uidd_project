@@ -1,3 +1,6 @@
+.content_backgroud{
+	background-color: #848484;
+}
 /* Login in with text */
 .login_in{
     padding-top:15%;
@@ -38,7 +41,7 @@
 ::placeholder {
     color: #7070708C;
     font-size: 3vmin;
-    padding-left: 3vw;
+    padding-left: 3vmin;
 }
 #submit_box{
 	text-align:left;

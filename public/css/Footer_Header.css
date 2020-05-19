@@ -19,7 +19,6 @@ html, body{
     height: 100%;
     padding-bottom: 40vh;
     padding:10vh 0 11vh 0; /* Header height and footer height */
-    background-color: #848484;
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 1;
