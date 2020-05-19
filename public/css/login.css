@@ -5,7 +5,7 @@
     font-family: Roboto;
     font-weight: 380;
 	font-size: 6.16vw;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.72vw;
     text-shadow: 0px 3px 6px #00000029;
 	color: #000000;
 	opacity: 1;
@@ -21,15 +21,15 @@
 	background: #FFFFFF;
 	border-radius: 50px;
 	opacity:1;
-	height:5.2rem;
-	width:50rem;
+	height:3.49vh;
+	width: 71.58vw;
     text-align:left;
     font-family: "Segoe UI";
     font-weight:400;
 	box-shadow: 0px 3px 6px #00000029;
 	border:none;
     color: #FFFFFF;
-    padding-top:1.5em;
+    padding-top: 1vh;
 }.Password_form{
 	margin-top:4vh;
 }
@@ -38,8 +38,8 @@
 }
 ::placeholder {
     color: #7070708C;
-    font-size:2.5rem;
-    padding-left:1em;
+    font-size: 3.58vw;
+    padding-left: 3vw;
     
 }
 #submit_box{
@@ -50,8 +50,8 @@
 .button{
 	border-radius: 50px;
 	opacity:1;
-	height:5rem;
-	width:18rem;
+	height: 3.36vh;
+	width: 25.78vw;
 	margin-top:5vh;
 	margin-left:16vw;
 	box-shadow: 0px 3px 6px #00000029;
@@ -59,7 +59,7 @@
     text-align:center;
     font-family: 'Roboto', sans-serif;
     font-weight:400;
-    font-size: 2.6rem;
+    font-size: 3.72vw;
 	color:white;
 }
 .login_button{
@@ -89,7 +89,6 @@
 .icons{
 	margin-top:2vh;
 	margin-left:3vh;
-	
 	height:9%;
 	width:9%;
 }
