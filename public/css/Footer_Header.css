@@ -34,23 +34,23 @@ html, body{
     z-index: 200;
 }
 .tetto{
-    padding-top: 7vh;
+    padding-top: 6.6vh;
     /*padding-left:38%;*/
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-	font-size: 3.6rem;
-	letter-spacing: 1.7rem;
+	font-size: 5.6vw;
+	letter-spacing: 3.3vw;
     color: #000000;
     font-weight: bolder;
 	opacity: 1;
 }
 .back{
     position: absolute;
-    top: 7.5rem;
-    left: 2.5rem;
-    width: 3rem;
-    height: 3rem; 
+    top: 6.6vh;
+    left: -3vw;
+    width: 20%;
+    height: 20%; 
 	opacity: 1;
 }
 .footer_MainPage{
