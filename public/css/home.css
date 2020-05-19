@@ -24,6 +24,7 @@ header {
         white-space: nowrap;
         font-size: 1.1rem;
         letter-spacing: -0.04rem;
+        text-overflow: ellipsis;
         color: #707070; }
       .posts_post_detail_account {
         display: inline-flex;
@@ -36,6 +37,7 @@ header {
           margin: auto;
           font-size: 0.75rem;
           letter-spacing: -0.04rem;
+          text-overflow: ellipsis;
           color: #707070; }
         .posts_post_detail_account_img {
           width: 1.563rem;
