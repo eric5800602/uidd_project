@@ -28,7 +28,6 @@ body span.switcher input {
   border-radius: 25px;
   background-color: #1E1E1E;
   outline: none;
-  font-family: 'Oswald', sans-serif;
 }
 body span.switcher input:before, body span.switcher input:after {
   z-index: 2;
@@ -143,4 +142,5 @@ body span.switcher.switcher-2 label {
 
 #switcher-1{
   box-shadow: 0 0.085rem 0.5rem #00000029;
+  letter-spacing: -0.04rem
 }
