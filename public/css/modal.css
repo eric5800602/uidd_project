@@ -40,3 +40,15 @@
 	font:Segoe UI;
 	font-size:3.5vw;
 }
+.modal-backdrop {
+    /*close the modal when clicked outside*/
+    display: none;    
+}
+
+.modal-dialog {
+    width: 100vw !important;;
+ 
+}
+.modal-body {
+    width:auto;
+}

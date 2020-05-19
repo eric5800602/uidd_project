@@ -23,6 +23,16 @@ html, body{
     overflow-y: auto;
     z-index: 1;
 }
+#id_content_for_login {
+    position: relative;
+    height: 100%;
+    padding-bottom: 40vh;
+    background-color: #848484;
+    padding:10vh 0 11vh 0; /* Header height and footer height */
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 1;
+}
 #id_footer {
     position: fixed;
     height: 11vh;
