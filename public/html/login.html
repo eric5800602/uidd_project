@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../css/Footer_Header.css">
         <link rel="stylesheet" type="text/css" href="../css/login.css">
+        <link rel="stylesheet" type="text/css" href="../css/modal.css">
     </head>
 
     <body>
@@ -59,8 +60,21 @@
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <p>Some text in the Modal..</p>
+                        <p class="modal_signup">Sign up</p>
+                        <p class="create_account">Create your account</p>
+                        <div id="modal_login_in_box">
+                            <form id="ajax-form_name">
+                                  <input type="text" name="fName" class="modal_input_form modal_Username_form" placeholder="&nbsp;&nbsp;Username"><br>
+                                  <input type="password" name="lName" class="modal_input_form Botton_form"  placeholder="&nbsp;&nbsp;Password"><br>
+                                  <input type="password" name="lName" class="modal_input_form Botton_form"  placeholder="&nbsp;&nbsp;Password"><br>
+                            </form>
+                        </div>
+                        <div id="submit_box">
+                            <form id="ajax-form">
+                                <button type="login" class="modal_button Cancel_button">Cancel</button>
+                                <button type="signup" class="modal_button Next_button" id="signup_button">Next</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

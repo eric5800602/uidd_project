@@ -108,6 +108,7 @@ $(document).ready(function () {
       },
       success: function (data) {
         alert(data.text);
+        LocationHerf();
       },
       
       error: function(data){
@@ -122,7 +123,7 @@ $(document).ready(function () {
   
 });
 var LocationHerf = function () {
-  window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/login.html#Back";
+  window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
 };
 
 
