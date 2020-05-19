@@ -182,8 +182,8 @@ $(document).ready(function () {
       dataType: "json",
       data: JSON.stringify({
         username: $('#ajax-form input[name=fName]').val(),
-       evaluation: $('#ajax-form1 input[name=lName]').val(),
-	   description: $('#ajax-form2 input[name=dName]').val()
+        evaluation: $('#ajax-form1 input[name=lName]').val(),
+	      description: $('#ajax-form2 input[name=dName]').val()
       }), 
       contentType: "application/json",
       crossDomain: true,
@@ -192,7 +192,7 @@ $(document).ready(function () {
       },
       "success": true,
        text: "Post success, test"
-      },
+      }
     )
-	   })
-  });
+  })
+});
