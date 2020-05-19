@@ -5,7 +5,7 @@ body, html{
     height: 100%;
 	width: 100%;
 	font-family: Microsoft JhengHei;
-	font-size:2vw;
+	font-size:3vw;
 }
 #header{
 	background-color:#E9E9E9;
@@ -47,15 +47,16 @@ body, html{
     left: calc(50% - 100px);
 }
 .taken{
-    height: 200px!important;
-    width: 200px!important;
+    height: 10vh!important;
+    width: 25vw!important;
+    top: 8vh;
+    left: 8vw;
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    top: 8vh;
-    left: 3vw;
-    z-index: 2;
+    z-index:4;
 }
+
 .block {
 position: fixed;
 bottom: 10vh;
@@ -86,4 +87,47 @@ width:15vw;
 padding-left:1vw;	
 position: fixed;
 bottom: 12vh;
+}
+#posting{
+position: absolute;
+z-index:1;
+opacity:0;
+padding-top:2vh;
+}
+.container.custom-container-width {
+    max-width:90vw;
+	padding-top:2vh;
+	margin-left:5vw;
+}
+.myimage{
+	height: 10vh!important;
+    width: 25vw!important;
+    top: 8vh;
+    left: 3vw;
+    z-index: 2;
+}
+input[type=text]{
+	background: #F7F7F7;
+	height:3vh;
+	margin-top:1vh;
+	text-align:left;
+}
+#itextarea{
+	height:10vh;
+}
+.form-control{
+	background: #CCCCCC;
+}
+a {
+	background: #CCCCCC;
+	color:black;
+	padding-top:1vh;
+	padding-bottom:1vh;
+	padding-left:2vw;
+	padding-right:3vw;
+	margin-left:3vw;
+	border-radius:10px;
+}
+label{
+	font-weight:bold;
 }
