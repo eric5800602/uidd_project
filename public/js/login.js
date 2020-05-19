@@ -82,12 +82,7 @@ $(document).ready(function () {
       success: function (msg) {
         console.log(msg);
         alert(msg.text);
-      },
-      //statusCode範例
-      statusCode: {
-        403: function (response) {
-          LocationHerf();
-        }
+        LocationHerf();
       }
     })
   })
