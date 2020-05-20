@@ -106,7 +106,7 @@ $(document).ready(function () {
         password: window.sign_password ,
         email: window.sign_email,
         designer: check,
-        room: $('#modal2_input select[name=modal2_room]').val(),
+        room: $('#modal2_input input[name=modal2_room]').val(),
         hall: $('#modal2_input input[name=modal2_hall]').val(),
         bath: $('#modal2_input input[name=modal2_bath]').val(),
         suite: suite_count
