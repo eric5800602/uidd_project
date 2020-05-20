@@ -80,8 +80,7 @@ $(document).ready(function () {
   /* Modal2 Next button*/
   $('#modal2_button button[id="Submit_button"]').click((event) => {
     var check = false;
-    var suite = false;
-    if(document.getElementById('switcher-1').checked = true){
+    if(document.getElementById('switcher-1').value){
       check = false;
     }
     else{
@@ -91,9 +90,9 @@ $(document).ready(function () {
       window.sign_password ,
       window.sign_email,
       check,
-      $('#modal2_input select[name=modal2_room]').val(),
-      $('#modal2_input input[name=modal2_hall]').val(),
-      $('#modal2_input input[name=modal2_bath]').val(),
+      $('#modal2_input input[name= modal2_room]').val(),
+      $('#modal2_input input[name= modal2_hall]').val(),
+      $('#modal2_input input[name= modal2_bath]').val(),
       suite_count)
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
