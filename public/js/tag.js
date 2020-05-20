@@ -10,8 +10,9 @@ $(document).ready(function() {
         })(i);
       }
     var tags = document.getElementsByClassName('tags')
-    for(var i = 0; i < mask.length; i++) {
+    for(var i = 0; i < tags.length; i++) {
         (function(index) {
+            console.log(i);
             tags[index].addEventListener("click", function() {
                 if (this.classList.contains("tags_click")) {
                     this.classList.remove("tags_click");
@@ -19,10 +20,10 @@ $(document).ready(function() {
            })
         })(i);
       }
-    var tags = document.getElementsByClassName('single')
-    for(var i = 0; i < mask.length; i++) {
+    var single = document.getElementsByClassName('single')
+    for(var i = 0; i < single.length; i++) {
         (function(index) {
-            tags[index].addEventListener("click", function() {
+            single[index].addEventListener("click", function() {
                 if (this.classList.contains("single_click")) {
                     this.classList.remove("single_click");
                 } else this.classList.add("single_click");
