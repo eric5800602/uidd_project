@@ -1,7 +1,7 @@
 
 /* Login in with text */
 .login_in{
-    padding-top:15%;
+    padding-top: 11vh;
     text-align: center;
     font-family: 'Roboto_Regular';
 	font-size: 6.16vw;
@@ -13,7 +13,7 @@
 /* place of form */
 #login_in_box{
 	text-align:center;
-	margin-top:4vh;
+	margin-top:3.7vh;
 }
 /*  form input  */
 .input_form{
@@ -51,7 +51,7 @@
 	opacity:1;
 	height: 3.36vh;
 	width: 25.78vw;
-	margin-top:5vh;
+	margin-top:4.5vh;
 	margin-left:16vw;
 	box-shadow: 0px 3px 6px #00000029;
     border:none;
@@ -69,7 +69,7 @@
 /* place of sign in with */
 #sign_in_with{
 	text-align:center;
-	margin-top:7vh;
+	margin-top:6vh;
 }
 /* sign in with text */
 .signin{

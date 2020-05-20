@@ -6,7 +6,7 @@
 	z-index: 1; /* Sit on top */
 	padding-top: 25vh; /* Location of the box */
 	left: 0;
-	top: 0;
+	top: 4.5vh;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
@@ -24,18 +24,18 @@
 .modal_signup{
     padding-top: 2vh;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    padding-left: 1vw;
+    font-family: 'Roboto_Bold';
+    padding-left: 0.5vw;
     font-weight: 700;
 	font-size: 5vw;
-	letter-spacing: 2vw;
+	letter-spacing: 1vw;
     color: #000000;
     font-weight: bolder;
 	opacity: 1;
 }
 .create_account{
     text-align:left;
-    padding-left: 7vw;
+    padding-left: 5vw;
     color:white;
 	font:Segoe UI;
 	font-size:3.5vw;
@@ -44,11 +44,55 @@
     /*close the modal when clicked outside*/
     display: none;    
 }
-
-.modal-dialog {
-    width: 100vw !important;;
- 
-}
 .modal-body {
     width:auto;
+}
+
+/* place of form */
+#modal_login_in_box{
+	text-align:center;
+}
+/*  form input  */
+.modal_input_form{
+	background: #FFFFFF;
+	border-radius: 50px;
+	opacity:1;
+	height:2.8vh;
+	width: 65vw;
+    text-align:left;
+    font-family: 'Roboto_Regular';
+	font-weight:400;
+	font-size: 3vmin;
+	box-shadow: 0px 3px 6px #00000029;
+	border:none;
+	padding-top: 1vmin;	/*word position in input block*/
+	margin-top:2.3vh;
+}
+
+#submit_box{
+	text-align:left;
+}
+
+/* form submit */
+.modal_button{
+	border-radius: 50px;
+	opacity:1;
+	height: 2.4vh;
+	width: 20vw;
+	margin-top:4vh;
+	margin-left:12vw;
+	margin-bottom: 3vh;
+	padding-bottom: 0.5vh;
+	box-shadow: 0px 3px 6px #00000029;
+    border:none;
+    text-align:center;
+    font-family: 'Roboto_Regular';
+    font-size: 3.72vmin;
+	color:white;
+}
+.Cancel_button{
+    background-color: #8BA9D2;
+}
+.Next_button{
+    background-color: #D28B8B;
 }
