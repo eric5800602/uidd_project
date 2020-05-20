@@ -33,11 +33,12 @@
     font-weight: bolder;
 	opacity: 1;
 }
+/*---- Modal 1 ----*/
 .create_account{
     text-align:left;
     padding-left: 5vw;
     color:white;
-	font:Segoe UI;
+	font-family: 'Roboto_Regular';
 	font-size:3.5vw;
 }
 .modal-backdrop {
@@ -93,6 +94,88 @@
 .Cancel_button{
     background-color: #8BA9D2;
 }
-.Next_button{
+.Modal1_Next_button{
     background-color: #D28B8B;
 }
+/*---- Modal 2 ----*/
+.designer_check{
+	text-align:left;
+    padding-left: 8vw;
+    color:white;
+	font-family: 'Roboto_Regular';
+	padding-top: 2vh;
+	letter-spacing: 0.2vw;
+	font-size:3.5vw;
+}
+
+/* The switch - the box around the slider */
+#modal_signup_box{
+	margin-left: 3vw;;
+}
+.house{
+    text-align: center;
+    font-family: Microsoft JhengHei;
+    font-size: 4vmin;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	opacity: 1;
+	display: inline-block;
+}
+.modal2_input_form{
+	background: #FFFFFF;
+	border-radius: 50px;
+	opacity:1;
+	height: 2.2vh;
+    width: 9vw;
+    text-align:left;
+    font-family: 'Roboto_Regular';
+	font-weight:400;
+	font-size: 3vmin;
+	box-shadow: 0px 3px 6px #00000029;
+	border:none;
+	padding-top: 1vmin;	/*word position in input block*/
+	padding-left: 1vmin;
+	margin-left:2.3vh;
+	display: inline-block;
+}
+/* Hide default HTML checkbox */
+/*
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #C0C0C0;
+	-webkit-transition: .4s;
+	transition: .4s;
+	z-index: 3;
+}
+.slider:before {
+	position: absolute;
+	content: "Yes";
+	height: 2vh;
+    width: 6vw;
+    left: 0vw;
+    bottom: 0.2vh;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+input:checked + .slider {
+	background-color: #2196F3;
+	content: "No";
+}
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+	transform: translateX(6vw);
+}
+.slider.round {
+	border-radius: 34px;
+}
+.slider.round:before {
+	border-radius: 50%;
+}*/

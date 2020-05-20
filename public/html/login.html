@@ -13,13 +13,15 @@
         <link rel="stylesheet" type="text/css" href="../css/font.css">
         <link rel="stylesheet" type="text/css" href="../css/Footer_Header.css">
         <link rel="stylesheet" type="text/css" href="../css/login.css">
-        <link rel="stylesheet" type="text/css" href="../css/modal.css">
+        <link rel="stylesheet" type="text/css" href="../css/login_modal.css">
+        <link rel="stylesheet" type="text/css" href="../css/login_toggle.css">
+        
     </head>
 
     <body>
             <!-- Fixed navbar -->
             <div class="container-fluid"  id="id_header">
-                <a href="#Back"><img class="img-responsive back" src="../image/footer/Back.svg" ></a>
+                <a href="#Back"><img class="img-responsive back" id="back" src="../image/footer/Back.svg" ></a>
                 <h1 class="tetto">TETTO</h1>
             </div>
 
@@ -28,66 +30,17 @@
                 <h2 class="login_in">Login in</h2>
                 <!-- ... Login in ... -->
                 <div id="login_in_box">
-                    <form id="ajax-form_name">
+                    <form id="ajax_login_input">
                           <input type="text" name="fName" class="input_form Username_form" placeholder="&nbsp;&nbsp;Username"><br>
                           <input type="password" name="lName" class="input_form Password_form"  placeholder="&nbsp;&nbsp;Password"><br>
                     </form>
                 </div>
                 <div id="submit_box">
-                    <form id="ajax-form">
-                        <button type="login" class="button login_button">Login</button>
+                    <form id="ajax_login_signup">
+                        <button type="submit" class="button login_button">Login</button>
                         <!-- Trigger the modal with a button -->
-                        <button type="signup" class="button signup_button" data-toggle="modal" data-target="#SignModal">Sigin Up</button>
+                        <button type="submit" class="button signup_button" id="signup" data-toggle="modal" data-target="#SignModal2" >Sigin Up</button>
                         
-                        <div class="modal" tabindex="-1" role="dialog" id="SignModal" >
-                            <div class="modal-lg" role="document">
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                    <p class="modal_signup">Sign up</p>
-                                    <p class="create_account w-100">create your account</p>
-                                    <div id="modal_login_in_box">
-                                        <form id="ajax-form_modal_input">
-                                                <input type="text" name="fName" class="modal_input_form  " placeholder="&nbsp;&nbsp;Username"><br>
-                                                <input type="password" name="lName" class="modal_input_form  "  placeholder="&nbsp;&nbsp;Password"><br>
-                                                <input type="password" name="lName" class="modal_input_form  "  placeholder="&nbsp;&nbsp;email address"><br>
-                                        </form>
-                                    </div>
-                                    <div id="submit_box">
-                                        <form id="ajax-form_modal_button">
-                                            <button type="cancel" class="modal_button Cancel_button" data-dismiss="modal">Close</button>
-                                            <button type="next" class="modal_button Next_button" id="Next_button">Next</button>
-                                        </form>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        <!-- Modal -->
-                        <!--
-                        <div class="modal" tabindex="-1" role="dialog" id="SignModal" data-backdrop="false">
-                            <div class="modal-dialog" tabindex="-1" role="dialog">
-                                <div class="modal-content">
-                                    <p class="modal_signup">Sign up</p>
-                                    <p class="create_account">Create your account</p>
-                                    <div id="modal_login_in_box">
-                                        <form id="ajax-form_modal_input">
-                                                <input type="text" name="fName" class="modal_input_form modal_Username_form" placeholder="&nbsp;&nbsp;Username"><br>
-                                                <input type="password" name="lName" class="modal_input_form Botton_form"  placeholder="&nbsp;&nbsp;Password"><br>
-                                                <input type="password" name="lName" class="modal_input_form Botton_form"  placeholder="&nbsp;&nbsp;Password"><br>
-                                        </form>
-                                    </div>
-                                    <div id="submit_box">
-                                        <form id="ajax-form_modal_button">
-                                            <button type="cancel" class="modal_button Cancel_button" data-dismiss="modal">Close</button>
-                                            <button type="next" class="modal_button Next_button" id="Next_button">Next</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    -->
-                        
-
                     </form>
                 </div>
                 <!-- ... sign in with ... -->
@@ -103,9 +56,7 @@
                 <div class="forgetpassword"> 
                     <a href="#forget" id="forgetpasswordbutton" class="forgetpassword_color">Forget Password?</a>
                     <div class="forget_line"></div>
-                </div>
-                
-                
+                </div>    
             </div>
 
             <!-- Footer -->
@@ -143,7 +94,66 @@
                     </div>
                 </div>
             </div>
-        
+            <!-- Modal 1-->
+            <div class="modal" tabindex="-1" role="dialog" id="SignModal1" >
+                <div class="modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="modal_signup">Sign up</p>
+                        <p class="create_account w-100">create your account</p>
+                        <div id="modal_login_in_box">
+                            <form id="modal1_input">
+                                    <input type="text" name="Username" class="modal_input_form  " placeholder="&nbsp;&nbsp;Username"><br>
+                                    <input type="password" name="Password" class="modal_input_form  "  placeholder="&nbsp;&nbsp;Password"><br>
+                                    <input type="email" name="Email" class="modal_input_form  "  placeholder="&nbsp;&nbsp;email address"><br>
+                            </form>
+                        </div>
+                        <div id="submit_box">
+                            <form id="modal1_button">
+                                <button type="submit" class="modal_button Cancel_button" data-dismiss="modal">Close</button>
+                                <button type="submit" class="modal_button Modal1_Next_button" id="Submit_button" data-toggle="modal"  data-target="#SignModal2" data-dismiss="modal">Next</button>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Modal 2-->
+            <div class="modal" tabindex="-1" role="dialog" id="SignModal2" >
+                <div class="modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="modal_signup">Sign up</p>
+                        <p class="designer_check w-100">Are you a Designer?</p>
+                        <!-- Toggle switch-->
+                        <div class="switch_containter">
+                            <span class="switcher switcher-1">
+                                <input type="checkbox" id="switcher-1">
+                                <label for="switcher-1"></label>
+                            </span>
+                        </div>
+                        <p class="designer_check w-100">What's your home type?</p>
+                        <div id="modal_signup_box">
+                            <form id="modal2_input">
+                                    <input type="text" name="fName" class="modal2_input_form  " placeholder="&nbsp;&nbsp;">
+                                    <p class="house">房</p>
+                                    <input type="password" name="lName" class="modal2_input_form  "  placeholder="&nbsp;&nbsp;">
+                                    <p class="house">廳</p>
+                                    <input type="email"" name="lName" class="modal2_input_form  "  placeholder="&nbsp;&nbsp;">
+                                    <p class="house">衛</p>
+                            </form>
+                        </div>
+                        <div id="submit_box">
+                            <form id="modal2_button">
+                                <button type="submit" class="modal_button Cancel_button" data-dismiss="modal">Close</button>
+                                <button type="submit" class="modal_button Modal1_Next_button" id="Next_button" data-dismiss="modal">Next</button>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
         <!-- ... Javascript ... -->
         <!-- ... jQuery first, then Popper.js, then Bootstrap JS ... -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
