@@ -99,6 +99,25 @@
     <div class="request"><img class="request_icon" src="./res/img/request.png">
       <p class="request_content">單品請求</p>
     </div>
+    <!--Button trigger modal-->
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button>
+    <!--Modal-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">請點擊想請求的單品</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body"><img class="modal_photo_mian" src="./res/img/main.png"></div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary btn_cancel" type="button" data-dismiss="modal">Close</button><img class="modal_photo_previw" src="./res/img/content_2.png">
+            <button class="btn btn-secondary btn_next" type="button" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="../js/post.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
