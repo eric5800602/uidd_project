@@ -33,9 +33,13 @@ $(document).ready(function() {
   });
 
   $(document).on("click",".posts_post", function(){
-    localStorage.setItem("object_id",this.id);
-    window.location= "./post.html"
-    
+    console.log(this);
+    localStorage.setItem("post_id",this.id);
+    window.location= "./post.html" 
+  });
+
+  $('.addpost').click(function(){
+    window.location= "./post2.html" 
   });
 
 });

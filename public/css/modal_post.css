@@ -1,0 +1,54 @@
+.modal_photo_main {
+  width: 28.5rem; }
+
+.modal_photo_preview {
+  width: 6.5rem;
+  margin: 0 4rem; }
+
+.modal-backdrop {
+  background-color: rgba(255, 255, 255, 0.7); }
+
+.modal-header {
+  padding: 0.2rem 1rem; }
+
+.modal-content {
+  display: block;
+  width: 28.6rem;
+  margin: auto; }
+
+.modal-title {
+  font-size: 1.5rem; }
+
+.modal-footer {
+  justify-content: center;
+  border-top: none;
+  background-color: #E9E9E9;
+  padding: 1.5rem 0.75rem; }
+
+.modal-body {
+  display: block;
+  padding: 0;
+  background-color: #E9E9E9; }
+
+.btn {
+  border-radius: 10rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  width: 5.5rem; }
+
+.btn_cancel {
+  background-color: #8BA9D2; }
+
+.btn_next {
+  background-color: #D28B8B; }
+
+.modal-photo-main-2 {
+  display: block;
+  width: 3.33rem;
+  margin: auto; }
+
+.modal-content-2 {
+  width: 17.833rem; }
+
+.modal-body-2 {
+  padding: 1.5rem; }

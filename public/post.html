@@ -9,7 +9,9 @@
     <link href="./css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/font.css">
     <link rel="stylesheet" type="text/css" href="../css/Footer_Header.css">
+    <link href="./css/modal_post.css" rel="stylesheet">
     <link href="./css/animation.css" rel="stylesheet">
+    <link href="./css/heart.css" rel="stylesheet">
     <link href="./css/post.css" rel="stylesheet">
   </head>
   <body>
@@ -21,20 +23,25 @@
     <div class="container-fluid" id="id_content">
       <!-- Title-->
       <div class="title">
-        <p class="title_title">讓起床更有活力的睡前儀式</p>
+        <p class="title_title" id="post_title">讓起床更有活力的睡前儀式</p>
         <div class="title_account">
-          <p class="title_account_id">eric_50336</p><img class="title_account_photo" src="./res/img/content_1.png">
+          <p class="title_account_id" id="post_id">eric_50336</p><img class="title_account_photo" src="./res/img/content_1.png" id="user_icon">
         </div>
       </div>
-      <!-- Image--><img class="photo" src="./res/img/main.png">
+      <!-- Image--><img class="photo" src="./res/img/main.png" id="post_icon">
       <!-- Interact-->
       <div class="interact">
         <div class="interact_likes">
-          <div class="interact_likes_heart"><img class="interact_likes_heart_logo" src="./res/img/heart.png">
-            <p class="interact_likes_heart_number">326</p>
+          <div class="interact_likes_heart">
+            <div class="heart">
+              <input class="interact_likes_heart_logo" id="toggle-heart" type="checkbox">
+              <label for="toggle-heart" aria-label="like">❤</label>
+            </div>
+            <!--img(class="interact_likes_heart_logo" src="./res/img/heart.png") -->
+            <p class="interact_likes_heart_number" id="like_count">326</p>
           </div>
           <div class="interact_likes_pen"><img class="interact_likes_pen_logo" src="./res/img/pen.png">
-            <p class="interact_likes_pen_number">23</p>
+            <p class="interact_likes_pen_number" id="pen_count">23</p>
           </div>
         </div>
         <div class="interact_notify"><img class="interact_notify_bell" src="./res/img/bell.png"><img class="interact_notify_follow" src="./res/img/bookmark.png"></div>
@@ -48,7 +55,7 @@
         <div class="content_paragraph">
           <p class="content_paragraph_title">EKOLSUND 躺椅</p><img class="content_paragraph_stars">
         </div>
-        <p class="content_content">設立一個整齊有序的小空間，回到家後選個喜歡的時間坐在這裡，為一天做個總結。換上家居服，坐在鏡子前，調暗燈光，卸下臉上和心裡的裝扮。過程裡多些自我覺察，體驗慢下來的步調，靜靜享受和自己相處的時間，白天起床後，反向重複這個儀式，打理好精神奕奕的臉，把睡衣掛回吊衣桿上，換上準備好的穿搭，又是嶄新的一天。</p>
+        <p class="content_content" id="post_content">設立一個整齊有序的小空間，回到家後選個喜歡的時間坐在這裡，為一天做個總結。換上家居服，坐在鏡子前，調暗燈光，卸下臉上和心裡的裝扮。過程裡多些自我覺察，體驗慢下來的步調，靜靜享受和自己相處的時間，白天起床後，反向重複這個儀式，打理好精神奕奕的臉，把睡衣掛回吊衣桿上，換上準備好的穿搭，又是嶄新的一天。</p>
         <div class="content_category">
           <p class="content_category_title">Category</p>
           <div class="content_category_content">
@@ -96,24 +103,33 @@
       </div>
     </div>
     <!-- Request-->
-    <div class="request"><img class="request_icon" src="./res/img/request.png">
+    <div class="request" data-toggle="modal" data-target="#exampleModalCenter"><img class="request_icon" src="./res/img/request.png">
       <p class="request_content">單品請求</p>
     </div>
     <!--Button trigger modal-->
-    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button>
+    <!--button(type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter") Launch demo modal-->
     <!--Modal-->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">請點擊想請求的單品</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
-          <div class="modal-body"><img class="modal_photo_mian" src="./res/img/main.png"></div>
+          <div class="modal-body"><img class="modal_photo_main" src="./res/img/main.png"></div>
           <div class="modal-footer">
-            <button class="btn btn-secondary btn_cancel" type="button" data-dismiss="modal">Close</button><img class="modal_photo_previw" src="./res/img/content_2.png">
-            <button class="btn btn-secondary btn_next" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-secondary btn_cancel" type="button" data-dismiss="modal">Cancel</button><img class="modal_photo_preview" src="./res/img/content_2.png">
+            <button class="btn btn-secondary btn_next" type="button" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter-2">Next</button>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-2">
+          <div class="modal-header modal-header-2">
+            <h5 class="modal-title modal-title-2" id="exampleModalLongTitle">單品請求成功</h5>
+          </div>
+          <div class="modal-body modal-body-2"><img class="modal_photo_main modal-photo-main-2" src="./res/img/ok.png"></div>
         </div>
       </div>
     </div>
