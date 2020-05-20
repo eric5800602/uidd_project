@@ -61,11 +61,11 @@ $(document).ready(function() {
             xhrFields: {
             withCredentials: true
             },
-            data: {
+            data: JSON.stringify({
                 space:space,
                 tags:tags,
                 single:single
-            },
+            }),
             success: function (data) {
                 //上傳成功之後，返回物件data         
                 console.log(data);
