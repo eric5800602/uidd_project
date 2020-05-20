@@ -176,7 +176,7 @@ $(document).ready(function () {
       xhrFields: {
         withCredentials: true
       },
-      data:  JSON.stringify{
+      data:  JSON.stringify({
         username: window.sign_username,
         password: window.sign_password ,
         email: window.sign_email,
@@ -185,7 +185,7 @@ $(document).ready(function () {
         hall: undefined,
         bath: undefined,
         suite: undefined
-      },
+      }),
       success: function (data) {
         alert(data.text);
         /*
