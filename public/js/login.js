@@ -110,6 +110,7 @@ $(document).ready(function () {
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
         }
         else{
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/login.html";
           alert(msg.text);
         }
       },
@@ -144,6 +145,7 @@ $(document).ready(function () {
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
         }
         else{
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/login.html";
           alert(msg.text);
         }
       },
