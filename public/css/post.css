@@ -43,8 +43,7 @@ header {
         width: 2.1rem; }
       .interact_likes_heart_number {
         display: inline;
-        margin: auto;
-        margin-left: 0.3rem;
+        margin: 0.68rem 0 0 0.3rem;
         font-size: 0.834rem;
         font-weight: 800; }
     .interact_likes_pen {
