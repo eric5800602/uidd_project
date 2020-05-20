@@ -5,11 +5,45 @@ body, html{
     height: 100%;
 	width: 100%;
 	font-family: Microsoft JhengHei;
-	font-size:3vw;
+	font-size:4vw;
+	position:relative;
 }
-#header{
+#id_header {
+    position: fixed;
+    height: 10vh;
+    top: 0;
+    background-color: #ECECEC;
+    overflow:hidden;
+    z-index: 199;
+	width:100%;
+}
+.tetto{
+    padding-top: 6.4vh;
+    text-align: center;
+    font-family: Roboto_Bold,sans-serif!important;
+    padding-left: 10vw;
+    font-weight: 700;
+	font-size: 5.5vw;
+	letter-spacing: 3.1vw;
+    color: #000000;
+	opacity: 1;
+}
+.back{
+    position: absolute;
+    top: 7vh;
+    left: 3.58vw;
+    width: 5.01vw;
+    height: 2.35vh; 
+	opacity: 1;
+}
+.submit_button{
+	color:black;
 	background-color:#E9E9E9;
-	height:6vh;
+	font-size:4vw;
+	margin-top:6vh;
+	margin-right:2vw;
+	border:none;
+	font-weight:bold;
 }
 .col photo{
 	width:100vw;
@@ -27,7 +61,6 @@ body, html{
 }
 #camerasetting{
 	height:30vh;
-	
 	background-color:#E9E9E9;
 	position:fixed;
 	z-index:1;
@@ -49,7 +82,7 @@ body, html{
 .taken{
     height: 10vh!important;
     width: 25vw!important;
-    top: 8vh;
+    top: 12vh;
     left: 8vw;
     transition: all 0.5s ease-in;
     border: solid 3px white;
@@ -89,10 +122,10 @@ position: fixed;
 bottom: 12vh;
 }
 #posting{
-position: absolute;
+position:relative;
 z-index:1;
 opacity:0;
-padding-top:2vh;
+padding-top:12vh;
 }
 .container.custom-container-width {
     max-width:90vw;
@@ -102,21 +135,106 @@ padding-top:2vh;
 .myimage{
 	height: 10vh!important;
     width: 25vw!important;
-    top: 8vh;
+    top: 3vh;
     left: 3vw;
     z-index: 2;
+	opacity:0;
+}
+#explanation{
+	padding-top:2vh;
 }
 input[type=text]{
 	background: #F7F7F7;
 	height:3vh;
 	margin-top:1vh;
 	text-align:left;
+	font-weight:400;
+	border-radius: 0%;
+	border:none;
 }
-#itextarea{
+.textarea {
+height: 10vh;
+background: #F7F7F7;
+margin-top:1vh;
+padding-left:1vw;
+text-align:left;
+padding: 4px;
+border:none;
+resize: vertical;
+overflow: auto;
+}
+.textarea:empty:before {
+content: attr(placeholder);
+color: #bbb;
+}
+/*#itextarea{
 	height:10vh;
+}*/
+/*the container must be positioned relative:*/
+.custom-select {
+  position: absolute;
+  padding:2vw;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #CCCCCC;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: black transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent black transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: black;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color:#CCCCCC;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#ajax-select1{
+	border:none;
 }
 .form-control{
 	background: #CCCCCC;
+	border:none;
 }
 a {
 	background: #CCCCCC;
@@ -125,9 +243,14 @@ a {
 	padding-bottom:1vh;
 	padding-left:2vw;
 	padding-right:3vw;
-	margin-left:3vw;
 	border-radius:10px;
 }
 label{
-	font-weight:bold;
+	font-weight:1000;
+}
+option{
+	font-size:1.5vw;
+	background:#CCCCCC;
+	border:solid 1px black;
+	color:black;
 }
