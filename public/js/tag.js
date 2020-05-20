@@ -70,10 +70,10 @@ $(document).ready(function() {
                 //上傳成功之後，返回物件data         
                 console.log(data)
                 if(data.success === false){
-                    window.location = '/login.html';
+                    window.location = '/html/login.html';
                 }
                 else if(data.success === true){
-                    window.location = '../home.html';
+                    window.location = '/home.html';
                 }
         }})
     })
