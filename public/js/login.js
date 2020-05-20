@@ -62,7 +62,9 @@ $(document).ready(function () {
           if(msg.first_time == true){
             window.location.href = "/html/tags.html";
           }
-          LocationHerf();
+          else{
+            LocationHerf();
+          }
         }
         else{
           alert(msg.text);
