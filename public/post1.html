@@ -9,25 +9,27 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">   
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
       <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">
-      <link rel="stylesheet" type="text/css" href="post1.css">
+	  <link rel="stylesheet" type="text/css" href="./css/font.css">
+      <link rel="stylesheet" type="text/css" href="./css/post1.css">
+
 </head>
 <body>
-<header>
-<div  class=".container-fluid">
+
+<div  class=".container-fluid" id="id_header">
   <div  class="row justify-content-between">
     <div class="col-2">
-     back
+     <img class="img-responsive back" id="back" src="../image/footer/Back.svg">
     </div>
-    <div class="col-8">
-      tetto
+    <div class="col-7">
+            <h1 class="tetto">TETTO</h1>
     </div>
-    <div  id="submitbutton" class="col-2">
+    <div  id="submitbutton" class="col-3">
       <button  type="submit" class="submit_button"><b>完成</b></button>
     </div>
 	</div>
 	</div>
-  </header>
-<div class=".container-fluid">
+  
+<div class=".container-fluid" id="id_content">
   <div  class="row">
     <div class="col">
 		<label   class="image-preview-wrapper" for="file-uploader">
@@ -44,7 +46,7 @@
 	<div id="post1" class="container">
   <div  class="row">
     <div class="col">
-  <div id="myresult1" class="img-zoom-result"></div>
+  
     </div> 
     <div class="col">  
   <div id="myresult" class="img-zoom-result"></div>
@@ -62,31 +64,39 @@
 	</div>
 	</div>
 <div  id="post2" class="container custom-container-width">
+<div class="row">
+<div class="col-12">
 <div class="form-group">
 <label for="username" class="col control-label"><b>單品名稱</b></label>
 	<form id="ajax-form">
                         <input type="text" name="fName" class="form-control">
 						</form>
-						</div>
+						</div></div></div>
+<div class="row">
+<div class="col-12">
 <div class="form-group">
 	<label for="evaluation" class="col control-label"><b>評價</b></label>
-						<form id="ajax-form1">
-                        <input type="text" name="lName" class="form-control"></form>
-						</div>
+	<form id="ajax-form">
+                        <input type="text" name="fName" class="form-control">
+						</form>
+
+						</div></div></div>
+<div class="row">
+<div class="col-12">
 <div class="form-group">
 <label for="description" class="col control-label"><b>說明</b></label>
  <form id="ajax-form2">
-                        <input id="itextarea" type="text" name="dName" class="form-control"></form>
+                       <div class="textarea" contenteditable="true"></div></form>
 						</div>
-						</div>
+						</div></div></div>
 <!-------javascript----->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-			<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+			<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-            <script src="./js/post1.js"></script>
+            <script src="./post1.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
