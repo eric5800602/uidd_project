@@ -41,6 +41,7 @@ $(document).ready(function() {
    },
    contentType: "application/json",
    success: function(data){
+     console.log(data);
      $('#post_title').text(data.post.title);
      $('#post_id').text(data.post.name);
      $('#user_icon').attr("src",data.post.user_icon);
