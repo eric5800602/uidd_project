@@ -164,6 +164,9 @@
 	background-color: #FFFFFF;
 	display: inline-block;
 }
+.background_change{
+	background-color: #8BA9D2;
+}
 .modal2_next{
 	font-family: 'Roboto_Regular';
 	margin-left: 31vw;

@@ -1,4 +1,26 @@
 var sign_password, sign_username, sign_email;
+var suite_count = false;
+var room_count = false;
+function suite_function(){
+  if(suite_count == false){
+    suite_count = true;
+    $('#suite').addClass('background_change');
+  }
+  else{
+    suite_count = false;
+    $('#suite').removeClass('background_change');
+  }
+}
+function room_function(){
+  if(room_count == false){
+    room_count = true;
+    $('#single').addClass('background_change');
+  }
+  else{
+    room_count = false;
+    $('#single').removeClass('background_change');
+  }
+}
 /*function check(){
   var forms = document.getElementById('register_form');
   if(forms.checkValidity()){
@@ -40,7 +62,7 @@ function completeAndRedirect(){
   })
 }*/
 $(document).ready(function () {
-  
+  /* Login button*/
   $('#ajax_login_signup button[id="login"]').click((event) => {
     event.preventDefault();
     $.post({
@@ -75,31 +97,6 @@ $(document).ready(function () {
   $('#ajax_login_signup button[id="signup"]').click((event) => {
     event.preventDefault();
   })
-  /*
-  $('#register_form button[id="signup"]').click((event) => {
-    console.log(check());
-    console.log($('#register_form input[name=name]').val(),$('#register_form input[name=email]').val(),$('#register_form input[name=phone]').val(),$('#register_form select[name=gender]').val(),$('#register_form input[name=password]').val());
-    $.post({
-      url: "https://symbolwu-login-web.herokuapp.com/register",
-      dataType: "json",
-      data: {
-        first_name: $('#register_form input[name=name]').val(),
-        last_name: $('#register_form input[name=email]').val(),
-        display_name: $('#register_form input[name=phone]').val(),
-        email: $('#register_form select[name=gender]').val(),
-        password: $('#register_form input[name=password]').val()
-      },
-      success: function (data) {
-        alert(data.text);
-      },
-      
-      error: function(data){
-        console.log(data);
-      }
-    })
-  })
-  */
-
   /* Modal1 Next button*/
   $('#modal1_button button[id="Next_button"]').click((event) => {
     event.preventDefault(); /* close html defalt setting*/
@@ -107,7 +104,9 @@ $(document).ready(function () {
     window.sign_username = $('#modal1_input input[name=Username]').val();
     window.sign_email = $('#modal1_input input[name=Email]').val();
   })
-    
+  $('#ajax_login_signup button[id="signup"]').click((event) => {
+    event.preventDefault();
+  })
   /* Modal2 Next button*/
   $('#modal2_button button[id="Submit_button"]').click((event) => {
     var check = false;
@@ -117,9 +116,6 @@ $(document).ready(function () {
     }
     else{
       check = true;
-    }
-    if(document.getElementById('suite').clicked == true){
-      suite = true;
     }
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
@@ -136,7 +132,7 @@ $(document).ready(function () {
         room: $('#modal2_input select[name=modal2_room]').val(),
         hall: $('#modal2_input input[name=modal2_hall]').val(),
         bath: $('#modal2_input input[name=modal2_bath]').val(),
-        suite: suite
+        suite: suite_count
       }), 
       /*
       data: {
