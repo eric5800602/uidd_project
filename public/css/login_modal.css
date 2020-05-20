@@ -110,12 +110,12 @@
 
 /* The switch - the box around the slider */
 #modal_signup_box{
-	margin-left: 3vw;;
+	margin-left: 3.3vw;;
 }
 .house{
     text-align: center;
     font-family: Microsoft JhengHei;
-    font-size: 4vmin;
+    font-size: 4.5vmin;
 	letter-spacing: 0px;
 	color: #FFFFFF;
 	opacity: 1;
@@ -135,7 +135,26 @@
 	border:none;
 	padding-top: 1vmin;	/*word position in input block*/
 	padding-left: 1vmin;
-	margin-left:2.3vh;
+	margin-left:2vh;
+	display: inline-block;
+}
+.room{
+	margin-left: 5vw;
+}
+.room_button{
+	border-radius: 50px;
+	opacity:1;
+	height: 2.5vh;
+	width: 11vw;
+	margin-left: 2.3vw;
+	padding-bottom: 2.8vh;
+	box-shadow: 0px 3px 6px #00000029;
+    border:none;
+    text-align:center;
+    font-family: Microsoft JhengHei;
+    font-size: 4vmin;
+	color:#666666;
+	background-color: #FFFFFF;
 	display: inline-block;
 }
 /* Hide default HTML checkbox */
