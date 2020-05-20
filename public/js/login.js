@@ -30,36 +30,6 @@ function room_function(){
   else{
     return false;
   }
-}
-function completeAndRedirect(){
-  $.post({
-    url: "https://luffy.ee.ncku.edu.tw:7575/register",
-    dataType: "json",
-    contentType: "application/json",
-    xhrFields: {
-      withCredentials: true
-    },
-    data: {
-      name: $('#register_form input[name=Username]').val(),
-      email: $('#register_form input[name=Email]').val(),
-      phone: $('#register_form input[name=phone]').val(),
-      gender: $('#register_form select[name=gender]').val(),
-      password: $('#register_form input[name=password]').val()
-    },
-    success: function (data) {
-      alert(data.text);
-      $('#squarespaceModal').modal('hide');
-      $('#register_form input[name=Username]').val("")
-      $('#register_form input[name=Email]').val("")
-      $('#register_form input[name=phone]').val("")
-      $('#register_form select[name=gender]').val("")
-      $('#register_form input[name=password]').val("")
-      $('#register_form input[name=password_confirmation]').val("")
-    },
-    error: function(data){
-      console.log(data);
-    }
-  })
 }*/
 $(document).ready(function () {
   /* Login button*/
@@ -134,28 +104,14 @@ $(document).ready(function () {
         bath: $('#modal2_input input[name=modal2_bath]').val(),
         suite: suite_count
       }), 
-      /*
-      data: {
-        username: window.sign_username,
-        password: window.sign_password ,
-        email: window.sign_email,
-        designer: check,
-        room: $('#modal2_input select[name=modal2_room]').val(),
-        hall: $('#modal2_input input[name=modal2_hall]').val(),
-        bath: $('#modal2_input input[name=modal2_bath]').val(),
-        suite: suite
-      },*/
-      success: function (data) {
-        alert(data.text);
-        /*
-        $('#SignModal2').modal('hide');
-        $('#register_form input[name=Username]').val("")
-        $('#register_form input[name=Email]').val("")
-        $('#register_form input[name=phone]').val("")
-        $('#register_form select[name=gender]').val("")
-        $('#register_form input[name=password]').val("")
-        $('#register_form input[name=password_confirmation]').val("")*/
-        window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+      success: function (msg) {
+        console.log(msg);
+        if(msg.success){
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+        }
+        else{
+          alert(msg.text);
+        }
       },
       error: function(data){
         console.log("fail");
@@ -182,17 +138,14 @@ $(document).ready(function () {
         bath: undefined,
         suite: undefined
       }),
-      success: function (data) {
-        alert(data.text);
-        /*
-        $('#SignModal2').modal('hide');
-        $('#register_form input[name=Username]').val("")
-        $('#register_form input[name=Email]').val("")
-        $('#register_form input[name=phone]').val("")
-        $('#register_form select[name=gender]').val("")
-        $('#register_form input[name=password]').val("")
-        $('#register_form input[name=password_confirmation]').val("")*/
-        window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+      success: function (msg) {
+        console.log(msg);
+        if(msg.success){
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+        }
+        else{
+          alert(msg.text);
+        }
       },
       error: function(data){
         console.log(data);
