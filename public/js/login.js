@@ -59,6 +59,9 @@ $(document).ready(function () {
       success: function (msg) {
         console.log(msg);
         if(msg.success){
+          if(msg.first_time == true){
+            window.location.href = "/html/tags.html";
+          }
           LocationHerf();
         }
         else{
