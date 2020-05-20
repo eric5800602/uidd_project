@@ -176,7 +176,7 @@ $(document).ready(function () {
       xhrFields: {
         withCredentials: true
       },
-      data: {
+      data:  JSON.stringify{
         username: window.sign_username,
         password: window.sign_password ,
         email: window.sign_email,
