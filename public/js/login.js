@@ -86,6 +86,7 @@ $(document).ready(function () {
     else{
       check = true;
     }
+    alert(check);
     console.log(window.sign_username,
       window.sign_password ,
       window.sign_email,
