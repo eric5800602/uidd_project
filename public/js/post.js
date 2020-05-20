@@ -36,9 +36,9 @@ $(document).ready(function() {
    url:"/get_post",
    type:'post',
    dataType: "json",
-   data:{
+   data:JSON.stringify({
      id:localStorage.getItem("post_id")
-   },
+   }),
    contentType: "application/json",
    success: function(data){
      console.log(data);
