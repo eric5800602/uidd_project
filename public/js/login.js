@@ -128,6 +128,17 @@ $(document).ready(function () {
       xhrFields: {
         withCredentials: true
       },
+      data: JSON.stringify({
+        username: window.sign_username,
+        password: window.sign_password ,
+        email: window.sign_email,
+        designer: check,
+        room: $('#modal2_input select[name=modal2_room]').val(),
+        hall: $('#modal2_input input[name=modal2_hall]').val(),
+        bath: $('#modal2_input input[name=modal2_bath]').val(),
+        suite: suite
+      }), 
+      /*
       data: {
         username: window.sign_username,
         password: window.sign_password ,
@@ -137,7 +148,7 @@ $(document).ready(function () {
         hall: $('#modal2_input input[name=modal2_hall]').val(),
         bath: $('#modal2_input input[name=modal2_bath]').val(),
         suite: suite
-      },
+      },*/
       success: function (data) {
         alert(data.text);
         /*
