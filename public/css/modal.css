@@ -4,7 +4,7 @@
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
-	padding-top: 25vh; /* Location of the box */
+	padding-top: 22.5vh; /* Location of the box */
 	left: 0;
 	top: 4.5vh;
 	width: 100%; /* Full width */
