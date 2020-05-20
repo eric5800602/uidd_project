@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="./css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/font.css">
-    <link rel="stylesheet" type="text/css" href="../css/Footer_Header.css">
+    <!--link(rel="stylesheet" type="text/css" href="../css/Footer_Header.css")-->
+    <link href="./css/modal_post.css" rel="stylesheet">
     <link href="./css/animation.css" rel="stylesheet">
     <link href="./css/post.css" rel="stylesheet">
   </head>
@@ -96,24 +97,33 @@
       </div>
     </div>
     <!-- Request-->
-    <div class="request"><img class="request_icon" src="./res/img/request.png">
+    <div class="request" data-toggle="modal" data-target="#exampleModalCenter"><img class="request_icon" src="./res/img/request.png">
       <p class="request_content">單品請求</p>
     </div>
     <!--Button trigger modal-->
-    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button>
+    <!--button(type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter") Launch demo modal-->
     <!--Modal-->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">請點擊想請求的單品</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
-          <div class="modal-body"><img class="modal_photo_mian" src="./res/img/main.png"></div>
+          <div class="modal-body"><img class="modal_photo_main" src="./res/img/main.png"></div>
           <div class="modal-footer">
-            <button class="btn btn-secondary btn_cancel" type="button" data-dismiss="modal">Close</button><img class="modal_photo_previw" src="./res/img/content_2.png">
-            <button class="btn btn-secondary btn_next" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-secondary btn_cancel" type="button" data-dismiss="modal">Cancel</button><img class="modal_photo_preview" src="./res/img/content_2.png">
+            <button class="btn btn-secondary btn_next" type="button" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter-2">Next</button>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-2">
+          <div class="modal-header modal-header-2">
+            <h5 class="modal-title modal-title-2" id="exampleModalLongTitle">單品請求成功</h5>
+          </div>
+          <div class="modal-body modal-body-2"><img class="modal_photo_main modal-photo-main-2" src="./res/img/ok.png"></div>
         </div>
       </div>
     </div>
