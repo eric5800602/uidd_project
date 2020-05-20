@@ -86,7 +86,6 @@ $(document).ready(function () {
     else{
       check = true;
     }
-    alert("Are u designer?",check);
     console.log(window.sign_username,
       window.sign_password ,
       window.sign_email,
@@ -116,7 +115,7 @@ $(document).ready(function () {
         console.log(msg);
         if(msg.success){
           console.log("success");
-          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
         }
         else{
           console.log("fail");
