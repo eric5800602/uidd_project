@@ -107,9 +107,11 @@ $(document).ready(function () {
       success: function (msg) {
         console.log(msg);
         if(msg.success){
+          console.log("success");
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
         }
         else{
+          console.log("fail");
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/login.html";
           alert(msg.text);
         }
@@ -142,14 +144,17 @@ $(document).ready(function () {
       success: function (msg) {
         console.log(msg);
         if(msg.success){
+          console.log("success");
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
         }
         else{
+          console.log("fail");
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/login.html";
           alert(msg.text);
         }
       },
       error: function(data){
+        console.log("fail");
         console.log(data);
       }
     })
