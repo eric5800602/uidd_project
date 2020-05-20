@@ -245,6 +245,11 @@ a {
 	padding-right:3vw;
 	border-radius:10px;
 }
+a:hover{
+	background:#8BA9D2;
+	color:white;
+	text-decoration:none;
+} 
 label{
 	font-weight:1000;
 }
