@@ -87,6 +87,7 @@ $(document).ready(function () {
       check = true;
     }
     alert(document.getElementById('switcher-1').checked);
+    alert(check);
     console.log(window.sign_username,
       window.sign_password ,
       window.sign_email,
