@@ -90,7 +90,7 @@ $(document).ready(function () {
         username: window.sign_username,
         password: window.sign_password ,
         email: window.sign_email,
-        designer: check,
+        designer: document.getElementById('switcher-1').checked,
         room: $('#modal2_input input[name=modal2_room]').val(),
         hall: $('#modal2_input input[name=modal2_hall]').val(),
         bath: $('#modal2_input input[name=modal2_bath]').val(),
