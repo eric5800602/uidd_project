@@ -79,23 +79,6 @@ $(document).ready(function () {
   })
   /* Modal2 Next button*/
   $('#modal2_button button[id="Submit_button"]').click((event) => {
-    var check = false;
-    if(document.getElementById('switcher-1').checked == true){
-      check = false;
-    }
-    else{
-      check = true;
-    }
-    alert(document.getElementById('switcher-1').checked);
-    alert(check);
-    console.log(window.sign_username,
-      window.sign_password ,
-      window.sign_email,
-      check,
-      $('#modal2_input input[name= modal2_room]').val(),
-      $('#modal2_input input[name= modal2_hall]').val(),
-      $('#modal2_input input[name= modal2_bath]').val(),
-      suite_count);
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
       dataType: "json",
@@ -117,7 +100,7 @@ $(document).ready(function () {
         console.log(msg);
         if(msg.success){
           console.log("success");
-          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
         }
         else{
           console.log("fail");
