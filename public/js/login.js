@@ -42,7 +42,7 @@ function completeAndRedirect(){
 $(document).ready(function () {
   
 
-  $('#ajax_login_signup button[type="login"]').click((event) => {
+  $('#ajax_login_signup button[id="login"]').click((event) => {
     event.preventDefault()
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/login",
@@ -72,7 +72,7 @@ $(document).ready(function () {
     event.preventDefault();
   })
   
-  $('#register_form button[type="signup"]').click((event) => {
+  $('#register_form button[id="signup"]').click((event) => {
     console.log(check());
     console.log($('#register_form input[name=name]').val(),$('#register_form input[name=email]').val(),$('#register_form input[name=phone]').val(),$('#register_form select[name=gender]').val(),$('#register_form input[name=password]').val());
     $.post({
