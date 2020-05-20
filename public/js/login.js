@@ -151,11 +151,12 @@ $(document).ready(function () {
         window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
       },
       error: function(data){
+        console.log("fail");
         console.log(data);
       }
     })
   })
-  /* Modal2 Next button*/
+  /* Modal2 Skip button*/
   $('#modal2_button span[id="skip_button"]').click((event) => {
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
