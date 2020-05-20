@@ -36,6 +36,7 @@ header {
           overflow: hidden;
           margin: auto;
           font-size: 0.75rem;
+          text-align: right;
           letter-spacing: -0.04rem;
           text-overflow: ellipsis;
           color: #707070; }
