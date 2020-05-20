@@ -86,14 +86,6 @@ $(document).ready(function () {
     else{
       check = true;
     }
-    console.log(window.sign_username,
-      window.sign_password ,
-      window.sign_email,
-      check,
-      $('#modal2_input input[name= modal2_room]').val(),
-      $('#modal2_input input[name= modal2_hall]').val(),
-      $('#modal2_input input[name= modal2_bath]').val(),
-      suite_count)
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
       dataType: "json",
@@ -131,6 +123,15 @@ $(document).ready(function () {
   })
   /* Modal2 Skip button*/
   $('#modal2_button span[id="skip_button"]').click((event) => {
+    alert("Are u designer?",check);
+    console.log(window.sign_username,
+      window.sign_password ,
+      window.sign_email,
+      check,
+      $('#modal2_input input[name= modal2_room]').val(),
+      $('#modal2_input input[name= modal2_hall]').val(),
+      $('#modal2_input input[name= modal2_bath]').val(),
+      suite_count);
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
       dataType: "json",
