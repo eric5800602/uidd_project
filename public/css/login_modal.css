@@ -132,7 +132,7 @@
 	background: #FFFFFF;
 	border-radius: 50px;
 	opacity:1;
-	height: 2.2vh;
+	height: 2.4vh;
     width: 9vw;
     text-align:left;
     font-family: 'Roboto_Regular';
@@ -140,7 +140,6 @@
 	font-size: 3vmin;
 	box-shadow: 0px 3px 6px #00000029;
 	border:none;
-	padding-bottom: 1vmin;	/*word position in input block*/
 	padding-left: 1vmin;
 	margin-left:2vh;
 	display: inline-block;
@@ -165,7 +164,7 @@
 	display: inline-block;
 }
 .background_change{
-	background-color: #8BA9D2;
+	background-color: #8BA9D2
 }
 .modal2_next{
 	font-family: 'Roboto_Regular';
