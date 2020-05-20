@@ -87,6 +87,14 @@ $(document).ready(function () {
     else{
       check = true;
     }
+    console.log(window.sign_username,
+      window.sign_password ,
+      window.sign_email,
+      check,
+      $('#modal2_input select[name=modal2_room]').val(),
+      $('#modal2_input input[name=modal2_hall]').val(),
+      $('#modal2_input input[name=modal2_bath]').val(),
+      suite_count)
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
       dataType: "json",
