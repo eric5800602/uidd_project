@@ -80,7 +80,7 @@ $(document).ready(function () {
   /* Modal2 Next button*/
   $('#modal2_button button[id="Submit_button"]').click((event) => {
     var check = false;
-    if(document.getElementById('switcher-1').value){
+    if(document.getElementById('switcher-1').checked){
       check = false;
     }
     else{
