@@ -37,7 +37,7 @@ $(document).ready(function() {
   });
 
   $('.addpost').click(function(){
-    window.location= "./post1.html" 
+    window.location= "./post2.html" 
   });
 
 });
