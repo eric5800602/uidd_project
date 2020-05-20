@@ -39,7 +39,7 @@
                     <form id="ajax_login_signup">
                         <button type="button" class="button login_button" id="login">Login</button>
                         <!-- Trigger the modal with a button -->
-                        <button type="button" class="button signup_button" id="signup" data-toggle="modal" data-target="#SignModal2" >Sigin Up</button>
+                        <button type="button" class="button signup_button" id="signup" data-toggle="modal" data-target="#SignModal1" >Sigin Up</button>
                     </form>
                 </div>
                 <!-- ... sign in with ... -->
@@ -110,7 +110,7 @@
                         <div id="submit_box">
                             <form id="modal1_button">
                                 <button type="submit" class="modal_button Cancel_button" data-dismiss="modal">Close</button>
-                                <button type="submit" class="modal_button Modal1_Next_button" id="Submit_button" data-toggle="modal"  data-target="#SignModal2" data-dismiss="modal">Next</button>
+                                <button type="submit" class="modal_button Modal1_Next_button" id="Next_button" data-toggle="modal"  data-target="#SignModal2" data-dismiss="modal">Next</button>
                             </form>
                         </div>
                     </div>
@@ -135,22 +135,23 @@
                         <p class="designer_check w-100">What's your home type?</p>
                         <div id="modal_signup_box">
                             <form id="modal2_input">
-                                    <input type="text" name="fName" class="modal2_input_form  " placeholder="&nbsp;&nbsp;">
+                                    <input type="text" name="modal2_room" class="modal2_input_form" placeholder="&nbsp;&nbsp;">
                                     <p class="house">房</p>
-                                    <input type="password" name="lName" class="modal2_input_form  "  placeholder="&nbsp;&nbsp;">
+                                    <input type="password" name="modal2_hall" class="modal2_input_form" placeholder="&nbsp;&nbsp;">
                                     <p class="house">廳</p>
-                                    <input type="email"" name="lName" class="modal2_input_form  "  placeholder="&nbsp;&nbsp;">
+                                    <input type="email"" name="modal2_bath" class="modal2_input_form" placeholder="&nbsp;&nbsp;">
                                     <p class="house">衛</p>
                             </form>
                         </div>
                         <div class="room">
-                            <button type="submit" class="room_button" data-dismiss="modal">套房</button>
-                            <button type="submit" class="room_button" id="Next_button" data-dismiss="modal">雅房</button>
+                            <button type="button" class="room_button" id="suite" data-dismiss="modal">套房</button>
+                            <button type="button" class="room_button" id="single" data-dismiss="modal">雅房</button>
                         </div>
                         <div id="submit_box">
                             <form id="modal2_button">
-                                <button type="submit" class="modal_button Cancel_button" data-dismiss="modal">Close</button>
-                                <button type="submit" class="modal_button Modal1_Next_button" id="Next_button" data-dismiss="modal">Next</button>
+                                <span class="skip" id="skip_button">skip</span>
+                                <!--<button type="submit" class="modal_button Cancel_button" id="skip_button" data-dismiss="modal">Close</button>-->
+                                <button type="submit" class="modal_button Modal1_Next_button modal2_next" id="Submit_button" data-dismiss="modal">Next</button>
                             </form>
                         </div>
                     </div>

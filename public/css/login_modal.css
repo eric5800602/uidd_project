@@ -94,6 +94,13 @@
 .Cancel_button{
     background-color: #8BA9D2;
 }
+.skip{
+	border-bottom:2px #CACACA solid; 
+	font-family: 'Roboto_Regular';
+	font-size:3vmin; 
+	color: #CACACA;
+	margin-left: 10vw;;
+}
 .Modal1_Next_button{
     background-color: #D28B8B;
 }
@@ -156,6 +163,10 @@
 	color:#666666;
 	background-color: #FFFFFF;
 	display: inline-block;
+}
+.modal2_next{
+	font-family: 'Roboto_Regular';
+	margin-left: 31vw;
 }
 /* Hide default HTML checkbox */
 /*
