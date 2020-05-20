@@ -71,6 +71,7 @@ $(document).ready(function() {
                 //上傳成功之後，返回物件data         
                 console.log(data)
                 if(data.success === false){
+                    alert("請先登入您的帳號")
                     window.location = '/html/login.html';
                 }
                 else if(data.success === true){
