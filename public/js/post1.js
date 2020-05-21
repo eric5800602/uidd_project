@@ -171,7 +171,6 @@ function imageZoom(imgID, resultID) {
 
 }
 imageZoom("myimage", "myresult");
-imageZoom("myimage", "myresult1");
 
 //單品敘述
 $(document).ready(function () {
@@ -196,3 +195,6 @@ $(document).ready(function () {
     )
   })
  });
+$('submit_button').click(function(){
+    window.location= "./post.html" 
+  });
