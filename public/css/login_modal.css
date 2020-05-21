@@ -169,13 +169,16 @@ button:focus {outline:0;}
 	animation-name:AddtheBackground;
     animation-duration:0.5s;
 	background-color: #8BA9D2;
+	color:#FFFFFF;
 }
 @keyframes AddtheBackground{
 	0%{
 		background:#FFFFFF;
+		color:#666666;
 	}
 	100%{
 		background:#8BA9D2;
+		color:#FFFFFF;
 	}
 }
 
@@ -183,13 +186,16 @@ button:focus {outline:0;}
 	animation-name:RemovetheBackground;
     animation-duration:0.5s;
 	background-color: #FFFFFF;
+	color:#666666;
 }
 @keyframes RemovetheBackground{
 	0%{
 		background:#8BA9D2;
+		color:#FFFFFF;
 	}
 	100%{
 		background:#FFFFFF;
+		color:#666666;
 	}
 }
 .modal2_next{
