@@ -1,11 +1,22 @@
 $(document).ready(function() {
-    var mask = document.getElementsByClassName('background_mask')
+    var mask = document.getElementsByClassName('background_mask');
+    var centered = document.getElementsByClassName('centered');
     for(var i = 0; i < mask.length; i++) {
         (function(index) {
             mask[index].addEventListener("click", function() {
                 if (this.classList.contains("background_mask_active")) {
                     this.classList.remove("background_mask_active");
-                  } else this.classList.add("background_mask_active");
+                    this.classList.add("double_click");
+                    if(centered[index].classList.contains("centered_click")){
+                        centered[index].classList.remove("centered_click");
+                    }
+                  } else {
+                    this.classList.add("background_mask_active");
+                    centered[index].classList.add("centered_click");
+                    if (this.classList.contains("double_click")) {
+                        this.classList.remove("double_click");
+                    }
+                }
            })
         })(i);
       }
@@ -15,18 +26,35 @@ $(document).ready(function() {
             console.log(i);
             tags[index].addEventListener("click", function() {
                 if (this.classList.contains("tags_click")) {
+                    this.classList.add("tags_double_click");
                     this.classList.remove("tags_click");
-                  } else this.classList.add("tags_click");
+                } else {
+                    this.classList.add("tags_click");
+                    if (this.classList.contains("tags_double_click")) {
+                        this.classList.remove("tags_double_click");
+                    }
+                }
            })
         })(i);
       }
-    var single = document.getElementsByClassName('single')
+    var single = document.getElementsByClassName('single');
+    var centered_single = document.getElementsByClassName('centered_single');
     for(var i = 0; i < single.length; i++) {
         (function(index) {
             single[index].addEventListener("click", function() {
                 if (this.classList.contains("single_click")) {
                     this.classList.remove("single_click");
-                } else this.classList.add("single_click");
+                    this.classList.add("double_click");
+                    if(centered_single[index].classList.contains("centered_click")){
+                        centered_single[index].classList.remove("centered_click");
+                    }
+                } else {
+                    this.classList.add("single_click");
+                    centered_single[index].classList.add("centered_click");
+                    if (this.classList.contains("double_click")) {
+                        this.classList.remove("double_click");
+                    }
+                }
             })
         })(i);
     }

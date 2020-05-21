@@ -63,6 +63,7 @@
             }
             .single{
                 background-color: #D9D9D9CF;
+                color: #222222;
                 opacity: 75%;
                 z-index:2;
                 position: absolute;
@@ -83,6 +84,18 @@
                 top: 0;
                 left: 0;
             }
+            .double_click{
+                animation-name:mask_cancel;
+                animation-duration:0.5s;
+                background:#D9D9D9CF;
+                opacity: 75%;
+                z-index:2;
+                position: absolute;
+                height:100%;
+                width:100%;
+                top: 0;
+                left: 0;
+            }
             .centered {
                 position: absolute;
                 top: 50%;
@@ -92,6 +105,20 @@
                 color: black;
                 transform: translate(-50%, -50%);
                 }
+            .centered_single {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 3rem;
+                font-weight:bolder;
+                color: black;
+                transform: translate(-50%, -50%);
+                }
+            .centered_click{
+                animation-name:white_font;
+                animation-duration:0.5s;
+                color: #FFFFFF;
+            }
             .tag_title{
                 padding:30pt;
             }
@@ -111,6 +138,13 @@
                 animation-name:oxxo;
                 animation-duration:0.5s;
                 background-color: #8BA9D2;
+                color:#E7E7E7;
+            }
+            .tags_double_click{
+                animation-name:oxxo_cancel;
+                animation-duration:0.5s;
+                background-color: #CCCCCC;
+                color:#000000;
             }
             .confirm_button{
                 background-color: #D28B8B;
@@ -129,12 +163,40 @@
                     background:#393939CF;
                 }
             }
+            @keyframes mask_cancel{
+                0%{
+                    background:#393939CF;
+                }
+                100%{
+                    background:#D9D9D9CF;
+                }
+            }
+            @keyframes white_font{
+                0%{
+                    color: #222222;
+                }
+                100%{
+                    color: #FFFFFF;
+                }
+            }
             @keyframes oxxo{
                 0%{
+                    color:#000000;
                     background:#CCCCCC;
                 }
                 100%{
+                    color:#E7E7E7;
                     background:#8BA9D2;
+                }
+            }
+            @keyframes oxxo_cancel{
+                0%{
+                    color:#E7E7E7;
+                    background:#8BA9D2;
+                }
+                100%{
+                    color:#000000;
+                    background:#CCCCCC;
                 }
             }
             </style>
@@ -172,15 +234,15 @@
             </div>
             <div class="col-md-12 tag_title" style="padding:0 0 50pt 0" id="single">
                 <div class="row no-gutters">
-                    <div class="col-md-6"><img src="../res/img/table.png"><div class="single"><div class="centered">桌子</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/sofa.png"><div class="single"><div class="centered">沙發</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/lamp.png"><div class="single"><div class="centered">燈具</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/chair.png"><div class="single"><div class="centered">椅子</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/cabinet.png"><div class="single"><div class="centered">收納櫃</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/bedding.png"><div class="single"><div class="centered">寢具</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/wardrobe.png"><div class="single"><div class="centered">衣櫃</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/supplies.png"><div class="single"><div class="centered">衛浴用品</div></div></img></div>
-                    <div class="col-md-6"><img src="../res/img/curtain.png"><div class="single"><div class="centered">窗簾</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/table.png"><div class="single"><div class="centered_single">桌子</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/sofa.png"><div class="single"><div class="centered_single">沙發</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/lamp.png"><div class="single"><div class="centered_single">燈具</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/chair.png"><div class="single"><div class="centered_single">椅子</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/cabinet.png"><div class="single"><div class="centered_single">收納櫃</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/bedding.png"><div class="single"><div class="centered_single">寢具</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/wardrobe.png"><div class="single"><div class="centered_single">衣櫃</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/supplies.png"><div class="single"><div class="centered_single">衛浴用品</div></div></img></div>
+                    <div class="col-md-6"><img src="../res/img/curtain.png"><div class="single"><div class="centered_single">窗簾</div></div></img></div>
                 </div>
             </div>
             <div class="col-md-12 tag_title">
