@@ -2,23 +2,33 @@ var sign_password, sign_username, sign_email;
 var suite_count = false;
 var room_count = false;
 function suite_function(){
+  const element_suite = document.querySelector("#suite");
   if(suite_count == false){
     suite_count = true;
-    $('#suite').addClass('background_change');
+    $('#suite').addClass('add_background');
+    if(element_suite.classList.contains("remove_background"))
+      $('#suite').removeClass('remove_background');
   }
   else{
     suite_count = false;
-    $('#suite').removeClass('background_change');
+    if(element_suite.classList.contains("add_background"))
+      $('#suite').removeClass('add_background');
+    $('#suite').addClass('remove_background');
   }
 }
 function room_function(){
+  const element_single = document.querySelector("#single");
   if(room_count == false){
     room_count = true;
-    $('#single').addClass('background_change');
+    $('#single').addClass('add_background');
+    if(element_single.classList.contains("remove_background"))
+      $('#single').removeClass('remove_background');
   }
   else{
     room_count = false;
-    $('#single').removeClass('background_change');
+    if(element_single.classList.contains("add_background"))
+      $('#single').removeClass('add_background');
+    $('#single').addClass('remove_background');
   }
 }
 /*function check(){

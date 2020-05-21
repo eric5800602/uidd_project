@@ -133,12 +133,6 @@ body span.switcher.switcher-1 input:not(:checked) + label {
     right: 0%;
   }
 }
-body span.switcher.switcher-2 label {
-  top: 0px;
-  width: 200px;
-  height: 50px;
-  border-radius: 25px;
-}
 
 #switcher-1{
   box-shadow: 0 0.085rem 0.5rem #00000029;
