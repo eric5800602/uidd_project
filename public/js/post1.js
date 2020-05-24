@@ -198,6 +198,7 @@ $(document).ready(function () {
 $('.submit_button').click(function(){
     window.location= "./post.html" 
   });
+/* 處理圖片回傳切好的50*50大小圖片*/
 document.getElementById("myimage").addEventListener('click',function(e){
   var x = event.pageX - (this.getBoundingClientRect().x+parseInt((window.getComputedStyle(this, null).getPropertyValue('padding-left'))));
   var y = event.pageY - (this.getBoundingClientRect().y + parseInt((window.getComputedStyle(this, null).getPropertyValue('padding-top'))));
