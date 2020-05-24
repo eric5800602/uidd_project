@@ -55,6 +55,10 @@ body, html{
   position: relative;
   cursor: pointer;
 }
+.image_col{
+  width:100%;
+  height:100%;
+}
 
 .spinner-wrapper {
   opacity: 0;

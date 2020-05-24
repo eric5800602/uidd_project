@@ -170,7 +170,7 @@ function imageZoom(imgID, resultID) {
   }
 
 }
-imageZoom("myimage", "myresult");
+//imageZoom("myimage", "myresult");
 
 //單品敘述
 $(document).ready(function () {
@@ -198,3 +198,33 @@ $(document).ready(function () {
 $('.submit_button').click(function(){
     window.location= "./post.html" 
   });
+document.getElementById("myimage").addEventListener('click',function(e){
+  var x = event.pageX - (this.getBoundingClientRect().x+parseInt((window.getComputedStyle(this, null).getPropertyValue('padding-left'))));
+  var y = event.pageY - (this.getBoundingClientRect().y + parseInt((window.getComputedStyle(this, null).getPropertyValue('padding-top'))));
+  if(x < 0) x = 0;
+  if(y < 0) y = 0;
+  console.log(x,y,this.getAttribute("src"));
+  $.ajax({
+    url: '/cropimage',
+    type: 'POST',
+    dataType: "json",
+    contentType: "application/json",
+    xhrFields: {
+    withCredentials: true
+    },
+    data: JSON.stringify({
+        url:this.getAttribute("src"),
+        x:x,
+        y:y
+    }),
+    success: function (data) {
+        //上傳成功之後，返回物件data         
+        console.log(data)
+        if(data.success === false){
+            alert(data.text);
+        }
+        else if(data.success === true){
+            this.src = data.url;
+        }
+  }})
+})
