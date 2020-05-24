@@ -224,10 +224,10 @@ document.getElementById("myimage").addEventListener('click',function(e){
         //上傳成功之後，返回物件data         
         console.log(data)
         if(data.success === false){
-            alert(data.text);
+            alert("Crop image fail");
         }
         else if(data.success === true){
-            this.src = data.url;
+            document.getElementById("target1").src = data.url;
         }
   }})
 })
