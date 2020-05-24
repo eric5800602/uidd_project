@@ -501,8 +501,14 @@ app.post('/cropimage',function(req,res){
         var store = crypto.randomBytes(16).toString('hex');
         var extension = image.getExtension();
         return image
-        .crop(x-25*w,y-25*h,50*w,50*h)
-        .write(`./public/image/post/${store}.${extension}`);
+        .crop(req.body.x-25*w,req.body.y-25*h,50*w,50*h)
+        .write(`./public/image/post/${store}.${extension}`,function(){
+            res.send({
+                'success':true,
+                "text": "Success to crop image",
+                "url": `image/post/${store}.${extension}`
+            })
+        });
     })
     .catch(err => {
         console.error(err);
@@ -512,9 +518,4 @@ app.post('/cropimage',function(req,res){
             "url": undefined
         })
     });
-    res.send({
-        'success':true,
-        "text": "Success to crop image",
-        "url": `image/post/${store}.${extension}`
-    })
 })
