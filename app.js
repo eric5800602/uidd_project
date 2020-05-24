@@ -496,12 +496,19 @@ app.post('/cropimage',function(req,res){
     store = `./public/${req.body.url}`;
     Jimp.read(`./public/${req.body.url}`)
     .then(image => {
+        var rx = req.body.width/image.bitmap.width;
+        var ry = req.body.height/image.bitmap.height;
         var w = image.bitmap.width/256;
         var h = image.bitmap.height/256;
+        var x = req.body.x/rx-25*w;
+        var y = req.body.y/ry-25*h;
+        if(x < 0) x = 0;
+        if(y < 0) y = 0;
+        console.log(x,y,50*w,50*h);
         var store = crypto.randomBytes(16).toString('hex');
         var extension = image.getExtension();
         return image
-        .crop(req.body.x-25*w,req.body.y-25*h,50*w,50*h)
+        .crop(x,y,73.2421875,52.34375)
         .write(`./public/image/post/${store}.${extension}`,function(){
             res.send({
                 'success':true,
