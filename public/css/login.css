@@ -1,53 +1,54 @@
 
 /* Login in with text */
+input { 
+    outline: none;
+}
+
 .login_in{
-    padding-top: 11vh;
+	padding-top: 21.1rem;
     text-align: center;
-    font-family: 'Roboto_Regular';
-	font-size: 6.16vw;
-    letter-spacing: 0.72vw;
-    text-shadow: 0px 3px 6px #00000029;
-	color: #000000;
-	opacity: 1;
+    font-family: 'Roboto_Light';
+    font-weight: bolder;
+    font-size: 5.1rem;
+    padding-left: 0.29rem;
+    letter-spacing: 0.58rem;
+    text-shadow: 0px 0.63rem 1.25rem #00000029;
+    color: #000000;
+    opacity: 1;
 }
 /* place of form */
 #login_in_box{
-	text-align:center;
-	margin-top:3.7vh;
+	text-align: center;
+    margin-top: 5.36rem;
 }
 /*  form input  */
 .input_form{
 	background: #FFFFFF;
-	border-radius: 50px;
-	opacity:1;
-	height:3.49vh;
-	width: 71.58vw;
-    text-align:left;
+    border-radius: 10.42rem;
+    opacity: 1;
+    height: 6.5rem;
+    width: 60rem;
+    text-align: left;
     font-family: "Segoe UI";
-	font-weight:400;
-	font-size: 3vmin;
-	box-shadow: 0px 3px 6px #00000029;
-	border:none;
-    padding-top: 1vmin;
-}
-.Password_form{
-	margin-top:4vh;
-}
-.Username_form{
-	margin-top:3vh;
+    font-size: 4rem;
+    box-shadow: 0px 0.63rem 1.25rem #00000029;
+    margin-top: 8.1rem;
+    border: none;
+    padding-top: 0.5rem;
+    padding-left: 3.5rem;
 }
 ::placeholder {
     color: #7070708C;
-    font-size: 3vmin;
-    padding-left: 3vmin;
+	font-size: 4rem;
 }
 #submit_box{
-	text-align:left;
+	display:inline;
+	text-align:center;
 }
 
 /* form submit */
 .button{
-	border-radius: 50px;
+	border-radius: 10.42rem;
 	opacity:1;
 	height: 3.36vh;
 	width: 25.78vw;
@@ -60,6 +61,7 @@
     font-size: 3.72vw;
 	color:white;
 }
+button:focus {outline:0;}
 .login_button{
     background-color: #8BA9D2;
 }
