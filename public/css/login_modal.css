@@ -163,7 +163,7 @@
 	background-color: #FFFFFF;
 	display: inline-block;
 }
-button:focus {outline:0;}
+
 
 .add_background{
 	animation-name:AddtheBackground;
