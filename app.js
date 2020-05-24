@@ -496,8 +496,8 @@ app.post('/cropimage',function(req,res){
     store = `./public/${req.body.url}`;
     Jimp.read(`./public/${req.body.url}`)
     .then(image => {
-        var rx = req.body.width/image.bitmap.width;
-        var ry = req.body.height/image.bitmap.height;
+        var rx = parseFloat(req.body.width)/image.bitmap.width;
+        var ry = parseFloat(req.body.height)/image.bitmap.height;
         var w = image.bitmap.width/256;
         var h = image.bitmap.height/256;
         var x = req.body.x/rx-25*w;
