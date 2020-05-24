@@ -215,8 +215,8 @@ document.getElementById("myimage").addEventListener('click',function(e){
     },
     data: JSON.stringify({
         url:this.getAttribute("src"),
-        x:x,
-        y:y
+        x:parseInt(x),
+        y:parseInt(y)
     }),
     success: function (data) {
         //上傳成功之後，返回物件data         
