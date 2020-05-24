@@ -498,6 +498,7 @@ app.post('/cropimage',function(req,res){
     .then(image => {
         var w = image.bitmap.width/256;
         var h = image.bitmap.height/256;
+        console.log(req.body.x,req.body.y);
         var store = crypto.randomBytes(16).toString('hex');
         var extension = image.getExtension();
         return image
