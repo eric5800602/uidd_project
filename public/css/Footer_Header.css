@@ -1,6 +1,5 @@
 /* Sticky footer styles
 -------------------------------------------------- */
-/*test*/
 html, body{
     position: relative;
     height: 100%;
@@ -9,7 +8,7 @@ html, body{
 }
 #id_header {
     position: fixed;
-    height: 10vh;
+    height: 18rem;
     top: 0;
     background-color: #ECECEC;
     overflow:hidden;
@@ -18,8 +17,7 @@ html, body{
 #id_content {
     position: relative;
     height: 100%;
-    padding-bottom: 40vh;
-    padding:10vh 0 11vh 0; /* Header height and footer height */
+    padding: 18rem 0 17.8rem 0; /* Header height and footer height */
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 1;
@@ -27,16 +25,15 @@ html, body{
 #id_content_for_login {
     position: relative;
     height: 100%;
-    padding-bottom: 40vh;
-    background-color: #848484;
-    padding:10vh 0 11vh 0; /* Header height and footer height */
+    padding: 18rem 0 17.8rem 0; /* Header height and footer height */
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 1;
+    background-color: #848484;
 }
 #id_footer {
     position: fixed;
-    height: 11vh;
+    height: 17.8rem;
     background-color: #F9F9F9F0;
     top:auto;
     bottom: 0;
@@ -45,88 +42,87 @@ html, body{
     opacity: 1;
 }
 .tetto{
-    padding-top: 6.4vh;
+    padding-top: 10.5rem;
     text-align: center;
     font-family: 'Roboto_Bold';
-    padding-left: 1.505vw;
-    font-weight: 700;
-	font-size: 5.5vw;
-	letter-spacing: 3.1vw;
+    padding-left: 1.1rem;
+    font-size: 4.4rem;
+    letter-spacing: 2.2rem;
     color: #000000;
-	opacity: 1;
+    opacity: 1;
 }
 .back{
     position: absolute;
-    top: 7vh;
-    left: 3.58vw;
-    width: 5.01vw;
-    height: 2.35vh; 
-	opacity: 1;
+    top: 10.8rem;
+    left: 2.9rem;
+    width: 4rem;
+    height: 4.05rem;
+    opacity: 1;
 }
 
 .text{
     position: absolute;
     text-align: center;
     font-family: Microsoft JhengHei;
-    font-size: 2.5vw;
-	letter-spacing: 0px;
+    font-size: 2.3rem;
 	color: #707070;
     opacity: 1;
-    top: 4.3vh;
+    top: 7.4rem;
 }
+
 .footer_MainPage{
     position: absolute;
-    top: 1.3vh;
-    left: 6.44vw;
-    width: 5.73vw;
-    height: 2.69vh; 
+    top: 2.4rem;
+    left: 5.9rem;
+    width: 4.62rem;
+    height: 4.62rem; 
 	opacity: 1;
 }
 .MainPage{
-    left: 6.8vw;
+    left: 5.94rem;
 }
 .footer_Search{
     position: absolute;
-    top: 1.3vh;
-    left: 6.44vw;
-    width: 5.73vw;
-    height: 2.69vh; 
+    top: 2.4rem;
+    left: 5.9rem;
+    width: 4.62rem;
+    height: 4.62rem; 
 	opacity: 1;
 }
 .Search{
-    left: 6.87vw;
+    left: 6.1rem;
 }
 .footer_Category{
     position: absolute;
-    top: -4vh;
-    left: 3.58vw;
-    width: 12.88vw;
-    height: 13.4vh; 
+    top: -6.7rem;
+    left: 3.1rem;
+    width: 10.39rem;
+    height: 23.03rem; 
 	opacity: 1;
 }
 .Category{
-    left: 7.44vw;
+    left: 6rem;
     
 }
 .footer_Msg{
     position: absolute;
-    top: 1.3vh;
-    left: 5.01vw;
-    width: 5.73vw;
-    height: 2.69vh; 
+    top: 2.23rem;
+    left: 4.54rem;
+    width: 4.62rem;
+    height: 4.62rem; 
 	opacity: 1;
 }
 .Msg{
-    left: 5.58vw;
+    left: 4.6rem;
 }
 .footer_Profile{
     position: absolute;
-    top: 1.3vh;
-    left: 5.01vw;
-    width: 5.73vw;
-    height: 2.69vh; 
-	opacity: 1;
+    top: 2.24rem;
+    left: 4rem;
+    width: 4.63rem;
+    height: 4.63rem;
+    opacity: 1;
 }
 .Profile{
-    left: 2.86vw;
+    left: 2.1rem;
 }
