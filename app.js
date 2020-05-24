@@ -4,6 +4,7 @@ const config = require('./config')
 const path = require('path')
 const crypto = require('crypto')
 const cmd=require('node-cmd');
+var Jimp = require('jimp');
 const url = `mongodb://${config.mongodb.user}:${config.mongodb.password}@${config.mongodb.host}/${config.mongodb.database}`
 const conn = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     if (err) console.log('fail to connect:', err)
@@ -491,8 +492,29 @@ app.post('/get_post', (req, res) => {
 
 })
 
-app.get('/users/:name', function (req, res) {
-    res.render('login', {
-      name: "123"
+app.post('/cropimage',function(req,res){
+    store = `./public/${req.body.url}`;
+    Jimp.read(`./public/${req.body.url}`)
+    .then(image => {
+        var w = image.bitmap.width/256;
+        var h = image.bitmap.height/256;
+        var store = crypto.randomBytes(16).toString('hex');
+        var extension = image.getExtension();
+        return image
+        .crop(x-25*w,y-25*h,50*w,50*h)
+        .write(`./public/image/post/${store}.${extension}`);
+    })
+    .catch(err => {
+        console.error(err);
+        res.send({
+            'success':false,
+            "text": err,
+            "url": undefined
+        })
     });
-  })
+    res.send({
+        'success':true,
+        "text": "Success to crop image",
+        "url": `image/post/${store}.${extension}`
+    })
+})
