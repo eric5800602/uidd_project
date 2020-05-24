@@ -18,4 +18,4 @@ function image_crop(x,y){
         console.error(err);
     });
 }
-image_crop(378,588);
+image_crop(643,399.0749969482422);
