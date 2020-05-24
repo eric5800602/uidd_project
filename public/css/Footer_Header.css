@@ -45,9 +45,9 @@ html, body{
     padding-top: 10.5rem;
     text-align: center;
     font-family: 'Roboto_Bold';
-    padding-left: 1rem;  /* padding left half of letter-spacing */
+    padding-left: 1.1rem;
     font-size: 4.4rem;
-    letter-spacing: 2rem;
+    letter-spacing: 2.2rem;
     color: #000000;
     opacity: 1;
 }
