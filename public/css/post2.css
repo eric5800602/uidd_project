@@ -5,7 +5,7 @@ body, html{
     height: 100%;
 	width: 100%;
 	font-family: Microsoft JhengHei;
-	font-size:4vw;
+	font-size:40px;
 	position:relative;
 }
 #id_header {
@@ -69,15 +69,15 @@ body, html{
 	bottom:0;
 }
 #camera--trigger{
-    width: 20vw;
-	height:9vh;
-    background-color: gray;
+    width:5em;
+	height:5em;
     border-radius: 50%;
     border: none;
     text-align: center;
     position: fixed;
-    bottom: 10vh;
+    bottom: 7.5em;
     left: calc(50% - 100px);
+	
 }
 .taken{
     height: 10vh!important;
@@ -92,15 +92,15 @@ body, html{
 
 .block {
 position: fixed;
-bottom: 10vh;
-margin-left:5vw;
+bottom: 8.5em;
+margin-left:0.5em;
 text-align: center;
 cursor: pointer;
 background: white;
 z-index:3;
 /*長寬不知道怎麼用正方形*/
-width:20vw;
-height:10vh;
+width:2.5em;
+height:2.5em;
 }
 #upload_input {
 display: none;
@@ -111,15 +111,15 @@ font-size: 180%;
 position: absolute;
 left: 0;
 width: 100%;
-top: 3vh;
+top:1em;
 }
 .cameraturn{
 z-index:3;
 /*長寬不知道怎麼用正方形*/
-width:15vw;
-padding-left:1vw;	
+width:2.5em;
+margin-left:3.5em;	
 position: fixed;
-bottom: 12vh;
+bottom: 8.5em;
 }
 #posting{
 position:relative;
@@ -167,75 +167,8 @@ overflow: auto;
 content: attr(placeholder);
 color: #bbb;
 }
-/*#itextarea{
-	height:10vh;
-}*/
-/*the container must be positioned relative:*/
-.custom-select {
-  position: absolute;
-  padding:2vw;
-}
 
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-}
 
-.select-selected {
-  background-color: #CCCCCC;
-}
-
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: black transparent transparent transparent;
-}
-
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent black transparent;
-  top: 7px;
-}
-
-/*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-  color: black;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-/*style items (options):*/
-.select-items {
-  position: absolute;
-  background-color:#CCCCCC;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/*hide the items when the select box is closed:*/
-.select-hide {
-  display: none;
-}
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-#ajax-select1{
-	border:none;
-}
-.form-control{
-	background: #CCCCCC;
-	border:none;
-}
 .hashtag{
 	background: #CCCCCC;
 	color:black;
@@ -253,9 +186,29 @@ color: #bbb;
 label{
 	font-weight:1000;
 }
-option{
-	font-size:1.5vw;
+
+#file{
+	opacity:0;
+	position:absolute;
+	
+}
+.plus{
+	height:0.5em;
+	width:0.5em;
+    margin-bottom:1em;
+}
+.selects{
+	width:4em;
+	height:2em;
 	background:#CCCCCC;
-	border:solid 1px black;
 	color:black;
+	border-radius:10px;
+	padding:0.2em;
+}
+.options{
+	background:#CCCCCC;
+	height:2em;
+	font-size:0.3em;
+	border:solid 1px #CCCCCC;
+	padding:0.2em;
 }
