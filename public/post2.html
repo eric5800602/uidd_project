@@ -22,7 +22,7 @@
             <h1 class="tetto">TETTO</h1>
     </div>
     <div  id="submitbutton" class="col-3">
-       <a href="post1.html" id="nextstep"><button  type="submit" class="submit_button"><b>下一步</b></button></a>
+      <a href="post1.html" id="nextstep"><button  type="submit" class="submit_button"><b>下一步</b></button></a>
     </div>
 	</div>
 	</div>
@@ -43,15 +43,16 @@
 	<div class="custom-file">
 	  <div class="block">
 	  <label>
-        <input  id="upload_input" type="file" class="custom-file-input" name="file">
-		<span class="upload_icon">➕</span>
+        <input id="file" type="file"/>
+		 <span class="upload_icon"><img class="plus" src="./res/plus.svg"></span>
         </label>
 		</div>
       </div>
 		</div>
 	<!-- Camera trigger -->
 	<div  class="col">
-        <button onclick="stop()" id="camera--trigger"></button>
+       
+		<button onclick="stop()"id="camera--trigger"><img id="camera--trigger" src="./res/camerabutton.png"/></button>
 	</div>
 
 	<div  class="col">
@@ -86,31 +87,33 @@
 </div></div>
 <div class="row">
 <div class="col-3">
-<div class="form-group">
- <select id="ajax-select1" class="form-control">
- <option>空間</option>
- <option>單品</option>
- <option>公共空間</option>
- </select>
-						</div></div>
+  
+  <select class="selects">
+    <option value="0" class="options">空間</option>
+    <option value="1" class="options">套房</option>
+    <option value="2" class="options">雅房</option>
+  </select>
+
+						</div>
 		<div class="col-1">> </div>
 <div class="col-3">
-<div class="form-group">
- <select class="form-control">
-  <option>臥房</option>
-  <option>廚房</option>
-  <option>客廳</option>
-</select>
 
-						</div></div>
+  <select class="selects">
+    <option value="0" class="options">臥室</option>
+    <option value="1" class="options">廚房</option>
+    <option value="2" class="options">客廳</option>
+  </select>
+</div>
 		<div class="col-1">></div>				
 <div class="col-3">
-<div class="form-group">
- <select id="ajax-select3" class="form-control">
- <option value="1">坪數</option>
- <option value="2">10以下</option>
- <option value="3">10-20</option></select>
-						</div></div>
+
+  
+  <select class="selects">
+    <option value="0" class="options">坪數</option>
+    <option value="1" class="options">5坪以下</option>
+    <option value="2" class="options">5-10坪</option>
+  </select>
+</div>
 </div>
 <div class="row">
 <div class="col-12">
