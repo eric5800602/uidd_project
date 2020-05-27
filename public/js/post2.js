@@ -90,6 +90,7 @@ file.onclick = function() {
         withCredentials: true
       },
       data: JSON.stringify({
+	      object:$(".taken"),val(),
     space: $("#space").val(),
 	room:$("#room").val(),
 	pings: $("#pings").val(),
