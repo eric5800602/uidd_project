@@ -140,9 +140,7 @@ padding-top:12vh;
     z-index: 2;
 	opacity:0;
 }
-#explanation{
-	padding-top:2vh;
-}
+
 input[type=text]{
 	background: #F7F7F7;
 	height:2.5em;
@@ -153,21 +151,22 @@ input[type=text]{
 	border:none;
 }
 ::-webkit-input-placeholder { /* Edge */
-  color: red;
+  color: #5F5F5F;
 }
 
 :-ms-input-placeholder { /* Internet Explorer */
-  color: red;
+  color: #5F5F5F;
 }
 
 ::placeholder {
-  color: red;
+  color: #5F5F5F;
 }
 .textarea {
-height: 10vh;
+height: 5em;
+width:75em;
 background: #F7F7F7;
-margin-top:1vh;
-padding-left:1vw;
+margin-top:1em;
+padding-left:1em;
 text-align:left;
 padding: 4px;
 border:none;
