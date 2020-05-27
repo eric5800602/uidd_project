@@ -94,7 +94,7 @@ file.onclick = function() {
 		room: document.getElementById('room').select,
 		ping: document.getElementById('ping').select,
         title: $('#ajax-form input[name=fName]').val(),
-        explanation: $('#ajax-form1 #description').val(),
+        explanation: $('#description').val(),
       }), 
       success: function (msg) {
         console.log(msg);
