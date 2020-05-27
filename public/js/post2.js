@@ -100,7 +100,7 @@ file.onclick = function() {
         console.log(msg);
         if(msg.success){
           console.log("success");
-          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/post1.html";
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/post1.html";
         }
         else{
           console.log("fail");
