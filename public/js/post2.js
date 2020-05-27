@@ -30,6 +30,9 @@ cameraTrigger.onclick = function() {
 	setTimeout(function () {
 	$("#posting").css('opacity','1');
 	}, 1000);
+	setTimeout(function () {
+	$("#tag").css('opacity','1');
+	}, 1000);
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
@@ -56,8 +59,27 @@ file.onclick = function() {
 	setTimeout(function () {
 	$("#posting").css('opacity','1');
 	}, 1000);
+	setTimeout(function () {
+	$("#tag").css('opacity','1');
+	}, 1000);
 };
-
+ var tags = document.getElementsByClassName('tags')
+    for(var i = 0; i < tags.length; i++) {
+        (function(index) {
+            console.log(i);
+            tags[index].addEventListener("click", function() {
+                if (this.classList.contains("tags_click")) {
+                    this.classList.add("tags_double_click");
+                    this.classList.remove("tags_click");
+                } else {
+                    this.classList.add("tags_click");
+                    if (this.classList.contains("tags_double_click")) {
+                        this.classList.remove("tags_double_click");
+                    }
+                }
+           })
+        })(i);
+      }
 /*
 //上傳照片
         var file = $("#file")[0];
