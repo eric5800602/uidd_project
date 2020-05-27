@@ -92,9 +92,9 @@ file.onclick = function() {
       data: JSON.stringify({
         space: $("#space").val(),
 	room:$("#room").val(),
-	pings: $('#ping').val(),
+	pings: $("#ping").val(),
         title: $('#ajax-form input[name=fName]').val(),
-        explanation: $('#description').val(),
+        explanation: $("#description").val(),
       }), 
       success: function (msg) {
         console.log(msg);
