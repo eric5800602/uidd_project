@@ -80,6 +80,41 @@ file.onclick = function() {
            })
         })(i);
       }
+	 $(document).ready(function () {
+		 $('#Submit_button').click((event) => {
+    $.post({
+      url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
+      dataType: "json",
+      contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      data: JSON.stringify({
+        space: document.getElementById('space').select,
+		room: document.getElementById('room').select,
+		ping: document.getElementById('ping').select,
+        name: $('#ajax-form input[name=fName]').val(),
+        description: $('#ajax-form1 #description').val(),
+      }), 
+      success: function (msg) {
+        console.log(msg);
+        if(msg.success){
+          console.log("success");
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/post1.html";
+        }
+        else{
+          console.log("fail");
+          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
+          alert(msg.text);
+        }
+      },
+      error: function(data){
+        console.log("fail");
+        console.log(data);
+      }
+    })
+  })
+	 })
 /*
 //上傳照片
         var file = $("#file")[0];
