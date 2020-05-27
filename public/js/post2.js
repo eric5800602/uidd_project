@@ -90,9 +90,9 @@ file.onclick = function() {
         withCredentials: true
       },
       data: JSON.stringify({
-        space: document.getElementById('space').select,
-		room: document.getElementById('room').select,
-		ping: document.getElementById('ping').select,
+        space: $("#space").val(),
+	room:$("#room").val(),
+	ping: $('#ping').val(),
         title: $('#ajax-form input[name=fName]').val(),
         explanation: $('#description').val(),
       }), 
