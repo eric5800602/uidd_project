@@ -90,11 +90,11 @@ file.onclick = function() {
         withCredentials: true
       },
       data: JSON.stringify({
-        space: $("#space").val(),
+    space: $("#space").val(),
 	room:$("#room").val(),
 	pings: $("#ping").val(),
         title: $('#ajax-form input[name=fName]').val(),
-        explanation: $("#description").val(),
+        explanation: $("#explanation").val(),
       }), 
       success: function (msg) {
         console.log(msg);
