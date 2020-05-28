@@ -80,6 +80,16 @@ file.onclick = function() {
            })
         })(i);
       }
+	  var confirm = document.getElementById('Submit_button');
+    confirm.addEventListener("click",function(){
+        var tags = new Array();
+        var tmp = document.getElementsByClassName('tags_click');
+        for(var i = 0; i < tmp.length; i++) {
+            (function(index) {
+                tags.push(tmp[i].textContent);
+            })(i);
+        }
+		        console.log(tags)
 	 $(document).ready(function () {
 		 $('#Submit_button').click((event) => {
     $.post({
@@ -89,14 +99,16 @@ file.onclick = function() {
       xhrFields: {
         withCredentials: true
       },
-      data: JSON.stringify({
-	      object:$(".taken").val(),
-    space: $("#space").val(),
-	room:$("#room").val(),
-	pings: $("#pings").val(),
+		data: JSON.stringify({
+		space: $("#space").val(),
+		room:$("#room").val(),
+		pings: $("#pings").val(),
         title: $('#ajax-form input[name=fName]').val(),
-        explanation: $("#explanation").val(),
+        explanation: $('#explanation').val(),
+		tags: $('#ajax-form3 input[name=tName]').val(),
+		tags:tags,
       }), 
+	  
       success: function (msg) {
         console.log(msg);
         if(msg.success){
@@ -115,6 +127,7 @@ file.onclick = function() {
       }
     })
   })
+	 })
 	 })
 /*
 //上傳照片
