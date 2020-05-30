@@ -35,7 +35,6 @@ var storage = multer.diskStorage({
     }
 });
 var upload = multer({ storage: storage, limits: { fileSize: 10000000 } });
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }))
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(session({
