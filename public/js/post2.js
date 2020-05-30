@@ -22,30 +22,32 @@ cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-    cameraOutput.src = cameraSensor.toDataURL("image/webp");
-    cameraOutput.classList.add("taken");
-	setTimeout(function () {
-		$("#div1").css('display','none');
-	}, 1000);
-	setTimeout(function () {
-	$("#posting").css('opacity','1');
-	}, 1000);
-	setTimeout(function () {
-	$("#tag").css('opacity','1');
-    }, 1000);
     var formData = new FormData();
-    formData.append('picture', cameraOutput.src);
-
+    formData.append('picture', cameraSensor.toDataURL("image/webp"));
     $.ajax({
         url: "/upload_image", 
         type: "POST", 
         cache: false,
         contentType: false,
         processData: false,
-        data: formData})
-        .done(function(e){
-            alert('done!');
-        });
+        data: formData,
+        success: function(msg){
+            cameraOutput.src = msg.url;
+            cameraOutput.classList.add("taken");
+            setTimeout(function () {
+                $("#div1").css('display','none');
+            }, 1000);
+            setTimeout(function () {
+            $("#posting").css('opacity','1');
+            }, 1000);
+            setTimeout(function () {
+            $("#tag").css('opacity','1');
+            }, 1000);
+                },
+        error:function(err){
+            cameraOutput.src = cameraSensor.toDataURL("image/webp");
+        }
+    })
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
@@ -60,7 +62,7 @@ $('#file').change(function() {
   var file = $('#file')[0].files[0];
   var reader = new FileReader;
   reader.onload = function(e) {
-    $('.taken').attr('src', e.target.result);
+    
     var formData = new FormData();
     formData.append('picture', e.target.result);
     $.ajax({
@@ -69,24 +71,29 @@ $('#file').change(function() {
         cache: false,
         contentType: false,
         processData: false,
-        data: formData})
-        .done(function(e){
-            alert('done!');
-        });
+        data: formData,
+        success: function(msg){
+            $('.taken').attr('src', msg.url);
+            cameraOutput.classList.add("taken");
+            setTimeout(function () {
+                $("#div1").css('display','none');
+            }, 1000);
+            setTimeout(function () {
+            $("#posting").css('opacity','1');
+            }, 1000);
+            setTimeout(function () {
+            $("#tag").css('opacity','1');
+            }, 1000);
+                },
+        error:function(err){
+            $('.taken').attr('src', e.target.result);
+        }
+    })
   };
   reader.readAsDataURL(file);
 });
 file.onclick = function() {
-	cameraOutput.classList.add("taken");
-	setTimeout(function () {
-		$("#div1").css('display','none');
-	}, 1000);
-	setTimeout(function () {
-	$("#posting").css('opacity','1');
-	}, 1000);
-	setTimeout(function () {
-	$("#tag").css('opacity','1');
-	}, 1000);
+	
 };
  var tags = document.getElementsByClassName('tags')
     for(var i = 0; i < tags.length; i++) {
