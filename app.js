@@ -14,6 +14,7 @@ mongoose.Promise = require('bluebird');
 const session = require('express-session')
 const bodyParser = require('body-parser')
 var port = 7575;
+const app = express()
 var fs = require('fs')
 var keyPath = './ssl/private.key';
 var certPath = './ssl/certificate.crt';
@@ -34,7 +35,7 @@ var storage = multer.diskStorage({
     }
 });
 var upload = multer({ storage: storage, limits: { fileSize: 10000000 } });
-const app = express()
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }))
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(session({
@@ -135,6 +136,17 @@ const saveAll = (data, model) => {
 }
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+/**
+ * @swagger
+ * /:
+ *  get:
+ *    description: 導向主畫面
+ *    responses:
+ *      '200':
+ *        description: 成功連線
+ */
+
 app.get('/', (req, res) => {
     return res.sendFile(path.join(__dirname, 'public/login.html'));
 })
@@ -160,6 +172,7 @@ app.get('/gitpull',(req,res)=>{
 })
 
 //login route for user login
+
 app.post('/login', async (req, res) => {
     const login = async function () {
         return new Promise(async (resolve, reject) => {
@@ -527,4 +540,8 @@ app.post('/cropimage',function(req,res){
             "url": undefined
         })
     });
+})
+
+app.post('/upload_image',function(req,res){
+    console.log(req.body)
 })

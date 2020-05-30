@@ -48,6 +48,19 @@ $('#file').change(function() {
   var reader = new FileReader;
   reader.onload = function(e) {
     $('.taken').attr('src', e.target.result);
+    var formData = new FormData();
+    formData.append('picture', e.target.result);
+
+    $.ajax({
+        url: "/upload_image", 
+        type: "POST", 
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData})
+        .done(function(e){
+            alert('done!');
+        });
   };
   reader.readAsDataURL(file);
 });
