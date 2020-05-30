@@ -75,7 +75,9 @@ const userSchema = new mongoose.Schema({
     }],
     single: [{
         type: String
-    }]
+    }],
+    user_icon: String,
+    post_icon: String,
 }, { collection: userCollectionName });
 const userModel = conn.model(userCollectionName, userSchema);
 
@@ -88,7 +90,7 @@ const postSchema = new mongoose.Schema({
     explanation:String,
     space:String,
     room:String,
-    pings:Number,
+    pings:String,
     tags:[{
         type: String
     }],
@@ -348,26 +350,46 @@ app.post('/add_post', (req, res) => {
             "text": "session username is undefined"
           }`))
     } else {
-        data = { 'name': req.session.username, 'user_icon': req.body.user_icon, 'post_icon': req.body.post_icon,
-        'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
-        'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
-        const m = new postModel(data)
-        m.save((err,result) => {
-            if (err) { 
-                console.log('fail to insert:', err)
-                res.send(JSON.parse(`{
-                    "success": false,
-                    "text": "Sorry, post fail",
-                    "id": "undefined"
-                }`))
-            } else {
-                // Response
-                res.send(JSON.parse(`{
-                    "success": true,
-                    "text": "Post success, ${req.session.username}",
-                    "id":"${result._id}"
-                }`))
-            }
+        const query = async function () {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    await userModel.findOne({ 'name': req.session.username }).exec(async (err, res) => {
+                        if (err) {
+                            console.log('fail to query:', err)
+                            resolve(undefined)
+                        }
+                        else {
+                            //console.log(res.tags.length == 0);
+                            resolve(res)
+                        }
+                    })
+                } catch (err) {
+                    reject(err)
+                }
+            })
+        };
+        query().then(r=>{
+            data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': r.post_icon,
+            'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
+            'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
+            const m = new postModel(data)
+            m.save((err,result) => {
+                if (err) { 
+                    console.log('fail to insert:', err)
+                    res.send(JSON.parse(`{
+                        "success": false,
+                        "text": "Sorry, post fail",
+                        "id": "undefined"
+                    }`))
+                } else {
+                    // Response
+                    res.send(JSON.parse(`{
+                        "success": true,
+                        "text": "Post success, ${req.session.username}",
+                        "id":"${result._id}"
+                    }`))
+                }
+            })
         })
     }
 })
@@ -542,5 +564,22 @@ app.post('/cropimage',function(req,res){
 })
 
 app.post('/upload_image',upload.array(),function(req,res){
-    console.log(req.body)
+    var image = req.body.picture.replace(/^data:image\/(png|jpg|jepg|webp);base64,/, "");
+    var store = crypto.randomBytes(16).toString('hex');
+    fs.writeFile(`./public/image/post/${store}.png`, image,'base64', function (err) {
+        if (err){
+            res.send({
+                'success':false,
+                "text": "Fail to crop image",
+                "url": 'undefined'
+            })
+            return next(err)
+        } 
+        res.send({
+            'success':true,
+            "text": "Success to upload image",
+            "url": `image/post/${store}.png`
+        })
+      })
+
 })
