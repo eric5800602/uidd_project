@@ -542,6 +542,5 @@ app.post('/cropimage',function(req,res){
 })
 
 app.post('/upload_image',function(req,res){
-    console.log(req.body)
-    res.send(req)
+    console.log(req)
 })
