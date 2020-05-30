@@ -54,28 +54,28 @@ $.ajax({
     if(heart_s==true){
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart1.png"
-      },time)
+      },100)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart2.png"
-      },time)
+      },200)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart3.png"
-      },time)
+      },300)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart4.png"
-      },time)
+      },400)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart5.png"
-      },time)
+      },500)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart6.png"
-      },time)
+      },600)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart7.png"
-      },time)
+      },700)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart8.png"
-      },time)
+      },800)
     }else{
 
 
