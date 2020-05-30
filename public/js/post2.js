@@ -68,12 +68,16 @@ $('#file').change(function() {
         url: "/upload_image", 
         type: "POST", 
         cache: false,
-        contentType: false,
+        contentType: "application/json",
+        xhrFields: {
+            withCredentials: true
+        },
         processData: false,
-        data: formData})
-        .done(function(e){
-            alert('done!');
-        });
+        data: formData,
+        success: function(msg){
+            alert('done');
+        }
+    })
   };
   reader.readAsDataURL(file);
 });
