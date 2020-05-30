@@ -68,7 +68,7 @@ $('#file').change(function() {
         url: "/upload_image", 
         type: "POST", 
         cache: false,
-        contentType: "application/json",
+        contentType: "text/plain",
         xhrFields: {
             withCredentials: true
         },
