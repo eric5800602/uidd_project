@@ -63,21 +63,16 @@ $('#file').change(function() {
     $('.taken').attr('src', e.target.result);
     var formData = new FormData();
     formData.append('picture', e.target.result);
-
     $.ajax({
         url: "/upload_image", 
         type: "POST", 
         cache: false,
-        contentType: "multipart/form-data",
-        xhrFields: {
-            withCredentials: true
-        },
+        contentType: false,
         processData: false,
-        data: formData,
-        success: function(msg){
-            alert('done');
-        }
-    })
+        data: formData})
+        .done(function(e){
+            alert('done!');
+        });
   };
   reader.readAsDataURL(file);
 });
