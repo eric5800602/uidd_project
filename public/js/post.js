@@ -46,8 +46,21 @@ $.ajax({
       document.getElementById("want_btn_0").innerHTML="已加入通知!"
       document.getElementById("want_number_0").innerHTML=num+1
     }
-
   });
+  var heart_s=false;
+  $('.interact_likes_heart_logo').click(function(){
+    heart_s=!heart_s
+    if(heart_s==true){
+      for(var i=0; i<9; i++){
+        setTimeout(
+          document.getElementById("heart").src = "./res/img/heart"+i;
+        ,100)
+      }
+    }else{
+
+
+    }
+  }
 
   $('#back').click(function(){
     window.location= "./home.html"
