@@ -60,7 +60,7 @@ $.ajax({
 
 
     }
-  }
+  })
 
   $('#back').click(function(){
     window.location= "./home.html"
