@@ -51,7 +51,7 @@ $.ajax({
   $('.interact_likes_heart_logo').click(function(){
     heart_s=!heart_s
     if(heart_s==true){
-      for(var i=0; i<8; i++){
+      for(var i=0; i<7; i++){
         setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart"+i+".png"
         },200)
