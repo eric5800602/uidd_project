@@ -50,32 +50,31 @@ $.ajax({
   var heart_s=false;
   $('.interact_likes_heart_logo').click(function(){
     heart_s=!heart_s
-    var time=100;
     if(heart_s==true){
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart1.png"
-      },100)
+      },50)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart2.png"
-      },200)
+      },100)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart3.png"
-      },300)
+      },150)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart4.png"
-      },400)
+      },200)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart5.png"
-      },500)
+      },250)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart6.png"
-      },600)
+      },300)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart7.png"
-      },700)
+      },350)
       setTimeout( function(){
           document.getElementById("heart").src = "./res/img/heart8.png"
-      },800)
+      },400)
     }else{
 
 
