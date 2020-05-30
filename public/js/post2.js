@@ -32,7 +32,20 @@ cameraTrigger.onclick = function() {
 	}, 1000);
 	setTimeout(function () {
 	$("#tag").css('opacity','1');
-	}, 1000);
+    }, 1000);
+    var formData = new FormData();
+    formData.append('picture', cameraOutput.src);
+
+    $.ajax({
+        url: "/upload_image", 
+        type: "POST", 
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData})
+        .done(function(e){
+            alert('done!');
+        });
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
