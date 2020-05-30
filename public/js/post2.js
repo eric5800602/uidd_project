@@ -87,7 +87,7 @@ $('#file').change(function() {
             setTimeout(function () {
             $("#tag").css('opacity','1');
             }, 1000);
-            stream.getTracks().forEach(function(track) {
+            cameraView.srcObject.getTracks().forEach(function(track) {
                 track.stop();
               });
                 },
