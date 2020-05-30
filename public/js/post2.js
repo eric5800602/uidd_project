@@ -73,8 +73,8 @@ $('#file').change(function() {
         processData: false,
         data: formData,
         success: function(msg){
-            $('.taken').attr('src', msg.url);
             cameraOutput.classList.add("taken");
+            cameraOutput.src = msg.url;
             setTimeout(function () {
                 $("#div1").css('display','none');
             }, 1000);
@@ -86,7 +86,7 @@ $('#file').change(function() {
             }, 1000);
                 },
         error:function(err){
-            $('.taken').attr('src', e.target.result);
+            cameraOutput.src =  e.target.result;
         }
     })
   };
