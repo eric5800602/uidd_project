@@ -52,9 +52,9 @@ $.ajax({
     heart_s=!heart_s
     if(heart_s==true){
       for(var i=0; i<9; i++){
-        setTimeout(
-          document.getElementById("heart").src = "./res/img/heart"+i;
-        ,100)
+        setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart"+i
+        },100)
       }
     }else{
 
