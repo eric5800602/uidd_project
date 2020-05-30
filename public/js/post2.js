@@ -43,6 +43,9 @@ cameraTrigger.onclick = function() {
             setTimeout(function () {
             $("#tag").css('opacity','1');
             }, 1000);
+            stream.getTracks().forEach(function(track) {
+                track.stop();
+              });
                 },
         error:function(err){
             cameraOutput.src = cameraSensor.toDataURL("image/webp");
@@ -84,6 +87,9 @@ $('#file').change(function() {
             setTimeout(function () {
             $("#tag").css('opacity','1');
             }, 1000);
+            stream.getTracks().forEach(function(track) {
+                track.stop();
+              });
                 },
         error:function(err){
             cameraOutput.src =  e.target.result;
