@@ -602,34 +602,67 @@ app.post('/new_tag', (req, res) => {
             })
         }
         else {
-            if(!result){
-                res.send({
-                    "success": true,
-                    "text": "Tag had been created",
-                    "reference":r.reference
+            if(!r){
+                data = { 'name': req.body.tag, 'reference':1}
+                const m = new tagsModel(data)
+                m.save((err,result) => {
+                    if (err) { 
+                        console.log('fail to insert:', err)
+                        res.send({
+                            "success": false,
+                            "text": "Fail to create tag",
+                            "id": undefined
+                        })
+                    } else {
+                        // Response
+                        res.send({
+                            "success": true,
+                            "text": `${req.body.tag} is success to be created`,
+                            "reference":1
+                        })
+                    }
                 })
             }else{
-                data = { 'name': req.body.tag, 'reference':0}
-                    const m = new tagsModel(data)
-                    m.save((err,result) => {
-                        if (err) { 
-                            console.log('fail to insert:', err)
-                            res.send({
-                                "success": false,
-                                "text": "Fail to create tag",
-                                "id": undefined
-                            })
-                        } else {
-                            // Response
-                            res.send({
-                                "success": true,
-                                "text": "Tag is success to be created",
-                                "reference":0
-                            })
-                        }
-                    })
+                r.reference++;
+                r.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
+                res.send({
+                    "success": true,
+                    "text": `${req.body.tag} had been created`,
+                    "reference":r.reference
+                })
             }
         }
     });
 
+})
+/*
+app.get('/new_tag', (req, res) => {
+    tagsModel.find({}).exec(async (err, r) => {
+        r.forEach(e=>{
+            e.reference = Math.floor(Math.random()*100)
+            e.save();
+        })
+    })
+    res.send("success")
+})
+*/
+app.get('/hot_tag',(req,res) => {
+    tagsModel.find({}).sort({reference:-1}).limit(20).exec(async (err, r) => {
+        if (err){
+            console.log(err)
+            res.send({
+                'success':false,
+                "tags":[]
+            })
+            return next(err)
+        } 
+        res.send({
+            'success':true,
+            "tags":r
+        })
+    })
 })
