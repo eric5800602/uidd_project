@@ -7,8 +7,11 @@ $(document).ready(function() {
         xhrFields: {
         withCredentials: true
         },
-        success: function (data) {        
-            console.log(data)
+        success: function (data) {
+            var tags = document.getElementsByClassName('tags');
+            tags.forEach(e, index => {
+               e.innerText = data.tags[index].name
+            });
     }})
     var mask = document.getElementsByClassName('background_mask');
     var centered = document.getElementsByClassName('centered');
