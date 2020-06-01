@@ -9,8 +9,8 @@ $(document).ready(function() {
         },
         success: function (data) {
             var tags = document.getElementsByClassName('tags');
-            tags.forEach(function(e, index, array){
-               e.innerText = data.tags[index].name
+            Array.prototype.forEach.call(tags, function(e,index) {
+                 e.innerText = data.tags[index].name
             });
     }})
     var mask = document.getElementsByClassName('background_mask');
