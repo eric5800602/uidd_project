@@ -77,6 +77,7 @@ const userSchema = new mongoose.Schema({
         type: String
     }],
     user_icon: String,
+    post_icon: String,
 }, { collection: userCollectionName });
 const userModel = conn.model(userCollectionName, userSchema);
 
@@ -366,7 +367,7 @@ app.post('/add_post', (req, res) => {
                         }
                         else {
                             //console.log(res.tags.length == 0);
-                            resolve(res.user_icon)
+                            resolve(res)
                         }
                     })
                 } catch (err) {
@@ -375,7 +376,7 @@ app.post('/add_post', (req, res) => {
             })
         };
         query().then(r=>{
-            data = { 'name': req.session.username, 'user_icon': r, 'post_icon': req.body.post_icon,
+            data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': r.post_icon,
             'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
             'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
             const m = new postModel(data)
@@ -587,5 +588,48 @@ app.post('/upload_image',upload.array(),function(req,res){
             "url": `image/post/${store}.png`
         })
       })
+
+})
+
+app.post('/new_tag', (req, res) => {
+    tagsModel.findOne({ 'name': req.body.tag }).exec(async (err, r) => {
+        if (err) {
+            console.log('Fail to create tag:', err)
+            res.send({
+                "success": false,
+                "text": "Fail to create tag",
+                "reference":undefined
+            })
+        }
+        else {
+            if(!result){
+                res.send({
+                    "success": true,
+                    "text": "Tag had been created",
+                    "reference":r.reference
+                })
+            }else{
+                data = { 'name': req.body.tag, 'reference':0}
+                    const m = new tagsModel(data)
+                    m.save((err,result) => {
+                        if (err) { 
+                            console.log('fail to insert:', err)
+                            res.send({
+                                "success": false,
+                                "text": "Fail to create tag",
+                                "id": undefined
+                            })
+                        } else {
+                            // Response
+                            res.send({
+                                "success": true,
+                                "text": "Tag is success to be created",
+                                "reference":0
+                            })
+                        }
+                    })
+            }
+        }
+    });
 
 })
