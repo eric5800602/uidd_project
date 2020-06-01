@@ -123,6 +123,13 @@ const singleSchema = new mongoose.Schema({
 }, { collection: singleCollectionName });
 const singleModel = conn.model(singleCollectionName, singleSchema);
 
+const tagsCollectionName = 'tags'
+const tagsSchema = new mongoose.Schema({
+    name: String,
+    reference: Number
+}, { collection: tagsCollectionName });
+const tagsModel = conn.model(tagsCollectionName, tagsSchema);
+
 const saveAll = (data, model) => {
     for (d of data) {
         const m = new model(d)
