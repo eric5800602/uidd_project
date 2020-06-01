@@ -77,7 +77,6 @@ const userSchema = new mongoose.Schema({
         type: String
     }],
     user_icon: String,
-    post_icon: String,
 }, { collection: userCollectionName });
 const userModel = conn.model(userCollectionName, userSchema);
 
@@ -367,7 +366,7 @@ app.post('/add_post', (req, res) => {
                         }
                         else {
                             //console.log(res.tags.length == 0);
-                            resolve(res)
+                            resolve(res.user_icon)
                         }
                     })
                 } catch (err) {
@@ -376,7 +375,7 @@ app.post('/add_post', (req, res) => {
             })
         };
         query().then(r=>{
-            data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': r.post_icon,
+            data = { 'name': req.session.username, 'user_icon': r, 'post_icon': req.body.post_icon,
             'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
             'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
             const m = new postModel(data)
