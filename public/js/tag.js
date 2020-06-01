@@ -9,7 +9,7 @@ $(document).ready(function() {
         },
         success: function (data) {
             var tags = document.getElementsByClassName('tags');
-            tags.forEach(e, index => {
+            tags.forEach(function(e, index, array){
                e.innerText = data.tags[index].name
             });
     }})
