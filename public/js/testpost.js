@@ -212,64 +212,72 @@ file.onclick = function() {
         }*/
 //select
 
-function CLASS_LIANDONG_YAO(array)
-{
-//陣列，聯動的資料來源
-this.array=array; 
-this.indexName='';
-this.obj='';
-//設定子SELECT
-// 引數：當前onchange的SELECT ID，要設定的SELECT ID
-this.subSelectChange=function(selectName1,selectName2)
-{
-//try
-//{
-var obj1=document.all[selectName1];
-var obj2=document.all[selectName2];
-var objName=this.toString();
-var me=this;
-obj1.onchange=function()
-{
-me.optionChange(this.options[this.selectedIndex].value,obj2.id)
-}
-}
-//設定第一個SELECT
-// 引數：indexName指選中項,selectName指select的ID
-this.firstSelectChange=function(indexName,selectName) 
-{
-this.obj=document.all[selectName];
-this.indexName=indexName;
-this.optionChange(this.indexName,this.obj.id)
-}
-// indexName指選中項,selectName指select的ID
-this.optionChange=function (indexName,selectName)
-{
-var obj1=document.all[selectName];
-var me=this;
-obj1.length=0;
-obj1.options[0]=new Option("請選擇",'');
-for(var i=0;i<this.array.length;i  )
-{ 
-if(this.array[i][1]==indexName)
-{
-//alert(this.array[i][1] " " indexName);
-obj1.options[obj1.length]=new Option(this.array[i][2],this.array[i][0]);
-}
-}
-} 
-}
-var array=new Array();
-array[0]=new Array("華南地區","根目錄","華南地區"); //資料格式 ID，父級ID，名稱
-array[1]=new Array("華北地區","根目錄","華北地區");
-array[2]=new Array("上海","華南地區","上海");
-array[3]=new Array("廣東","華南地區","廣東");
-array[4]=new Array("徐家彙","上海","徐家彙");
-array[5]=new Array("普託","上海","普託"); 
-array[6]=new Array("廣州","廣東","廣州");
-array[7]=new Array("湛江","廣東","湛江");
-//--------------------------------------------
-//這是呼叫程式碼
-var liandong=new CLASS_LIANDONG_YAO(array) //設定資料來源
-liandong.firstSelectChange("根目錄","s1"); //設定第一個選擇框
-liandong.subSelectChange("space","room"); //設定子級選擇框
-liandong.subSelectChange("room","pings");
+function myViewModel(scope) {
+        var self = this;
+        self.Level1 = null;
+        self.Level2 = null;
+        self.Level3 = null;
+        
+        //模擬資料
+        var data = self.Data = {
+          "空間": {
+            "臥室": [ "5" ],
+            "廚房": [ "1", "5" ]
+          },
+          "單品": {
+            "桌子": [ "木頭", "塑膠" ],
+			"椅子": [ "木頭", "塑膠" ]
+          },
+          
+        };
+        
+        //各Level對應的選項集合
+        self.L1Options = Object.keys(self.Data);
+        self.Level1 = self.L1Options[0];
+        self.L2Options = [];
+        self.L3Options = [];
+        
+        //Level1變更時連動L2Options
+        scope.$watch("m.Level1", function() {
+            self.L2Options = data[self.Level1] ? Object.keys(data[self.Level1]) : [];
+            //檢查Level2是否在選項中，若無將Level2設定第一筆選項
+            var idx = $.inArray(self.Level2, self.L2Options);
+            if (idx == -1) self.Level2 = self.L2Options[0];
+        });
+        //Level1或Level2變更時連動L3Options
+        scope.$watch("m.Level1+'/'+m.Level2", function() {
+            self.L3Options = 
+                data[self.Level1] && data[self.Level1][self.Level2] ?
+                data[self.Level1][self.Level2] :
+                [];
+            //檢查Level3是否在選項中，若無將Level3設定第一筆選項
+            var idx = $.inArray(self.Level3, self.L3Options);
+            if (idx == -1 ) self.Level3 = self.L3Options[0];
+        });
+        
+        //產生單層資料，形成下拉選單，用來測試更動Level1/Level2/Level3後連動是否正確
+        var list = [];
+        self.L1Options.forEach(function(space) {
+            Object.keys(data[space]).forEach(function(area) {
+                data[space][area].forEach(function(ping) {
+                    list.push(space + "/" + area + "/" + ping);
+                });
+            });
+        });
+        self.Path = "";
+        self.PathOptions = list;
+        
+        //按鈕後修改Level1/Level2/Level3
+        self.SetLevels = function() {
+            var p = self.Path.split('/');
+            self.Level1 = p[0];
+            self.Level2 = p[1];
+            self.Level3 = p[2];
+        };
+        
+      }      
+      
+      angular.module("app", [])
+      .controller("main", function ($scope) {
+        $scope.m = new myViewModel($scope);
+      });
