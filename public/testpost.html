@@ -86,17 +86,10 @@
 <div class="col-12">
 <label for="description" class="col control-label"><b>分類選擇：</b></label>
 </div></div>
-<div class="row">
-<form name="form1" method="post">
-<SELECT ID="space" NAME="s1" class="selects" >
-<OPTION selected></OPTION>
-</SELECT>
-<SELECT ID="room" NAME="s2" class="selects" >
-<OPTION selected></OPTION>
-</SELECT>
-<SELECT ID="pings" NAME="s3" class="selects">
-<OPTION selected></OPTION>
-</SELECT>
+<div class="row" ng-controller="main">
+<select ng-model="m.Level1" ng-options="o as o for o in m.L1Options" class="selects" id="space"></select>
+        <select ng-model="m.Level2" ng-options="o as o for o in m.L2Options" class="selects" id="room"></select>
+        <select ng-model="m.Level3" ng-options="o as o for o in m.L3Options" class="selects" id="pings"></select>
 
 </div>
 <div class="row">
