@@ -98,7 +98,6 @@ text-align: center;
 cursor: pointer;
 background: white;
 z-index:3;
-/*長寬不知道怎麼用正方形*/
 width:2.5em;
 height:2.5em;
 }
@@ -200,12 +199,13 @@ label{
 #file{
 	opacity:0;
 	position:absolute;
+	max-width:2.5em;
 	
 }
 .plus{
 	height:0.5em;
 	width:0.5em;
-    margin-bottom:1em;
+    margin-bottom:1.5em;
 }
 .selects{
 	width:4em;
