@@ -4,7 +4,7 @@
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
-	padding-top: 22.5vh; /* Location of the box */
+	padding-top: 18.5rem; /* Location of the box */
 	left: 0;
 	top: 4.5vh;
 	width: 100%; /* Full width */
@@ -17,29 +17,28 @@
 .modal-content {
 	background-color: #848484;
 	margin: auto;
-	border: 1px solid #888;
-	width: 80%;
+	border: 0px solid #888;
+	width: 90%;
 }
 
 .modal_signup{
-    padding-top: 2vh;
     text-align: center;
     font-family: 'Roboto_Bold';
-    padding-left: 0.5vw;
-    font-weight: 700;
-	font-size: 5vw;
-	letter-spacing: 1vw;
+    padding-left: 0.25rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.5rem;
     color: #000000;
     font-weight: bolder;
-	opacity: 1;
+    opacity: 1;
 }
 /*---- Modal 1 ----*/
 .create_account{
-    text-align:left;
-    padding-left: 5vw;
-    color:white;
-	font-family: 'Roboto_Regular';
-	font-size:3.5vw;
+    text-align: left;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    color: white;
+    font-family: 'Roboto_Light';
+    font-size: 1.3rem;
 }
 .modal-backdrop {
     /*close the modal when clicked outside*/
@@ -58,16 +57,17 @@
 	background: #FFFFFF;
 	border-radius: 50px;
 	opacity:1;
-	height:2.8vh;
-	width: 65vw;
-    text-align:left;
-    font-family: 'Roboto_Regular';
-	font-weight:400;
-	font-size: 3vmin;
-	box-shadow: 0px 0.63rem 1.25rem #00000029;
-	border:none;
-	padding-top: 1vmin;	/*word position in input block*/
-	margin-top:2.3vh;
+	height: 2rem;
+    padding-left: 1rem;
+    width: 21rem;
+    font-size: 1.2rem;
+    text-align: left;
+    font-family: 'Roboto_Light';
+    box-shadow: 0px 2pt 6pt #00000029;
+    border: none;
+    padding-top: 0.5rem;
+	margin-top: 2rem;
+	
 }
 
 #submit_box{
@@ -84,7 +84,7 @@
 	margin-left:12vw;
 	margin-bottom: 3vh;
 	padding-bottom: 0.5vh;
-	box-shadow: 0px 0.63rem 1.25rem #00000029;
+	box-shadow: 0px 2pt 6pt #00000029;
     border:none;
     text-align:center;
     font-family: 'Roboto_Regular';
@@ -138,7 +138,7 @@
     font-family: 'Roboto_Regular';
 	font-weight:400;
 	font-size: 3vmin;
-	box-shadow: 0px 0.63rem 1.25rem #00000029;
+	box-shadow: 0px 2pt 6pt #00000029;
 	border:none;
 	padding-left: 1vmin;
 	margin-left:2vh;
@@ -154,7 +154,7 @@
 	width: 11vw;
 	margin-left: 2.3vw;
 	padding-bottom: 2.8vh;
-	box-shadow: 0px 0.63rem 1.25rem #00000029;
+	box-shadow: 0px 2pt 6pt #00000029;
     border:none;
     text-align:center;
     font-family: Microsoft JhengHei;
