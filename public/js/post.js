@@ -46,8 +46,40 @@ $.ajax({
       document.getElementById("want_btn_0").innerHTML="已加入通知!"
       document.getElementById("want_number_0").innerHTML=num+1
     }
-
   });
+  var heart_s=false;
+  $('.interact_likes_heart_logo').click(function(){
+    heart_s=!heart_s
+    if(heart_s==true){
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart1.png"
+      },50)
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart2.png"
+      },100)
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart3.png"
+      },150)
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart4.png"
+      },200)
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart5.png"
+      },250)
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart6.png"
+      },300)
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart7.png"
+      },350)
+      setTimeout( function(){
+          document.getElementById("heart").src = "./res/img/heart8.png"
+      },400)
+    }else{
+
+
+    }
+  })
 
   $('#back').click(function(){
     window.location= "./home.html"

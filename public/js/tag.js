@@ -1,4 +1,18 @@
 $(document).ready(function() {
+    $.ajax({
+        url: '/hot_tag',
+        type: 'get',
+        dataType: "json",
+        contentType: "application/json",
+        xhrFields: {
+        withCredentials: true
+        },
+        success: function (data) {
+            var tags = document.getElementsByClassName('tags');
+            Array.prototype.forEach.call(tags, function(e,index) {
+                 e.innerText = data.tags[index].name
+            });
+    }})
     var mask = document.getElementsByClassName('background_mask');
     var centered = document.getElementsByClassName('centered');
     for(var i = 0; i < mask.length; i++) {

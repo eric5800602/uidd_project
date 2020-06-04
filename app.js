@@ -4,6 +4,7 @@ const config = require('./config')
 const path = require('path')
 const crypto = require('crypto')
 const cmd=require('node-cmd');
+var Jimp = require('jimp');
 const url = `mongodb://${config.mongodb.user}:${config.mongodb.password}@${config.mongodb.host}/${config.mongodb.database}`
 const conn = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     if (err) console.log('fail to connect:', err)
@@ -13,6 +14,7 @@ mongoose.Promise = require('bluebird');
 const session = require('express-session')
 const bodyParser = require('body-parser')
 var port = 7575;
+const app = express()
 var fs = require('fs')
 var keyPath = './ssl/private.key';
 var certPath = './ssl/certificate.crt';
@@ -33,8 +35,7 @@ var storage = multer.diskStorage({
     }
 });
 var upload = multer({ storage: storage, limits: { fileSize: 10000000 } });
-const app = express()
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }))
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(session({
     secret: 'uiddgroupK',
@@ -74,7 +75,9 @@ const userSchema = new mongoose.Schema({
     }],
     single: [{
         type: String
-    }]
+    }],
+    user_icon: String,
+    post_icon: String,
 }, { collection: userCollectionName });
 const userModel = conn.model(userCollectionName, userSchema);
 
@@ -87,7 +90,7 @@ const postSchema = new mongoose.Schema({
     explanation:String,
     space:String,
     room:String,
-    pings:Number,
+    pings:String,
     tags:[{
         type: String
     }],
@@ -120,6 +123,13 @@ const singleSchema = new mongoose.Schema({
 }, { collection: singleCollectionName });
 const singleModel = conn.model(singleCollectionName, singleSchema);
 
+const tagsCollectionName = 'tags'
+const tagsSchema = new mongoose.Schema({
+    name: String,
+    reference: Number
+}, { collection: tagsCollectionName });
+const tagsModel = conn.model(tagsCollectionName, tagsSchema);
+
 const saveAll = (data, model) => {
     for (d of data) {
         const m = new model(d)
@@ -134,6 +144,17 @@ const saveAll = (data, model) => {
 }
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+/**
+ * @swagger
+ * /:
+ *  get:
+ *    description: 導向主畫面
+ *    responses:
+ *      '200':
+ *        description: 成功連線
+ */
+
 app.get('/', (req, res) => {
     return res.sendFile(path.join(__dirname, 'public/login.html'));
 })
@@ -159,6 +180,7 @@ app.get('/gitpull',(req,res)=>{
 })
 
 //login route for user login
+
 app.post('/login', async (req, res) => {
     const login = async function () {
         return new Promise(async (resolve, reject) => {
@@ -335,26 +357,46 @@ app.post('/add_post', (req, res) => {
             "text": "session username is undefined"
           }`))
     } else {
-        data = { 'name': req.session.username, 'user_icon': req.body.user_icon, 'post_icon': req.body.post_icon,
-        'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
-        'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
-        const m = new postModel(data)
-        m.save((err,result) => {
-            if (err) { 
-                console.log('fail to insert:', err)
-                res.send(JSON.parse(`{
-                    "success": false,
-                    "text": "Sorry, post fail",
-                    "id": "undefined"
-                }`))
-            } else {
-                // Response
-                res.send(JSON.parse(`{
-                    "success": true,
-                    "text": "Post success, ${req.session.username}",
-                    "id":"${result._id}"
-                }`))
-            }
+        const query = async function () {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    await userModel.findOne({ 'name': req.session.username }).exec(async (err, res) => {
+                        if (err) {
+                            console.log('fail to query:', err)
+                            resolve(undefined)
+                        }
+                        else {
+                            //console.log(res.tags.length == 0);
+                            resolve(res)
+                        }
+                    })
+                } catch (err) {
+                    reject(err)
+                }
+            })
+        };
+        query().then(r=>{
+            data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': r.post_icon,
+            'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
+            'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
+            const m = new postModel(data)
+            m.save((err,result) => {
+                if (err) { 
+                    console.log('fail to insert:', err)
+                    res.send(JSON.parse(`{
+                        "success": false,
+                        "text": "Sorry, post fail",
+                        "id": "undefined"
+                    }`))
+                } else {
+                    // Response
+                    res.send(JSON.parse(`{
+                        "success": true,
+                        "text": "Post success, ${req.session.username}",
+                        "id":"${result._id}"
+                    }`))
+                }
+            })
         })
     }
 })
@@ -491,8 +533,136 @@ app.post('/get_post', (req, res) => {
 
 })
 
-app.get('/users/:name', function (req, res) {
-    res.render('login', {
-      name: "123"
+app.post('/cropimage',function(req,res){
+    store = `./public/${req.body.url}`;
+    Jimp.read(`./public/${req.body.url}`)
+    .then(image => {
+        var rx = parseFloat(req.body.width)/image.bitmap.width;
+        var ry = parseFloat(req.body.height)/image.bitmap.height;
+        var w = image.bitmap.width/256;
+        var h = image.bitmap.height/256;
+        var x = req.body.x/rx-25*w;
+        var y = req.body.y/ry-25*h;
+        if(x < 0) x = 0;
+        if(y < 0) y = 0;
+        if(x + 50*w > image.bitmap.width) x = image.bitmap.width-50*w;
+        if(y + 50*h > image.bitmap.height) y = image.bitmap.height-50*h;
+        console.log(x,y,50*w,50*h);
+        var store = crypto.randomBytes(16).toString('hex');
+        var extension = image.getExtension();
+        return image
+        .crop(x,y,73.2421875,52.34375)
+        .write(`./public/image/post/${store}.${extension}`,function(){
+            res.send({
+                'success':true,
+                "text": "Success to crop image",
+                "url": `image/post/${store}.${extension}`
+            })
+        });
+    })
+    .catch(err => {
+        console.error(err);
+        res.send({
+            'success':false,
+            "text": err,
+            "url": undefined
+        })
     });
-  })
+})
+
+app.post('/upload_image',upload.array(),function(req,res){
+    var image = req.body.picture.replace(/^data:image\/(png|jpg|jepg|webp);base64,/, "");
+    var store = crypto.randomBytes(16).toString('hex');
+    fs.writeFile(`./public/image/post/${store}.png`, image,'base64', function (err) {
+        if (err){
+            res.send({
+                'success':false,
+                "text": "Fail to crop image",
+                "url": 'undefined'
+            })
+            return next(err)
+        } 
+        res.send({
+            'success':true,
+            "text": "Success to upload image",
+            "url": `image/post/${store}.png`
+        })
+      })
+
+})
+
+app.post('/new_tag', (req, res) => {
+    tagsModel.findOne({ 'name': req.body.tag }).exec(async (err, r) => {
+        if (err) {
+            console.log('Fail to create tag:', err)
+            res.send({
+                "success": false,
+                "text": "Fail to create tag",
+                "reference":undefined
+            })
+        }
+        else {
+            if(!r){
+                data = { 'name': req.body.tag, 'reference':1}
+                const m = new tagsModel(data)
+                m.save((err,result) => {
+                    if (err) { 
+                        console.log('fail to insert:', err)
+                        res.send({
+                            "success": false,
+                            "text": "Fail to create tag",
+                            "id": undefined
+                        })
+                    } else {
+                        // Response
+                        res.send({
+                            "success": true,
+                            "text": `${req.body.tag} is success to be created`,
+                            "reference":1
+                        })
+                    }
+                })
+            }else{
+                r.reference++;
+                r.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
+                res.send({
+                    "success": true,
+                    "text": `${req.body.tag} had been created`,
+                    "reference":r.reference
+                })
+            }
+        }
+    });
+
+})
+/*
+app.get('/new_tag', (req, res) => {
+    tagsModel.find({}).exec(async (err, r) => {
+        r.forEach(e=>{
+            e.reference = Math.floor(Math.random()*100)
+            e.save();
+        })
+    })
+    res.send("success")
+})
+*/
+app.get('/hot_tag',(req,res) => {
+    tagsModel.find({}).sort({reference:-1}).limit(20).exec(async (err, r) => {
+        if (err){
+            console.log(err)
+            res.send({
+                'success':false,
+                "tags":[]
+            })
+            return next(err)
+        } 
+        res.send({
+            'success':true,
+            "tags":r
+        })
+    })
+})

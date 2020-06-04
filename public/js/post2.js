@@ -16,20 +16,41 @@ function cameraStart() {
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
     });
-}
+};
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-    cameraOutput.src = cameraSensor.toDataURL("image/webp");
-    cameraOutput.classList.add("taken");
-	setTimeout(function () {
-		$("#div1").css('display','none');
-	}, 1000);
-	setTimeout(function () {
-	$("#posting").css('opacity','1');
-	}, 1000);
+    var formData = new FormData();
+    formData.append('picture', cameraSensor.toDataURL("image/webp"));
+    $.ajax({
+        url: "/upload_image", 
+        type: "POST", 
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function(msg){
+            cameraOutput.src = msg.url;
+            cameraOutput.classList.add("taken");
+            setTimeout(function () {
+                $("#div1").css('display','none');
+            }, 1000);
+            setTimeout(function () {
+            $("#posting").css('opacity','1');
+            }, 1000);
+            setTimeout(function () {
+            $("#tag").css('opacity','1');
+            }, 1000);
+            cameraView.srcObject.getTracks().forEach(function(track) {
+                track.stop();
+              });
+                },
+        error:function(err){
+            cameraOutput.src = cameraSensor.toDataURL("image/webp");
+        }
+    })
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
@@ -38,80 +59,114 @@ cameraTrigger.addEventListener("click",function(){
 	
 })
 */
-//下拉選單
-var x, i, j, selElmnt, a, b, c;
-/*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("custom-select");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  /*for each element, create a new DIV that will act as the selected item:*/
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /*for each element, create a new DIV that will contain the option list:*/
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < selElmnt.length; j++) {
-    /*for each option in the original select element,
-    create a new DIV that will act as an option item:*/
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
-}
-function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
-  var x, y, i, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  for (i = 0; i < y.length; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < x.length; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
 
+//上傳照片
+$('#file').change(function() {
+  var file = $('#file')[0].files[0];
+  var reader = new FileReader;
+  reader.onload = function(e) {
+    
+    var formData = new FormData();
+    formData.append('picture', e.target.result);
+    $.ajax({
+        url: "/upload_image", 
+        type: "POST", 
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function(msg){
+            cameraOutput.classList.add("taken");
+            cameraOutput.src = msg.url;
+            setTimeout(function () {
+                $("#div1").css('display','none');
+            }, 1000);
+            setTimeout(function () {
+            $("#posting").css('opacity','1');
+            }, 1000);
+            setTimeout(function () {
+            $("#tag").css('opacity','1');
+            }, 1000);
+            cameraView.srcObject.getTracks().forEach(function(track) {
+                track.stop();
+              });
+                },
+        error:function(err){
+            cameraOutput.src =  e.target.result;
+        }
+    })
+  };
+  reader.readAsDataURL(file);
+});
+file.onclick = function() {
+	
+};
+ var tags = document.getElementsByClassName('tags')
+    for(var i = 0; i < tags.length; i++) {
+        (function(index) {
+            console.log(i);
+            tags[index].addEventListener("click", function() {
+                if (this.classList.contains("tags_click")) {
+                    this.classList.add("tags_double_click");
+                    this.classList.remove("tags_click");
+                } else {
+                    this.classList.add("tags_click");
+                    if (this.classList.contains("tags_double_click")) {
+                        this.classList.remove("tags_double_click");
+                    }
+                }
+           })
+        })(i);
+      }
+	  var confirm = document.getElementById('Submit_button');
+    confirm.addEventListener("click",function(){
+        var tags = new Array();
+        var tmp = document.getElementsByClassName('tags_click');
+        for(var i = 0; i < tmp.length; i++) {
+            (function(index) {
+                tags.push(tmp[i].textContent);
+            })(i);
+        }
+		        console.log(tags)
+	 $(document).ready(function () {
+		 $('#Submit_button').click((event) => {
+    $.post({
+      url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
+      dataType: "json",
+      contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+		data: JSON.stringify({
+		space: $("#space").val(),
+		room:$("#room").val(),
+		pings: $("#pings").val(),
+        title: $('#ajax-form input[name=fName]').val(),
+        explanation: $('#explanation').val(),
+		tags: $('#ajax-form3 input[name=tName]').val(),
+		tags:tags,
+      }), 
+	  
+      success: function (msg) {
+        console.log(msg);
+        if(msg.success){
+          console.log("success");
+         
+        }
+        else{
+          console.log("fail");
+          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
+          alert(msg.text);
+        }
+      },
+      error: function(data){
+        console.log("fail");
+        console.log(data);
+      }
+    })
+  })
+	 })
+	 })
 /*
 //上傳照片
         var file = $("#file")[0];
