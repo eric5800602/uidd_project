@@ -87,10 +87,14 @@
 <label for="description" class="col control-label"><b>分類選擇：</b></label>
 </div></div>
 <div class="row" ng-controller="main">
-<select ng-model="m.Level1" ng-options="o as o for o in m.L1Options" class="selects" id="space"></select>
-        <select ng-model="m.Level2" ng-options="o as o for o in m.L2Options" class="selects" id="room"></select>
-        <select ng-model="m.Level3" ng-options="o as o for o in m.L3Options" class="selects" id="pings"></select>
-
+	<form>
+	
+			<select id="college-list" class="selects" onchange="changeCollege(this.selectedIndex)"></select>
+			
+      
+			<select id="sector-list" class="selects"></select>
+		</form>
+	
 </div>
 <div class="row">
 <div class="col-12">
