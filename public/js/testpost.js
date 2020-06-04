@@ -224,7 +224,7 @@ var space=['空間','單品'];
 			var sectors=new Array();
 			sectors[0]=['臥室','廚房','陽台','客廳'];	
 			sectors[1]=['書桌','椅子','衣櫃'];
-			function changespace(index){
+			function changeSpace(index){
 				var Sinner="";
 				for(var i=0;i<sectors[index].length;i++){
 					Sinner=Sinner+'<option value=i>'+sectors[index][i]+'</option>';
@@ -232,4 +232,4 @@ var space=['空間','單品'];
 				var sectorSelect=document.getElementById("sector-list");
 				sectorSelect.innerHTML=Sinner;
 			}
-			changeCollege(document.getElementById("space").selectedIndex);
+			changeSpace(document.getElementById("space").selectedIndex);
