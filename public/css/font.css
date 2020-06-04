@@ -13,3 +13,7 @@
 @font-face {
   font-family: 'Roboto_Black';
   src: url("../res/fonts/Roboto-black.ttf"); }
+
+  @font-face {
+    font-family: 'Roboto_Light';
+    src: url("../res/fonts/Roboto-Light.ttf"); }
