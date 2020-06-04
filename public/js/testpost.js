@@ -219,7 +219,7 @@ var space=['空間','單品'];
 				inner=inner+'<option value=i>'+space[i]+'</option>';
 			}
 			spaceSelect.innerHTML=inner;
-			for(var i=0;){
+			if(i==0){
 				$("#pings").css('opacity','1');
 			}
 			var sectors=new Array();
