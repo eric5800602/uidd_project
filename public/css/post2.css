@@ -215,6 +215,9 @@ label{
 	border-radius:10px;
 	padding:0.2em;
 }
+#pings{
+	opacity:0;
+}
 .options{
 	background:#CCCCCC;
 	height:2em;
