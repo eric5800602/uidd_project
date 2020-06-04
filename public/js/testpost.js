@@ -219,8 +219,9 @@ var space=['空間','單品'];
 				inner=inner+'<option value=i>'+space[i]+'</option>';
 			}
 			spaceSelect.innerHTML=inner;
-			
-			
+			for(var i=0;){
+				$("#pings").css('opacity','1');
+			}
 			var sectors=new Array();
 			sectors[0]=['臥室','廚房','陽台','客廳'];	
 			sectors[1]=['書桌','椅子','衣櫃'];
