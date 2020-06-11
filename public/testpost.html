@@ -86,14 +86,33 @@
 <div class="col-12">
 <label for="description" class="col control-label"><b>分類選擇：</b></label>
 </div></div>
-<div class="row" ng-controller="main">
-	<form>
-	
-			<select id="space" class="selects" onchange="changeSpace(this.selectedIndex)"></select>
-			<select id="sector-list" class="selects"></select>
-		 <input type="text" name="pings" id="pings" class="selects">
-		</form>
-	
+<div class="row">
+	<form action=”#”> 
+<br/> 
+<br/> 
+<br/> 
+    <div class=”Address”> 
+        <span class=”Province”>Province： 
+            <select> 
+                <option value=”” selected=”selected”>Please Choose Province</option> 
+                <option value=”HeBei”>HeBei</option> 
+                <option value=”ShanDong”>ShanDong</option> 
+            </select>  
+        </span> 
+        <span class=”City” style=”display:none”>City： 
+            <select> 
+            </select> 
+        </span> 
+        <span class=”Area” style=”display:none”>Area： 
+            <select> 
+            </select> 
+        </span> 
+        <br/> 
+         <br/> 
+        <span class=”AddressSelect” style=”display:none”> 
+        </span> 
+    </div> 
+</form> 
 </div>
 <div class="row">
 <div class="col-12">
