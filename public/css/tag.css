@@ -1,0 +1,211 @@
+body{
+    font-family: 'Roboto_Regular';
+}
+#id_container{
+    position: relative;
+    height: 100%;
+    /*padding-bottom: 40vh;*/
+    background-color: #656565;
+    padding: 7rem 0 6.8rem 0; /* Header height and footer height */
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+}
+.text_content{
+    font-size: 2.5rem;
+    color:white;
+}
+
+.tag_content{
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    font-family: Microsoft JhengHei;
+    font-size: 1.6rem;
+}
+
+.tag_title{
+    margin-top: 3rem;
+    margin-left: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-family: Microsoft JhengHei;
+}
+
+.title_text{
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.95rem;
+    font-weight:bolder;
+    color: black;
+    transform: translate(-50%, -50%);
+}
+
+img{
+    height:100%;
+    width:100%;
+    mix-blend-mode: hard-light;
+}
+.background_mask{
+    background-color: #D9D9D9CF;
+    opacity: 75%;
+    z-index:2;
+    position: absolute;
+    height:100%;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+.background_mask_active{
+    animation-name:mask;
+    animation-duration:0.5s;
+    background:#393939CF;
+    opacity: 75%;
+    z-index:2;
+    position: absolute;
+    height:100%;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+.single{
+    background-color: #D9D9D9CF;
+    color: #222222;
+    opacity: 75%;
+    z-index:2;
+    position: absolute;
+    height:100%;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+.single_click{
+    animation-name:mask;
+    animation-duration:0.5s;
+    background:#393939CF;
+    opacity: 75%;
+    z-index:2;
+    position: absolute;
+    height:100%;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+.double_click{
+    animation-name:mask_cancel;
+    animation-duration:0.5s;
+    background:#D9D9D9CF;
+    opacity: 75%;
+    z-index:2;
+    position: absolute;
+    height:100%;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+
+.centered_single {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    font-weight:bolder;
+    color: black;
+    transform: translate(-50%, -50%);
+
+}
+.centered_click{
+    animation-name:white_font;
+    animation-duration:0.5s;
+    color: #FFFFFF;
+}
+
+.tags{
+    font-size: 1.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0.8rem 0.1rem 0pt 1rem;
+    font-family: Microsoft JhengHei;
+    border-radius: 8pt;
+    white-space: nowrap;
+    width: auto;
+    background-color: #CCCCCC;
+    cursor: pointer;
+    border: none;
+}
+.tags_click{
+    animation-name:oxxo;
+    animation-duration:0.5s;
+    background-color: #8BA9D2;
+    color:#E7E7E7;
+}
+.tags_double_click{
+    animation-name:oxxo_cancel;
+    animation-duration:0.5s;
+    background-color: #CCCCCC;
+    color:#000000;
+}
+.tags_control{
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+}
+.confirm_button{
+    border: none;
+    background-color: #D28B8B;
+    color: #FFFFFF;
+    border-radius: 30pt;
+    box-shadow: 0px 2pt 6pt #00000029;
+    width: 9rem;
+    font-size: 1.5rem;
+
+}
+@keyframes mask{
+    0%{
+        background:#D9D9D9CF;
+    }
+    100%{
+        background:#393939CF;
+    }
+}
+@keyframes mask_cancel{
+    0%{
+        background:#393939CF;
+    }
+    100%{
+        background:#D9D9D9CF;
+    }
+}
+@keyframes white_font{
+    0%{
+        color: #222222;
+    }
+    100%{
+        color: #FFFFFF;
+    }
+}
+@keyframes oxxo{
+    0%{
+        color:#000000;
+        background:#CCCCCC;
+    }
+    100%{
+        color:#E7E7E7;
+        background:#8BA9D2;
+    }
+}
+@keyframes oxxo_cancel{
+    0%{
+        color:#E7E7E7;
+        background:#8BA9D2;
+    }
+    100%{
+        color:#000000;
+        background:#CCCCCC;
+    }
+}
