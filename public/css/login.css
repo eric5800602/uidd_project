@@ -106,16 +106,16 @@ button:focus {outline:0;}
 /* place of forgetpassword  */
 
 .forgetpassword {
-	text-align:center;
-	border-bottom:2px #FFFFFF solid; 
-	font-family: 'Roboto_Light';
-    font-size: 3rem; 
-    letter-spacing: 0.06rem;
-	color: #FFFFFF;
+    text-align: center;
+    border-bottom: 0.5px #FFFFFF solid;
+    font-family: 'Roboto_Light';
+    font-size: 1.2rem;
+    letter-spacing: 0.01rem;
+    color: #FFFFFF;
 }
 .forgetpassword_box {
     text-align: center;
-    margin-top: 17rem;
-    margin-left: 35rem;
+    margin-top: 6rem;
+    margin-left: 14rem;
 }
 

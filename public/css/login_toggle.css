@@ -8,24 +8,23 @@
             align-items: flex-start;
     -webkit-box-pack: center;
             justify-content: center;
-    height: 4rem;
-    margin: 1.5rem 0px 0px 7.5rem;
+    margin-top: 0.5rem;
+    margin-left: 4rem;
   }
   body span.switcher {
     position: relative; 
-    height: 50px;
     border-radius: 25px;
-    margin: 20px 0;
+    /*height: 50px;
     width:200px;
-    /*box-shadow:*/ 
+    box-shadow:*/ 
   }
   body span.switcher input {
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
     position: relative;
-    width: 15rem;
-    height: 4.5rem;
+    width: 6rem;
+    height: 1.8rem;
     border-radius: 25px;
     background-color: #1E1E1E;
     outline: none;
@@ -33,9 +32,9 @@
   body span.switcher label {
     z-index: 1;
     position: absolute;
-    top: 0.4rem;
-    width: 7rem;
-    height: 3.6rem;
+    top: 0.15rem;
+    width: 2.7rem;
+    height: 1.5rem;
     border-radius: 20px;
     box-shadow: 0 0.25rem 0.5rem #00000050;
   }
@@ -50,14 +49,14 @@
   body span.switcher input:before {
     content: 'Yes';
     font-family: 'Roboto_Regular';
-    font-size: 2.5rem;
-    left: 2rem;
+    font-size: 1rem;
+    left: 0.8rem;
   }
   body span.switcher input:after {
     content: 'No';
     font-family: 'Roboto_Regular';
-    font-size: 2.5rem;
-    right: 2rem;
+    font-size: 0.7rem;
+    right: 1rem;
   }
   
   body span.switcher.switcher-1 input {
@@ -77,7 +76,7 @@
     color: #FFFFFF;
   }
   body span.switcher.switcher-1 input:checked + label {
-    left: 1rem;
+    left: 0.3rem;
     right: 1rem;
   
     background: #FFFFFF;
@@ -96,7 +95,7 @@
     color: #000000;
   }
   body span.switcher.switcher-1 input:not(:checked) + label {
-    left: 7.2rem;
+    left: 3rem;
     right: 0.3rem;
     background: #FFFFFF;
     -webkit-transition: left .2s, right .2s;

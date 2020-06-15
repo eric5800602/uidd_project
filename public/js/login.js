@@ -31,16 +31,23 @@ function room_function(){
     $('#single').addClass('remove_background');
   }
 }
-/*function check(){
-  var forms = document.getElementById('register_form');
-  if(forms.checkValidity()){
-    console.log($('#register_form input[name=name]').val(),$('#register_form input[name=email]').val(),$('#register_form input[name=phone]').val(),$('#register_form select[name=gender]').val(),$('#register_form input[name=password]').val());
-    return true;
-  }
-  else{
-    return false;
-  }
-}*/
+
+
+
+$('#SignModal1').on('show.bs.modal', function (e) {
+  $(document.body).addClass("mymodal-open");
+}).on('hide.bs.modal', function (e) {
+  $(document.body).removeClass("mymodal-open");
+})
+
+$('#SignModal2').on('show.bs.modal', function (e) {
+  $(document.body).addClass("mymodal-open");
+}).on('hide.bs.modal', function (e) {
+  $(document.body).removeClass("mymodal-open");
+})
+
+
+
 $(document).ready(function () {
   /* Login button*/
   $('#ajax_login_signup button[id="login"]').click((event) => {

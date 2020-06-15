@@ -4,14 +4,17 @@
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
-	padding-top: 18.5rem; /* Location of the box */
+	padding-top: 22rem; /* Location of the box */
 	left: 0;
-	top: 4.5vh;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.mymodal-open .show {
+	background-color: rgba(255, 255, 255, 0.6);
+	z-index: 1050;
 }
 /* Modal Content */
 .modal-content {
@@ -22,30 +25,32 @@
 }
 
 .modal_signup{
-    text-align: center;
+	text-align: center;
+    margin-top: 1.3rem;
     font-family: 'Roboto_Bold';
-    padding-left: 0.25rem;
-    font-size: 1.7rem;
-    letter-spacing: 0.5rem;
+    padding-left: 0.3rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.6rem;
     color: #000000;
     font-weight: bolder;
     opacity: 1;
 }
-/*---- Modal 1 ----*/
+/*---------- Modal 2 -------------------------------*/
 .create_account{
-    text-align: left;
-    padding-left: 1rem;
+	text-align: left;
+    padding-left: 2.25rem;
     padding-top: 1rem;
     color: white;
     font-family: 'Roboto_Light';
-    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    font-size: 1.25rem;
 }
 .modal-backdrop {
     /*close the modal when clicked outside*/
     display: none;    
 }
 .modal-body {
-    width:auto;
+    padding: 0rem;
 }
 
 /* place of form */
@@ -55,21 +60,27 @@
 /*  form input  */
 .modal_input_form{
 	background: #FFFFFF;
-	border-radius: 50px;
-	opacity:1;
-	height: 2rem;
-    padding-left: 1rem;
+    border-radius: 50px;
+    opacity: 1;
+    height: 2rem;
+    padding-left: 0.2rem;
     width: 21rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: left;
     font-family: 'Roboto_Light';
     box-shadow: 0px 2pt 6pt #00000029;
     border: none;
-    padding-top: 0.5rem;
-	margin-top: 2rem;
-	
+    margin-top: 1.8rem;
+    padding-top: 0.3rem;
 }
-
+.modal_input_form_sec{
+	margin-top: 2.3rem;
+}
+#modal1_input ::placeholder{
+	font-size: 1.1rem;
+	/*padding-left: -0.3rem;*/
+	letter-spacing: 0.01rem;
+}
 #submit_box{
 	text-align:left;
 }
@@ -77,93 +88,101 @@
 /* form submit */
 .modal_button{
 	border-radius: 50px;
-	opacity:1;
-	height: 2.4vh;
-	width: 20vw;
-	margin-top:4vh;
-	margin-left:12vw;
-	margin-bottom: 3vh;
-	padding-bottom: 0.5vh;
-	box-shadow: 0px 2pt 6pt #00000029;
-    border:none;
-    text-align:center;
-    font-family: 'Roboto_Regular';
-    font-size: 3.72vmin;
-	color:white;
+    opacity: 1;
+    height: 1.7rem;
+    width: 6rem;
+    margin-top: 2.2rem;
+    /* margin-left: 2rem; */
+    margin-bottom: 3vh;
+    /* padding-bottom: 0.5vh; */
+    box-shadow: 0px 2pt 6pt #00000029;
+    border: none;
+    text-align: center;
+    font-family: 'Roboto_Light';
+    font-size: 1.1rem;
+    color: white;
 }
 .Cancel_button{
-    background-color: #8BA9D2;
+	background-color: #8BA9D2;
+	margin-left: 6rem;
 }
-.skip{
-	border-bottom:2px #CACACA solid; 
-	font-family: 'Roboto_Regular';
-	font-size:3vmin; 
-	color: #CACACA;
-	margin-left: 10vw;;
-}
+
 .Modal1_Next_button{
-    background-color: #D28B8B;
+	background-color: #D28B8B;
+	margin-left: 4rem;
 }
-/*---- Modal 2 ----*/
+/*---------- Modal 2 -------------------------------*/
 .designer_check{
-	text-align:left;
-    padding-left: 8vw;
-    color:white;
-	font-family: 'Roboto_Regular';
-	padding-top: 2vh;
-	letter-spacing: 0.2vw;
-	font-size:3.5vw;
+	text-align: left;
+    padding-left: 3.5rem;
+    color: white;
+    font-family: 'Roboto_Light';
+    padding-top: 1.8rem;
+    letter-spacing: 0.05rem;
+    font-size: 1.2rem;
+}
+.home_type{
+	padding-top: 1.2rem;
 }
 
 /* The switch - the box around the slider */
 #modal_signup_box{
-	margin-left: 3.3vw;;
+	margin-left: 2.9rem;
+    margin-top: 0.3rem;
 }
 .house{
-    text-align: center;
+	text-align: center;
     font-family: Microsoft JhengHei;
-    font-size: 4.5vmin;
-	letter-spacing: 0px;
-	color: #FFFFFF;
-	opacity: 1;
-	display: inline-block;
+    font-size: 1.5rem;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    display: inline-block;
 }
+
 .modal2_input_form{
 	background: #FFFFFF;
-	border-radius: 50px;
-	opacity:1;
-	height: 2.4vh;
-    width: 9vw;
-    text-align:left;
-    font-family: 'Roboto_Regular';
-	font-weight:400;
-	font-size: 3vmin;
-	box-shadow: 0px 2pt 6pt #00000029;
-	border:none;
-	padding-left: 1vmin;
-	margin-left:2vh;
-	display: inline-block;
+    border-radius: 50px;
+    opacity: 1;
+    height: 1.6rem;
+    width: 3.15rem;
+    text-align: left;
+    font-family: 'Roboto_Light';
+    font-weight: 400;
+    font-size: 1rem;
+    box-shadow: 0px 2pt 6pt #00000029;
+    border: none;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    display: inline-block;
 }
 .room{
-	margin-left: 5vw;
+	margin-left: 2.6rem;
+    margin-top: 1rem;
 }
 .room_button{
 	border-radius: 50px;
-	opacity:1;
-	height: 2.5vh;
-	width: 11vw;
-	margin-left: 2.3vw;
-	padding-bottom: 2.8vh;
-	box-shadow: 0px 2pt 6pt #00000029;
-    border:none;
-    text-align:center;
+    opacity: 1;
+    height: 2rem;
+    width: 3.8rem;
+	margin-left: 1.3rem;
+    box-shadow: 0px 2pt 6pt #00000029;
+    border: none;
+    text-align: center;
     font-family: Microsoft JhengHei;
-    font-size: 4vmin;
-	color:#666666;
-	background-color: #FFFFFF;
-	display: inline-block;
+    font-size: 1.3rem;
+    color: #666666;
+    background-color: #FFFFFF;
+    display: inline-block;
 }
 
+.skip{
+	border-bottom: 2px #CACACA solid;
+    font-family: 'Roboto_Light';
+    font-size: 1.2rem;
+    color: #CACACA;
+    margin-left: 4rem;
+}
 
 .add_background{
 	animation-name:AddtheBackground;
@@ -171,6 +190,13 @@
 	background-color: #8BA9D2;
 	color:#FFFFFF;
 }
+
+.modal2_next{
+	font-family: 'Roboto_Light';
+    margin-left: 12.2rem;
+    letter-spacing: 0.06rem;
+}
+
 @keyframes AddtheBackground{
 	0%{
 		background:#FFFFFF;
@@ -198,7 +224,4 @@
 		color:#666666;
 	}
 }
-.modal2_next{
-	font-family: 'Roboto_Regular';
-	margin-left: 31vw;
-}
+
