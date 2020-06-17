@@ -138,8 +138,8 @@ file.onclick = function() {
         withCredentials: true
       },
 		data: JSON.stringify({
-		space: $("#space").val(),
-		room:$("#room").val(),
+		space: $("#sel1").val(),
+		room:$("#sel2").val(),
 		pings: $("#pings").val(),
         title: $('#ajax-form input[name=fName]').val(),
         explanation: $('#explanation').val(),
@@ -211,109 +211,23 @@ file.onclick = function() {
             console.log(sessionStorage.getItem("url"));
         }*/
 //select
-
-$(document).ready(function () { 
-    //找到三個下拉框  
-    var ProvinceSelect = $(“.Province”).children(“select”); 
-    var CitySelect = $(“.City”).children(“select”); 
-    var AreaSelect = $(“.Area”).children(“select”); 
-    var AddressSelect=$(“.AddressSelect”); 
-    //給第二個下拉框註冊事件  
-    ProvinceSelect.change(function () { 
-        //1、獲取當前下拉框的值  
-         var ProvinceValue = $(this).val(); 
-        //1.1只要第一個下拉框內容有變化，第三個下拉框就要隱藏起來  
-        AreaSelect.parent().hide(); 
-        AddressSelect.hide(); 
-        AddressSelect.html(“”); 
-        //2、如果值不為空，則顯示城市下拉框  
-         if (ProvinceValue != “”) { 
-                   CitySelect.html(“”); 
-                   $(“<option value=”>Please Choose City</option>”).appendTo(CitySelect); 
-                    switch(ProvinceValue) 
-                       { 
-                        //實際專案中，這個城市陣列肯定是在伺服器獲取的，這裡為了簡便，我就直接自定義了一個陣列  
-                        //如果追求完美，這裡還可以加一道快取，防止重複獲取  
-                       case “HeBei”: 
-                            var CityOfHeBei=[“ShiJiaZhuang”,”CangZhou”,”LangFang”];  
-                            for(var i=0;i<CityOfHeBei.length;i ){ 
-                                $(“<option value='” CityOfHeBei[i] “‘>” CityOfHeBei[i] “</option>”).appendTo(CitySelect); 
-                            } 
-                             break; 
-                       case “ShanDong”: 
-                            var CityOfShanDon=[“JiNan”,”DeZhou”,”QingDao”];      
-                            for(var i=0;i<CityOfShanDon.length;i ){ 
-                                $(“<option value='” CityOfShanDon[i] “‘>” CityOfShanDon[i] “</option>”).appendTo(CitySelect); 
-                            } 
-                            break; 
-                       } 
-                 CitySelect.parent().show();    
-        } else { 
-            CitySelect.parent().hide(); 
-        } 
-    }); 
-    //給第二個下拉框註冊事件  
-     CitySelect.change(function () { 
-            var CityValue = $(this).val();       
-            AddressSelect.hide(); 
-            AreaSelect.parent().hide();  
-            AddressSelect.html(“”); 
-             if (CityValue != “”) { 
-                   AreaSelect.html(“”); 
-                   $(“<option value=”>Please Choose Area</option>”).appendTo(AreaSelect); 
-                    switch(CityValue) 
-                       { 
-                       //實際專案中，這個區陣列肯定是在伺服器獲取的，這裡為了簡便，我就直接自定義了一個陣列  
-                       //如果追求完美，這裡還可以加一道快取，防止重複獲取  
-                       case “ShiJiaZhuang”: 
-                            var AreaOfCity=[“GaoXinQu”,”KaiFaQu”,”XinHuaQu”];    
-                            for(var i=0;i<AreaOfCity.length;i ){ 
-                                $(“<option value='” AreaOfCity[i] “‘>” AreaOfCity[i] “</option>”).appendTo(AreaSelect); 
-                            } 
-                             break; 
-                       case “CangZhou”: 
-                            var AreaOfCity=[“XinHuaQu”,”YunHeQu”];       
-                            for(var i=0;i<AreaOfCity.length;i ){ 
-                                $(“<option value='” AreaOfCity[i] “‘>” AreaOfCity[i] “</option>”).appendTo(AreaSelect); 
-                            } 
-                            break; 
-                       case “LangFang”: 
-                            var AreaOfCity=[“AnCiQu”,”GuangYangQu”]; 
-                            for(var i=0;i<AreaOfCity.length;i ){ 
-                                $(“<option value='” AreaOfCity[i] “‘>” AreaOfCity[i] “</option>”).appendTo(AreaSelect); 
-                            } 
-                            break; 
-                       case “QingDao”: 
-                            var AreaOfCity=[“GaoXinQu”,”KaiFaQu”,”XinHuaQu”];    
-                            for(var i=0;i<AreaOfCity.length;i ){ 
-                                $(“<option value='” AreaOfCity[i] “‘>” AreaOfCity[i] “</option>”).appendTo(AreaSelect); 
-                            } 
-                             break; 
-                       case “DeZhou”: 
-                            var AreaOfCity=[“XinHuaQu”,”YunHeQu”];       
-                            for(var i=0;i<AreaOfCity.length;i ){ 
-                                $(“<option value='” AreaOfCity[i] “‘>” AreaOfCity[i] “</option>”).appendTo(AreaSelect); 
-                            } 
-                            break; 
-                       case “JiNan”: 
-                            var AreaOfCity=[“AnCiQu”,”GuangYangQu”]; 
-                            for(var i=0;i<AreaOfCity.length;i ){ 
-                                $(“<option value='” AreaOfCity[i] “‘>” AreaOfCity[i] “</option>”).appendTo(AreaSelect); 
-                            } 
-                            break; 
-                       } 
-                     AreaSelect.parent().show();  
-             } else { 
-                     AreaSelect.parent().hide(); 
-            } 
-    }); 
-    AreaSelect.change(function(){ 
-            var AreaValue=$(this).val(); 
-            AddressSelect.html(“”); 
-            if (AreaValue!=””){ 
-                $(“<span>The Address Is –Province: ” ProvinceSelect.val() ”  City: ” CitySelect.val() ”  Area: ” AreaSelect.val() “</span>”).appendTo(AddressSelect); 
-            AddressSelect.show(); 
-            //alert(“The Address Is  Province: ” ProvinceSelect.val() ”  City: ” CitySelect.val() ”  Area: ” AreaSelect.val());  
-                }                   
-     }) 
-}); 
+var sel1 = document.querySelector('#sel1');
+var sel2 = document.querySelector('#sel2');
+var options1 = sel1.querySelectorAll('option');
+var options2 = sel2.querySelectorAll('option');
+function giveSelection(selValue) {
+  sel2.innerHTML = '';
+  for(var i = 0; i < options2.length; i++) {
+    if(options2[i].dataset.option === selValue) {
+      sel2.appendChild(options2[i]);
+    }
+}
+  }
+  giveSelection(sel1.value);
+  
+var myTarget = document.getElementById('sel1');
+var myTargetValue = myTarget.value;
+if(myTargetValue == 'a'){
+ //input1.style.opacity = 1;
+  console.log("hi");
+}  
