@@ -47,11 +47,18 @@ body{
     transform: translate(-50%, -50%);
 }
 
-img{
+.tags_img img{
     height:100%;
     width:100%;
     mix-blend-mode: hard-light;
 }
+
+.tags_img {
+    height:100%;
+    width:100%;
+    mix-blend-mode: hard-light;
+}
+
 .background_mask{
     background-color: #D9D9D9CF;
     opacity: 75%;
@@ -163,7 +170,7 @@ img{
     box-shadow: 0px 2pt 6pt #00000029;
     width: 9rem;
     font-size: 1.5rem;
-
+    margin-bottom: 2rem;
 }
 @keyframes mask{
     0%{
