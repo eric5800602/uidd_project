@@ -87,18 +87,23 @@
 <label for="description" class="col control-label"><b>分類選擇：</b></label>
 </div></div>
 <div class="row">
+<div class="col-3">
 	<select id="sel1" onchange="giveSelection(this.value)">
-  <option value="a">a</option>
-  <option value="b">b</option>
+  <option value="space">空間</option>
+  <option value="single">單品</option>
 </select>
+</div>
+<div class="col-3">
 <select name="selectedname" id="sel2">
-  <option data-option="a">apple</option>
-  <option data-option="a">airplane</option>
-  <option data-option="b">banana</option>
-  <option data-option="b">book</option>
+  <option data-option="space">臥室</option>
+  <option data-option="space">廚房</option>
+  <option data-option="single">桌子</option>
+  <option data-option="single">椅子</option>
+  </div>
 </select>
+<div class="col-3">
 <input type="text" id="input1" class="form-control" >
-            
+        </div>    
 
 </div>
 <div class="row">
