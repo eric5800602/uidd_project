@@ -205,10 +205,10 @@ label{
 .plus{
 	height:0.5em;
 	width:0.5em;
-    margin-bottom:2em;
+    margin-bottom:2.5em;
 }
 .selects{
-	width:4em;
+	
 	height:2em;
 	background:#CCCCCC;
 	color:black;
@@ -216,14 +216,17 @@ label{
 	padding:0.2em;
 }
 #pings{
-	opacity:0;
+	opacity:1;
+	background: #F7F7F7;
+	height:2em;
 }
 .options{
 	background:#CCCCCC;
-	height:2em;
-	font-size:0.3em;
+	height:1em;
+	font-size:0.2em;
 	border:solid 1px #CCCCCC;
-	padding:0.2em;
+	padding:0.1em;
+	width:2em;
 }
 
 #tag{
@@ -231,8 +234,7 @@ label{
 	margin-left:2em;
 	
 }
-
- .tags{
+.tags{
               
                 padding-left: 0.5em;
                 padding-right: 0.5em;
