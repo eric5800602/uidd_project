@@ -227,7 +227,7 @@ function giveSelection(selValue) {
   
 var myTarget = document.getElementById('sel1');
 var myTargetValue = myTarget.value;
-if(myTargetValue == 'a'){
+if(myTargetValue == 'single'){
  //input1.style.opacity = 1;
   console.log("hi");
 }  
