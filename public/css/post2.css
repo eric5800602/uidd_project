@@ -223,10 +223,10 @@ label{
 .options{
 	background:#CCCCCC;
 	height:1em;
-	font-size:0.2em;
-	border:solid 1px #CCCCCC;
-	padding:0.1em;
-	width:2em;
+	font-size:0.3em;
+	border:solid 0.5px #CCCCCC;
+	padding:0.05em;
+	width:1.5em;
 }
 
 #tag{
