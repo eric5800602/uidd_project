@@ -229,8 +229,7 @@ var myTarget = document.getElementById('sel1');
 var myTargetValue = myTarget.value;
 $( "#sel1" ).change(function() {
 	if($("#sel1").val()=="single"){
-		input1.style.opacity = 0;
-
+		 $("#pings").css('opacity','0');
 	}
   
 });
