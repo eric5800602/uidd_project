@@ -131,7 +131,9 @@ body{
     animation-duration:0.5s;
     color: #FFFFFF;
 }
-
+button:focus{
+    outline: 0;
+}
 .tags{
     font-size: 1.4rem;
     padding-left: 1rem;
