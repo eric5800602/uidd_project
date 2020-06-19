@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+        
+        </style>
+        </head>
+        <body>
+            <input id= "first"></input>    
+            <input id= "second"></input>
+            <input id= "third"></input>
+            <button type="button" id="send">Send</button>
+        </body>
+    <script>
+        document.getElementById("send").onclick = function(){
+            $.post({
+                url: "https://luffy.ee.ncku.edu.tw:7575/add",
+                dataType: "json",
+                data: JSON.stringify({
+                    "first":document.getElementById("first").value,
+                    "second":document.getElementById("second").value,
+                    "third":document.getElementById("third").value
+                }), 
+                contentType: "application/json",
+                crossDomain: true,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (msg) {
+                    console.log(msg)
+                    document.getElementById("first").value = msg.fisrt;
+                    document.getElementById("second").value = msg.second;
+                }
+            })
+        }
+    </script>
+</html>

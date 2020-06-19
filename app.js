@@ -666,3 +666,10 @@ app.get('/hot_tag',(req,res) => {
         })
     })
 })
+
+app.post('/add',(req,res) => {
+    res.send({
+        "fisrt":Number(req.body.first) + Number(req.body.third),
+        "second":Number(req.body.second) + Number(req.body.third),
+    })
+})
