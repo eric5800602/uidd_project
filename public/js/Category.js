@@ -1,10 +1,14 @@
-//var invocation = new XMLHttpRequest();
-//var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
+var invocation = new XMLHttpRequest();
+var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 
 $(document).ready(function() {
-    var footer_Category = document.getElementsByClassName("footer_Category");
+    /*var footer_Category = document.getElementsByClassName("footer_Category");
     footer_Category[0].classList.add("Add_Background");
-    //footer_Category[0].style.backgroundColor = "#707070";
+    var footer_MainPage = document.getElementsByClassName("footer_MainPage");
+    footer_MainPage[0].classList.add("Add_Background");
+    var footer_Profile = document.getElementsByClassName("footer_Profile");
+    footer_Profile[0].classList.add("Add_Background");
+    */
 
 
   $.ajax({
