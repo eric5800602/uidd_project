@@ -126,6 +126,22 @@ html, body{
 .Profile{
     left: 0.6rem;
 }
-.Add_Background{
-    background-color: #707070;
+
+.hidden{
+    opacity: 0;
+}
+
+.icon_background{
+    display: block;
+    animation-name:changing;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes changing{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

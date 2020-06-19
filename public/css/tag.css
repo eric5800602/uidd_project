@@ -4,7 +4,6 @@ body{
 #id_container{
     position: relative;
     height: 100%;
-    /*padding-bottom: 40vh;*/
     background-color: #656565;
     padding: 7rem 0 6.8rem 0; /* Header height and footer height */
     box-sizing: border-box;

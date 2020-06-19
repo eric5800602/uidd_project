@@ -49,11 +49,6 @@ $('#SignModal2').on('show.bs.modal', function (e) {
 
 
 $(document).ready(function () {
-  
-  /* Add background to footer image */
-  var footer_MainPage = document.getElementsByClassName("footer_MainPage");
-  footer_MainPage.addClass("Add_Background")
-
 
   /* Login button*/
   $('#ajax_login_signup button[id="login"]').click((event) => {
@@ -74,7 +69,7 @@ $(document).ready(function () {
         console.log(msg);
         if(msg.success){
           if(msg.first_time == true){
-            window.location.href = "/html/tags.html";
+            window.location.href = "./html/tags.html";
           }
           else{
             LocationHerf();
@@ -123,7 +118,7 @@ $(document).ready(function () {
         console.log(msg);
         if(msg.success){
           console.log("success");
-          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/tags.html";
         }
         else{
           console.log("fail");
@@ -160,7 +155,7 @@ $(document).ready(function () {
         console.log(msg);
         if(msg.success){
           console.log("success");
-          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/tags.html";
+          window.location.href = "https://luffy.ee.ncku.edu.tw:7575/tags.html";
         }
         else{
           console.log("fail");
