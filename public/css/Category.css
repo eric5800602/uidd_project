@@ -1,0 +1,66 @@
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: #ECECEC; }
+  
+  .posts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none; }
+    .posts_post {
+      display: inline-block;
+      width: 50%; }
+      .posts_post_img {
+        width: 100%; }
+      .posts_post_detail {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0.3rem 0 0.5rem 0.75rem; }
+        .posts_post_detail_title {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          font-size: 1.1rem;
+          letter-spacing: -0.04rem;
+          text-overflow: ellipsis;
+          color: #707070; }
+        .posts_post_detail_account {
+          display: inline-flex;
+          float: right;
+          padding: 0 1.5rem 0 0; }
+          .posts_post_detail_account_id {
+            display: inline-block;
+            width: 4rem;
+            overflow: hidden;
+            margin: auto;
+            font-size: 0.75rem;
+            text-align: right;
+            letter-spacing: -0.04rem;
+            text-overflow: ellipsis;
+            color: #707070; }
+          .posts_post_detail_account_img {
+            height: 1.563rem;
+            width: 1.563rem;
+            margin: 0 0 0 0.4rem;
+            border-radius: 50%; }
+  
+  .vsc-initialized {
+    overflow-x: hidden; }
+  
+  body {
+    overflow: auto;
+    overflow-x: hidden; }
+  
+  #id_header {
+    width: 100%; }
+  
+  .tetto {
+    padding-left: 5vw; }
+  
+  .addpost {
+    position: absolute;
+    top: 6.2vh;
+    right: 6vw; }
+  

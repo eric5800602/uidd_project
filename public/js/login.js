@@ -49,6 +49,12 @@ $('#SignModal2').on('show.bs.modal', function (e) {
 
 
 $(document).ready(function () {
+  
+  /* Add background to footer image */
+  var footer_MainPage = document.getElementsByClassName("footer_MainPage");
+  footer_MainPage.addClass("Add_Background")
+
+
   /* Login button*/
   $('#ajax_login_signup button[id="login"]').click((event) => {
     event.preventDefault();
