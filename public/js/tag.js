@@ -37,7 +37,6 @@ $(document).ready(function() {
     var tags = document.getElementsByClassName('tags')
     for(var i = 0; i < tags.length; i++) {
         (function(index) {
-            console.log(i);
             tags[index].addEventListener("click", function() {
                 if (this.classList.contains("tags_click")) {
                     this.classList.add("tags_double_click");
@@ -114,7 +113,7 @@ $(document).ready(function() {
                 console.log(data)
                 if(data.success === false){
                     alert("請先登入您的帳號")
-                    window.location = '/html/login.html';
+                    window.location = '/login.html';
                 }
                 else if(data.success === true){
                     window.location = '/home.html';
