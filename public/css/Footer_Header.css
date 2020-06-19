@@ -94,10 +94,10 @@ html, body{
 }
 .footer_Category{
     position: absolute;
-    top: -0.1rem;
-    left: 1.2rem;
-    width: 4rem;
-    height: 4rem;
+    top: 0.9rem;
+    left: 2.3rem;
+    width: 1.8rem;
+    height: 1.8rem;
     opacity: 1;
 }
 .Category{
