@@ -8,7 +8,7 @@ html, body{
 }
 #id_header {
     position: fixed;
-    height: 7rem;
+    height: 6.5rem;
     top: 0;
     background-color: #ECECEC;
     overflow:hidden;
@@ -17,7 +17,7 @@ html, body{
 #id_content {
     position: relative;
     height: 100%;
-    padding: 7rem 0 6.8rem 0; /* Header height and footer height */
+    padding: 6.5rem 0 6.4rem 0; /* Header height and footer height */
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 1;
@@ -25,7 +25,7 @@ html, body{
 #id_content_for_login {
     position: relative;
     height: 100%;
-    padding: 7rem 0 6.8rem 0; /* Header height and footer height */
+    padding: 6.5rem 0 6.4rem 0; /* Header height and footer height */
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 1;
@@ -33,7 +33,7 @@ html, body{
 }
 #id_footer {
     position: fixed;
-    height: 6.8rem;
+    height: 6.4rem;
     background-color: #F9F9F9F0;
     top:auto;
     bottom: 0;
@@ -42,7 +42,7 @@ html, body{
     opacity: 1;
 }
 .tetto{
-    padding-top: 4.3rem;
+    padding-top: 3.8rem;
     text-align: center;
     font-family: 'Roboto_Bold';
     padding-left: 0.58rem;
@@ -53,7 +53,7 @@ html, body{
 }
 .back{
     position: absolute;
-    top: 4rem;
+    top: 3.5rem;
     left: 1.4rem;
     width: 1rem;
     height: 2.05rem;

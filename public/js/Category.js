@@ -2,14 +2,55 @@ var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 
 $(document).ready(function() {
-    /*var footer_Category = document.getElementsByClassName("footer_Category");
-    footer_Category[0].classList.add("Add_Background");
-    var footer_MainPage = document.getElementsByClassName("footer_MainPage");
-    footer_MainPage[0].classList.add("Add_Background");
-    var footer_Profile = document.getElementsByClassName("footer_Profile");
-    footer_Profile[0].classList.add("Add_Background");
-    */
 
+
+  $(function() {
+    var $el,
+      leftPos,
+      newWidth,
+      $mainNav = $(".scrollmenu");
+    $(".active a").addClass("default_color")
+    $mainNav.append("<li id='magic-line'></li>");
+
+    var $magicLine = $("#magic-line");
+    $magicLine
+      .width($(".active").width())
+      .css("left", $(".active a").position().left)
+      .data("origLeft", $magicLine.position().left)
+      .data("origTop", $magicLine.position().top)
+      .data("origWidth", $magicLine.width());
+    $(".scrollmenu li a ").hover(
+      function() {
+        if($(".active a").hasClass("default_color")){
+          $(".active a").removeClass("default_color");
+        }
+        $el = $(this);
+        $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
+        leftPos = $el.position().left - $("#start").position().left;
+        console.log($el.position().left, $("#start").position().left);
+        newWidth = $el.parent().width();
+        $magicLine.stop().animate({
+          left: leftPos,
+          width: newWidth
+        });
+      },
+      function() {
+        $el = $(this);
+        $el.css('color', $el.data('bgcolor'));
+        $magicLine.stop().animate({
+          left: $magicLine.data("origLeft"),
+          top: $magicLine.data("origTop"),
+          width: $magicLine.data("origWidth")
+        });
+      }
+    );
+  });
+  
+  // Credit: https://css-tricks.com/jquery-magicline-navigation
+  
+  
+  // Credit: https://css-tricks.com/jquery-magicline-navigation
+  
 
   $.ajax({
     url:"https://luffy.ee.ncku.edu.tw:7575/recommend",
