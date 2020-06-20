@@ -55,7 +55,7 @@
   body span.switcher input:after {
     content: 'No';
     font-family: 'Roboto_Regular';
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     right: 1rem;
   }
   

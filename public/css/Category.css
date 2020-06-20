@@ -2,7 +2,50 @@ header {
     width: 100%;
     height: 10vh;
     background-color: #ECECEC; }
-  
+  .content_background{
+    background-color: #848484;
+  }
+  .page{
+    margin-bottom:1rem;
+    }
+  .page_title{
+    margin: 0 0 8rem 0;
+    }
+
+    div.scrollmenu {
+      position: relative;
+      background-color: #1D1D1D;
+      overflow: scroll;
+      white-space: nowrap;
+    }
+    div.scrollmenu li a.default_color{
+      color: #FFFFFF ;
+    }
+    div.scrollmenu::-webkit-scrollbar {
+      display: none;
+    }
+    div.scrollmenu li {
+      display: inline-block;
+      text-align: center;
+    }
+    div.scrollmenu a {
+      display: inline-block;
+      color: #5F5F5F;
+      font-family: Microsoft JhengHei;
+      padding: 0.5rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      text-decoration: none;
+    }
+    #magic-line {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100px;
+      height: 0.25rem;
+      background: #FFFFFF;
+    }
+
   .posts {
     width: 100%;
     display: flex;
@@ -25,7 +68,7 @@ header {
           font-size: 1.1rem;
           letter-spacing: -0.04rem;
           text-overflow: ellipsis;
-          color: #707070; }
+          color: #FFFFFF; }
         .posts_post_detail_account {
           display: inline-flex;
           float: right;
@@ -39,7 +82,7 @@ header {
             text-align: right;
             letter-spacing: -0.04rem;
             text-overflow: ellipsis;
-            color: #707070; }
+            color: #FFFFFF; }
           .posts_post_detail_account_img {
             height: 1.563rem;
             width: 1.563rem;
@@ -61,6 +104,6 @@ header {
   
   .addpost {
     position: absolute;
-    top: 6.2vh;
+    top: 5.2vh;
     right: 6vw; }
   
