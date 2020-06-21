@@ -3,7 +3,7 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 
 $(document).ready(function() {
 
-
+  /* Magicline for scrollMenu */
   $(function() {
     var $el,
       leftPos,
@@ -27,7 +27,6 @@ $(document).ready(function() {
         $el = $(this);
         $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
         leftPos = $el.position().left - $("#start").position().left;
-        console.log($el.position().left, $("#start").position().left);
         newWidth = $el.parent().width();
         $magicLine.stop().animate({
           left: leftPos,
@@ -45,12 +44,7 @@ $(document).ready(function() {
       }
     );
   });
-  
-  // Credit: https://css-tricks.com/jquery-magicline-navigation
-  
-  
-  // Credit: https://css-tricks.com/jquery-magicline-navigation
-  
+  /* Scale Text to Fit in Fixed Div */
 
   $.ajax({
     url:"https://luffy.ee.ncku.edu.tw:7575/recommend",
