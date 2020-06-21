@@ -17,6 +17,12 @@ function cameraStart() {
         console.error("Oops. Something is broken.", error);
     });
 };
+
+//back and next
+ $('#back').click(function(){
+    window.location= "./home.html"
+  })
+});
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
@@ -151,7 +157,7 @@ file.onclick = function() {
         console.log(msg);
         if(msg.success){
           console.log("success");
-         
+          window.location= "./page1.html"
         }
         else{
           console.log("fail");
