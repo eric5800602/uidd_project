@@ -199,16 +199,14 @@ label{
 #file{
 	opacity:0;
 	position:absolute;
-	max-width:2.5em;
-	
+	max-width:2.5em;	
 }
 .plus{
 	height:0.5em;
 	width:0.5em;
-    margin-bottom:2.5em;
+    bottom:2.5em;
 }
 .selects{
-	
 	height:2em;
 	background:#CCCCCC;
 	color:black;
@@ -217,8 +215,9 @@ label{
 }
 #pings{
 	opacity:1;
-	background: #F7F7F7;
+	background: #CCCCCC;
 	height:2em;
+	padding:0.2em;
 }
 .options{
 	background:#CCCCCC;
