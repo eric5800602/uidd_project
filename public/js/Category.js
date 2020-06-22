@@ -44,6 +44,7 @@ $(document).ready(function() {
       }
     );
   });
+  
   /* Scale Text to Fit in Fixed Div */
 
   $.ajax({
@@ -55,25 +56,24 @@ $(document).ready(function() {
       console.log(data.object[0])
       var html = ""
       for(i=0; i<data.object.length; i++){
-        html = html+ `<div class="posts_post" id="${data.object[i].id}">\
-            <img class="posts_post_img" src="${data.object[i].post_icon}">\
-            <div class="posts_post_detail">\
-              <p class="posts_post_detail_title">${data.object[i].title}</p>\
-              <div class="posts_post_detail_account">\
-                <p class="posts_post_detail_account_id">${data.object[i].name}</p>\
-                <img class="posts_post_detail_account_img" src="${data.object[i].user_icon}">\
-              </div>\
-            </div>\
+          html = html+ `
+          <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
+            <img class="tags_img" src="${data.object[i].post_icon}">\
+                <div class="row no-gutters intro align-items-center">\
+                  <div class="col-6 intro_title">${data.object[i].title}</div>\
+                  <div class="col-4 intro_account_id">${data.object[i].name}</div>\
+                  <div class="col-2">\
+                    <img class="intro_account_img" src="${data.object[i].user_icon}"></img>\
+                  </div>\
+                </div>\
+            </img>\
           </div>`
       }
-        $('#posts').html(html)
-        // data.object.forEach(element => console.log(element));
-        // $("#post_img").attr("src",data.object[0].post_icon)
-        // $("#user_img").attr("src",data.object[0].user_icon)
+        $('#myposts').html(html)
     }
   });
 
-  $(document).on("click",".posts_post", function(){
+  $(document).on("click",".single_post", function(){
     console.log(this);
     localStorage.setItem("post_id",this.id);
     window.location= "./post.html" 

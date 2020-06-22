@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
@@ -24,22 +24,20 @@
       <img class="addpost" src="./res/img/post.svg">
     </div>
     <!-- Content Conteiner-->
-    <div class="container-fluid content_background" id="id_content">
-      
-      
-      <div class="page">
+    <div class="container-fluid content_background" id="id_container">
+      <div class="row">
+          <!-- Title -->
+          <div class="page_title">
+            <div class="square one"></div>
+            <div class="square two"></div>
+            <div class="square three"></div>
+            <div class="square four"></div>
 
-        <!-- Title-->
-        <div class="page_title">
-          <div class="square one"></div>
-          <div class="square two"></div>
-          <div class="square three"></div>
-          <div class="square four"></div>
-
-          <span class="Theme">Space</span>
-        </div>
+            <span class="Theme">Space</span>
+          </div>
+          
+      </div>
         <!-- Bar -->
-        
         <div class="scrollmenu">
           <li class="active" id="start"><a href="#All">All</a></li>
           <li><a href="#News">客廳</a></li>
@@ -53,10 +51,15 @@
           <li><a href="#News">戶外空間</a></li>
         </div>
       
+          <!-- Posts-->
+      <div class="row">
+          <div class="spacing"></div>
 
-      </div>
-      <!-- Posts-->
-      <div class="posts" id="posts"></div>
+          <div class="col-md-12 post">
+              <div class="row no-gutters" id="myposts"></div>
+          </div>
+        
+        </div>
     </div>
     <!--Footer-->
     <div class="container-fluid" id="id_footer">
