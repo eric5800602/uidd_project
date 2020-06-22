@@ -35,7 +35,7 @@ body, html{
     left: 3.58vw;
     width: 5.01vw;
     height: 2.35vh; 
-	opacity: 1;
+opacity: 1;
 }
 .submit_button{
 	color:black;
@@ -121,13 +121,12 @@ margin-left:3.5em;
 position: fixed;
 bottom: 8.5em;
 }
-#div1{
-	opacity:0;
-}
+
+
 #posting{
 position:relative;
 z-index:8;
-opacity:1;
+opacity:0;
 padding-top:12vh;
 }
 .container.custom-container-width {
