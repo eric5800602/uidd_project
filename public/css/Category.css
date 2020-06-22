@@ -5,12 +5,21 @@ header {
   .content_background{
     background-color: #848484;
   }
+  #id_container{
+    position: relative;
+    height: 100%;
+    padding: 7rem 0 6.8rem 0; /* Header height and footer height */
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+}
   .page{
-    margin-bottom:1rem;
+    margin-bottom: 0rem;
     }
     /*  Title  */
     .page_title{
-      margin: 0 0 10.5rem 0;
+      margin: 0 0 9rem 0;
     }
       /*  Cube  */
       .cube{
@@ -46,9 +55,10 @@ header {
       .Theme{
         position: absolute;
         color: #FFFFFF;
-        top: 8.7rem;
-        left: 18rem;
+        top: 8.9rem;
+        left: 15rem;
         font-size: 4rem;
+        text-align: right;
         letter-spacing: 0.7rem;
         font-family: 'Roboto_Regular';
         font-weight: 900;
@@ -56,11 +66,12 @@ header {
 
 
     /*  Scrollable Menu  */
+
     div.scrollmenu {
       margin-top: 1rem;
       position: relative;
       background-color: #1D1D1D;
-      overflow: scroll;
+      overflow-x: auto;
       white-space: nowrap;
     }
     div.scrollmenu li a.default_color{
@@ -88,54 +99,60 @@ header {
       left: 0;
       bottom: 0;
       width: 100px;
-      height: 0.25rem;
+      height: 0.15rem;
       background: #FFFFFF;
     }
 
-  /*  Post  */
-  .posts {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none; }
-    .posts_post {
-      display: inline-block;
-      width: 50%; }
-      .posts_post_img {
-        width: 100%; }
-      .posts_post_detail {
-        display: inline-flex;
-        justify-content: space-between;
+    
+
+
+    /* post */
+    /*.no-gutters>[class*=col-] {
+      padding-right: 0;
+      padding-left: 0;
+      margin-bottom: 2rem;
+    }*/
+    .single_post{
+      width: auto;
+    }
+    .tags_img {
+      height:100%;
+      width:100%;
+      mix-blend-mode: hard-light;
+    }
+
+    .spacing{
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+    .intro {
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.3rem 0.3rem 0.3rem 0.5rem; }
+      .intro_title {
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 1.1rem;
+        letter-spacing: -0.04rem;
+        text-overflow: ellipsis;
+        color: #FFFFFF;
+        padding: 0 0 0 0.5rem; }
+      .intro_account_id {
+        overflow: hidden;
+        margin: auto;
+        font-size: 0.75rem;
+        text-align: right;
+        letter-spacing: -0.04rem;
+        text-overflow: ellipsis;
+        color: #FFFFFF; }
+      .intro_account_img {
+        height: 100%;
         width: 100%;
-        margin: 0.3rem 0 0.5rem 0; }
-        .posts_post_detail_title {
-          display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-          font-size: 1.1rem;
-          letter-spacing: -0.04rem;
-          text-overflow: ellipsis;
-          color: #FFFFFF;
-          padding: 0 0 0 0.5rem; }
-        .posts_post_detail_account {
-          display: inline-flex;
-          float: right;
-          padding: 0 0.5rem 0 0; }
-          .posts_post_detail_account_id {
-            display: inline-block;
-            width: 4rem;
-            overflow: hidden;
-            margin: auto;
-            font-size: 0.75rem;
-            text-align: right;
-            letter-spacing: -0.04rem;
-            text-overflow: ellipsis;
-            color: #FFFFFF; }
-          .posts_post_detail_account_img {
-            height: 1.563rem;
-            width: 1.563rem;
-            margin: 0 0 0 0.4rem;
-            border-radius: 50%; }
+        border-radius: 50%; }
+    .post{
+      margin-bottom: 2rem;
+    }
+  
   
   .vsc-initialized {
     overflow-x: hidden; }
