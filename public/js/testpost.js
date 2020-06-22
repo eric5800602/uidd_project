@@ -141,13 +141,14 @@ file.onclick = function() {
         withCredentials: true
       },
 		data: JSON.stringify({
-		space: $("#space").val(),
-		room:$("#room").val(),
-		pings: $("#pings").val(),
+		space: $("#sel1").val(),
+		room:$("#sel2").val(),
+		pings: $('#ajax-form4 input[name=pings]').val(),
         title: $('#ajax-form input[name=fName]').val(),
         explanation: $('#explanation').val(),
 		tags: $('#ajax-form3 input[name=tName]').val(),
 		tags:tags,
+			
       }), 
 	  
       success: function (msg) {
