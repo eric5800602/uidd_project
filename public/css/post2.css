@@ -35,16 +35,27 @@ body, html{
     left: 3.58vw;
     width: 5.01vw;
     height: 2.35vh; 
-opacity: 1;
+	opacity: 1;
 }
-.submit_button{
+#Submit_button{
 	color:black;
 	background-color:#E9E9E9;
 	font-size:4vw;
-	margin-top:6vh;
+	margin-top:3.2em;
 	margin-right:2vw;
 	border:none;
 	font-weight:bold;
+	opacity:1;
+}
+#Submit_button1{
+	color:black;
+	background-color:#E9E9E9;
+	font-size:4vw;
+	margin-top:-2.5em;
+	margin-right:2vw;
+	border:none;
+	font-weight:bold;
+	opacity:0;
 }
 .col photo{
 	width:100vw;
@@ -121,12 +132,13 @@ margin-left:3.5em;
 position: fixed;
 bottom: 8.5em;
 }
-
-
+#div1{
+	opacity:0;
+}
 #posting{
-position:relative;
+position:absolute;
 z-index:8;
-opacity:0;
+opacity:1;
 padding-top:12vh;
 }
 .container.custom-container-width {

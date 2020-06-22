@@ -43,6 +43,7 @@ cameraTrigger.onclick = function() {
             setTimeout(function () {
             $("#tag").css('opacity','1');
             }, 1000);
+			
             cameraView.srcObject.getTracks().forEach(function(track) {
                 track.stop();
               });
@@ -101,6 +102,39 @@ $('#file').change(function() {
 file.onclick = function() {
 	
 };
+//select
+var sel1 = document.querySelector('#sel1');
+var sel2 = document.querySelector('#sel2');
+var options1 = sel1.querySelectorAll('option');
+var options2 = sel2.querySelectorAll('option');
+function giveSelection(selValue) {
+  sel2.innerHTML = '';
+  for(var i = 0; i < options2.length; i++) {
+    if(options2[i].dataset.option === selValue) {
+      sel2.appendChild(options2[i]);
+    }
+}
+  }
+  giveSelection(sel1.value);
+var myTarget = document.getElementById('sel1');
+var myTargetValue = myTarget.value;
+$( "#sel1" ).change(function() {
+	if($("#sel1").val()=="single"){
+		 $("#pings").css('opacity','0');
+		  $("#next").css('opacity','0');
+		  $("#Submit_button").css('opacity','0');
+		  $("#Submit_button1").css('opacity','1');
+		  
+	}
+   else if($("#sel1").val()=="space"){
+		 $("#pings").css('opacity','1');
+		  $("#next").css('opacity','1');
+		   $("#Submit_button").css('opacity','1');
+		   $("#Submit_button1").css('opacity','0');
+	}
+});
+
+//tags
  var tags = document.getElementsByClassName('tags')
     for(var i = 0; i < tags.length; i++) {
         (function(index) {
@@ -140,7 +174,7 @@ file.onclick = function() {
 		data: JSON.stringify({
 		space: $("#sel1").val(),
 		room:$("#sel2").val(),
-		pings: $("#pings").val(),
+		pings: $('#ajax-form4 input[name=pings]').val(),
         title: $('#ajax-form input[name=fName]').val(),
         explanation: $('#explanation').val(),
 		tags: $('#ajax-form3 input[name=tName]').val(),
@@ -167,69 +201,4 @@ file.onclick = function() {
   })
 	 })
 	 })
-/*
-//上傳照片
-        var file = $("#file")[0];
-        //這裡使用的是onchange事件，所以當你選擇完檔案之後，就觸發事件上傳
-        file.onchange = function () {
-            //建立一個FormDate
-            var formData = new FormData();
-            //將檔案資訊追加到其中
-            formData.append('file', file.files[0]);
-            //利用split切割，拿到上傳檔案的格式
-            var src = file.files[0].name,
-                formart = src.split(".")[1];
-            //使用if判斷上傳檔案格式是否符合                                                          
-            if (formart == "jpg" || formart == "png" || formart == "PNG" ||
-                formart == "docx" || formart == "txt" ||
-                formart == "ppt" || formart == "xlsx" ||
-                formart == "zip" || formart == "rar" ||
-                formart == "doc") {
-                //只有滿足以上格式時，才會觸發ajax請求
-                $.ajax({
-                    url: '/upload',
-                    type: 'POST',
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    success: function (data) {
-                        //上傳成功之後，返回物件data         
-                        if (data.success===true) {
-                            var src = data.data;
-                            console.log(formart)
-                            if (formart == "png" || formart == "jpg") {
-                                $('#img').attr('src',src)
-                            }
-                            console.log(`Url of img: ${data.data}`)
-                            // 這裡將msg 追加到你要顯示的區域 
-                            localStorage.setItem("url", data.data)
-                        }
-                    }})
-                    //不滿足上傳格式時 
-            }
-            console.log(sessionStorage.getItem("url"));
-        }*/
-//select
-var sel1 = document.querySelector('#sel1');
-var sel2 = document.querySelector('#sel2');
-var options1 = sel1.querySelectorAll('option');
-var options2 = sel2.querySelectorAll('option');
-function giveSelection(selValue) {
-  sel2.innerHTML = '';
-  for(var i = 0; i < options2.length; i++) {
-    if(options2[i].dataset.option === selValue) {
-      sel2.appendChild(options2[i]);
-    }
-}
-  }
-  giveSelection(sel1.value);
-  
-var myTarget = document.getElementById('sel1');
-var myTargetValue = myTarget.value;
-$( "#sel1" ).change(function() {
-	if($("#sel1").val()=="single"){
-		 $("#pings").css('opacity','0');
-	}
-  
-});
+
