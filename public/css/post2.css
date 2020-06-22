@@ -17,6 +17,7 @@ body, html{
     z-index: 199;
 	width:100%;
 }
+
 .tetto{
     padding-top: 6.4vh;
     text-align: center;
@@ -110,7 +111,7 @@ font-size: 180%;
 position: absolute;
 left: 0;
 width: 100%;
-top:1em;
+bottom:0.1em;
 }
 .cameraturn{
 z-index:3;
@@ -120,10 +121,13 @@ margin-left:3.5em;
 position: fixed;
 bottom: 8.5em;
 }
+#div1{
+	opacity:0;
+}
 #posting{
 position:relative;
-z-index:1;
-opacity:0;
+z-index:8;
+opacity:1;
 padding-top:12vh;
 }
 .container.custom-container-width {
@@ -143,7 +147,7 @@ padding-top:12vh;
 input[type=text]{
 	background: #F7F7F7;
 	height:2.5em;
-	margin-top:1vh;
+
 	text-align:left;
 	font-weight:400;
 	border-radius: 0%;
@@ -160,14 +164,14 @@ input[type=text]{
 ::placeholder {
   color: #5F5F5F;
 }
+
 .textarea {
 height: 5em;
-width:70em;
+width:21.5em;
 background: #F7F7F7;
 margin-top:1em;
-padding-left:1em;
+padding-left:0.5em;
 text-align:left;
-padding: 4px;
 border:none;
 resize: vertical;
 overflow: auto;
@@ -176,22 +180,11 @@ overflow: auto;
 content: attr(placeholder);
 color: #bbb;
 }
-
-
-.hashtag{
-	background: #CCCCCC;
-	color:black;
-	padding-top:1vh;
-	padding-bottom:1vh;
-	padding-left:2vw;
-	padding-right:3vw;
-	border-radius:10px;
+#selected{
+	margin-bottom:1em;
 }
-.hashtag:hover{
-	background:#8BA9D2;
-	color:white;
-	text-decoration:none;
-} 
+
+
 label{
 	font-weight:1000;
 }
@@ -204,7 +197,7 @@ label{
 .plus{
 	height:0.5em;
 	width:0.5em;
-    bottom:2.5em;
+   
 }
 .selects{
 	height:2em;
@@ -218,6 +211,8 @@ label{
 	background: #CCCCCC;
 	height:2em;
 	padding:0.2em;
+	bottom:0.5em;
+
 }
 .options{
 	background:#CCCCCC;
