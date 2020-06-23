@@ -43,7 +43,9 @@ cameraTrigger.onclick = function() {
             setTimeout(function () {
             $("#tag").css('opacity','1');
             }, 1000);
-			
+		 setTimeout(function () {
+            $("#Submit_button").css('opacity','1');
+            }, 100);		
             cameraView.srcObject.getTracks().forEach(function(track) {
                 track.stop();
               });
@@ -154,9 +156,13 @@ file.onclick = function() {
         console.log(msg);
         if(msg.success){
 			if($("#sel1").val()=="single"){
-			console.log("good");}
+			console.log("good");
+				 window.location= "./home.html"
+			}
          else if($("#sel1").val()=="space"){
-			 console.log(" very good");}
+			 console.log(" very good");
+		  window.location= "./post1.html"
+	 }
 		 
         }
         else{
