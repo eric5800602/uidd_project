@@ -189,7 +189,7 @@ $( "#sel1" ).change(function() {
         console.log(msg);
         if(msg.success){
           console.log("good");
-           window.location= "./home.html"
+         
         }
         else{
           console.log("fail");
@@ -226,8 +226,8 @@ $( "#sel1" ).change(function() {
       success: function (msg) {
         console.log(msg);
         if(msg.success){
-          console.log("success");
-           window.location= "./post1.html"
+          console.log("very good");
+           
         }
         else{
           console.log("fail");
