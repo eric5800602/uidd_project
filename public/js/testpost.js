@@ -155,7 +155,7 @@ file.onclick = function() {
         console.log(msg);
         if(msg.success){
           console.log("success");
-           window.location= "./post1.html" 
+          /* window.location= "./post1.html" */
 
         }
         else{
@@ -192,8 +192,8 @@ file.onclick = function() {
       success: function (msg) {
         console.log(msg);
         if(msg.success){
-          console.log("success");
-           window.location= "./home.html" 
+          console.log("good");
+           /*window.location= "./home.html" */
 
         }
         else{
@@ -271,8 +271,9 @@ var myTarget = document.getElementById('sel1');
 var myTargetValue = myTarget.value;
 $( "#sel1" ).change(function() {
 	if($("#sel1").val()=="single"){
-		 $("#pings","#next").css('opacity','0');
-		  $("#Submit_button").css('z-index','0');
+		 $("#pings").css('opacity','0');
+		 $("#next").css('opacity','0');
+		  $("#Submit_button").css('z-index','1');
 		$("#Submit_button").css('opacity','0');
 		  $("#Submit_button1").css('opacity','1');
 		  $("#Submit_button1").css('z-index','3');
