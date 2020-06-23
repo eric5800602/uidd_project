@@ -158,7 +158,7 @@ file.onclick = function() {
           if($("#sel1").val()=="single"){
            window.location= "./home.html" 
 		  }
-		  else if($("#sel1").val()=="space"){
+		  else($("#sel1").val()=="space"){
 			  window.location= "./post1.html" 
         }
 
