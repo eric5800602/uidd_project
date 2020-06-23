@@ -271,9 +271,7 @@ var myTarget = document.getElementById('sel1');
 var myTargetValue = myTarget.value;
 $( "#sel1" ).change(function() {
 	if($("#sel1").val()=="single"){
-		 $("#pings").css('opacity','0');
-		  $("#next").css('opacity','0');
-		$("#Submit_button").css('display','none');
+		 $("#pings","#next").css('opacity','0');
 		  $("#Submit_button").css('z-index','0');
 		$("#Submit_button").css('opacity','0');
 		  $("#Submit_button1").css('opacity','1');
