@@ -229,7 +229,7 @@ $( "#sel1" ).change(function() {
 		 $("#pings").css('opacity','0');
 		  $("#next").css('opacity','0');
 		  $("#Submit_button").css('opacity','0');
-		  $("#Submit_button").css('z-index','0');
+		
 		  $("#Submit_button1").css('opacity','1');
 		  $("#Submit_button1").css('z-index','3');
 		  
@@ -240,7 +240,7 @@ $( "#sel1" ).change(function() {
 		   $("#Submit_button").css('opacity','1');
 		   $("#Submit_button").css('z-index','3');
 		   $("#Submit_button1").css('opacity','0');
-		   $("#Submit_button1").css('z-index','0');
+		
 	}
 });
 
