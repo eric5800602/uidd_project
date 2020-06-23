@@ -153,8 +153,11 @@ file.onclick = function() {
       success: function (msg) {
         console.log(msg);
         if(msg.success){
-          console.log("good");
-         
+			if($("#sel1").val()=="single"){
+			console.log("good");}
+         else if($("#sel1").val()=="space"){
+			 console.log(" very good");}
+		 
         }
         else{
           console.log("fail");
@@ -169,44 +172,7 @@ file.onclick = function() {
     })
   })
 	 })
-	
-		 $('#Submit_button1').click((event) => {
-    $.post({
-      url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
-      dataType: "json",
-      contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-		data: JSON.stringify({
-		space: $("#sel1").val(),
-		room:$("#sel2").val(),
-		pings: $('#ajax-form4 input[name=pings]').val(),
-        title: $('#ajax-form input[name=fName]').val(),
-        explanation: $('#explanation').val(),
-		tags: $('#ajax-form3 input[name=tName]').val(),
-		tags:tags,
-      }), 
 	 
-      success: function (msg) {
-        console.log(msg);
-        if(msg.success){
-          console.log("very good");
-           
-        }
-        else{
-          console.log("fail");
-          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
-          alert(msg.text);
-        }
-      },
-      error: function(data){
-        console.log("fail");
-        console.log(data);
-      }
-    })
-  
-	 })
 	 })
 //select
 var sel1 = document.querySelector('#sel1');
@@ -228,18 +194,17 @@ $( "#sel1" ).change(function() {
 	if($("#sel1").val()=="single"){
 		 $("#pings").css('opacity','0');
 		  $("#next").css('opacity','0');
-		  $("#Submit_button").css('opacity','0');
-		
-		  $("#Submit_button1").css('opacity','1');
-		  $("#Submit_button1").css('z-index','3');
+		  $("#nexticon").css('opacity','0');		
+		  $("#finishicon").css('opacity','1');
+		  $("#finishicon").css('z-index','3');
 		  
 	}
    else if($("#sel1").val()=="space"){
 		 $("#pings").css('opacity','1');
 		  $("#next").css('opacity','1');
-		   $("#Submit_button").css('opacity','1');
-		   $("#Submit_button").css('z-index','3');
-		   $("#Submit_button1").css('opacity','0');
+		   $("#nexticon").css('opacity','1');
+		   $("#nexticon").css('z-index','3');
+		   $("#finishicon").css('opacity','0');
 		
 	}
 });
