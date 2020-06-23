@@ -158,47 +158,9 @@ file.onclick = function() {
           if($("#sel1").val()=="single"){
            window.location= "./home.html" 
 		  }
-		  else($("#sel1").val()=="space"){
+		  else{
 			  window.location= "./post1.html" 
         }
-
-        }
-        else{
-          console.log("fail");
-          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
-          alert(msg.text);
-        }
-      },
-      error: function(data){
-        console.log("fail");
-        console.log(data);
-      }
-    })
-  })
-   $('#Submit_button1').click((event) => {
-    $.post({
-      url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
-      dataType: "json",
-      contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-		data: JSON.stringify({
-		space: $("#sel1").val(),
-		room:$("#sel2").val(),
-		pings: $('#ajax-form4 input[name=pings]').val(),
-        title: $('#ajax-form input[name=fName]').val(),
-        explanation: $('#explanation').val(),
-		tags: $('#ajax-form3 input[name=tName]').val(),
-		tags:tags,
-			
-      }), 
-	  
-      success: function (msg) {
-        console.log(msg);
-        if(msg.success){
-          console.log("good");
-           /*window.location= "./home.html" */
 
         }
         else{
