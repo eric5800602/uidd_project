@@ -142,19 +142,19 @@ $( "#sel1" ).change(function() {
 		 $("#pings").css('opacity','0');
 		 $("#next").css('opacity','0');
 		  $("#Submit_button").css('z-index','1');
-		$("#Submit_button").css('opacity','0');
-		  $("#Submit_button1").css('opacity','1');
+		$("#Submit_button").css('display','none');
+		  $("#Submit_button1").css('display','block');
 		  $("#Submit_button1").css('z-index','3');
 		  
 	}
    else if($("#sel1").val()=="space"){
 		 $("#pings").css('opacity','1');
 		  $("#next").css('opacity','1');
-		   $("#Submit_button").css('opacity','1');
+		   $("#Submit_button").css('display','block');
 		   $("#Submit_button").css('z-index','3');
-		
-	    $("#Submit_button1").css('opacity','0');
+	      $("#Submit_button1").css('display','none');
 		   $("#Submit_button1").css('z-index','1');
+	
 	}
 });
 
