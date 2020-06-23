@@ -37,6 +37,9 @@ body, html{
     height: 2.35vh; 
 	opacity: 1;
 }
+#Submit_button{
+opacity:0;
+}
 #nexticon{
 	color:black;
 	background-color:#E9E9E9;
