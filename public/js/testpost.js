@@ -193,11 +193,11 @@ $( "#sel1" ).change(function() {
         console.log(msg);
         if(msg.success){
           console.log("success");
-          if($("#sel1").val()=="single"){
-           window.location= "./home.html" ;
+          if($("#sel1").val()=="space"){
+           window.location= "./post1.html" ;
 		  }
 		  else{
-			  window.location= "./post1.html" ;
+			  window.location= "./home.html" ;
         }
 
         }
