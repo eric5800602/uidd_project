@@ -169,7 +169,7 @@ file.onclick = function() {
     })
   })
 	 })
-	  $(document).ready(function () {
+	
 		 $('#Submit_button1').click((event) => {
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
@@ -205,7 +205,7 @@ file.onclick = function() {
         console.log(data);
       }
     })
-  })
+  
 	 })
 	 })
 //select
