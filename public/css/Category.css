@@ -98,7 +98,7 @@ header {
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 100px;
+      width: 5rem;
       height: 0.15rem;
       background: #FFFFFF;
     }
@@ -118,7 +118,6 @@ header {
     .tags_img {
       height:100%;
       width:100%;
-      mix-blend-mode: hard-light;
     }
 
     .spacing{

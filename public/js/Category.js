@@ -4,6 +4,7 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 $(document).ready(function() {
 
   /* Magicline for scrollMenu */
+  
   $(function() {
     var $el,
       leftPos,
@@ -19,7 +20,7 @@ $(document).ready(function() {
       .data("origLeft", $magicLine.position().left)
       .data("origTop", $magicLine.position().top)
       .data("origWidth", $magicLine.width());
-    $(".scrollmenu li a ").hover(
+    /*$(".scrollmenu li a ").hover(
       function() {
         if($(".active a").hasClass("default_color")){
           $(".active a").removeClass("default_color");
@@ -43,6 +44,26 @@ $(document).ready(function() {
         });
       }
     );
+    */
+    $('.scrollmenu li a').click(function(){
+      if($(".active a").hasClass("default_color")){
+        $(".active a").removeClass("default_color");
+      }
+      $('.scrollmenu li a').data('bgcolor', $('.scrollmenu li a').css('color')).css('color', '#5F5F5F');
+      $el = $(this);
+      $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
+      leftPos = $el.position().left - $("#start").position().left;
+      newWidth = $el.parent().width();
+      $magicLine.stop().animate({
+        left: leftPos,
+        width: newWidth
+      });
+
+      $magicLine
+        .data("origLeft", $(this).position().left)
+        .data("origWidth", $(this).position().width);
+    });
+
   });
   
   /* Scale Text to Fit in Fixed Div */
@@ -78,6 +99,8 @@ $(document).ready(function() {
     localStorage.setItem("post_id",this.id);
     window.location= "./post.html" 
   });
+  
+
 
   $('.addpost').click(function(){
     window.location= "./post2.html" 
