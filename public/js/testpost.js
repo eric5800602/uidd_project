@@ -170,6 +170,44 @@ file.onclick = function() {
       }
     })
   })
+   $('#Submit_button1').click((event) => {
+    $.post({
+      url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
+      dataType: "json",
+      contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+		data: JSON.stringify({
+		space: $("#sel1").val(),
+		room:$("#sel2").val(),
+		pings: $('#ajax-form4 input[name=pings]').val(),
+        title: $('#ajax-form input[name=fName]').val(),
+        explanation: $('#explanation').val(),
+		tags: $('#ajax-form3 input[name=tName]').val(),
+		tags:tags,
+			
+      }), 
+	  
+      success: function (msg) {
+        console.log(msg);
+        if(msg.success){
+          console.log("success");
+           window.location= "./home.html" 
+
+        }
+        else{
+          console.log("fail");
+          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
+          alert(msg.text);
+        }
+      },
+      error: function(data){
+        console.log("fail");
+        console.log(data);
+      }
+    })
+  })
 	 })
 	 })
 /*
@@ -236,13 +274,17 @@ $( "#sel1" ).change(function() {
 		 $("#pings").css('opacity','0');
 		  $("#next").css('opacity','0');
 		  $("#Submit_button").css('opacity','0');
+		  $("#Submit_button").css('z-index','0');
 		  $("#Submit_button1").css('opacity','1');
+		  $("#Submit_button1").css('z-index','3');
 		  
 	}
    else if($("#sel1").val()=="space"){
 		 $("#pings").css('opacity','1');
 		  $("#next").css('opacity','1');
 		   $("#Submit_button").css('opacity','1');
+		   $("#Submit_button").css('z-index','3');
 		   $("#Submit_button1").css('opacity','0');
+		   $("#Submit_button1").css('z-index','1');
 	}
 });
