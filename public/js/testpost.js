@@ -155,7 +155,12 @@ file.onclick = function() {
         console.log(msg);
         if(msg.success){
           console.log("success");
-          /* window.location= "./post1.html" */
+          if($("#sel1").val()=="single"){
+           window.location= "./home.html" 
+		  }
+		  else if($("#sel1").val()=="space"){
+			  window.location= "./post2.html" 
+        }
 
         }
         else{
