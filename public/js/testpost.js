@@ -159,7 +159,7 @@ file.onclick = function() {
            window.location= "./home.html" 
 		  }
 		  else if($("#sel1").val()=="space"){
-			  window.location= "./post2.html" 
+			  window.location= "./post1.html" 
         }
 
         }
