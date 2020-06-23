@@ -673,3 +673,86 @@ app.post('/add',(req,res) => {
         "second":Number(req.body.second) + Number(req.body.third),
     })
 })
+
+app.post('/get_post_with_tag',(req,res) => {
+    data = new Array;
+    var recommend;
+    if(req.body.tag == "All"){
+        recommend = async function () {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    await postModel.find({}).limit(10).exec(async (err, r) => {
+                        if (err) {
+                            console.log('fail to query:', err)
+                            resolve(false)
+                        }
+                        else {
+                            r.forEach(r => {
+                                data.push({
+                                    'name': r.name,
+                                    'user_icon': r.user_icon,
+                                    'post_icon': r.post_icon,
+                                    'title': r.title,
+                                    'id': r._id
+                                })
+                            })
+                            data = JSON.stringify(data);
+                            //console.log(data);
+                            resolve(true)
+                        }
+                    })
+                } catch (err) {
+                    reject(err)
+                }
+            })
+        };
+    }
+    else{
+        recommend = async function () {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    await postModel.find({tags:req.body.tag}).limit(10).exec(async (err, r) => {
+                        if (err) {
+                            console.log('fail to query:', err)
+                            resolve(false)
+                        }
+                        else {
+                            r.forEach(r => {
+                                data.push({
+                                    'name': r.name,
+                                    'user_icon': r.user_icon,
+                                    'post_icon': r.post_icon,
+                                    'title': r.title,
+                                    'id': r._id
+                                })
+                            })
+                            data = JSON.stringify(data);
+                            //console.log(data);
+                            resolve(true)
+                        }
+                    })
+                } catch (err) {
+                    reject(err)
+                }
+            })
+        };
+    }
+    recommend().then(r => {
+        if (r === true) {
+            m = JSON.parse(`{
+                "success": true,
+                "text": "Query success",
+                "object": ${data}
+              }`)
+            //console.log(m.object);
+            res.json(m)
+        }
+        else if (r === false) {
+            res.send(JSON.parse(`{
+                "success": false,
+                "text": "Sorry, query fail",
+                "object":"undefined"
+              }`))
+        }
+    })
+})

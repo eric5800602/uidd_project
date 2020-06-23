@@ -67,12 +67,16 @@ $(document).ready(function() {
   });
   
   /* Scale Text to Fit in Fixed Div */
-
+  var target_tag = $("#magic-line").context.URL.split("#")[1];
   $.ajax({
-    url:"https://luffy.ee.ncku.edu.tw:7575/recommend",
-    type:'get',
+    url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
+    type:'post',
     dataType: "json",
     contentType: "application/json",
+    xhrFields: {
+      withCredentials: true
+    },
+    data: JSON.stringify({tag:target_tag}),
     success: function(data){
       console.log(data.object[0])
       var html = ""
