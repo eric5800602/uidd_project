@@ -93,9 +93,9 @@ const postSchema = new mongoose.Schema({
     pings:String,
     tags:[{
         type: String
-    }],
+    }], 
     like:Number,
-    request:Number,
+    pen:Number,
     object:[mongoose.SchemaTypes.ObjectId],
     published: Boolean
 }, { collection: postCollectionName });
@@ -129,6 +129,19 @@ const tagsSchema = new mongoose.Schema({
     reference: Number
 }, { collection: tagsCollectionName });
 const tagsModel = conn.model(tagsCollectionName, tagsSchema);
+
+const requestsCollectionName = 'requests'
+const requestsSchema = new mongoose.Schema({
+    position:{
+        type: pointSchema
+      },
+    img:String,
+    Source:Number,
+    Price:Number,
+    Texture:Number,
+    postid:mongoose.SchemaTypes.ObjectId
+}, { collection: requestsCollectionName });
+const requestsModel = conn.model(requestsCollectionName, requestsSchema);
 
 const saveAll = (data, model) => {
     for (d of data) {
@@ -378,7 +391,7 @@ app.post('/add_post', (req, res) => {
         query().then(r=>{
             data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': r.post_icon,
             'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
-            'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'request':0,'published':true}
+            'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'pen':0,'published':true}
             const m = new postModel(data)
             m.save((err,result) => {
                 if (err) { 
@@ -518,16 +531,30 @@ app.post('/get_post', (req, res) => {
         else {
             var object = [];
             for(i in r.object){
-                var m = await query(r.object[i]);
+                var m = await query(r.object[i]);   
                 console.log(m);
                 await object.push(m);
             }
-            res.send({
-                "success": true,
-                "text": "Get post success",
-                "post": r,
-                'single': object
-            })
+            requestsModel.find({ 'postid': req.body.id }).exec(async (err, requests) => {
+                if (err) {
+                    console.log('fail to query:', err)
+                    res.send({
+                        "success": false,
+                        "text": "Get request fail",
+                        "post": undefined,
+                        "single":undefined
+                    })
+                }
+                else {
+                    res.send({
+                        "success": true,
+                        "text": "Get post success",
+                        "post": r,
+                        'single': object,
+                        "requests":requests,
+                    })
+                }
+            });
         }
     });
 
@@ -793,4 +820,109 @@ app.post('/get_post_with_tag',(req,res) => {
               }`))
         }
     })
+})
+/*
+position:{
+        type: pointSchema
+      },
+    img:String,
+    Source:Number,
+    Price:Number,
+    Texture:Number,
+    postid:id
+data:{
+    postid:id,
+    Source:number,
+    Price:number,
+    Texture:number,
+    img:url string,
+    x:number,
+    y:number
+}
+*/
+app.post('/add_request', (req, res) => {
+    data = {
+        'postid':req.body.id,
+        'Source': Number(req.body.Source), 'Price': Number(req.body.Price), 'Texture': Number(req.body.Texture),
+        'img':String(req.body.img),'position':{"type" : "Point","coordinates" : [Number(req.body.x),Number(req.body.y)]}
+    }
+    const m = new requestsModel(data)
+    m.save((err,result) => {
+        if (err) {
+            console.log('fail to insert:', err)
+            res.send(JSON.parse(`{
+                "success": false,
+                "text": "Sorry, post request fail",
+                "id": undefined
+              }`))
+        } else {
+            // Response
+            res.send(JSON.parse(`{
+                "success": true,
+                "text": "Post request success, ${result._id}",
+                "id": "${result._id}"
+              }`))
+        }
+    })
+})
+/*
+data:{
+    id:id,
+    type:String
+}
+*/
+app.post('/modify_request', (req, res) => {
+    requestsModel.findOne({ '_id': req.body.id }).exec(async (err, r) => {
+        if (err) {
+            console.log('Fail to find request:', err)
+            res.send({
+                "success": false,
+                "text": "Fail to find request",
+                "reference":undefined
+            })
+        }
+        else {
+            switch(req.body.type){
+                case 'Source':
+                    r.Source++;
+                    r.save(function (err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                    res.send({
+                        "success": true,
+                        "text": `${req.body.type} had been increased`,
+                        "count":r.Source
+                    })
+                    break;
+                case 'Price':
+                    r.Price++;
+                    r.save(function (err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                    res.send({
+                        "success": true,
+                        "text": `${req.body.type} had been increased`,
+                        "count":r.Price
+                    })
+                    break;
+                case 'Texture':
+                    r.Texture++;
+                    r.save(function (err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                    res.send({
+                        "success": true,
+                        "text": `${req.body.type} had been increased`,
+                        "count":r.Texture
+                    })
+                    break;
+            }
+        }
+    });
 })
