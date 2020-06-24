@@ -90,6 +90,9 @@ $('#file').change(function() {
             setTimeout(function () {
             $("#Submit_button").css('opacity','1');
             }, 100);
+		setTimeout(function () {
+            $("#tag").css('opacity','1');
+            }, 1000);
             cameraView.srcObject.getTracks().forEach(function(track) {
                 track.stop();
               });
