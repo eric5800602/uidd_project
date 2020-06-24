@@ -47,6 +47,9 @@ $(document).ready(function() {
         // data.object.forEach(element => console.log(element));
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
+    },
+    error:function(data){
+      console.log(data)
     }
   });
 

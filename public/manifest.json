@@ -7,12 +7,12 @@
   "theme_color": "#ECECEC",
   "background_color": "#ECECEC",
   "icons": [{
-    "src": "./res/img/tetto-144px.png",
+    "src": "./res/img/tetto-144x144.png",
     "sizes": "144x144",
     "type": "image/png"
   },{
-    "src": "./res/img/tetto-790px.png",
-    "sizes": "790x790",
+    "src": "./res/img/tetto-800x800.png",
+    "sizes": "800x800",
     "type": "image/png"
   }]
 }

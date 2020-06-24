@@ -2,19 +2,19 @@
 // try edit the cached files and/or the `cachedFiles` list
 const cachedFiles = [
     './res/img/post.svg',
-    './res/img/tetto-790px.png',
-    './res/img/tetto-144px.png',
-    './res/img/tetto.png',
+    './res/img/tetto-144x144.png',
+    './res/img/tetto-800x800.png',
     './js/home.js',
-    '../image/footer/MianPage.svg',
-    '../image/footer/Search.svg',
-    '../image/footer/Category.svg',
-    '../image/footer/Msg.svg',
-    '../image/footer/Profile.svg',
+    './home.html',
+    '../image/footer/MainPage.png',
+    '../image/footer/Search.png',
+    '../image/footer/Category.png',
+    '../image/footer/Msg.png',
+    '../image/footer/Profile.png',
   ]
   
   // edit this to force re-cache
-  const cacheKey = 'tetto-sw-v1'
+  const cacheKey = 'tetto-sw-v2'
   
   // install, a good time to preload cache
   self.addEventListener('install', event => {
