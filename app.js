@@ -842,7 +842,7 @@ data:{
 */
 app.post('/add_request', (req, res) => {
     data = {
-        'postid':req.body.id,
+        'postid':req.body.postid,
         'Source': Number(req.body.Source), 'Price': Number(req.body.Price), 'Texture': Number(req.body.Texture),
         'img':String(req.body.img),'position':{"type" : "Point","coordinates" : [Number(req.body.x),Number(req.body.y)]}
     }
@@ -867,12 +867,12 @@ app.post('/add_request', (req, res) => {
 })
 /*
 data:{
-    id:id,
+    requestid:id,
     type:String
 }
 */
 app.post('/modify_request', (req, res) => {
-    requestsModel.findOne({ '_id': req.body.id }).exec(async (err, r) => {
+    requestsModel.findOne({'_id': req.body.requestid }).exec(async (err, r) => {
         if (err) {
             console.log('Fail to find request:', err)
             res.send({
