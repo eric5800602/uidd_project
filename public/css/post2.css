@@ -38,6 +38,9 @@ body, html{
 	opacity: 1;
 }
 #Submit_button{
+opacity:0;
+}
+#nexticon{
 	color:black;
 	background-color:#E9E9E9;
 	font-size:4vw;
@@ -47,7 +50,7 @@ body, html{
 	font-weight:bold;
 	opacity:1;
 }
-#Submit_button1{
+#finishicon{
 	color:black;
 	background-color:#E9E9E9;
 	font-size:4vw;

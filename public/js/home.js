@@ -4,7 +4,25 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 $(document).ready(function() {
 //  $('#ajax-form button[type="submit"]').click((event) => {
 //    event.preventDefault()
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../sw.js')
+    .then(reg => {
+      console.log(`SW is registered with scope: ${reg.scope}`)
+    })
+    .catch(err => {
+      console.log('SW Error ', err)
+    })
+  }
 
+  const fetchData = () => {
+    $('#hello').text(`fetching...`)
+
+    $.get('./hello', res => {
+      $('#hello').text(`server: ${res}`)
+    })
+  }
+
+  $('#fetch-data').click(fetchData)
   $.ajax({
     url:"https://luffy.ee.ncku.edu.tw:7575/recommend",
     type:'get',
@@ -29,6 +47,9 @@ $(document).ready(function() {
         // data.object.forEach(element => console.log(element));
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
+    },
+    error:function(data){
+      console.log(data)
     }
   });
 

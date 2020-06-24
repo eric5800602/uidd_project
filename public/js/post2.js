@@ -71,6 +71,7 @@ $('#file').change(function() {
     
     var formData = new FormData();
     formData.append('picture', e.target.result);
+    console.log(e.target.result)
     $.ajax({
         url: "/upload_image", 
         type: "POST", 
@@ -80,7 +81,7 @@ $('#file').change(function() {
         data: formData,
         success: function(msg){
             cameraOutput.classList.add("taken");
-            cameraOutput.src = msg.url;
+            cameraOutput.src = e.target.result;
             setTimeout(function () {
                 $("#div1").css('display','none');
             }, 1000);
