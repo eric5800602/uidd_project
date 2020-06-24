@@ -7,19 +7,16 @@ $(document).ready(function() {
   var $el,
     leftPos,
     newWidth,
+    ori_new,
     $mainNav = $(".scrollmenu");
   $(".active a").addClass("default_color")
   $mainNav.append("<li id='magic-line'></li>");
 
-  var $magicLine = $("#magic-line");
-  $magicLine
-    .width($(".active").width())
-    .css("left", $(".active a").position().left)
-    .data("origLeft", $magicLine.position().left)
-    .data("origTop", $magicLine.position().top)
-    .data("origWidth", $magicLine.width());
+  
 
   $('.scrollmenu li a').click(function(){
+    var $magicLine = $("#magic-line");
+    
     if($(".active a").hasClass("default_color")){
       $(".active a").removeClass("default_color");
     }
@@ -27,7 +24,9 @@ $(document).ready(function() {
     $el = $(this);
     $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
     leftPos = $el.position().left - $("#start").position().left;
-    newWidth = $el.parent().width();
+    ori_new = $el.parent().width();
+    newWidth = ori_new * 0.7;
+    leftPos = leftPos + 0.5*(ori_new-newWidth);
     $magicLine.stop().animate({
       left: leftPos,
       width: newWidth
@@ -38,6 +37,7 @@ $(document).ready(function() {
     /*$(".single_post").remove();*/
   });
 
+  /* Cube animate */
   $('.cube').on('click', function(){
     $('.page_title').toggleClass('clicked');
   });
@@ -52,7 +52,6 @@ $(document).ready(function() {
       Theme[0].classList.remove("space_two");
     if(Theme[0].classList.contains("space_three"))
       Theme[0].classList.remove("space_three");
-    console.log("one click!!!!!!");
   });
   $('.square_two').on('click', function(){
     $('.page_title').toggleClass('clicked');
@@ -65,7 +64,6 @@ $(document).ready(function() {
     if(Theme[0].classList.contains("space_one"))
       Theme[0].classList.remove("space_one");
     $('.Theme').addClass('space_two');
-    console.log("two click!!!!!!");
   });
   $('.square_three').on('click', function(){
     $('.page_title').toggleClass('clicked');
@@ -78,18 +76,15 @@ $(document).ready(function() {
     if(Theme[0].classList.contains("space_one"))
       Theme[0].classList.remove("space_one");
     $('.Theme').addClass('space_three');
-    console.log("three click!!!!!!");
   });
   $('.square_four').on('click', function(){
     $('.page_title').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#FFFFFF');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#0F4C81');
     $('#Theme').text('Activity');
-    
-    console.log("four click!!!!!!");
   });
   var target_tag = $("#magic-line").context.URL.split("#")[1];
-
+  
   $.ajax({
     url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
     type:'post',
