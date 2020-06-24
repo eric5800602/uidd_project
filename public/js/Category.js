@@ -41,7 +41,7 @@ $(document).ready(function() {
   $('.cube').on('click', function(){
     $('.page_title').toggleClass('clicked');
   });
-  /* Scale Text to Fit in Fixed Div */
+
   var target_tag = $("#magic-line").context.URL.split("#")[1];
 
   $.ajax({
