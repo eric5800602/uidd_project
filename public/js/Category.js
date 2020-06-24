@@ -16,6 +16,9 @@ $(document).ready(function() {
     var Theme = document.getElementsByClassName('Theme');
     if(Theme[0].classList.contains("Theme_hidden"))
       Theme[0].classList.remove("Theme_hidden");
+    var intro = document.getElementsByClassName('intro');
+    if(intro[0].classList.contains("color_changing"))
+    intro[0].classList.remove("color_changing");
     $('.activity').remove();
     console.log("remove_activity_class");
   };
@@ -120,6 +123,7 @@ $(document).ready(function() {
     $('.scrollmenu').addClass('activity_menu');
     $('.page_title').addClass('activity_page_title');
     $('.Theme').addClass('Theme_hidden');
+    $('.intro').addClass('color_changing');
     
     var html = ""
     html = html+ `

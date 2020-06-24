@@ -311,14 +311,17 @@ header {
     .intro {
       justify-content: space-between;
       width: 100%;
-      padding: 0.3rem 0.3rem 0.3rem 0.5rem; }
+      padding: 0.3rem 0.3rem 0.3rem 0.5rem; 
+      color: #FFFFFF;}
+    .color_changing{
+      color: #707070;
+    }
       .intro_title {
         overflow: hidden;
         white-space: nowrap;
         font-size: 1.1rem;
         letter-spacing: -0.04rem;
         text-overflow: ellipsis;
-        color: #FFFFFF;
         padding: 0 0 0 0.5rem; }
       .intro_account_id {
         overflow: hidden;
@@ -326,8 +329,7 @@ header {
         font-size: 0.75rem;
         text-align: right;
         letter-spacing: -0.04rem;
-        text-overflow: ellipsis;
-        color: #FFFFFF; }
+        text-overflow: ellipsis; }
       .intro_account_img {
         height: 100%;
         width: 100%;
