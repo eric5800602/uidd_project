@@ -41,7 +41,53 @@ $(document).ready(function() {
   $('.cube').on('click', function(){
     $('.page_title').toggleClass('clicked');
   });
-
+  $('.square_one').on('click', function(){
+    $('.page_title').toggleClass('clicked');
+    $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#848484');
+    $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#848484');
+    $('#Theme').text('Space');
+    $('.Theme').addClass('space_one');
+    var Theme = document.getElementsByClassName('Theme');
+    if(Theme[0].classList.contains("space_two"))
+      Theme[0].classList.remove("space_two");
+    if(Theme[0].classList.contains("space_three"))
+      Theme[0].classList.remove("space_three");
+    console.log("one click!!!!!!");
+  });
+  $('.square_two').on('click', function(){
+    $('.page_title').toggleClass('clicked');
+    $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#D28B8B');
+    $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#D28B8B');
+    $('#Theme').text('Product');
+    var Theme = document.getElementsByClassName('Theme');
+    if(Theme[0].classList.contains("space_three"))
+      Theme[0].classList.remove("space_three");
+    if(Theme[0].classList.contains("space_one"))
+      Theme[0].classList.remove("space_one");
+    $('.Theme').addClass('space_two');
+    console.log("two click!!!!!!");
+  });
+  $('.square_three').on('click', function(){
+    $('.page_title').toggleClass('clicked');
+    $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#8BA9D2');
+    $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#8BA9D2');
+    $('#Theme').text('Designer');
+    var Theme = document.getElementsByClassName('Theme');
+    if(Theme[0].classList.contains("space_two"))
+      Theme[0].classList.remove("space_two");
+    if(Theme[0].classList.contains("space_one"))
+      Theme[0].classList.remove("space_one");
+    $('.Theme').addClass('space_three');
+    console.log("three click!!!!!!");
+  });
+  $('.square_four').on('click', function(){
+    $('.page_title').toggleClass('clicked');
+    $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#FFFFFF');
+    $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#0F4C81');
+    $('#Theme').text('Activity');
+    
+    console.log("four click!!!!!!");
+  });
   var target_tag = $("#magic-line").context.URL.split("#")[1];
 
   $.ajax({

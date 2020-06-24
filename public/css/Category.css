@@ -160,15 +160,27 @@ header {
       .Theme{
         position: absolute;
         color: #FFFFFF;
-        top: 20%;
+        top: 24%;
         right: 5%;
-        font-size: 4rem;
+        font-size: 3.5rem;
         text-align: right;
         font-family: 'Roboto_Regular';
         font-weight: 600;
       }
-      .space{
+      .space_one{
+        top: 20%;
+        font-size: 3.9rem;
         letter-spacing: 0.7rem;
+      }
+      .space_two{
+        top: 24%;
+        font-size: 3.5rem;
+        letter-spacing: 0.3rem;
+      }
+      .space_three{
+        top: 26%;
+        font-size: 3rem;
+        letter-spacing: 0.25rem;
       }
       .page_title.clicked .Theme{
         right: -50%;
