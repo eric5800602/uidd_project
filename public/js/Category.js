@@ -5,13 +5,28 @@ $(document).ready(function() {
 
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
-  
+  /* Function for remove the class added in activity page */
+  var remove_activity_class = function (){
+    var scrollbar = document.getElementsByClassName('scrollmenu');
+    if(scrollbar[0].classList.contains("activity_menu"))
+      scrollbar[0].classList.remove("activity_menu");
+    var page_title = document.getElementsByClassName('page_title');
+    if(page_title[0].classList.contains("activity_page_title"))
+      page_title[0].classList.remove("activity_page_title");
+    var Theme = document.getElementsByClassName('Theme');
+    if(Theme[0].classList.contains("Theme_hidden"))
+      Theme[0].classList.remove("Theme_hidden");
+    $('.activity').remove();
+    console.log("remove_activity_class");
+  };
   /* Cube animate */
   $(document).on("click",".cube", function(){
     $('.page_title').toggleClass('clicked');
+    $('.activity_space').toggleClass('clicked');
   });
   $(document).on("click",".square_one", function(){
     $('.page_title').toggleClass('clicked');
+    $('.activity_space').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#848484');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#848484');
     $('#Theme').text('Space');
@@ -21,6 +36,7 @@ $(document).ready(function() {
       Theme[0].classList.remove("space_two");
     if(Theme[0].classList.contains("space_three"))
       Theme[0].classList.remove("space_three");
+    remove_activity_class();
     var html = ""
     html = html+ `
       <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
@@ -39,6 +55,7 @@ $(document).ready(function() {
   });
   $(document).on("click",".square_two", function(){
     $('.page_title').toggleClass('clicked');
+    $('.activity_space').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#D28B8B');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#D28B8B');
     $('#Theme').text('Product');
@@ -48,6 +65,7 @@ $(document).ready(function() {
     if(Theme[0].classList.contains("space_one"))
       Theme[0].classList.remove("space_one");
     $('.Theme').addClass('space_two');
+    remove_activity_class();
     var html = ""
     html = html+ `
       <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
@@ -67,6 +85,7 @@ $(document).ready(function() {
 
   $(document).on("click",".square_three", function(){
     $('.page_title').toggleClass('clicked');
+    $('.activity_space').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#8BA9D2');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#8BA9D2');
     $('#Theme').text('Designer');
@@ -75,6 +94,7 @@ $(document).ready(function() {
       Theme[0].classList.remove("space_two");
     if(Theme[0].classList.contains("space_one"))
       Theme[0].classList.remove("space_one");
+    remove_activity_class();
     $('.Theme').addClass('space_three');
     var html = ""
     html = html+ `
@@ -86,46 +106,31 @@ $(document).ready(function() {
     $('#Menu').html(html)
     $('#All').click();
   });
-
+  
   $(document).on("click",".square_four", function(){
     $('.page_title').toggleClass('clicked');
+    $('.activity_space').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#FFFFFF');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#0F4C81');
     $('#Theme').text('Activity');
+    var html = ""
+    html = html+ `
+      <p class="scrollmenu_text">貼文內加入標籤「經典藍」，即會出現於活動頁面 !</p>`
+    $('#Menu').html(html)
+    $('.scrollmenu').addClass('activity_menu');
+    $('.page_title').addClass('activity_page_title');
+    $('.Theme').addClass('Theme_hidden');
+    
+    var html = ""
+    html = html+ `
+      <p class="activity slogan  changing">2020代表色<br>&emsp;&emsp;&emsp;經典藍</p>\
+      <p class="activity comment  changing">經典藍給人的感覺是一個平靜的色彩，為人類心靈<br>帶來平和與寧靜，提供庇護。</p>\
+      <img class="activity Activity_tags_img  changing" src="./image/Category/Activity/Activity.png">`
+    $('#activity_text_space').html(html);
   });
-  var target_tag = $("#magic-line").context.URL.split("#")[1];
   
-  /*$.ajax({
-    url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
-    type:'post',
-    dataType: "json",
-    contentType: "application/json",
-    xhrFields: {
-      withCredentials: true
-    },
-    data: JSON.stringify({tag:this}),
-    success: function(data){
-      var html = ""
-      for(i=0; i<data.object.length; i++){
-          html = html+ `
-          <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
-            <img class="tags_img" src="${data.object[i].post_icon}">\
-                <div class="row no-gutters intro align-items-center">\
-                  <div class="col-6 intro_title">${data.object[i].title}</div>\
-                  <div class="col-4 intro_account_id">${data.object[i].name}</div>\
-                  <div class="col-2">\
-                    <img class="intro_account_img" src="${data.object[i].user_icon}"></img>\
-                  </div>\
-                </div>\
-            </img>\
-          </div>`
-      }
-        $('#myposts').html(html)
-    }
-  });*/
 
   $(document).on("click",".scrollmenu li a", function(){
-    console.log("a click");
     var $magicLine = $("#magic-line");
     
     if($(".active a").hasClass("default_color")){
@@ -177,7 +182,6 @@ $(document).ready(function() {
   });
 
   $(document).on("click",".single_post", function(){
-    console.log(this);
     localStorage.setItem("post_id",this.id);
     window.location= "./post.html" 
   });

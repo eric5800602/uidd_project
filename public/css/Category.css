@@ -21,6 +21,9 @@ header {
       width: 100%;
       position: relative;
     }
+    .activity_page_title{
+      height: 12.5rem;
+    }
       /*  Cube  */
       .cube{
         position: absolute;
@@ -158,6 +161,49 @@ header {
         right: 1%;
         opacity: 1;
       }
+      .activity_space{
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+        .slogan{
+          font-size: 2rem;
+          font-family: Microsoft JhengHei;
+          top: 15%;
+          line-height: 2.5rem;
+          left: 31%;
+          color: white;
+        }
+        .comment{
+          font-size: 1.4rem;
+          font-family: Microsoft JhengHei;
+          letter-spacing: -0.1rem;
+          line-height: 2rem;
+          bottom: 0;
+          left: 1rem;
+          color: white;
+        }
+        .Activity_tags_img{
+          width: 14%;
+          height: 53%;
+          top: 10%;
+          right: 8%;
+        }
+        .activity{
+          position: absolute;
+        }
+        .activity_space.clicked .slogan{
+          left: 51%;
+          opacity: 0;
+        }
+        .activity_space.clicked .comment{
+          bottom: 20%;
+          opacity: 0;
+        }
+        .activity_space.clicked .Activity_tags_img{
+          right: -12%;
+          opacity: 0;
+        }
 
       /*  Theme  */
       .Theme{
@@ -169,6 +215,10 @@ header {
         text-align: right;
         font-family: 'Roboto_Regular';
         font-weight: 600;
+        opacity: 1;
+      }
+      .Theme_hidden{
+        opacity: 0;
       }
       .space_one{
         top: 20%;
@@ -199,6 +249,17 @@ header {
       white-space: nowrap;
       margin-bottom: 0.5rem;
     }
+    div.activity_menu{
+      background-color: #CBCBCB;
+      overflow-x: hidden;
+      text-align: center;
+      height: 2.4rem;
+      padding-top: 0.4rem;
+    }
+      .scrollmenu_text{
+        font-size: 1.2rem;
+        letter-spacing: -0.1rem;
+      }
     div.scrollmenu li a.default_color{
       color: #FFFFFF ;
     }
