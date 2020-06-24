@@ -5,8 +5,7 @@ $(document).ready(function() {
 
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
-  $(".active a").addClass("default_color")
-
+  
   /* Cube animate */
   $(document).on("click",".cube", function(){
     $('.page_title').toggleClass('clicked');
@@ -24,19 +23,19 @@ $(document).ready(function() {
       Theme[0].classList.remove("space_three");
     var html = ""
     html = html+ `
-      <li class="item active" id="start"><a href="#All">All</a></li>\
-      <li class="item"><a href="#客廳">客廳</a></li>\
-      <li class="item"><a href="#臥室">臥室</a></li>\
-      <li class="item"><a href="#書房">書房</a></li>\
-      <li class="item"><a href="#浴室">浴室</a></li>\
-      <li class="item"><a href="#套房">套房</a></li>\
-      <li class="item"><a href="#雅房">雅房</a></li>\
-      <li class="item"><a href="#餐廚">餐廚</a></li>\
-      <li class="item"><a href="#玄關">玄關</a></li>\
-      <li class="item"><a href="#戶外空間">戶外空間</a></li>\
+      <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item"><a href="#客廳" id="客廳">客廳</a></li>\
+      <li class="item"><a href="#臥室" id="臥室">臥室</a></li>\
+      <li class="item"><a href="#書房" id="書房">書房</a></li>\
+      <li class="item"><a href="#浴室" id="浴室">浴室</a></li>\
+      <li class="item"><a href="#套房" id="套房">套房</a></li>\
+      <li class="item"><a href="#雅房" id="雅房">雅房</a></li>\
+      <li class="item"><a href="#餐廚" id="餐廚">餐廚</a></li>\
+      <li class="item"><a href="#玄關" id="玄關">玄關</a></li>\
+      <li class="item"><a href="#戶外空間" id="戶外空間">戶外空間</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    $(".active a").addClass("default_color")
+    $('#All').click();
   });
   $(document).on("click",".square_two", function(){
     $('.page_title').toggleClass('clicked');
@@ -51,20 +50,19 @@ $(document).ready(function() {
     $('.Theme').addClass('space_two');
     var html = ""
     html = html+ `
-      <li class="item active" id="start"><a href="#All">All</a></li>\
-      <li class="item"><a href="#桌子">桌子</a></li>\
-      <li class="item"><a href="#沙發">沙發</a></li>\
-      <li class="item"><a href="#燈具">燈具</a></li>\
-      <li class="item"><a href="#椅子">椅子</a></li>\
-      <li class="item"><a href="#收納櫃">收納櫃</a></li>\
-      <li class="item"><a href="#寢具">寢具</a></li>\
-      <li class="item"><a href="#衣櫃">衣櫃</a></li>\
-      <li class="item"><a href="#衛浴用品">衛浴用品</a></li>\
-      <li class="item"><a href="#窗簾">窗簾</a></li>\
+      <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item"><a href="#桌子" id="桌子">桌子</a></li>\
+      <li class="item"><a href="#沙發" id="沙發">沙發</a></li>\
+      <li class="item"><a href="#燈具" id="燈具">燈具</a></li>\
+      <li class="item"><a href="#椅子" id="椅子">椅子</a></li>\
+      <li class="item"><a href="#收納櫃" id="收納櫃">收納櫃</a></li>\
+      <li class="item"><a href="#寢具" id="寢具">寢具</a></li>\
+      <li class="item"><a href="#衣櫃" id="衣櫃">衣櫃</a></li>\
+      <li class="item"><a href="#衛浴用品" id="衛浴用品">衛浴用品</a></li>\
+      <li class="item"><a href="#窗簾" id="窗簾">窗簾</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    $(".active a").addClass("default_color")
-
+    $('#All').click();
   });
 
   $(document).on("click",".square_three", function(){
@@ -80,13 +78,13 @@ $(document).ready(function() {
     $('.Theme').addClass('space_three');
     var html = ""
     html = html+ `
-      <li class="item active" id="start"><a href="#All">All</a></li>\
-      <li class="item"><a href="#住宅空間">住宅空間</a></li>\
-      <li class="item"><a href="#商業空間">商業空間</a></li>\
-      <li class="item"><a href="#辦公空間">辦公空間</a></li>\
+      <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item"><a href="#住宅空間"  id="住宅空間">住宅空間</a></li>\
+      <li class="item"><a href="#商業空間" id="商業空間">商業空間</a></li>\
+      <li class="item"><a href="#辦公空間" id="辦公空間">辦公空間</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    $(".active a").addClass("default_color")
+    $('#All').click();
   });
 
   $(document).on("click",".square_four", function(){
@@ -97,7 +95,7 @@ $(document).ready(function() {
   });
   var target_tag = $("#magic-line").context.URL.split("#")[1];
   
-  $.ajax({
+  /*$.ajax({
     url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
     type:'post',
     dataType: "json",
@@ -105,9 +103,8 @@ $(document).ready(function() {
     xhrFields: {
       withCredentials: true
     },
-    data: JSON.stringify({tag:target_tag}),
+    data: JSON.stringify({tag:this}),
     success: function(data){
-      console.log(data.object[0])
       var html = ""
       for(i=0; i<data.object.length; i++){
           html = html+ `
@@ -125,7 +122,7 @@ $(document).ready(function() {
       }
         $('#myposts').html(html)
     }
-  });
+  });*/
 
   $(document).on("click",".scrollmenu li a", function(){
     console.log("a click");
@@ -137,7 +134,7 @@ $(document).ready(function() {
     $('.scrollmenu li a').data('bgcolor', $('.scrollmenu li a').css('color')).css('color', '#5F5F5F');
     $el = $(this);
     $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
-    leftPos = $el.position().left - $("#start").position().left;
+    leftPos = $el.position().left - $("#Start").position().left;
     ori_new = $el.parent().width();
     newWidth = ori_new * 0.7;
     leftPos = leftPos + 0.5*(ori_new-newWidth);
@@ -148,6 +145,35 @@ $(document).ready(function() {
     $magicLine
       .data("origLeft", $(this).position().left)
       .data("origWidth", $(this).position().width);
+    var now_tag = this.id;
+    $.ajax({
+      url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
+      type:'post',
+      dataType: "json",
+      contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      data: JSON.stringify({tag:now_tag}),
+      success: function(data){
+        var html = ""
+        for(i=0; i<data.object.length; i++){
+            html = html+ `
+            <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
+              <img class="tags_img" src="${data.object[i].post_icon}">\
+                  <div class="row no-gutters intro align-items-center">\
+                    <div class="col-6 intro_title">${data.object[i].title}</div>\
+                    <div class="col-4 intro_account_id">${data.object[i].name}</div>\
+                    <div class="col-2">\
+                      <img class="intro_account_img" src="${data.object[i].user_icon}"></img>\
+                    </div>\
+                  </div>\
+              </img>\
+            </div>`
+        }
+          $('#myposts').html(html)
+      }
+    });
   });
 
   $(document).on("click",".single_post", function(){
@@ -162,6 +188,7 @@ $(document).ready(function() {
     window.location= "./post2.html" 
   });
 
+  $('#All').click();
 });
 
 
