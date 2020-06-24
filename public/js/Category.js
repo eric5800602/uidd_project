@@ -4,44 +4,14 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 $(document).ready(function() {
 
   /* Magicline for scrollMenu */
-  var $el,
-    leftPos,
-    newWidth,
-    ori_new,
-    $mainNav = $(".scrollmenu");
+  var $el, leftPos, newWidth, ori_new;
   $(".active a").addClass("default_color")
-  $mainNav.append("<li id='magic-line'></li>");
-
-  
-
-  $('.scrollmenu li a').click(function(){
-    var $magicLine = $("#magic-line");
-    
-    if($(".active a").hasClass("default_color")){
-      $(".active a").removeClass("default_color");
-    }
-    $('.scrollmenu li a').data('bgcolor', $('.scrollmenu li a').css('color')).css('color', '#5F5F5F');
-    $el = $(this);
-    $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
-    leftPos = $el.position().left - $("#start").position().left;
-    ori_new = $el.parent().width();
-    newWidth = ori_new * 0.7;
-    leftPos = leftPos + 0.5*(ori_new-newWidth);
-    $magicLine.stop().animate({
-      left: leftPos,
-      width: newWidth
-    });
-    $magicLine
-      .data("origLeft", $(this).position().left)
-      .data("origWidth", $(this).position().width);
-    /*$(".single_post").remove();*/
-  });
 
   /* Cube animate */
-  $('.cube').on('click', function(){
+  $(document).on("click",".cube", function(){
     $('.page_title').toggleClass('clicked');
   });
-  $('.square_one').on('click', function(){
+  $(document).on("click",".square_one", function(){
     $('.page_title').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#848484');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#848484');
@@ -52,8 +22,23 @@ $(document).ready(function() {
       Theme[0].classList.remove("space_two");
     if(Theme[0].classList.contains("space_three"))
       Theme[0].classList.remove("space_three");
+    var html = ""
+    html = html+ `
+      <li class="item active" id="start"><a href="#All">All</a></li>\
+      <li class="item"><a href="#客廳">客廳</a></li>\
+      <li class="item"><a href="#臥室">臥室</a></li>\
+      <li class="item"><a href="#書房">書房</a></li>\
+      <li class="item"><a href="#浴室">浴室</a></li>\
+      <li class="item"><a href="#套房">套房</a></li>\
+      <li class="item"><a href="#雅房">雅房</a></li>\
+      <li class="item"><a href="#餐廚">餐廚</a></li>\
+      <li class="item"><a href="#玄關">玄關</a></li>\
+      <li class="item"><a href="#戶外空間">戶外空間</a></li>\
+      <li id='magic-line'></li>`
+    $('#Menu').html(html)
+    $(".active a").addClass("default_color")
   });
-  $('.square_two').on('click', function(){
+  $(document).on("click",".square_two", function(){
     $('.page_title').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#D28B8B');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#D28B8B');
@@ -64,8 +49,25 @@ $(document).ready(function() {
     if(Theme[0].classList.contains("space_one"))
       Theme[0].classList.remove("space_one");
     $('.Theme').addClass('space_two');
+    var html = ""
+    html = html+ `
+      <li class="item active" id="start"><a href="#All">All</a></li>\
+      <li class="item"><a href="#桌子">桌子</a></li>\
+      <li class="item"><a href="#沙發">沙發</a></li>\
+      <li class="item"><a href="#燈具">燈具</a></li>\
+      <li class="item"><a href="#椅子">椅子</a></li>\
+      <li class="item"><a href="#收納櫃">收納櫃</a></li>\
+      <li class="item"><a href="#寢具">寢具</a></li>\
+      <li class="item"><a href="#衣櫃">衣櫃</a></li>\
+      <li class="item"><a href="#衛浴用品">衛浴用品</a></li>\
+      <li class="item"><a href="#窗簾">窗簾</a></li>\
+      <li id='magic-line'></li>`
+    $('#Menu').html(html)
+    $(".active a").addClass("default_color")
+
   });
-  $('.square_three').on('click', function(){
+
+  $(document).on("click",".square_three", function(){
     $('.page_title').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#8BA9D2');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#8BA9D2');
@@ -76,8 +78,18 @@ $(document).ready(function() {
     if(Theme[0].classList.contains("space_one"))
       Theme[0].classList.remove("space_one");
     $('.Theme').addClass('space_three');
+    var html = ""
+    html = html+ `
+      <li class="item active" id="start"><a href="#All">All</a></li>\
+      <li class="item"><a href="#住宅空間">住宅空間</a></li>\
+      <li class="item"><a href="#商業空間">商業空間</a></li>\
+      <li class="item"><a href="#辦公空間">辦公空間</a></li>\
+      <li id='magic-line'></li>`
+    $('#Menu').html(html)
+    $(".active a").addClass("default_color")
   });
-  $('.square_four').on('click', function(){
+
+  $(document).on("click",".square_four", function(){
     $('.page_title').toggleClass('clicked');
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#FFFFFF');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#0F4C81');
@@ -113,6 +125,29 @@ $(document).ready(function() {
       }
         $('#myposts').html(html)
     }
+  });
+
+  $(document).on("click",".scrollmenu li a", function(){
+    console.log("a click");
+    var $magicLine = $("#magic-line");
+    
+    if($(".active a").hasClass("default_color")){
+      $(".active a").removeClass("default_color");
+    }
+    $('.scrollmenu li a').data('bgcolor', $('.scrollmenu li a').css('color')).css('color', '#5F5F5F');
+    $el = $(this);
+    $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
+    leftPos = $el.position().left - $("#start").position().left;
+    ori_new = $el.parent().width();
+    newWidth = ori_new * 0.7;
+    leftPos = leftPos + 0.5*(ori_new-newWidth);
+    $magicLine.stop().animate({
+      left: leftPos,
+      width: newWidth
+    });
+    $magicLine
+      .data("origLeft", $(this).position().left)
+      .data("origWidth", $(this).position().width);
   });
 
   $(document).on("click",".single_post", function(){
