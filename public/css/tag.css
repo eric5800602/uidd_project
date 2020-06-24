@@ -5,7 +5,7 @@ body{
     position: relative;
     height: 100%;
     background-color: #656565;
-    padding: 7rem 0 6.8rem 0; /* Header height and footer height */
+    padding: 6.5rem 0 6.4rem 0; /* Header height and footer height */
     box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;

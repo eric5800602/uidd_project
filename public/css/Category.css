@@ -8,54 +8,116 @@ header {
   #id_container{
     position: relative;
     height: 100%;
-    padding: 7rem 0 6.8rem 0; /* Header height and footer height */
+    padding: 6.5rem 0 6.4rem 0; /* Header height and footer height */
     box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1;
-}
-  .page{
-    margin-bottom: 0rem;
-    }
+  }
+
     /*  Title  */
     .page_title{
-      margin: 0 0 9rem 0;
+      height: 9.5rem;
+      width: 100%;
+      position: relative;
     }
       /*  Cube  */
       .cube{
-        position: relative;
+        position: absolute;
+        height: 2.7rem;
+        width: 2.7rem;
+        top: 3.5rem;
+        left: 1.5rem;
+        z-index: 5;
+        opacity: 0;
       }
-      .square {
-        position:absolute;
+      .square_one{
+        position: absolute;
+        top: 3.5rem;
+        left: 1.5rem;
         height: 1.2rem;
         width: 1.2rem;
         background-color: #FFFFFF;
+        border: 0.2rem solid white;
+        z-index: 1;
+        transition: transform .8s cubic-bezier(0.42, 0, 0.15, 1.4);
       }
-      .one{
+      .square_two{
         position: absolute;
-        top: 10.5rem;
-        left: 1.5rem;
-      }
-      .two{
-        position: absolute;
-        top: 10.5rem;
+        top: 3.5rem;
         left: 3rem;
+        height: 1.2rem;
+        width: 1.2rem;
+        background-color: #FFFFFF;
+        border: 0.2rem solid white;
+        z-index: 3;
+        transition: transform .8s cubic-bezier(0.42, 0, 0.15, 1.4);
       }
-      .three{
+      .square_three{
         position: absolute;
-        top: 12rem;
+        top: 5rem;
         left: 1.5rem;
+        height: 1.2rem;
+        width: 1.2rem;
+        background-color: #FFFFFF;
+        border: 0.2rem solid white;
+        z-index: 2;
+        transition: transform .8s cubic-bezier(0.42, 0, 0.15, 1.4);
       }
-      .four{
+      .square_four{
         position: absolute;
-        top: 12rem;
+        top: 5rem;
         left: 3rem;
+        height: 1.2rem;
+        width: 1.2rem;
+        background-color: #FFFFFF;
+        border: 0.2rem solid white;
+        z-index: 3;
+        transition: transform .8s cubic-bezier(0.42, 0, 0.15, 1.4);
       }
+      .page_title.clicked .square_one{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        height: 100%;
+        width: 25%;
+        background-color: #848484;
+        transform: rotate(180deg);
+      }
+      .page_title.clicked .square_two{
+        position: absolute;
+        top: 0%;
+        left: 25%;
+        height: 100%;
+        width: 25%;
+        background-color: #D28B8B;
+        transform: rotate(180deg);
+      }
+      .page_title.clicked .square_three{
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        height: 100%;
+        width: 25%;
+        background-color: #8BA9D2;
+        transform: rotate(180deg);
+      }
+      .page_title.clicked .square_four{
+        position: absolute;
+        top: 0%;
+        left: 75%;
+        height: 100%;
+        width: 25%;
+        background-color: #848484;
+        transform: rotate(180deg);
+      }
+
+
       /*  Theme  */
       .Theme{
         position: absolute;
         color: #FFFFFF;
-        top: 8.9rem;
+        top: 1.9rem;
         left: 15rem;
         font-size: 4rem;
         text-align: right;
@@ -68,11 +130,11 @@ header {
     /*  Scrollable Menu  */
 
     div.scrollmenu {
-      margin-top: 1rem;
       position: relative;
       background-color: #1D1D1D;
       overflow-x: auto;
       white-space: nowrap;
+      margin-bottom: 0.5rem;
     }
     div.scrollmenu li a.default_color{
       color: #FFFFFF ;
@@ -118,11 +180,6 @@ header {
     .tags_img {
       height:100%;
       width:100%;
-    }
-
-    .spacing{
-      margin-bottom: 0.5rem;
-      width: 100%;
     }
     .intro {
       justify-content: space-between;
@@ -170,4 +227,3 @@ header {
     position: absolute;
     top: 5.2vh;
     right: 6vw; }
-  
