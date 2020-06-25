@@ -33,7 +33,7 @@ $(document).ready(function() {
       var html = ""
       for(i=0; i<data.object.length; i++){
         html = html+ `<div class="posts_post" id="${data.object[i].id}">\
-            <img class="img-fluid" src="${data.object[i].post_icon}">\
+            <img class="posts_post_img" src="${data.object[i].post_icon}">\
             <div class="posts_post_detail">\
               <p class="posts_post_detail_title">${data.object[i].title}</p>\
               <div class="posts_post_detail_account">\
