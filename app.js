@@ -34,9 +34,9 @@ var storage = multer.diskStorage({
         })
     }
 });
-var upload = multer({ storage: storage, limits: { fileSize: 10000000 } });
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
-app.use(bodyParser.json({ limit: '50mb' }))
+var upload = multer({ storage: storage, limits: { fileSize: 25*1024*1024*1024,fieldSize: 25 * 1024 * 1024 } });
+app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }))
+app.use(bodyParser.json({ limit: '100mb' }))
 app.use(session({
     secret: 'uiddgroupK',
     cookie: { maxAge: 60 * 10000 }
@@ -609,7 +609,7 @@ function decodeBase64Image(dataString) {
   
     return response;
   }
-app.post('/upload_image',upload.array(),function(req,res){
+app.post('/upload_image',upload.single(),function(req,res){
     var image = req.body.picture.replace(/^data:image\/(png|jpg|jepg|webp);base64,/,"");
     var imageBuffer = decodeBase64Image(req.body.picture);
     var type = req.body.picture.match(/\/.*;/)[0];

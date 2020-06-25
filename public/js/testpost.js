@@ -71,6 +71,7 @@ $('#file').change(function() {
     
     var formData = new FormData();
     formData.append('picture', e.target.result);
+    console.log(formData.get('picture'));
     $.ajax({
         url: "/upload_image", 
         type: "POST", 
