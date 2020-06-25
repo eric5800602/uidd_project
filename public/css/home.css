@@ -12,9 +12,7 @@ header {
     display: inline-block;
     width: 50%; }
     .posts_post_img {
-      max-width: 100%;
-      height:auto;  
-    }
+      width: 100%; }
     .posts_post_detail {
       display: inline-flex;
       justify-content: space-between;
