@@ -310,7 +310,7 @@ header {
       margin-bottom: 2rem;
     }*/
     .single_post{
-      width: auto;
+      width: 100%;
     }
     .tags_img {
       height:100%;
@@ -333,7 +333,7 @@ header {
         padding: 0 0 0 0.5rem; }
       .intro_account_id {
         overflow: hidden;
-        margin: auto;
+        /*margin: auto;*/
         font-size: 0.75rem;
         text-align: right;
         letter-spacing: -0.04rem;
