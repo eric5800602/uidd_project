@@ -272,6 +272,7 @@ header {
     }
     div.scrollmenu li {
       display: inline-block;
+      text-decoration: none;
       text-align: center;
     }
     div.scrollmenu a {
@@ -283,6 +284,9 @@ header {
       padding-left: 1.5rem;
       text-decoration: none;
       font-size: 1.3rem;
+    }
+    a:focus{
+      outline: none;
     }
     #magic-line {
       position: absolute;
@@ -313,7 +317,7 @@ header {
       width:100%;
     }
     .intro {
-      justify-content: space-between;
+      /*justify-content: space-between;*/
       width: 100%;
       padding: 0.3rem 0.3rem 0.3rem 0.5rem; 
       color: #FFFFFF;}
