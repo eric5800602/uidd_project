@@ -194,7 +194,7 @@ $(document).ready(function() {
               </img>\
             </div>`
         }*/
-        var i=1;
+        var i=3;
         html = html+ `
             <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
               <img class="tags_img" src="${data.object[i].post_icon}">\
@@ -207,7 +207,7 @@ $(document).ready(function() {
                   </div>\
               </img>\
             </div>`
-            i=2;
+            i=0;
             html = html+ `
             <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
               <img class="tags_img" src="${data.object[i].post_icon}">\
