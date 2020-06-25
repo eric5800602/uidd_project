@@ -40,7 +40,9 @@ cameraTrigger.onclick = function() {
             setTimeout(function () {
             $("#posting").css('opacity','1');
             }, 1000);
-           
+            setTimeout(function () {
+            $("#tag").css('opacity','1');
+            }, 1000);
 		 setTimeout(function () {
             $("#Submit_button").css('opacity','1');
             }, 100);		
@@ -89,7 +91,9 @@ $('#file').change(function() {
             setTimeout(function () {
             $("#Submit_button").css('opacity','1');
             }, 100);
-		
+		setTimeout(function () {
+            $("#tag").css('opacity','1');
+            }, 1000);
             cameraView.srcObject.getTracks().forEach(function(track) {
                 track.stop();
               });
@@ -106,7 +110,26 @@ file.onclick = function() {
 };
 
 //tags
-  var tags = document.getElementsByClassName('tags')
+
+	 
+	 $(document).ready(function () {
+		 $.ajax({
+        url: '/hot_tag',
+        type: 'get',
+        dataType: "json",
+        contentType: "application/json",
+        xhrFields: {
+        withCredentials: true
+        },
+        success: function (data) {
+            var tags = document.getElementsByClassName('tags');
+            Array.prototype.forEach.call(tags, function(e,index) {
+                 e.innerText = data.tags[index].name
+            });
+    }})
+    
+   
+    var tags = document.getElementsByClassName('tags')
     for(var i = 0; i < tags.length; i++) {
         (function(index) {
             tags[index].addEventListener("click", function() {
@@ -122,23 +145,10 @@ file.onclick = function() {
            })
         })(i);
       }
-	  var confirm = document.getElementById('Submit_button');
+   
+    var confirm = document.getElementById('Submit_button');
     confirm.addEventListener("click",function(){
-		$.ajax({
-        url: '/hot_tag',
-        type: 'get',
-        dataType: "json",
-        contentType: "application/json",
-        xhrFields: {
-        withCredentials: true
-        },
-        success: function (data) {
-            var tags = document.getElementsByClassName('tags');
-            Array.prototype.forEach.call(tags, function(e,index) {
-                 e.innerText = data.tags[index].name
-            });
-    }})
-         var tags = new Array();        
+        var tags = new Array();        
         var tmp = document.getElementsByClassName('tags_click');
         for(var i = 0; i < tmp.length; i++) {
             (function(index) {
@@ -155,20 +165,21 @@ file.onclick = function() {
             withCredentials: true
             },
             data: JSON.stringify({
+              
                 tags:tags
-    
+               
             }),
             success: function (data) {
                 //上傳成功之後，返回物件data         
                 console.log(data)
                 if(data.success === false){
-                     console.log("nooooo")
+                     console.log(" noooo");
                 }
                 else if(data.success === true){
-                    console.log("goooood")
+                     console.log(" oooogood");
                 }
         }})
-	 $(document).ready(function () {
+    })
 		 $('#Submit_button').click((event) => {
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
@@ -214,7 +225,7 @@ file.onclick = function() {
   })
 	 })
 	 
-	 })
+	
 //select
 var sel1 = document.querySelector('#sel1');
 var sel2 = document.querySelector('#sel2');
