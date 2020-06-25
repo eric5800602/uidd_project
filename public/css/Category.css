@@ -21,6 +21,9 @@ header {
       width: 100%;
       position: relative;
     }
+    .activity_clicked.page_title{
+      height: 12.5rem;
+    }
     .activity_page_title{
       height: 12.5rem;
     }
@@ -255,6 +258,7 @@ header {
       text-align: center;
       height: 2.4rem;
       padding-top: 0.4rem;
+      margin-bottom: 0;
     }
       .scrollmenu_text{
         font-size: 1.2rem;
@@ -313,7 +317,7 @@ header {
       width: 100%;
       padding: 0.3rem 0.3rem 0.3rem 0.5rem; 
       color: #FFFFFF;}
-    .color_changing{
+    .clicked .intro{
       color: #707070;
     }
       .intro_title {

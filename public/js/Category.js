@@ -11,21 +11,32 @@ $(document).ready(function() {
     if(scrollbar[0].classList.contains("activity_menu"))
       scrollbar[0].classList.remove("activity_menu");
     var page_title = document.getElementsByClassName('page_title');
-    if(page_title[0].classList.contains("activity_page_title"))
-      page_title[0].classList.remove("activity_page_title");
+    if(page_title[0].classList.contains("activity_clicked"))
+      page_title[0].classList.remove("activity_clicked");
+    var activity_space = document.getElementsByClassName('activity_space');
+    if(activity_space[0].classList.contains("clicked"))
+      activity_space[0].classList.remove("clicked");
     var Theme = document.getElementsByClassName('Theme');
     if(Theme[0].classList.contains("Theme_hidden"))
       Theme[0].classList.remove("Theme_hidden");
-    var intro = document.getElementsByClassName('intro');
-    if(intro[0].classList.contains("color_changing"))
-    intro[0].classList.remove("color_changing");
-    $('.activity').remove();
+    
+    $('#Activity_tags_img').remove();
+    $('#slogan').remove();
+    $('#comment').remove();
     console.log("remove_activity_class");
+    
+    var myposts = document.getElementById('myposts');
+    if(myposts.classList.contains("clicked"))
+      myposts.classList.remove("clicked");
   };
   /* Cube animate */
   $(document).on("click",".cube", function(){
     $('.page_title').toggleClass('clicked');
     $('.activity_space').toggleClass('clicked');
+    /*var page_title = document.getElementsByClassName('page_title');
+    if(page_title[0].classList.contains("activity_page_title"))
+      page_title[0].classList.remove("activity_page_title");*/
+    
   });
   $(document).on("click",".square_one", function(){
     $('.page_title').toggleClass('clicked');
@@ -121,16 +132,18 @@ $(document).ready(function() {
       <p class="scrollmenu_text">貼文內加入標籤「經典藍」，即會出現於活動頁面 !</p>`
     $('#Menu').html(html)
     $('.scrollmenu').addClass('activity_menu');
-    $('.page_title').addClass('activity_page_title');
+    //$('.page_title').addClass('activity_page_title');
     $('.Theme').addClass('Theme_hidden');
-    $('.intro').addClass('color_changing');
+    $('#myposts').addClass('clicked');
+    $('.page_title').addClass('activity_clicked');
     
     var html = ""
     html = html+ `
-      <p class="activity slogan  changing">2020代表色<br>&emsp;&emsp;&emsp;經典藍</p>\
-      <p class="activity comment  changing">經典藍給人的感覺是一個平靜的色彩，為人類心靈<br>帶來平和與寧靜，提供庇護。</p>\
-      <img class="activity Activity_tags_img  changing" src="./image/Category/Activity/Activity.png">`
+      <p class="activity slogan changing" id="slogan">2020代表色<br>&emsp;&emsp;&emsp;經典藍</p>\
+      <p class="activity comment changing" id="comment">經典藍給人的感覺是一個平靜的色彩，為人類心靈<br>帶來平和與寧靜，提供庇護。</p>\
+      <img class="activity Activity_tags_img changing" id="Activity_tags_img" src="./image/Category/Activity/Activity.png">`
     $('#activity_text_space').html(html);
+    console.log("Four clicked");
   });
   
 
@@ -155,6 +168,7 @@ $(document).ready(function() {
       .data("origLeft", $(this).position().left)
       .data("origWidth", $(this).position().width);
     var now_tag = this.id;
+    
     $.ajax({
       url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
       type:'post',
