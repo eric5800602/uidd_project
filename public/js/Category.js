@@ -180,7 +180,7 @@ $(document).ready(function() {
       data: JSON.stringify({tag:now_tag}),
       success: function(data){
         var html = ""
-        for(i=0; i<data.object.length; i++){
+        /*for(i=0; i<data.object.length; i++){
             html = html+ `
             <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
               <img class="tags_img" src="${data.object[i].post_icon}">\
@@ -193,8 +193,33 @@ $(document).ready(function() {
                   </div>\
               </img>\
             </div>`
-        }
-        alert(data.object[1].title);
+        }*/
+        var i=1;
+        html = html+ `
+            <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
+              <img class="tags_img" src="${data.object[i].post_icon}">\
+                  <div class="row no-gutters intro align-items-center">\
+                    <div class="col-6 intro_title">${data.object[i].title}</div>\
+                    <div class="col-4 intro_account_id">${data.object[i].name}</div>\
+                    <div class="col-2">\
+                      <img class="intro_account_img" src="${data.object[i].user_icon}"></img>\
+                    </div>\
+                  </div>\
+              </img>\
+            </div>`
+            i=2;
+            html = html+ `
+            <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
+              <img class="tags_img" src="${data.object[i].post_icon}">\
+                  <div class="row no-gutters intro align-items-center">\
+                    <div class="col-6 intro_title">${data.object[i].title}</div>\
+                    <div class="col-4 intro_account_id">${data.object[i].name}</div>\
+                    <div class="col-2">\
+                      <img class="intro_account_img" src="${data.object[i].user_icon}"></img>\
+                    </div>\
+                  </div>\
+              </img>\
+            </div>`
         $('#myposts').html(html)
       }
     });
