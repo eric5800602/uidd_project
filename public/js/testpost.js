@@ -40,9 +40,7 @@ cameraTrigger.onclick = function() {
             setTimeout(function () {
             $("#posting").css('opacity','1');
             }, 1000);
-            setTimeout(function () {
-            $("#tag").css('opacity','1');
-            }, 1000);
+           
 		 setTimeout(function () {
             $("#Submit_button").css('opacity','1');
             }, 100);		
@@ -91,9 +89,7 @@ $('#file').change(function() {
             setTimeout(function () {
             $("#Submit_button").css('opacity','1');
             }, 100);
-		setTimeout(function () {
-            $("#tag").css('opacity','1');
-            }, 1000);
+		
             cameraView.srcObject.getTracks().forEach(function(track) {
                 track.stop();
               });
@@ -128,6 +124,20 @@ file.onclick = function() {
       }
 	  var confirm = document.getElementById('Submit_button');
     confirm.addEventListener("click",function(){
+		$.ajax({
+        url: '/hot_tag',
+        type: 'get',
+        dataType: "json",
+        contentType: "application/json",
+        xhrFields: {
+        withCredentials: true
+        },
+        success: function (data) {
+            var tags = document.getElementsByClassName('tags');
+            Array.prototype.forEach.call(tags, function(e,index) {
+                 e.innerText = data.tags[index].name
+            });
+    }})
          var tags = new Array();        
         var tmp = document.getElementsByClassName('tags_click');
         for(var i = 0; i < tmp.length; i++) {
@@ -145,7 +155,6 @@ file.onclick = function() {
             withCredentials: true
             },
             data: JSON.stringify({
-                
                 tags:tags
     
             }),
@@ -153,11 +162,10 @@ file.onclick = function() {
                 //上傳成功之後，返回物件data         
                 console.log(data)
                 if(data.success === false){
-                    alert("請先登入您的帳號")
-                    window.location = '/login.html';
+                     console.log("nooooo")
                 }
                 else if(data.success === true){
-                    window.location = '/home.html';
+                    console.log("goooood")
                 }
         }})
 	 $(document).ready(function () {
