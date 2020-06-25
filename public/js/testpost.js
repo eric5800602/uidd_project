@@ -110,33 +110,7 @@ file.onclick = function() {
 };
 
 //tags
- var tags = document.getElementsByClassName('tags')
-    for(var i = 0; i < tags.length; i++) {
-        (function(index) {
-            console.log(i);
-            tags[index].addEventListener("click", function() {
-                if (this.classList.contains("tags_click")) {
-                    this.classList.add("tags_double_click");
-                    this.classList.remove("tags_click");
-                } else {
-                    this.classList.add("tags_click");
-                    if (this.classList.contains("tags_double_click")) {
-                        this.classList.remove("tags_double_click");
-                    }
-                }
-           })
-        })(i);
-      }
-	  var confirm = document.getElementById('Submit_button');
-    confirm.addEventListener("click",function(){
-        var tags = new Array();
-        var tmp = document.getElementsByClassName('tags_click');
-        for(var i = 0; i < tmp.length; i++) {
-            (function(index) {
-                tags.push(tmp[i].textContent);
-            })(i);
-        }
-		        console.log(tags)
+
 	 $(document).ready(function () {
 		 $('#Submit_button').click((event) => {
     $.post({
@@ -153,7 +127,7 @@ file.onclick = function() {
         title: $('#ajax-form input[name=fName]').val(),
         explanation: $('#explanation').val(),
 		tags: $('#ajax-form3 input[name=tName]').val(),
-		tags:tags,
+	
       }), 
 	 
       success: function (msg) {
@@ -218,4 +192,74 @@ $( "#sel1" ).change(function() {
 		
 	}
 });
-
+//tags
+$(document).ready(function() {
+    $.ajax({
+        url: '/hot_tag',
+        type: 'get',
+        dataType: "json",
+        contentType: "application/json",
+        xhrFields: {
+        withCredentials: true
+        },
+        success: function (data) {
+            var tags = document.getElementsByClassName('tags');
+            Array.prototype.forEach.call(tags, function(e,index) {
+                 e.innerText = data.tags[index].name
+            });
+    }})
+    
+   
+    var tags = document.getElementsByClassName('tags')
+    for(var i = 0; i < tags.length; i++) {
+        (function(index) {
+            tags[index].addEventListener("click", function() {
+                if (this.classList.contains("tags_click")) {
+                    this.classList.add("tags_double_click");
+                    this.classList.remove("tags_click");
+                } else {
+                    this.classList.add("tags_click");
+                    if (this.classList.contains("tags_double_click")) {
+                        this.classList.remove("tags_double_click");
+                    }
+                }
+           })
+        })(i);
+      }
+   
+    var confirm = document.getElementById('Submit_button');
+    confirm.addEventListener("click",function(){
+        var tags = new Array();        
+        var tmp = document.getElementsByClassName('tags_click');
+        for(var i = 0; i < tmp.length; i++) {
+            (function(index) {
+                tags.push(tmp[i].textContent);
+            })(i);
+        }       
+        console.log(tags)
+        $.ajax({
+            url: '/modify_tags',
+            type: 'POST',
+            dataType: "json",
+            contentType: "application/json",
+            xhrFields: {
+            withCredentials: true
+            },
+            data: JSON.stringify({
+               
+                tags:tags,
+               
+            }),
+            success: function (data) {
+                //上傳成功之後，返回物件data         
+                console.log(data)
+                if(data.success === false){
+                    alert("請先登入您的帳號")
+                    window.location = '/login.html';
+                }
+                else if(data.success === true){
+                    console.log("nononono");
+                }t
+        }})
+    })
+})
