@@ -157,7 +157,7 @@ file.onclick = function() {
   })
 	 })
 	 
-	 })
+	
 //select
 var sel1 = document.querySelector('#sel1');
 var sel2 = document.querySelector('#sel2');
