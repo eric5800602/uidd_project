@@ -180,6 +180,7 @@ $(document).ready(function() {
       data: JSON.stringify({tag:now_tag}),
       success: function(data){
         var html = ""
+        console.log(data.object.length);
         for(i=0; i<data.object.length; i++){
             html = html+ `
             <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
