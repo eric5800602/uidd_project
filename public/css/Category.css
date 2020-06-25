@@ -313,6 +313,7 @@ header {
       width: 100%;
     }
     .tags_img {
+      object-fit: cover;
       height:100%;
       width:100%;
     }
@@ -339,6 +340,7 @@ header {
         letter-spacing: -0.04rem;
         text-overflow: ellipsis; }
       .intro_account_img {
+        object-fit: cover;
         height: 100%;
         width: 100%;
         border-radius: 50%; }
