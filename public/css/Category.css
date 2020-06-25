@@ -312,6 +312,10 @@ header {
     .single_post{
       width: 100%;
     }
+    .img_of_post{
+      width: 100%;
+      height: 11.5rem;
+    }
     .tags_img {
       object-fit: cover;
       height:100%;
