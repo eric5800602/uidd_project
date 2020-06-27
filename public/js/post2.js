@@ -4,11 +4,14 @@ var constraints = { video: { facingMode: "user" }, audio: false };
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
+      cameraturn = document.querySelector("#cameraturn"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
-function cameraStart() {
+function cameraStart(m) {
+    m = m||'user';
+    if(m=='env'){m='environment';}
     navigator.mediaDevices
-        .getUserMedia(constraints)
+        .getUserMedia( { video: { facingMode: m }, audio: false })
         .then(function(stream) {
         track = stream.getTracks()[0];
         cameraView.srcObject = stream;
@@ -56,7 +59,15 @@ cameraTrigger.onclick = function() {
     })
 };
 // Start the video stream when the window loads
-window.addEventListener("load", cameraStart, false);
+
+let mode='env';
+window.addEventListener("load", function(){
+  cameraStart(mode);
+}, false);
+
+cameraturn.addEventListener("click", function(){
+  cameraStart(mode=='user' ? 'env' : 'user');
+}, false);
 /*
 cameraTrigger.addEventListener("click",function(){
 	
