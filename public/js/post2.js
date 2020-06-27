@@ -2,23 +2,45 @@
 var constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
+       cameraView2 = document.querySelector("#camera--view2"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
       cameraturn = document.querySelector("#cameraturn"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
+
 function cameraStart(m) {
     m = m||'user';
     if(m=='env'){m='environment';}
+	cameraView.style.display='none';
+	cameraView2.style.display='none';
+	if(m=='user'){
+	 navigator.mediaDevices
+        .getUserMedia( { video: { facingMode: m }, audio: false })
+        .then(function(stream) {
+        track = stream.getTracks()[0];
+        cameraView2.srcObject = stream;
+		 cameraView2.style.display='block';
+    })
+    .catch(function(error) {
+	    alert(error);
+        console.error("Oops. Something is broken.", error);
+    });	
+		
+		
+	}else{
     navigator.mediaDevices
         .getUserMedia( { video: { facingMode: m }, audio: false })
         .then(function(stream) {
         track = stream.getTracks()[0];
         cameraView.srcObject = stream;
+		 cameraView.style.display='block';
     })
     .catch(function(error) {
+	    alert(error);
         console.error("Oops. Something is broken.", error);
     });
+	} // end of else
 };
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
