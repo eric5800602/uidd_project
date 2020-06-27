@@ -268,4 +268,6 @@ $( "#sel1" ).change(function() {
 		
 	}
 });
-
+$('#back').click(function(){
+    window.location= "./home.html"
+  })
