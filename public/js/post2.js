@@ -9,7 +9,7 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
 
-function cameraStart(m){
+function cameraStart(m){ alert(m+ '    '+window.mode);
     m = m||'user';
     if(m=='env'){m='environment';}
 	window.mode=m;
@@ -99,8 +99,7 @@ cameraTrigger.onclick = function() {
     })
 };
 // Start the video stream when the window loads
-
-let mode='env';
+window.mode='env';
 window.addEventListener("load", function(){
   cameraStart(mode);
 }, false);
