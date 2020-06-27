@@ -9,7 +9,24 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
 
-function cameraStart(m) {
+function camerStart(m){
+    m = m||'user';
+    if(m=='env'){m='environment';}
+	cameraStop();
+	 navigator.mediaDevices
+        .getUserMedia( { video: { facingMode: m }, audio: false })
+        .then(function(stream) {
+        // track = stream.getTracks()[0];
+        cameraView.srcObject = stream;
+    }).catch(function(error){alert(error);});
+}
+function cameraStop(){
+	if(cameraView.srcObject){
+	  cameraView.srcObject.getTracks().forEach(t=>t.stop());
+	}
+}
+
+function cameraStart__(m) {
     m = m||'user';
     if(m=='env'){m='environment';}
 	cameraView.style.display='none';
