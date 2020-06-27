@@ -170,7 +170,8 @@ function imageZoom(imgID, resultID) {
   }
 
 }
-//imageZoom("myimage", "myresult");
+imageZoom("myimage", "myresult");
+
 
 //單品敘述
 $(document).ready(function () {
@@ -181,7 +182,7 @@ $(document).ready(function () {
       dataType: "json",
       data: JSON.stringify({
         username: $('#ajax-form input[name=fName]').val(),
-       evaluation: $('#ajax-form1 input[name=lName]').val(),
+       evaluation: $('#evaluation').val(),
 	   description: $('#ajax-form2 input[name=dName]').val()
       }), 
       contentType: "application/json",
@@ -195,39 +196,9 @@ $(document).ready(function () {
     )
   })
  });
-$('.submit_button').click(function(){
-    window.location= "./post.html" 
-  });
-/* 處理圖片回傳切好的50*50大小圖片*/
-document.getElementById("myimage").addEventListener('click',function(e){
-  var x = event.pageX - (this.getBoundingClientRect().x+parseInt((window.getComputedStyle(this, null).getPropertyValue('padding-left'))));
-  var y = event.pageY - (this.getBoundingClientRect().y + parseInt((window.getComputedStyle(this, null).getPropertyValue('padding-top'))));
-  if(x < 0) x = 0;
-  if(y < 0) y = 0;
-  console.log(x,y,this.getAttribute("src"));
-  $.ajax({
-    url: '/cropimage',
-    type: 'POST',
-    dataType: "json",
-    contentType: "application/json",
-    xhrFields: {
-    withCredentials: true
-    },
-    data: JSON.stringify({
-        url:this.getAttribute("src"),
-        x:parseInt(x),
-        y:parseInt(y),
-        width:this.width,
-        height:this.height
-    }),
-    success: function (data) {
-        //上傳成功之後，返回物件data         
-        console.log(data)
-        if(data.success === false){
-            alert("Crop image fail");
-        }
-        else if(data.success === true){
-            document.getElementById("target1").src = data.url;
-        }
-  }})
-})
+ 
+ 
+ 
+ //評價
+
+  
