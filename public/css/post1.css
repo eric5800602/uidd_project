@@ -118,6 +118,7 @@ text-align: center;
 #post2{
 	padding-top:2vh;
 }
+ 
 .posting{
 padding-top:1.5vh;	
 font-size:4vw;
@@ -135,6 +136,26 @@ input[type=text]{
 	border-radius: 0%;
 	border:none;
 }
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    vertical-align:middle;
+    margin-bottom:0.5em;
+    background:#EBEBEB;
+    border:#999 solid 1px;
+    border-radius: 50%;
+  height:1.2em;
+   width: 1.2em;
+}
+input[type="checkbox"]:checked {
+    background:#F7E011;
+}
+input[type=checkbox]:checked::after{
+    content: '';
+    position: absolute;
+    background: transparent;
+    border-top: none;
+    border-right: none;  
+}         
 .textarea {
 height: 10vh;
 background: #F7F7F7;
