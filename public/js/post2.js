@@ -12,6 +12,7 @@ const cameraView = document.querySelector("#camera--view"),
 function cameraStart(m){
     m = m||'user';
     if(m=='env'){m='environment';}
+	window.mode=m;
 	cameraStop();
 	 navigator.mediaDevices
         .getUserMedia( { video: { facingMode: m }, audio: false })
