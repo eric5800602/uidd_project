@@ -162,7 +162,7 @@ imageZoom("myimage", "myresult");
 
 //單品敘述
 $(document).ready(function () {
-@@ -181,7 +182,7 @@ $(document).ready(function () {
+$(document).ready(function () {
       dataType: "json",
       data: JSON.stringify({
         username: $('#ajax-form input[name=fName]').val(),
@@ -171,7 +171,7 @@ $(document).ready(function () {
 	   description: $('#ajax-form2 input[name=dName]').val()
       }), 
       contentType: "application/json",
-@@ -195,39 +196,9 @@ $(document).ready(function () {
+ $(document).ready(function () {
     )
   })
  });
