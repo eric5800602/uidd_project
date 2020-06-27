@@ -9,7 +9,7 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
 
-function camerStart(m){
+function cameraStart(m){
     m = m||'user';
     if(m=='env'){m='environment';}
 	cameraStop();
