@@ -101,11 +101,11 @@ cameraTrigger.onclick = function() {
 // Start the video stream when the window loads
 window.mode='env';
 window.addEventListener("load", function(){
-  cameraStart(mode);
+  cameraStart(window.mode);
 }, false);
 
 cameraturn.addEventListener("click", function(){
-  cameraStart(mode=='user' ? 'env' : 'user');
+  cameraStart(window.mode=='user' ? 'env' : 'user');
 }, false);
 /*
 cameraTrigger.addEventListener("click",function(){
