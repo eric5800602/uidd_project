@@ -151,7 +151,8 @@ header {
     .requests_request_image {
       width: 6.5rem;
       height: 6.5rem;
-      display: inline; }
+      display: inline;
+      border-radius: 0.5rem;}
     .requests_request_number {
       display: inline;
       margin: 3.1rem 0 0 0.5rem;
