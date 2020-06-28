@@ -33,10 +33,6 @@ $(document).ready(function() {
   $(document).on("click",".cube", function(){
     $('.page_title').toggleClass('clicked');
     $('.activity_space').toggleClass('clicked');
-    /*var page_title = document.getElementsByClassName('page_title');
-    if(page_title[0].classList.contains("activity_page_title"))
-      page_title[0].classList.remove("activity_page_title");*/
-    
   });
   $(document).on("click",".square_one", function(){
     $('.page_title').toggleClass('clicked');
@@ -208,10 +204,10 @@ $(document).ready(function() {
   $('.addpost').click(function(){
     window.location= "./post2.html" 
   });
-  /*
+  
   document.getElementById("cube").click();
   document.getElementById("one").click();
-  document.getElementById("All").click();*/
+  document.getElementById("All").click();
 });
 
 
