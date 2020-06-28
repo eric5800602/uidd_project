@@ -132,9 +132,9 @@ $(document).ready(function() {
 $('#btn_submit').click(function(){
   var s=0, p=0, t=0;
   var cut;
-  if(s==true) s=1;
-  if(p==true) p=1;
-  if(t==true) t=1;
+  if(source==true) s=1;
+  if(price==true) p=1;
+  if(texture==true) t=1;
   console.log("Cropimage\nimg: " + img + "\nx: " + xpx + "\ny: " + ypx )
   $.ajax({
     url:"/cropimage",
