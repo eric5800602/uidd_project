@@ -165,8 +165,8 @@ $('#btn_submit').click(function(){
         Price: p,
         Texture: t,
         img: cut,
-        x: x,
-        y: y,
+        x: xpx,
+        y: ypy,
       }),
       contentType: "application/json",
       success: function(data){
