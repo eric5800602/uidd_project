@@ -54,7 +54,7 @@ $(document).ready(function() {
     var html = ""
     html = html+ `
       <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
-      <li class="item"><a href="#客廳" id="客廳">客廳</a></li>\
+      <li class="item"><a href="#客廳" id="Dining">客廳</a></li>\
       <li class="item"><a href="#臥室" id="臥室">臥室</a></li>\
       <li class="item"><a href="#書房" id="書房">書房</a></li>\
       <li class="item"><a href="#浴室" id="浴室">浴室</a></li>\
