@@ -154,12 +154,18 @@ header {
       display: inline;
       border-radius: 0.5rem;}
     .requests_request_data {
-      width: 18rem;
+      width: 19rem;
     }
     .request_data_num{
+      width: 2rem;
+      text-align: center;
       display: inline-block;
     }
     .request_data_btn{
+      background-color: #3D5EAA;
+      color: white;
+      border-radius: 1rem;
+      padding: 0 1rem;
       display: inline-block;
     }
 
