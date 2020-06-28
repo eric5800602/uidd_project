@@ -136,46 +136,46 @@ $('#btn_submit').click(function(){
   if(price==true) p=1;
   if(texture==true) t=1;
   console.log("Cropimage\nimg: " + img + "\nx: " + xpx + "\ny: " + ypx )
-  $.ajax({
-    url:"/cropimage",
-    type:'post',
-    dataType: "json",
-    data:JSON.stringify({
-      url: img,
-      x: xpx,
-      y:ypx,
-      width: 78,
-      height: 78,
+  //$.ajax({
+  //  url:"/cropimage",
+  //  type:'post',
+  //  dataType: "json",
+  //  data:JSON.stringify({
+  //    url: img,
+  //    x: xpx,
+  //    y:ypx,
+  //    width: 78,
+  //    height: 78,
 
-    }),
-      contentType: "application/json",
-      success: function(data){
-        cut=data.url;
-        console.log(cut);
+  //  }),
+  //    contentType: "application/json",
+  //    success: function(data){
+  //      cut=data.url;
+  //      console.log(cut);
 
-      }
-  });
+  //    }
+  //});
   
 
   console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut )
-  $.ajax({
-      url:"/add_request",
-      type:'post',
-      dataType: "json",
-      data:JSON.stringify({
-        postid:localStorage.getItem("post_id"),
-        Source: s,
-        Price: p,
-        Texture: t,
-        img: cut,
-        x: xpx,
-        y: ypx,
-      }),
-      contentType: "application/json",
-      success: function(data){
-        console.log(data);
-      }
-  });
+ // $.ajax({
+ //     url:"/add_request",
+ //     type:'post',
+ //     dataType: "json",
+ //     data:JSON.stringify({
+ //       postid:localStorage.getItem("post_id"),
+ //       Source: s,
+ //       Price: p,
+ //       Texture: t,
+ //       img: cut,
+ //       x: xpx,
+ //       y: ypx,
+ //     }),
+ //     contentType: "application/json",
+ //     success: function(data){
+ //       console.log(data);
+ //     }
+ // });
 
   $('.div_source').animate({"opacity": '1'});
   $('.div_texture').animate({"opacity": '1'});
@@ -214,6 +214,7 @@ function handleStart(evt) {
 }
 
 function handleMove(evt) {
+    console.log("xpx="+xpx+", ypx="+ypx)
     evt.preventDefault();
     var x = evt.pageX - $('#full').offset().left-40;
     var y = evt.pageY - $('#full').offset().top-40;
