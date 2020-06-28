@@ -5,6 +5,9 @@ header {
   .content_background{
     background-color: #848484;
   }
+  .content_background::-webkit-scrollbar {
+    display: none;
+  }
   #id_container{
     position: relative;
     height: 100%;
