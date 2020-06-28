@@ -23,7 +23,7 @@ $.ajax({
       $('#pen_count').text(data.post.request);
       $('#post_content').text(data.post.explanation);
       img=data.post.post_icon;
-      var html='<div class="requests">';
+      var html='<div class="requests"><p class="requests_title">Request</p>';
       for(i=0; i<data.requests.length; i++){
         html=html+`
                 <div class="requests_request" id="${data.requests[i]._id}">\
@@ -188,7 +188,7 @@ $('#btn_submit').click(function(){
              contentType: "application/json",
              success: function(data){
                console.log(data);
-               //location.reload();
+               location.reload();
              }
          });
       }
