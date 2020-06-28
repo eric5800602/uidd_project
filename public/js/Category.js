@@ -194,7 +194,7 @@ $(document).ready(function() {
         $('#myposts').html(html)
       }
     });
-    
+    return false;
   });
 
   $(document).on("click",".single_post", function(){
