@@ -65,7 +65,7 @@ opacity:0;
 .col photo{
 	width:100vw;
 }
-#camera, #camera--view, #camera--view2, #camera--sensor, #camera--output{
+#camera{
     position: fixed;
     width: 100vw;
 	height:70vh;
@@ -73,8 +73,15 @@ opacity:0;
 	z-index:2;
 }
 #camera--view, #camera--view2, #camera--sensor, #camera--output{
+    position: fixed;
+    width: 100vw;
+	height:70vh;
+    object-fit: cover;
+	z-index:4;
+}
+#camera--view, #camera--view2, #camera--sensor, #camera--output{
     transform: scaleX(-1);
-    filter: FlipH;/*水平翻轉*/
+   
 }
 #camerasetting{
 	height:30vh;
