@@ -170,7 +170,7 @@ $(document).ready(function() {
     var now_tag = this.id;
     
     $.ajax({
-      url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
+      url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_space",
       type:'post',
       dataType: "json",
       contentType: "application/json",
