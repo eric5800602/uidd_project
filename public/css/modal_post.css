@@ -46,7 +46,9 @@
   border-radius: 10rem;
   padding: 0.8rem 1.2rem;
   border: none;
-  width: 5.5rem; }
+  width: 5.5rem; 
+  box-shadow: 0 0.2rem 1rem #888888;
+  }
 
 .btn_cancel {
   background-color: #848484; }
