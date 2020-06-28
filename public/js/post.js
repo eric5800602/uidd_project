@@ -44,7 +44,7 @@ $('.div_source').click(function(){
 
 $('.div_price').click(function(){
   price=!price;
-  console.log("price= "+source)
+  console.log("price= "+price)
   if(price==true){
     $('.div_price').animate({"opacity": '0.5'});
   }else{
@@ -55,7 +55,7 @@ $('.div_price').click(function(){
 
 $('.div_texture').click(function(){ 
   texture=!texture;
-  console.log("texture= "+source)
+  console.log("texture= "+texture)
   if(texture==true){
     $('.div_texture').animate({"opacity": '0.5'});
   }else{
@@ -174,9 +174,9 @@ $('#btn_submit').click(function(){
       }
   });
 
-  //source=false;
-  //texture=false;
-  //price=false;
+  source=false;
+  texture=false;
+  price=false;
   xpx=0;
   ypx=0;
 });
