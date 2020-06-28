@@ -22,8 +22,6 @@ $.ajax({
     }
 });
 $(window).onload(function() {
-//  $('#ajax-form button[type="submit"]').click((event) => {
-//    event.preventDefault()
   $('.requests_request_want').addClass("blue")
   var state=false
   $('#want_btn_0').click(function(){
