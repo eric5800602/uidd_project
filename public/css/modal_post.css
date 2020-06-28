@@ -52,3 +52,12 @@
 
 .modal-body-2 {
   padding: 1.5rem; }
+
+.div_icon{
+  display: flex;
+  flex-direction: column;
+}
+.div_word{
+  color: white;
+  font-size: 1.5rem;
+}
