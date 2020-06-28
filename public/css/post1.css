@@ -48,11 +48,7 @@ body, html{
 	padding-top:10vh;
 }
 .image-preview-wrapper{
-  padding-top:4vh;
-  max-width: 100vw;
-  width: 100vw;
-  margin: 0 auto;
-  position: relative;
+  
   cursor: pointer;
 }
 .image_col{
@@ -74,47 +70,47 @@ body, html{
 }
 
 .img-thumbnail{
-	width:100vw;
+	padding-top:4vh;
+  max-width: 100vw;
+  width: 100vw;
+  margin: 0 auto;
+  position: relative;
 }
+/*新增單品*/
 .block {
+width:5em;
+height:5em;
 position: relative;
 text-align: center;
 cursor: pointer;
 background: #F7F7F7;
+}
 
-/*長寬不知道怎麼用正方形*/
-width:20vw;
-height:10vh;
-}
-#upload_input {
-display: none;
-}
 .upload_icon {
-font-weight: bold;
-font-size: 180%;
 position: absolute;
 left: 0;
 width: 100%;
-top: 3vh;
+top:1.5em;
+}
+.plus{
+	height:1.5em;
+	width:1.5em;  
 }
 #post1{
 	padding-top:3vh;
 }
-.img-zoom-lens {
-  position: absolute;
-  /*set the size of the lens:*/
-  width: 200px;
-  height: 200px;
-}
+
 
 .img-zoom-result {
   border: 1px solid #d4d4d4;
+
+  /*background-repeat : no-repeat;*/
   /*set the size of the result div:*/
-  width:20vw;
-height:10vh;
+  width:5em;
+height:5em;overflow:hidden;
 position: relative;
-text-align: center;
 }
+.img-zoom-result img{width: 100vw;position:absolute;top:0;left:0}
 #post2{
 	padding-top:2vh;
 }
@@ -175,7 +171,5 @@ color: #bbb;
 font-size:4vw;
 color:#575757;
 }
-.evaluation{
-	
-	
-}
+
+
