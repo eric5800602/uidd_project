@@ -154,8 +154,8 @@ function handleStart(evt) {
 
 function handleMove(evt) {
     evt.preventDefault();
-    var x = evt.pageX - $('#full').offset().top;
-    var y = evt.pageY - $('#full').offset().left;
+    var x = evt.pageX - $('#full').offset().left;
+    var y = evt.pageY - $('#full').offset().top;
     // document.getElementById("x").innerHTML = x;
     console.log("evt.pageX= " + evt.pageX + "evt.page.Y= "+evt.pageY)
     console.log("this.offsetLeft= " +  $('#full').offset().left + "this.offsetTop= "+$('#full').offset().top)
