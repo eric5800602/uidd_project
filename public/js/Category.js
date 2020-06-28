@@ -65,7 +65,7 @@ $(document).ready(function() {
       <li class="item"><a href="#戶外空間" id="戶外空間">戶外空間</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    $('#All').click();
+    $('#客廳').click();
   });
   $(document).on("click",".square_two", function(){
     $('.page_title').toggleClass('clicked');
@@ -208,7 +208,10 @@ $(document).ready(function() {
   $('.addpost').click(function(){
     window.location= "./post2.html" 
   });
-  
+  /*
+  document.getElementById("cube").click();
+  document.getElementById("one").click();
+  document.getElementById("All").click();*/
 });
 
 
