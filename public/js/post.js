@@ -133,23 +133,23 @@ $(document).ready(function() {
   if(s==true) s=1;
   if(p==true) p=1;
   if(t==true) t=1;
-  $.ajax({
-      url:"/cropimage",
-      type:'post',
-      dataType: "json",
-      data:JSON.stringify({
-        url: img,
-        x: xpx,
-        y:ypx,
-        width: 78,
-        height: 78,
+  //$.ajax({
+  //    url:"/cropimage",
+  //    type:'post',
+  //    dataType: "json",
+  //    data:JSON.stringify({
+  //      url: img,
+  //      x: xpx,
+  //      y:ypx,
+  //      width: 78,
+  //      height: 78,
 
-      }),
-      contentType: "application/json",
-      success: function(data){
-        console.log(data);
-      }
-  });
+  //    }),
+  //    contentType: "application/json",
+  //    success: function(data){
+  //      console.log(data);
+  //    }
+  //});
  // $.ajax({
  //     url:"/add_request",
  //     type:'post',
