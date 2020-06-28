@@ -208,8 +208,6 @@ $(document).ready(function() {
   $('.addpost').click(function(){
     window.location= "./post2.html" 
   });
-  document.getElementById("cube").click();
-  document.getElementById("one").click();
   document.getElementById("All").click();
 });
 
