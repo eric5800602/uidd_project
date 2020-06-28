@@ -136,7 +136,8 @@ header {
       color: #707070; }
 
 .requests {
-  margin: 1.2rem 1.42rem; }
+  margin: 1.2rem 1.42rem;
+  background-color: #E9E9E9}
   .requests_title {
     font-weight: 800; }
   .requests_request {
@@ -147,7 +148,7 @@ header {
     border: solid #ACACAC 0.083rem;
     border-radius: 0.42rem;
     box-shadow: 0 0.07rem 0.17rem #00000029;
-    background-color: #CECECE; }
+    background-color: #FFFFFF; }
     .requests_request_image {
       width: 6.5rem;
       height: 6.5rem;
