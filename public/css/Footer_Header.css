@@ -34,7 +34,7 @@ html, body{
 #id_footer {
     position: fixed;
     height: 6.4rem;
-    background-color: rgba(249, 249, 249, 0.94);
+    background-color: rgba(249, 249, 249, 1);
     top:auto;
     bottom: 0;
     overflow:hidden;
