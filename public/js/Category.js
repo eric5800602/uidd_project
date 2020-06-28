@@ -173,8 +173,8 @@ $(document).ready(function() {
       success: function(data){
         var html = ""
         console.log(data.object.length);
-        if(data.object.length >= 6)
-        data.object.length = 6;
+        if(data.object.length > 4)
+        data.object.length = 4;
         for(i=0; i<data.object.length; i++){
             if(!data.object[i].post_icon){
               data.object[i].post_icon = 'image/user/c006ca7fd14cb00b74ca03b7977019b8.png';
