@@ -4,7 +4,7 @@ var source = false;
 var price = false;
 var texture = false;
 var xpx, ypx;
-
+var img;
 $.ajax({
     url:"/get_post",
     type:'post',
@@ -22,6 +22,7 @@ $.ajax({
       $('#like_count').text(data.post.like);
       $('#pen_count').text(data.post.request);
       $('#post_content').text(data.post.explanation);
+      img=data.post.post_icon;
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
     }
@@ -128,6 +129,44 @@ $(document).ready(function() {
 });
 
 #('#btn_submit').click(function(){
+  var s=0, p=0, t=0;
+  if(s==true) s=1;
+  if(p==true) p=1;
+  if(t==true) t=1;
+  $.ajax({
+      url:"/cropimage",
+      type:'post',
+      dataType: "json",
+      data:JSON.stringify({
+        url: img,
+        x: xpx,
+        y:ypx,
+        width: 78,
+        height: 78,
+
+      }),
+      contentType: "application/json",
+      success: function(data){
+        console.log(data);
+      }
+  });
+ // $.ajax({
+ //     url:"/add_request",
+ //     type:'post',
+ //     dataType: "json",
+ //     data:JSON.stringify({
+ //       id:localStorage.getItem("post_id")
+ //       Source: s
+ //       Price: p
+ //       Texture: t
+
+ //     }),
+ //     contentType: "application/json",
+ //     success: function(data){
+ //       console.log("request!!!");
+ //     }
+ // });
+
   source=false;
   texture=false;
   price=false;
