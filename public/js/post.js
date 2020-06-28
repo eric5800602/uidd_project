@@ -32,7 +32,7 @@ $('.photo').click(function(){
 
 $('.div_source').click(function(){
   source=!source;
-  if(cource==true){
+  if(source==true){
     $('.div_source').animate({"background-color": '#8C8C8C4D'});
   }else{
 
