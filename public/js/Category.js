@@ -168,7 +168,7 @@ $(document).ready(function() {
       .data("origLeft", $(this).position().left)
       .data("origWidth", $(this).position().width);
     var now_tag = this.id;
-    
+    console.log(this.id);
     $.ajax({
       url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_space",
       type:'post',
@@ -181,9 +181,6 @@ $(document).ready(function() {
       success: function(data){
         var html = ""
         console.log(data.object.length);
-        for(i=0; i<data.object.length; i++){
-          console.log(data.object[i].post_icon);
-        }
         for(i=0; i<data.object.length; i++){
             html = html+ `
             <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
