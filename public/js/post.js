@@ -151,13 +151,12 @@ $('#btn_submit').click(function(){
       contentType: "application/json",
       success: function(data){
         cut=data.url;
-        console.log("cut= "+cut);
+        console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
 
       }
   });
   
 
-  console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
  // $.ajax({
  //     url:"/add_request",
  //     type:'post',
