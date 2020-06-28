@@ -144,8 +144,6 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0.75rem 0 1.5rem 0rem;
-    padding: 0.2rem 0.7rem;
-    border: solid #ACACAC 0.083rem;
     border-radius: 0.42rem;
     box-shadow: 0 0.07rem 0.17rem #00000029;
     background-color: #FFFFFF; }
@@ -154,22 +152,6 @@ header {
       height: 6.5rem;
       display: inline;
       border-radius: 0.5rem;}
-    .requests_request_number {
-      display: inline;
-      margin: 3.1rem 0 0 0.5rem;
-      font-size: 2.5rem;
-      letter-spacing: 0.5rem;
-      color: #FFFFFF; }
-    .requests_request_want {
-      display: inline-block;
-      height: 1.7rem;
-      float: right;
-      margin: 0.5rem 0 4rem 0;
-      padding: 0.1rem 0.7rem;
-      border-radius: 0.42rem;
-      box-shadow: 0 0.17rem 0.17rem #00000029;
-      color: #FFFFFF;
-      overflow: hidden; }
 
 .request {
   display: inline-block;
