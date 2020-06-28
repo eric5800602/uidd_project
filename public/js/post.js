@@ -1,5 +1,9 @@
 var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
+var source = false;
+var price = false;
+var texture = false;
+
 $.ajax({
     url:"/get_post",
     type:'post',
@@ -21,10 +25,29 @@ $.ajax({
         // $("#user_img").attr("src",data.object[0].user_icon)
     }
 });
+
 $('.photo').click(function(){
   console.log("hi")
 });
 
+$('.div_source').click(function(){
+  source=!source;
+  if(cource==true){
+    $('.div_source').animate({"background-color": '#8C8C8C4D'});
+  }else{
+
+  }
+})
+
+$('.div_price').click(function(){
+  
+
+})
+
+$('.div_texture').click(function(){
+  
+
+})
 
 $(window).onload = function() {
   $('.requests_request_want').addClass("blue")
@@ -79,7 +102,7 @@ $(window).onload = function() {
           document.getElementById("heart").src = "./res/img/heart8.png"
       },400)
     }else{
-
+      
 
     }
   })
