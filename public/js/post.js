@@ -62,7 +62,7 @@ $('.div_texture').click(function(){
 
 })
 
-$(window).onload = function() {
+$(document).ready(function() {
   $('.requests_request_want').addClass("blue")
   var state=false
   $('#want_btn_0').click(function(){
@@ -134,7 +134,7 @@ $(window).onload = function() {
     window.location= "./home.html"
     console.log("back");
   })
-};
+});
 
 var el = document.getElementById("full");
 el.addEventListener("touchstart", handleStart, false);
