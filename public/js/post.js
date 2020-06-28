@@ -34,8 +34,9 @@ $('.div_source').click(function(){
   source=!source;
   console.log("source= "+source)
   if(source==true){
-    $('.div_source').animate({"background-color": '#8C8C8C4D'});
+    $('.div_source').animate({"opacity": '0.5'});
   }else{
+    $('.div_source').animate({"opacity": '1'});
 
   }
 })
