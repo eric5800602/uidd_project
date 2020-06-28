@@ -50,7 +50,7 @@ $('#SignModal2').on('show.bs.modal', function (e) {
 
 $(document).ready(function () {
 
-  /* Login button*/
+  /* Login button*/ 
   $('#ajax_login_signup button[id="login"]').click((event) => {
     event.preventDefault();
     $.post({
@@ -85,8 +85,13 @@ $(document).ready(function () {
   $('#ajax_login_signup button[id="signup"]').click((event) => {
     event.preventDefault();
   })
+
+
+  
+  
+
   /* Modal1 Next button*/
-  $('#modal1_button button[id="Next_button"]').click((event) => {
+  $('#modal1_input button[id="Next_button"]').click((event) => {
     event.preventDefault(); /* close html defalt setting*/
     window.sign_password = $('#modal1_input input[name=Password]').val();
     window.sign_username = $('#modal1_input input[name=Username]').val();
@@ -115,13 +120,10 @@ $(document).ready(function () {
         suite: suite_count
       }), 
       success: function (msg) {
-        console.log(msg);
         if(msg.success){
-          console.log("success");
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/tags.html";
         }
         else{
-          console.log("fail");
           //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/login.html";
           alert(msg.text);
         }
