@@ -3,7 +3,7 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 var source = false;
 var price = false;
 var texture = false;
-var xpx, ypx;
+var xpx=0, ypx=0, x=0, y=0;
 var img;
 $.ajax({
     url:"/get_post",
@@ -142,8 +142,8 @@ $('#btn_submit').click(function(){
     dataType: "json",
     data:JSON.stringify({
       url: img,
-      x: xpx,
-      y:ypx,
+      x: x,
+      y: y,
       width: 78,
       height: 78,
 
@@ -153,29 +153,28 @@ $('#btn_submit').click(function(){
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
 
+         $.ajax({
+             url:"/add_request",
+             type:'post',
+             dataType: "json",
+             data:JSON.stringify({
+               postid:localStorage.getItem("post_id"),
+               Source: s,
+               Price: p,
+               Texture: t,
+               img: cut,
+               x: x,
+               y: y,
+             }),
+             contentType: "application/json",
+             success: function(data){
+               console.log(data);
+             }
+         });
       }
   });
   
-        console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
 
- // $.ajax({
- //     url:"/add_request",
- //     type:'post',
- //     dataType: "json",
- //     data:JSON.stringify({
- //       postid:localStorage.getItem("post_id"),
- //       Source: s,
- //       Price: p,
- //       Texture: t,
- //       img: cut,
- //       x: xpx,
- //       y: ypx,
- //     }),
- //     contentType: "application/json",
- //     success: function(data){
- //       console.log(data);
- //     }
- // });
 
   $('.div_source').animate({"opacity": '1'});
   $('.div_texture').animate({"opacity": '1'});
@@ -202,8 +201,8 @@ var ongoingTouches = [];
 
 function handleStart(evt) {
     evt.preventDefault();
-    var x = evt.pageX - $('#full').offset().left-40;
-    var y = evt.pageY - $('#full').offset().top-40;
+    x = evt.pageX - $('#full').offset().left-40;
+    y = evt.pageY - $('#full').offset().top-40;
     console.log("x= " + x + "y= "+y)
     //document.getElementById("x").innerHTML = x;
     //document.getElementById("y").innerHTML = y;
@@ -214,10 +213,10 @@ function handleStart(evt) {
 }
 
 function handleMove(evt) {
-    console.log("xpx="+xpx+", ypx="+ypx)
+    console.log("x="+x+", y="+y)
     evt.preventDefault();
-    var x = evt.pageX - $('#full').offset().left-40;
-    var y = evt.pageY - $('#full').offset().top-40;
+    x = evt.pageX - $('#full').offset().left-40;
+    y = evt.pageY - $('#full').offset().top-40;
     xpx = -x +'px'
     ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
