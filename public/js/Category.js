@@ -177,7 +177,7 @@ $(document).ready(function() {
       xhrFields: {
         withCredentials: true
       },
-      data: JSON.stringify({tag:now_tag}),
+      data: JSON.stringify({space:now_tag}),
       success: function(data){
         var html = ""
         console.log(data.object.length);
