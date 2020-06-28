@@ -86,5 +86,6 @@ $(window).onload = function() {
 
   $('#back').click(function(){
     window.location= "./home.html"
+    console.log("back");
   })
 };
