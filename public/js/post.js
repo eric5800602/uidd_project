@@ -164,7 +164,7 @@ $('#btn_submit').click(function(){
       x: x,
       y: y,
       width: 250,
-      height: 200,
+      height: 250,
 
     }),
       contentType: "application/json",
