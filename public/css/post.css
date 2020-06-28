@@ -31,7 +31,8 @@ header {
       border-radius: 20rem; }
 
 .photo {
-  width: 100vw; }
+  width: 100vw;
+  height: 23.5rem;}
 
 .interact {
   margin: 0.2rem 1.3rem; }
