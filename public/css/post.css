@@ -156,6 +156,12 @@ header {
     .requests_request_data {
       width: 18rem;
     }
+    .request_data_num{
+      display: inline-block;
+    }
+    .request_data_btn{
+      display: inline-block;
+    }
 
 .request {
   display: inline-block;
