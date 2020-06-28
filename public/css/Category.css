@@ -270,6 +270,7 @@ header {
     }
     div.activity_menu.actclicked{
       margin-top: -2.5rem;
+      opacity: 0;
     }
       .scrollmenu_text{
         font-size: 1.2rem;
