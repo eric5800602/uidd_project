@@ -154,8 +154,8 @@ function handleStart(evt) {
 
 function handleMove(evt) {
     evt.preventDefault();
-    var x = evt.pageX - $('#full').offset().left+10;
-    var y = evt.pageY - $('#full').offset().top+10;
+    var x = evt.pageX - $('#full').offset().left-10;
+    var y = evt.pageY - $('#full').offset().top-10;
     var xpx = -x +'px'
     var ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
