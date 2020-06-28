@@ -24,7 +24,7 @@ $.ajax({
       $('#post_content').text(data.post.explanation);
       img=data.post.post_icon;
       var html="";
-      for(i=0; i<data.requests.length(); i++){
+      for(i=0; i<data.requests.length; i++){
         html=html+`
               <div class="requests">\
                 <p class="requests_title">Request</p>\
