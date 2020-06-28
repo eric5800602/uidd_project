@@ -26,21 +26,21 @@ $.ajax({
       var html='<div class="requests"><p class="requests_title">Request</p>';
       for(i=0; i<data.requests.length; i++){
         html=html+`
-                <div class="requests_request" id="${data.requests[i]._id}">\
+                <div class="requests_request request" id="${data.requests[i]._id}">\i
                   <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
-                  <div class="requests_request_data">
+                  <div class="requests_request_data ">
                     
-                    <div class= requests_request_data_source>
-                      <p class="requests_request_data_source_num"> ${data.requests[i].Source}
-                      <p class="requests_request_data_source_btn"> Source
+                    <div class="request_data">
+                      <p class="request_data_num" id="source"> ${data.requests[i].Source}
+                      <p class="request_data_btn"> Source
                     </div>
-                    <div class= requests_request_data_price>
-                      <p class="requests_request_data_price_num"> ${data.requests[i].Price}
-                      <p class="requests_request_data_price_btn"> Price
+                    <div class="request_data">
+                      <p class="request_data_num" id="price"> ${data.requests[i].Price}
+                      <p class="request_data_btn"> Price
                     </div>
-                    <div class= requests_request_data_texture>
-                      <p class="requests_request_data_texture_num"> ${data.requests[i].Texture}
-                      <p class="requests_request_data_texture_btn"> Texture
+                    <div class="request_data">
+                      <p class="request_data_num" id="texture"> ${data.requests[i].Texture}
+                      <p class="request_data_btn"> Texture
                     </div>
 
                   </div>

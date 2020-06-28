@@ -153,6 +153,9 @@ header {
       height: 6.5rem;
       display: inline;
       border-radius: 0.5rem;}
+    .requests_request_data {
+      width: 18rem;
+    }
 
 .request {
   display: inline-block;
