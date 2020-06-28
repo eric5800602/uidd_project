@@ -125,3 +125,51 @@ $(window).onload = function() {
     console.log("back");
   })
 };
+
+var el = document.getElementById("full");
+el.addEventListener("touchstart", handleStart, false);
+el.addEventListener("touchend", handleEnd, false);
+el.addEventListener("touchcancel", handleCancel, false);
+el.addEventListener("touchmove", handleMove, false);
+
+el.addEventListener("mousestart", handleStart, false);
+el.addEventListener("mouseend", handleEnd, false);
+el.addEventListener("mousecancel", handleCancel, false);
+el.addEventListener("mousemove", handleMove, false);
+
+var ongoingTouches = [];
+
+function handleStart(evt) {
+    evt.preventDefault();
+    var x = evt.pageX - this.offsetLeft;
+    var y = evt.pageY - this.offsetTop;
+    document.getElementById("x").innerHTML = x;
+    document.getElementById("y").innerHTML = y;
+    var xpx = -x +'px'
+    var ypx = -y +'px'
+    document.getElementById('image').style.left = xpx;
+    document.getElementById('image').style.top = ypx;
+}
+
+function handleMove(evt) {
+    evt.preventDefault();
+    var x = evt.pageX - this.offsetLeft;
+    var y = evt.pageY - this.offsetTop;
+    document.getElementById("x").innerHTML = x;
+    document.getElementById("y").innerHTML = y;
+    var xpx = -x +'px'
+    var ypx = -y +'px'
+    document.getElementById('image').style.left = xpx;
+    document.getElementById('image').style.top = ypx;
+}
+
+
+function handleEnd(evt) {
+    evt.preventDefault();
+  log("touchend");
+}
+
+function handleCancel(evt) {
+    evt.preventDefault();
+  log("touchcancel.");
+}
