@@ -33,7 +33,7 @@ $.ajax({
                 </div>
         `
       }
-      heml+="</div>"
+      html+="</div>"
       console.log("html=" + html)
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
