@@ -37,17 +37,28 @@ $('.div_source').click(function(){
     $('.div_source').animate({"opacity": '0.5'});
   }else{
     $('.div_source').animate({"opacity": '1'});
-
   }
 })
 
 $('.div_price').click(function(){
-  
+  source=!source;
+  console.log("source= "+source)
+  if(source==true){
+    $('.div_source').animate({"opacity": '0.5'});
+  }else{
+    $('.div_source').animate({"opacity": '1'});
+  }
 
 })
 
-$('.div_texture').click(function(){
-  
+$('.div_texture').click(function(){ 
+  source=!source;
+  console.log("source= "+source)
+  if(source==true){
+    $('.div_source').animate({"opacity": '0.5'});
+  }else{
+    $('.div_source').animate({"opacity": '1'});
+  }
 
 })
 
