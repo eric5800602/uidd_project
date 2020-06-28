@@ -136,25 +136,25 @@ $('#btn_submit').click(function(){
   if(price==true) p=1;
   if(texture==true) t=1;
   console.log("Cropimage\nimg: " + img + "\nx: " + xpx + "\ny: " + ypx )
-  //$.ajax({
-  //  url:"/cropimage",
-  //  type:'post',
-  //  dataType: "json",
-  //  data:JSON.stringify({
-  //    url: img,
-  //    x: xpx,
-  //    y:ypx,
-  //    width: 78,
-  //    height: 78,
+  $.ajax({
+    url:"/cropimage",
+    type:'post',
+    dataType: "json",
+    data:JSON.stringify({
+      url: img,
+      x: xpx,
+      y:ypx,
+      width: 78,
+      height: 78,
 
-  //  }),
-  //    contentType: "application/json",
-  //    success: function(data){
-  //      cut=data.url;
-  //      console.log(cut);
+    }),
+      contentType: "application/json",
+      success: function(data){
+        cut=data.url;
+        console.log(cut);
 
-  //    }
-  //});
+      }
+  });
   
 
   console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
