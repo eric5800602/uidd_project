@@ -61,7 +61,7 @@ $(document).ready(function() {
       <li class="item"><a href="#戶外空間" id="戶外空間">戶外空間</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    $('#客廳').click();
+    $('#All').click();
   });
   $(document).on("click",".square_two", function(){
     $('.page_title').toggleClass('clicked');
@@ -90,7 +90,7 @@ $(document).ready(function() {
       <li class="item"><a href="#窗簾" id="窗簾">窗簾</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    $('#桌子').click();
+    $('#All').click();
   });
 
   $(document).on("click",".square_three", function(){
@@ -114,7 +114,7 @@ $(document).ready(function() {
       <li class="item"><a href="#辦公空間" id="辦公空間">辦公空間</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    document.getElementById("住宅空間").click();
+    $('#All').click();
   });
   
   $(document).on("click",".square_four", function(){
