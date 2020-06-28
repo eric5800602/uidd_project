@@ -28,8 +28,26 @@ $.ajax({
         html=html+`
                 <div class="requests_request" id="${data.requests[i]._id}">\
                   <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
-                  <p class="requests_request_number" id="">${data.requests[i].Source}</p>
-                  <p class="requests_request_want" id="want_btn_0">我也想知道!</p>
+                  <div class="requests_request_data">
+                    
+                    <div class= requests_request_data_source>
+                      <p class="requests_request_data_source_num"> ${data.requests[i].Source}
+                      <p class="requests_request_data_source_btn"> Source
+                    </div>
+                    <div class= requests_request_data_price>
+                      <p class="requests_request_data_price_num"> ${data.requests[i].Price}
+                      <p class="requests_request_data_price_btn"> Price
+                    </div>
+                    <div class= requests_request_data_texture>
+                      <p class="requests_request_data_texture_num"> ${data.requests[i].Texture}
+                      <p class="requests_request_data_texture_btn"> Texture
+                    </div>
+
+                  </div>
+                  <div class="requests_request_push">
+                    <p class="requests_request_btn"> PUSH
+                    <p class="requests_request_num"> 0
+                  </div>
                 </div>
         `
       }
