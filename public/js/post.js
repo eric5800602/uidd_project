@@ -150,8 +150,8 @@ $('#btn_submit').click(function(){
     }),
       contentType: "application/json",
       success: function(data){
-        console.log(data.url);
         cut=data.url;
+        console.log(cut);
 
       }
   });
