@@ -3,6 +3,7 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 var source = false;
 var price = false;
 var texture = false;
+var xpx, ypx;
 
 $.ajax({
     url:"/get_post",
@@ -124,16 +125,14 @@ $(document).ready(function() {
     window.location= "./home.html"
     console.log("back");
   })
+});
 
-  $('#back').click(function(){
-    window.location= "./home.html"
-    console.log("back");
-  })
-
-  $('#back').click(function(){
-    window.location= "./home.html"
-    console.log("back");
-  })
+#('#btn_submit').click(function(){
+  source=false;
+  texture=false;
+  price=false;
+  xpx=0;
+  ypx=0;
 });
 
 var el = document.getElementById("full");
@@ -156,8 +155,8 @@ function handleStart(evt) {
     console.log("x= " + x + "y= "+y)
     //document.getElementById("x").innerHTML = x;
     //document.getElementById("y").innerHTML = y;
-    var xpx = -x +'px'
-    var ypx = -y +'px'
+    xpx = -x +'px'
+    ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
     document.getElementById('image').style.top = ypx;
 }
@@ -166,8 +165,8 @@ function handleMove(evt) {
     evt.preventDefault();
     var x = evt.pageX - $('#full').offset().left-40;
     var y = evt.pageY - $('#full').offset().top-40;
-    var xpx = -x +'px'
-    var ypx = -y +'px'
+    xpx = -x +'px'
+    ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
     document.getElementById('image').style.top = ypx;
 }
