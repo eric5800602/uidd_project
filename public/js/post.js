@@ -28,7 +28,7 @@ $.ajax({
         html=html+`
                 <div class="requests_request" id="${data.requests[i]._id}">\
                   <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
-                  <p class="requests_request_number" id="">${data.requesets[i].Source}</p>
+                  <p class="requests_request_number" id="">${data.requests[i].Source}</p>
                   <p class="requests_request_want" id="want_btn_0">我也想知道!</p>
                 </div>
         `
