@@ -151,7 +151,7 @@ $('#btn_submit').click(function(){
       contentType: "application/json",
       success: function(data){
         cut=data.url;
-        console.log(cut);
+        console.log("cut= "+cut);
 
       }
   });
