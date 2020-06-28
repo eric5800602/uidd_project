@@ -117,8 +117,8 @@ $(document).ready(function() {
       <li class="item"><a href="#商業空間" id="商業空間">商業空間</a></li>\
       <li class="item"><a href="#辦公空間" id="辦公空間">辦公空間</a></li>\
       <li id='magic-line'></li>`
-    $('#Menu').html(html)
-    $('#All').click();
+    document.getElementById("Menu").html(html);
+    document.getElementById("All").click();
   });
   
   $(document).on("click",".square_four", function(){
@@ -130,7 +130,7 @@ $(document).ready(function() {
     var html = ""
     html = html+ `
       <p class="scrollmenu_text">貼文內加入標籤「經典藍」，即會出現於活動頁面 !</p>`
-    $('#Menu').html(html)
+    document.getElementById("Menu").html(html);
     $('.scrollmenu').addClass('activity_menu');
     //$('.page_title').addClass('activity_page_title');
     $('.Theme').addClass('Theme_hidden');
@@ -196,7 +196,7 @@ $(document).ready(function() {
               </div>\
             </div>`
         }
-        $('#myposts').html(html)
+        document.getElementById("myposts").html(html);
       }
     });
   });
@@ -211,8 +211,7 @@ $(document).ready(function() {
   $('.addpost').click(function(){
     window.location= "./post2.html" 
   });
-
-  $('#All').click();
+  document.getElementById("All").click();
 });
 
 
