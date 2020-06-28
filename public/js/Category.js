@@ -185,13 +185,13 @@ $(document).ready(function() {
             html = html+ `
             <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
               <div class="img_of_post">\
-                <img class="tags_img" loading="lazy" alt="..." src="${data.object[i].post_icon}">\
+                <img class="tags_img" alt="..." src="${data.object[i].post_icon}">\
               </div>\
               <div class="row no-gutters intro align-items-center">\
                 <div class="col-6 intro_title">${data.object[i].title}</div>\
                 <div class="col-4 intro_account_id">${data.object[i].name}</div>\
                 <div class="col-2">\
-                  <img class="intro_account_img" loading="lazy" alt="..." src="${data.object[i].user_icon}"></img>\
+                  <img class="intro_account_img" alt="..."src="${data.object[i].user_icon}"></img>\
                 </div>\
               </div>\
             </div>`
