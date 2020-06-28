@@ -389,7 +389,7 @@ app.post('/add_post', (req, res) => {
             })
         };
         query().then(r=>{
-            data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': r.post_icon,
+            data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': req.body.post_icon,
             'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
             'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'pen':0,'published':true}
             const m = new postModel(data)
@@ -964,7 +964,7 @@ app.post('/get_post_with_space',(req,res) => {
         recommend = async function () {
             return new Promise(async (resolve, reject) => {
                 try {
-                    await postModel.find({space:req.body.space}).limit(10).exec(async (err, r) => {
+                    await postModel.find({room:req.body.space}).limit(10).exec(async (err, r) => {
                         if (err) {
                             console.log('fail to query:', err)
                             resolve(false)
