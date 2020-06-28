@@ -157,7 +157,7 @@ header {
       width: 18rem;
     }
 
-.request {
+.request_data {
   display: inline-block;
   position: fixed;
   bottom: 9rem;
