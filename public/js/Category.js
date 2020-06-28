@@ -138,7 +138,7 @@ $(document).ready(function() {
       <p class="activity comment changing" id="comment">經典藍給人的感覺是一個平靜的色彩，為人類心靈<br>帶來平和與寧靜，提供庇護。</p>\
       <img class="activity Activity_tags_img changing" id="Activity_tags_img" src="./image/Category/Activity/Activity.png">`
     $('#activity_text_space').html(html);
-    console.log("Four clicked");
+    $('#myposts').html("");
   });
   
 
