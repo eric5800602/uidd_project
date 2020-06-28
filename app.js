@@ -113,6 +113,7 @@ const pointSchema = new mongoose.Schema({
 
 const singleCollectionName = 'single'
 const singleSchema = new mongoose.Schema({
+    postid:mongoose.SchemaTypes.ObjectId,
     name: String,
     evaluation: Number,
     description: String,
@@ -483,7 +484,8 @@ app.post('/upload', upload.single('file'), function (req, res, next) {
 
 app.post('/add_single', (req, res) => {
     data = {
-        'name': req.body.username, 'evaluation': Number(req.body.evaluation), 'description': String(req.body.description),'img':req.body.img,
+        'postid':req.body.postid,
+        'name': req.body.name, 'evaluation': Number(req.body.evaluation), 'description': String(req.body.description),'img':req.body.img,
         'position':{"type" : "Point","coordinates" : [Number(req.body.x),Number(req.body.y)]}
     }
     const m = new singleModel(data)
@@ -529,13 +531,7 @@ app.post('/get_post', (req, res) => {
             })
         }
         else {
-            var object = [];
-            for(i in r.object){
-                var m = await query(r.object[i]);   
-                console.log(m);
-                await object.push(m);
-            }
-            requestsModel.find({ 'postid': req.body.id }).exec(async (err, requests) => {
+            singleModel.find({ 'postid': req.body.id }).exec(async (err, singles) => {
                 if (err) {
                     console.log('fail to query:', err)
                     res.send({
@@ -546,15 +542,29 @@ app.post('/get_post', (req, res) => {
                     })
                 }
                 else {
-                    res.send({
-                        "success": true,
-                        "text": "Get post success",
-                        "post": r,
-                        'single': object,
-                        "requests":requests,
-                    })
+                    requestsModel.find({ 'postid': req.body.id }).exec(async (err, requests) => {
+                        if (err) {
+                            console.log('fail to query:', err)
+                            res.send({
+                                "success": false,
+                                "text": "Get request fail",
+                                "post": undefined,
+                                "single":undefined
+                            })
+                        }
+                        else {
+                            res.send({
+                                "success": true,
+                                "text": "Get post success",
+                                "post": r,
+                                'single': singles,
+                                "requests":requests,
+                            })
+                        }
+                    });
                 }
             });
+            
         }
     });
 
@@ -928,7 +938,7 @@ app.post('/modify_request', (req, res) => {
 })
 
 app.post('/get_post_with_space',(req,res) => {
-    data = new Array;
+    var data = new Array;
     var recommend;
     if(req.body.space == "All"){
         recommend = async function () {
