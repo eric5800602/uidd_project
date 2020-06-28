@@ -41,23 +41,23 @@ $('.div_source').click(function(){
 })
 
 $('.div_price').click(function(){
-  source=!source;
-  console.log("source= "+source)
-  if(source==true){
-    $('.div_source').animate({"opacity": '0.5'});
+  price=!price;
+  console.log("price= "+source)
+  if(price==true){
+    $('.div_price').animate({"opacity": '0.5'});
   }else{
-    $('.div_source').animate({"opacity": '1'});
+    $('.div_price').animate({"opacity": '1'});
   }
 
 })
 
 $('.div_texture').click(function(){ 
-  source=!source;
-  console.log("source= "+source)
-  if(source==true){
-    $('.div_source').animate({"opacity": '0.5'});
+  texture=!texture;
+  console.log("texture= "+source)
+  if(texture==true){
+    $('.div_texture').animate({"opacity": '0.5'});
   }else{
-    $('.div_source').animate({"opacity": '1'});
+    $('.div_texture').animate({"opacity": '1'});
   }
 
 })
