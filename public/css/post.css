@@ -155,6 +155,10 @@ header {
       border-radius: 0.5rem;}
     .requests_request_data {
       width: 19rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.5rem 0;
     }
     .request_data_num{
       width: 2rem;
