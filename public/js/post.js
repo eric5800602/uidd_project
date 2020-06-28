@@ -143,8 +143,8 @@ function handleStart(evt) {
     evt.preventDefault();
     var x = evt.pageX - this.offsetLeft;
     var y = evt.pageY - this.offsetTop;
-    document.getElementById("x").innerHTML = x;
-    document.getElementById("y").innerHTML = y;
+    //document.getElementById("x").innerHTML = x;
+    //document.getElementById("y").innerHTML = y;
     var xpx = -x +'px'
     var ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
@@ -155,8 +155,8 @@ function handleMove(evt) {
     evt.preventDefault();
     var x = evt.pageX - this.offsetLeft;
     var y = evt.pageY - this.offsetTop;
-    document.getElementById("x").innerHTML = x;
-    document.getElementById("y").innerHTML = y;
+    // document.getElementById("x").innerHTML = x;
+    // document.getElementById("y").innerHTML = y;
     var xpx = -x +'px'
     var ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
@@ -165,11 +165,11 @@ function handleMove(evt) {
 
 
 function handleEnd(evt) {
-    evt.preventDefault();
-  log("touchend");
+  evt.preventDefault();
+  console.log("touchend");
 }
 
 function handleCancel(evt) {
-    evt.preventDefault();
-  log("touchcancel.");
+  evt.preventDefault();
+  console.log("touchcancel.");
 }
