@@ -163,8 +163,8 @@ $('#btn_submit').click(function(){
       url: img,
       x: x,
       y: y,
-      width: 300,
-      height: 300,
+      width: 250,
+      height: 250,
 
     }),
       contentType: "application/json",
