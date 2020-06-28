@@ -1,30 +1,29 @@
 var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
-
+$.ajax({
+    url:"/get_post",
+    type:'post',
+    dataType: "json",
+    data:JSON.stringify({
+      id:localStorage.getItem("post_id")
+    }),
+    contentType: "application/json",
+    success: function(data){
+      console.log(data);
+      $('#post_title').text(data.post.title);
+      $('#post_id').text(data.post.name);
+      $('#user_icon').attr("src",data.post.user_icon);
+      $('#post_icon').attr("src",data.post.post_icon);
+      $('#like_count').text(data.post.like);
+      $('#pen_count').text(data.post.request);
+      $('#post_content').text(data.post.explanation);
+        // $("#post_img").attr("src",data.object[0].post_icon)
+        // $("#user_img").attr("src",data.object[0].user_icon)
+    }
+});
 $(window).onload(function() {
 //  $('#ajax-form button[type="submit"]').click((event) => {
 //    event.preventDefault()
-$.ajax({
-  url:"/get_post",
-  type:'post',
-  dataType: "json",
-  data:JSON.stringify({
-    id:localStorage.getItem("post_id")
-  }),
-  contentType: "application/json",
-  success: function(data){
-    console.log(data);
-    $('#post_title').text(data.post.title);
-    $('#post_id').text(data.post.name);
-    $('#user_icon').attr("src",data.post.user_icon);
-    $('#post_icon').attr("src",data.post.post_icon);
-    $('#like_count').text(data.post.like);
-    $('#pen_count').text(data.post.request);
-    $('#post_content').text(data.post.explanation);
-      // $("#post_img").attr("src",data.object[0].post_icon)
-      // $("#user_img").attr("src",data.object[0].user_icon)
-  }
-});
   $('.requests_request_want').addClass("blue")
   var state=false
   $('#want_btn_0').click(function(){
