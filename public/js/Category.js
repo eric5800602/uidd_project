@@ -53,7 +53,7 @@ $(document).ready(function() {
     remove_activity_class();
     var html = ""
     html = html+ `
-      <li class="item" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item" id="start"><a href="#All" id="All">All</a></li>\
       <li class="item"><a href="#客廳" id="客廳">客廳</a></li>\
       <li class="item"><a href="#臥室" id="臥室">臥室</a></li>\
       <li class="item"><a href="#書房" id="書房">書房</a></li>\
@@ -82,7 +82,7 @@ $(document).ready(function() {
     remove_activity_class();
     var html = ""
     html = html+ `
-      <li class="item" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item" id="start"><a href="#All" id="All">All</a></li>\
       <li class="item"><a href="#桌子" id="桌子">桌子</a></li>\
       <li class="item"><a href="#沙發" id="沙發">沙發</a></li>\
       <li class="item"><a href="#燈具" id="燈具">燈具</a></li>\
@@ -112,7 +112,7 @@ $(document).ready(function() {
     $('.Theme').addClass('space_three');
     var html = ""
     html = html+ `
-      <li class="item" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item" id="start"><a href="#All" id="All">All</a></li>\
       <li class="item"><a href="#住宅空間"  id="住宅空間">住宅空間</a></li>\
       <li class="item"><a href="#商業空間" id="商業空間">商業空間</a></li>\
       <li class="item"><a href="#辦公空間" id="辦公空間">辦公空間</a></li>\
@@ -152,7 +152,7 @@ $(document).ready(function() {
     $('.scrollmenu li a').data('bgcolor', $('.scrollmenu li a').css('color')).css('color', '#5F5F5F');
     $el = $(this);
     $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');
-    leftPos = $el.position().left - $("#Start").position().left;
+    leftPos = $el.position().left - $("#start").position().left;
     ori_new = $el.parent().width();
     newWidth = ori_new * 0.7;
     leftPos = leftPos + 0.5*(ori_new-newWidth);
