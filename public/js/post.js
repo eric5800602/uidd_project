@@ -1,7 +1,7 @@
 var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 
-$(document).ready(function() {
+$(window).onload(function() {
 //  $('#ajax-form button[type="submit"]').click((event) => {
 //    event.preventDefault()
 $.ajax({
