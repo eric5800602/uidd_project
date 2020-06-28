@@ -131,6 +131,7 @@ $(document).ready(function() {
 
 $('#btn_submit').click(function(){
   var s=0, p=0, t=0;
+  var cut;
   if(s==true) s=1;
   if(p==true) p=1;
   if(t==true) t=1;
@@ -148,25 +149,30 @@ $('#btn_submit').click(function(){
     }),
       contentType: "application/json",
       success: function(data){
+        console.log(data.url);
+        cut=data.url;
+
+      }
+  });
+
+  $.ajax({
+      url:"/add_request",
+      type:'post',
+      dataType: "json",
+      data:JSON.stringify({
+        postid:localStorage.getItem("post_id")
+        Source: s,
+        Price: p,
+        Texture: t,
+        img: cut,
+        x: x,
+        y: y,
+      }),
+      contentType: "application/json",
+      success: function(data){
         console.log(data);
       }
   });
- // $.ajax({
- //     url:"/add_request",
- //     type:'post',
- //     dataType: "json",
- //     data:JSON.stringify({
- //       id:localStorage.getItem("post_id")
- //       Source: s
- //       Price: p
- //       Texture: t
-
- //     }),
- //     contentType: "application/json",
- //     success: function(data){
- //       console.log("request!!!");
- //     }
- // });
 
   source=false;
   texture=false;
