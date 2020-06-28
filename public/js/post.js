@@ -21,8 +21,8 @@ $.ajax({
         // $("#user_img").attr("src",data.object[0].user_icon)
     }
 });
-$('.photo').click(funciton(){
-  console.log("ai")
+$('.photo').click(function(){
+  console.log("hi")
 });
 
 
