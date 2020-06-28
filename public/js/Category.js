@@ -195,6 +195,7 @@ $(document).ready(function() {
         $('#myposts').html(html)
       }
     });
+    $('#id_container').scrollTop(0);
   });
 
   $(document).on("click",".single_post", function(){
