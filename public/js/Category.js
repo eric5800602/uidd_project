@@ -209,7 +209,7 @@ $(document).ready(function() {
   document.getElementById("cube").click();
   document.getElementById("one").click();
   document.getElementById("All").click();
-  window.scrollTo(0,0);
+  $('#id_container').scrollTop(0);
 });
 
 
