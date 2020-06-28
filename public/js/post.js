@@ -23,23 +23,17 @@ $.ajax({
       $('#pen_count').text(data.post.request);
       $('#post_content').text(data.post.explanation);
       img=data.post.post_icon;
-      var html="";
+      var html='<div class="requests">';
       for(i=0; i<data.requests.length; i++){
         html=html+`
-              <div class="requests">\
-                <p class="requests_title">Request</p>\
-                <div class="requests_request" id="want_0">\
-                  <img class="requests_request_image" src="./res/img/request_1.png" id="want_img_0">\
-                  <p class="requests_request_number" id="want_number_0">1089</p>
+                <div class="requests_request" id="${data.requests[i].id}">\
+                  <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
+                  <p class="requests_request_number" id="${data.requests[i].id}">1089</p>
                   <p class="requests_request_want" id="want_btn_0">我也想知道!</p>
                 </div>
-                <div class="requests_request" id="want_1"><img class="requests_request_image" src="./res/img/request_1.png" id="want_img_1">
-                  <p class="requests_request_number" id="want_number_1">321</p>
-                  <p class="requests_request_want" id="want_btn_1">我也想知道!</p>
-                </div>
-              </div>
         `
       }
+      heml+="</div>"
       console.log("html=" + html)
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
