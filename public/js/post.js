@@ -160,7 +160,7 @@ $('#btn_submit').click(function(){
       type:'post',
       dataType: "json",
       data:JSON.stringify({
-        postid:localStorage.getItem("post_id")
+        postid:localStorage.getItem("post_id"),
         Source: s,
         Price: p,
         Texture: t,
