@@ -9,9 +9,8 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">   
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-      <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">
-	  
-	  <link rel="stylesheet" type="text/css" href="./css/star-rating.css">
+      <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">	  
+	 
       <link rel="stylesheet" type="text/css" href="./css/post1.css">
 
 </head>
@@ -34,14 +33,7 @@
 <div class=".container-fluid" id="id_content">
   <div  class="row">
     <div class="col">
-		<label   class="image-preview-wrapper" for="file-uploader">
-		<img id="myimage" src="./res/post1.png"  class="img-thumbnail" data-target="image-preview">
-		
-		<div class="spinner-wrapper position-absolute" data-target="spinner">
-		  <div class="spinner-border text-secondary" role="status">
-			<span class="sr-only">Loading...</span>
-		  </div></div>
-	  </label>
+		<img id="myimage" src="./res/pic.png"  class="img-thumbnail" data-target="image-preview">	
     </div>
 	</div>
 	</div>
@@ -51,18 +43,19 @@
   
     </div> 
     <div class="col">  
-  <div id="myresult" class="img-zoom-result"></div>
+  <div  class="img-zoom-result">
+  <img src="" />
+  </div>
     </div> 
     <div class="col">
-      <div class="custom-file">
-	  <div class="block">
+
+	  <div id="addsingle" class="block">
 	  <label>
-        <input  id="upload_input" type="file" class="custom-file-input" data-target="file-uploader" id="file-uploader">
-		<span class="upload_icon">➕</span>
+ 		 <span class="upload_icon"><img class="plus" src="./res/plus.svg"></span>
         </label>
 		</div>
       </div>
-    </div>
+ 
 	</div>
 	</div>
 <div  id="post2" class="container custom-container-width">
