@@ -160,7 +160,7 @@ $(document).ready(function() {
       .data("origLeft", $(this).position().left)
       .data("origWidth", $(this).position().width);
     var now_tag = this.id;
-    console.log(this.id);
+    $('#id_container').scrollTop(0);
     $.ajax({
       url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_space",
       type:'post',
@@ -172,7 +172,6 @@ $(document).ready(function() {
       data: JSON.stringify({space:now_tag}),
       success: function(data){
         var html = ""
-        console.log(data.object.length);
         for(i=0; i<data.object.length; i++){
             if(!data.object[i].post_icon){
               data.object[i].post_icon = 'image/user/c006ca7fd14cb00b74ca03b7977019b8.png';
@@ -195,7 +194,7 @@ $(document).ready(function() {
         $('#myposts').html(html)
       }
     });
-    $('#id_container').scrollTop(0);
+    
   });
 
   $(document).on("click",".single_post", function(){
@@ -212,7 +211,6 @@ $(document).ready(function() {
   document.getElementById("cube").click();
   document.getElementById("one").click();
   document.getElementById("All").click();
-  $('#id_container').scrollTop(0);
 });
 
 
