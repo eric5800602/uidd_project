@@ -93,9 +93,14 @@ $(document).ready(function () {
   /* Modal1 Next button*/
   $('#modal1_input button[id="Next_button"]').click((event) => {
     event.preventDefault(); /* close html defalt setting*/
+    
     window.sign_password = $('#modal1_input input[name=Password]').val();
     window.sign_username = $('#modal1_input input[name=Username]').val();
     window.sign_email = $('#modal1_input input[name=Email]').val();
+    if(window.sign_password.length == 0 || window.sign_username.length == 0 || window.sign_email.length == 0){
+      alert("請完整填寫欄位");
+      return false;
+    }
   })
   $('#ajax_login_signup button[id="signup"]').click((event) => {
     event.preventDefault();
