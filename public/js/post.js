@@ -163,7 +163,7 @@ $('#btn_submit').click(function(){
       url: img,
       x: x,
       y: y,
-      width: 250,
+      width: 230,
       height: 250,
 
     }),
