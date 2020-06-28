@@ -53,7 +53,7 @@ $(document).ready(function() {
     remove_activity_class();
     var html = ""
     html = html+ `
-      <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item" id="Start"><a href="#All" id="All">All</a></li>\
       <li class="item"><a href="#客廳" id="客廳">客廳</a></li>\
       <li class="item"><a href="#臥室" id="臥室">臥室</a></li>\
       <li class="item"><a href="#書房" id="書房">書房</a></li>\
@@ -82,7 +82,7 @@ $(document).ready(function() {
     remove_activity_class();
     var html = ""
     html = html+ `
-      <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item" id="Start"><a href="#All" id="All">All</a></li>\
       <li class="item"><a href="#桌子" id="桌子">桌子</a></li>\
       <li class="item"><a href="#沙發" id="沙發">沙發</a></li>\
       <li class="item"><a href="#燈具" id="燈具">燈具</a></li>\
@@ -94,7 +94,7 @@ $(document).ready(function() {
       <li class="item"><a href="#窗簾" id="窗簾">窗簾</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    $('#All').click();
+    $('#桌子').click();
   });
 
   $(document).on("click",".square_three", function(){
@@ -112,13 +112,13 @@ $(document).ready(function() {
     $('.Theme').addClass('space_three');
     var html = ""
     html = html+ `
-      <li class="item active" id="Start"><a href="#All" id="All">All</a></li>\
+      <li class="item" id="Start"><a href="#All" id="All">All</a></li>\
       <li class="item"><a href="#住宅空間"  id="住宅空間">住宅空間</a></li>\
       <li class="item"><a href="#商業空間" id="商業空間">商業空間</a></li>\
       <li class="item"><a href="#辦公空間" id="辦公空間">辦公空間</a></li>\
       <li id='magic-line'></li>`
     $('#Menu').html(html)
-    document.getElementById("All").click();
+    document.getElementById("住宅空間").click();
   });
   
   $(document).on("click",".square_four", function(){
