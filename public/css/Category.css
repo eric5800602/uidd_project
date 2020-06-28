@@ -48,6 +48,11 @@ header {
         transition-duration: .7s;
         transition-timing-function: ease-out;
       }
+      .special_changing{
+        transition-property: height;
+        transition-duration: .7s;
+        transition-timing-function: ease-out;
+      }
       .square_one{
         position: absolute;
         top: 3.5rem;
@@ -262,6 +267,9 @@ header {
       height: 2.4rem;
       padding-top: 0.4rem;
       margin-bottom: 0;
+    }
+    div.activity_menu.actclicked{
+      margin-top: -2.5rem;
     }
       .scrollmenu_text{
         font-size: 1.2rem;

@@ -8,11 +8,11 @@ $(document).ready(function() {
   /* Function for remove the class added in activity page */
   var remove_activity_class = function (){
     var scrollbar = document.getElementsByClassName('scrollmenu');
-    if(scrollbar[0].classList.contains("activity_menu"))
+    if(scrollbar[0].classList.contains("activity_menu")){
       scrollbar[0].classList.remove("activity_menu");
-    var page_title = document.getElementsByClassName('page_title');
-    if(page_title[0].classList.contains("activity_clicked"))
-      page_title[0].classList.remove("activity_clicked");
+      scrollbar[0].classList.remove("actclicked");
+    }
+    
     var activity_space = document.getElementsByClassName('activity_space');
     if(activity_space[0].classList.contains("clicked"))
       activity_space[0].classList.remove("clicked");
@@ -30,6 +30,13 @@ $(document).ready(function() {
   };
   /* Cube animate */
   $(document).on("click",".cube", function(){
+    var scrollbar = document.getElementsByClassName('scrollmenu');
+    if(scrollbar[0].classList.contains("activity_menu")){
+      $('.activity_menu').addClass('actclicked');
+    }
+    var page_title = document.getElementsByClassName('page_title');
+    if(page_title[0].classList.contains("activity_clicked"))
+      page_title[0].classList.remove("activity_clicked");
     $('.page_title').toggleClass('clicked');
     $('.activity_space').toggleClass('clicked');
   });
@@ -122,6 +129,10 @@ $(document).ready(function() {
     $('.content_background').data('bgcolor', $('.content_background').css('background-color')).css('background-color', '#FFFFFF');
     $('.page_title').data('bgcolor', $('.page_title').css('background-color')).css('background-color', '#0F4C81');
     $('#Theme').text('Activity');
+    var scrollbar = document.getElementsByClassName('scrollmenu');
+    if(scrollbar[0].classList.contains("activity_menu")){
+      scrollbar[0].classList.remove("actclicked");
+    }
     var html = ""
     html = html+ `
       <p class="scrollmenu_text">貼文內加入標籤「經典藍」，即會出現於活動頁面 !</p>`
