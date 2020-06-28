@@ -141,8 +141,8 @@ var ongoingTouches = [];
 
 function handleStart(evt) {
     evt.preventDefault();
-    var x = evt.pageX - $('#full').offset().left+50;
-    var y = evt.pageY - $('#full').offset().top+50;
+    var x = evt.pageX - $('#full').offset().left+40;
+    var y = evt.pageY - $('#full').offset().top+40;
     console.log("x= " + x + "y= "+y)
     //document.getElementById("x").innerHTML = x;
     //document.getElementById("y").innerHTML = y;
@@ -154,8 +154,8 @@ function handleStart(evt) {
 
 function handleMove(evt) {
     evt.preventDefault();
-    var x = evt.pageX - $('#full').offset().left-50;
-    var y = evt.pageY - $('#full').offset().top-50;
+    var x = evt.pageX - $('#full').offset().left-40;
+    var y = evt.pageY - $('#full').offset().top-40;
     var xpx = -x +'px'
     var ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
