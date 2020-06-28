@@ -26,7 +26,7 @@ $('.photo').click(function(){
 });
 
 
-$(window).onload(function() {
+$(window).onload = function() {
   $('.requests_request_want').addClass("blue")
   var state=false
   $('#want_btn_0').click(function(){
@@ -87,4 +87,4 @@ $(window).onload(function() {
   $('#back').click(function(){
     window.location= "./home.html"
   })
-});
+};
