@@ -174,9 +174,9 @@ $('#btn_submit').click(function(){
       }
   });
 
-  source=false;
-  texture=false;
-  price=false;
+  //source=false;
+  //texture=false;
+  //price=false;
   xpx=0;
   ypx=0;
 });
