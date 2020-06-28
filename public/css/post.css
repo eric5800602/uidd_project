@@ -54,7 +54,7 @@ header {
       display: inline-flex; }
       .interact_likes_pen_logo {
         width: 2rem;
-        width: 2rem}
+        height: 2rem}
       .interact_likes_pen_number {
         display: inline;
         margin: auto;
@@ -149,6 +149,7 @@ header {
     box-shadow: 0 0.07rem 0.17rem #00000029;
     background-color: #CECECE; }
     .requests_request_image {
+      width: 6.5rem;
       width: 6.5rem;
       display: inline; }
     .requests_request_number {
