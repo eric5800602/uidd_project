@@ -158,7 +158,7 @@ function handleMove(evt) {
     var y = evt.pageY - $('#full').position().left;
     // document.getElementById("x").innerHTML = x;
     console.log("evt.pageX= " + evt.pageX + "evt.page.Y= "+evt.pageY)
-    console.log("this.offsetLeft= " +  $('#full').offset().left + "this.offsetTop= "+$('#full').offsetTop)
+    console.log("this.offsetLeft= " +  $('#full').offset().left + "this.offsetTop= "+$('#full').offset().top)
     console.log("x= " + x + "y= "+y)
     // document.getElementById("y").innerHTML = y;
     var xpx = -x +'px'
