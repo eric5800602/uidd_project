@@ -23,7 +23,6 @@ $(document).ready(function() {
     $('#Activity_tags_img').remove();
     $('#slogan').remove();
     $('#comment').remove();
-    console.log("remove_activity_class");
     
     var myposts = document.getElementById('myposts');
     if(myposts.classList.contains("clicked"))
@@ -210,6 +209,7 @@ $(document).ready(function() {
   document.getElementById("cube").click();
   document.getElementById("one").click();
   document.getElementById("All").click();
+  $('#id_container').scrollTop(0);
 });
 
 
