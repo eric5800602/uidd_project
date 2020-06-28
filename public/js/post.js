@@ -21,6 +21,11 @@ $.ajax({
         // $("#user_img").attr("src",data.object[0].user_icon)
     }
 });
+$('.photo').click(funciton(){
+  console.log("ai")
+});
+
+
 $(window).onload(function() {
   $('.requests_request_want').addClass("blue")
   var state=false
