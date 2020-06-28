@@ -143,6 +143,7 @@ function handleStart(evt) {
     evt.preventDefault();
     var x = evt.pageX - this.offsetLeft;
     var y = evt.pageY - this.offsetTop;
+    console.log("x= " + x + "y= "+y)
     //document.getElementById("x").innerHTML = x;
     //document.getElementById("y").innerHTML = y;
     var xpx = -x +'px'
