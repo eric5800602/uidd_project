@@ -36,6 +36,9 @@ $.ajax({
       html+="</div>"
       console.log("html=" + html)
       $('#requests').html(html)
+
+      $('#full').attr("src", data.post.post_icon)
+      $('#image').attr("src", data.post.post_icon)
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
     }
