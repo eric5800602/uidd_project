@@ -68,6 +68,12 @@
   font-size: 1.5rem;
   text-align: center;
 }
+.div_icon{
+  display: block;
+  margin: auto;
+  height: 2.6rem;
+
+}
 .footer_req{
   display: flex;
   justify-content: center;
