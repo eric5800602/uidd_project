@@ -124,6 +124,16 @@ $(window).onload = function() {
     window.location= "./home.html"
     console.log("back");
   })
+
+  $('#back').click(function(){
+    window.location= "./home.html"
+    console.log("back");
+  })
+
+  $('#back').click(function(){
+    window.location= "./home.html"
+    console.log("back");
+  })
 };
 
 var el = document.getElementById("full");
