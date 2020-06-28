@@ -160,7 +160,6 @@ $(document).ready(function() {
       .data("origLeft", $(this).position().left)
       .data("origWidth", $(this).position().width);
     var now_tag = this.id;
-    $('#id_container').scrollTop(0);
     $.ajax({
       url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_space",
       type:'post',
