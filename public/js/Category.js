@@ -149,10 +149,6 @@ $(document).ready(function() {
 
   $(document).on("click",".scrollmenu li a", function(){
     var $magicLine = $("#magic-line");
-    
-    if($(".active a").hasClass("default_color")){
-      $(".active a").removeClass("default_color");
-    }
     $('.scrollmenu li a').data('bgcolor', $('.scrollmenu li a').css('color')).css('color', '#5F5F5F');
     $el = $(this);
     $el.data('bgcolor', $el.css('color')).css('color', '#FFFFFF');

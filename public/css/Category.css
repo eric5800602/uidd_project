@@ -42,7 +42,7 @@ header {
       }
       .changing{
         transition-property: all;
-        transition-duration: .6s;
+        transition-duration: .7s;
         transition-timing-function: ease-out;
       }
       .square_one{
