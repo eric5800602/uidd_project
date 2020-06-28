@@ -49,7 +49,9 @@
   width: 5.5rem; 
   box-shadow: 0 0.2rem 1rem #888888;
   }
-
+.btn_a{
+  margin: 0 3rem;
+}
 .btn_cancel {
   background-color: #848484; }
 
