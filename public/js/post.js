@@ -183,8 +183,8 @@ $('#btn_submit').click(function(){
   source=false;
   texture=false;
   price=false;
-  xpx=0;
-  ypx=0;
+  //xpx=0;
+  //ypx=0;
 });
 
 var el = document.getElementById("full");
