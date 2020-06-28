@@ -136,7 +136,7 @@ header {
       color: #707070; }
 
 .requests {
-  margin: 1.2rem 1.42rem;
+  padding: 1.2rem 1.42rem;
   background-color: #E9E9E9}
   .requests_title {
     font-weight: 800; }
