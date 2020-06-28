@@ -930,7 +930,7 @@ app.post('/modify_request', (req, res) => {
 app.post('/get_post_with_space',(req,res) => {
     data = new Array;
     var recommend;
-    if(req.body.tag == "All"){
+    if(req.body.space == "All"){
         recommend = async function () {
             return new Promise(async (resolve, reject) => {
                 try {
