@@ -135,6 +135,7 @@ $('#btn_submit').click(function(){
   if(s==true) s=1;
   if(p==true) p=1;
   if(t==true) t=1;
+  console.log("Cropimage\nimg: " + img + "\nx: " + xpx + "\ny: " + ypx )
   $.ajax({
     url:"/cropimage",
     type:'post',
@@ -154,7 +155,9 @@ $('#btn_submit').click(function(){
 
       }
   });
+  
 
+  console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut )
   $.ajax({
       url:"/add_request",
       type:'post',
