@@ -196,6 +196,9 @@ $(document).ready(function() {
               </div>\
             </div>`
         }
+        for(i=0; i<data.object.length; i++){
+          console.log(data.object[i].post_icon);
+        }
         $('#myposts').html(html)
       }
     });
