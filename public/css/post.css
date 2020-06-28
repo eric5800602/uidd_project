@@ -163,6 +163,8 @@ header {
     }
     .request_data_btn{
       background-color: #3D5EAA;
+      width: 5rem;
+      text-align: center;
       color: white;
       border-radius: 1rem;
       padding: 0 1rem;
