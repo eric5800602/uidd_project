@@ -166,7 +166,7 @@ $('#btn_submit').click(function(){
         Texture: t,
         img: cut,
         x: xpx,
-        y: ypy,
+        y: ypx,
       }),
       contentType: "application/json",
       success: function(data){
@@ -174,6 +174,9 @@ $('#btn_submit').click(function(){
       }
   });
 
+  $('.div_source').animate({"opacity": '1'});
+  $('.div_texture').animate({"opacity": '1'});
+  $('.div_price').animate({"opacity": '1'});
   source=false;
   texture=false;
   price=false;
