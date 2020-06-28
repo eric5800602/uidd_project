@@ -56,10 +56,17 @@
 .footer_div{
   display: flex;
   flex-direction: column;
+  width: 30%;
+  background-color: #3D5EAA;
+  border-radius: 1rem;
+  margin: 1rem 0.3rem;
+  padding: 0.5rem;
+  box-shadow: 0 0.2rem 1rem #888888;
 }
 .div_word{
   color: white;
   font-size: 1.5rem;
+  text-align: center;
 }
 .footer_req{
   display: flex;
