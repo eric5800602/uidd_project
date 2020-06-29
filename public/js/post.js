@@ -51,7 +51,7 @@ $.ajax({
                   </div>
                   <div class="requests_request_push">
                     <p class="requests_request_btn" id=${id[6]} onclick="like(this.id)"> PUSH
-                    <p class="requests_request_num" id=${id[7]} onclick="like(this.id)"> ${data.requests[i].Push}
+                    <p class="requests_request_num" id=${id[7]}> ${data.requests[i].Push}
                   </div>
                 </div>
         `
