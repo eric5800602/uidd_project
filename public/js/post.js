@@ -3,6 +3,9 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 var source = false;
 var price = false;
 var texture = false;
+var btn_s = false;
+var btn_p = false;
+var btn_t = false;
 var xpx=0, ypx=0, x=0, y=0, xx=0, yy=0;
 var img;
 $.ajax({
@@ -81,9 +84,10 @@ $.ajax({
 
 function like (id_click){
   console.log(id_click)
-  console.log(id_click.substring(4, 5))
+  //console.log(id_click.substring(4, 5))
   if(id_click.substring(4, 5)=='s'){
     console.log('s')
+    $('#'+id_click).animate({"opacity":'0.5'})
 
   }else if(id_click.substring(4, 5)=='p'){
     console.log('p')
@@ -212,6 +216,9 @@ $(document).ready(function() {
 $('#btn_submit').click(function(){
   var s=0, p=0, t=0;
   var cut;
+  btn_s = source
+  btn_p = price
+  btn_t = texture
   if(source==true) s=1;
   if(price==true) p=1;
   if(texture==true) t=1;
