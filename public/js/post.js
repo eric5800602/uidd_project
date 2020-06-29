@@ -141,10 +141,22 @@ function like (id_click){
   }else{
     console.log('wrong')
   }
-  console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)
-  
-
-
+  console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)  
+  $.ajax({
+    url:"/modify_request",
+    type:'post',
+    dataType: "json",
+    data:JSON.stringify({
+      requestid: id_last,
+      type: type,
+      plus: oper
+    }),
+    contentType: "application/json",
+    success: function(data){
+      console.log(data);
+      location.reload();
+    }
+  });
 
 }
 
