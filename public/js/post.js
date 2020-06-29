@@ -215,8 +215,8 @@ $('#btn_submit').click(function(){
                Texture: t,
                Push: 1,
                img: cut,
-               x: x,
-               y: y,
+               x: xx,
+               y: yy,
              }),
              contentType: "application/json",
              success: function(data){
