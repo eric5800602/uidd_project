@@ -185,24 +185,24 @@ $('#btn_submit').click(function(){
   if(price==true) p=1;
   if(texture==true) t=1;
   console.log("Cropimage\nimg: " + img + "\nx: " + xpx + "\ny: " + ypx )
- // $.ajax({
- //   url:"/cropimage",
- //   type:'post',
- //   dataType: "json",
- //   data:JSON.stringify({
- //     url: img,
- //     x: x,
- //     y: y,
- //     width: 375,
- //     height: 282,
- //     target_w: 78,
- //     target_h: 78
+  $.ajax({
+    url:"/cropimage",
+    type:'post',
+    dataType: "json",
+    data:JSON.stringify({
+      url: img,
+      x: x,
+      y: y,
+      width: 375,
+      height: 282,
+      target_w: 78,
+      target_h: 78
 
- //   }),
- //     contentType: "application/json",
- //     success: function(data){
- //       cut=data.url;
- //       console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
+    }),
+      contentType: "application/json",
+      success: function(data){
+        cut=data.url;
+        console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
 
  //        $.ajax({
  //            url:"/add_request",
@@ -213,6 +213,7 @@ $('#btn_submit').click(function(){
  //              Source: s,
  //              Price: p,
  //              Texture: t,
+ //              Push: 1,
  //              img: cut,
  //              x: x,
  //              y: y,
@@ -223,8 +224,8 @@ $('#btn_submit').click(function(){
  //              location.reload();
  //            }
  //        });
- //     }
- // });
+      }
+  });
   
 
 
