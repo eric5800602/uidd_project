@@ -34,7 +34,7 @@ $.ajax({
                     
                     <div class="request_data data_source">
                       <p class="request_data_num" id=${id[0]}> ${data.requests[i].Source}
-                      <p class="request_data_btn" id=${id[1]}> Source
+                      <p class="request_data_btn" id=${id[1]} onclick="like(this.id)"> Source
                     </div>
                     <div class="request_data data_price">
                       <p class="request_data_num" id=${id[2]}> ${data.requests[i].Price}
@@ -76,6 +76,11 @@ $.ajax({
     }
 });
 
+function like (id_click){
+    console.log(id_click)
+
+
+}
 
 // request 按讚
 $('.request_data_btn').on("click", function(){
