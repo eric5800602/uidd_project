@@ -203,7 +203,8 @@ $('#btn_submit').click(function(){
       success: function(data){
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
-         $.ajax({
+        console.log("xx= "+xx+", yy= "+yy)
+        $.ajax({
              url:"/add_request",
              type:'post',
              dataType: "json",
