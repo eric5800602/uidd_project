@@ -30,15 +30,15 @@ $.ajax({
                   <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
                   <div class="requests_request_data ">
                     
-                    <div class="request_data">
+                    <div class="request_data data_source">
                       <p class="request_data_num" id="source"> ${data.requests[i].Source}
                       <p class="request_data_btn"> Source
                     </div>
-                    <div class="request_data">
+                    <div class="request_data data_price">
                       <p class="request_data_num" id="price"> ${data.requests[i].Price}
                       <p class="request_data_btn"> Price
                     </div>
-                    <div class="request_data">
+                    <div class="request_data data_texture">
                       <p class="request_data_num" id="texture"> ${data.requests[i].Texture}
                       <p class="request_data_btn"> Texture
                     </div>
@@ -75,12 +75,27 @@ $.ajax({
 });
 
 
+// request 按讚
+$('.data_source').click(function(){
+  console.log("source"); 
+});
+
+$('.data_price').click(function(){ 
+  console.log("price"); 
+});
 
 
+$('.data_texture').click(function(){ 
+  console.log("teexture"); 
+});
+
+// 點擊貼文照片出現東西
 $('.photo').click(function(){
   console.log("hi")
 });
 
+
+// 發出request選擇source/price/texture
 $('.div_source').click(function(){
   source=!source;
   console.log("source= "+source)
@@ -112,6 +127,10 @@ $('.div_texture').click(function(){
   }
 
 })
+
+
+
+
 
 $(document).ready(function() {
   $('.requests_request_want').addClass("blue")
@@ -178,6 +197,7 @@ $(document).ready(function() {
 });
 
 
+// 發出request的ajax
 $('#btn_submit').click(function(){
   var s=0, p=0, t=0;
   var cut;
@@ -185,6 +205,7 @@ $('#btn_submit').click(function(){
   if(price==true) p=1;
   if(texture==true) t=1;
   console.log("Cropimage\nimg: " + img + "\nx: " + x + "\ny: " + y )
+  // 切圖片
   $.ajax({
     url:"/cropimage",
     type:'post',
@@ -204,6 +225,7 @@ $('#btn_submit').click(function(){
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
         console.log("xx= "+xx+", yy= "+yy)
+        // 新增request
         $.ajax({
              url:"/add_request",
              type:'post',
@@ -226,8 +248,6 @@ $('#btn_submit').click(function(){
          });
       }
   });
-  
-
 
   $('.div_source').animate({"opacity": '1'});
   $('.div_texture').animate({"opacity": '1'});
@@ -239,6 +259,8 @@ $('#btn_submit').click(function(){
   //ypx=0;
 });
 
+
+// request下面的圖跟著動+取得點
 var el = document.getElementById("full");
 el.addEventListener("touchstart", handleStart, false);
 el.addEventListener("touchend", handleEnd, false);
