@@ -1,169 +1,127 @@
-
-//放大圖片
-/*function imageZoom(imgID, resultID) {
-  var img, lens, result, cx, cy;
-  img = document.getElementById(imgID);
-  result = document.getElementById(resultID);
-  //create lens:
-  lens = document.createElement("DIV");
-  lens.setAttribute("class", "img-zoom-lens");
-  //insert lens:
-  img.parentElement.insertBefore(lens, img);
-  //calculate the ratio between result DIV and lens:
-  cx = result.offsetWidth / lens.offsetWidth;
-  cy = result.offsetHeight / lens.offsetHeight;
-  //set background properties for the result DIV:
-  result.style.backgroundImage = "url('" + img.src + "')";
-  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-  //execute a function when someone moves the cursor over the image, or the lens:
-  lens.addEventListener("mousemove", moveLens);
-  img.addEventListener("mousemove", moveLens)
-  //and also for touch screens:
-  lens.addEventListener("touchmove", moveLens);
-  img.addEventListener("touchmove", moveLens);
-  function moveLens(e) {
-    var pos, x, y;
-    //prevent any other actions that may occur when moving over the image:
-    e.preventDefault();
-    //get the cursor's x and y positions:
-    pos = getCursorPos(e);
-    //calculate the position of the lens:
-    x = pos.x - (lens.offsetWidth / 2);
-    y = pos.y - (lens.offsetHeight / 2);
-    //prevent the lens from being positioned outside the image:
-    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-    if (x < 0) {x = 0;}
-    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-    if (y < 0) {y = 0;}
-    //set the position of the lens:
-    lens.style.left = x + "px";
-    lens.style.top = y + "px";
-    //display what the lens "sees":
-    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-  }
-  function getCursorPos(e) {
-    var a, x = 0, y = 0;
-    e = e || window.event;
-    //get the x and y positions of the image:
-    a = img.getBoundingClientRect();
-    //calculate the cursor's x and y coordinates, relative to the image:
-    x = e.pageX - a.left;
-    y = e.pageY - a.top;
-    //consider any page scrolling:
-    x = x - window.pageXOffset;
-    y = y - window.pageYOffset;
-    return {x : x, y : y};
-  }
-
-}
-imageZoom("myimage", "myresult");
-*/
+var htmlItems = '';
+var productData = [];
+var editNum = 1;
+var axisX = 0, axisY = 0, rank = 0;
+var options = {
+  max_value: 5,
+  step_size: 1,
+  initial_value: rank
+};
+var serverUrl = 'https://luffy.ee.ncku.edu.tw:7575/'
 
 //單品敘述
 $(document).ready(function () {
- /* $('#ajax-form button[type="submit"]').click((event) => {
-    event.preventDefault()
-    $.post({
-      url: "http://luffy.ee.ncku.edu.tw:7575/add_post",
-      dataType: "json",
-      data: JSON.stringify({
-        username: $('#ajax-form input[name=fName]').val(),
-       evaluation: $('#evaluation').val(),
-	   description: $('#ajax-form2 input[name=dName]').val()
-      }), 
-      contentType: "application/json",
-      crossDomain: true,
-      xhrFields: {
-        withCredentials: true
-      },
-      success: function (msg) {
-        console.log(msg);
-        if(msg.success){
-			 console.log("success");
-	 }
-		 
-        }
-        else{
-          console.log("fail");
-          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
-          alert(msg.text);
-        }
-      },
-      error: function(data){
-        console.log("fail");
-        console.log(data);
-      }
-      },
-    )
-  })
- });*/
- 
- /*$('#myimage').click.function(){
-	 $('.img-zoom-result').css('backgroundImage' , 'url("'../res/post1.png'")');
- })*/
- 
- //放大圖片
- /*
- $(document).on("id_content",function(){
-  $("#myimage").on("swipe",function(){
-    $(".img-zoom-result").css(
-  });                       
-});
-*/
-window.is_myimage_touching = false;
-var MYIMAGE_SELECTOR = '#myimage', $myimage = $(MYIMAGE_SELECTOR), myimageOffset = $myimage.offset();
-$(document).on('touchstart touchend', MYIMAGE_SELECTOR, function(e){
-	window.is_myimage_touching = e.type==='touchstart';
-});
-//$('.img-zoom-result').css('background-image',$myimage.attr('src'));
-window.is_handle_myimage_touching=false;
-var $imgzoomresult = $('.img-zoom-result');
-$(document).on('touchmove',MYIMAGE_SELECTOR,function(e){
-	//if(!window.is_myimage_touching){return;}
-	//if(window.is_handle_myimage_touching){return;}
-	window.is_handle_myimage_touching=true;
-	console.log(e.touches[0].clientX, e.touches[0].clientY, myimageOffset.top, myimageOffset.left);
-	var tmp = e.touches[0];
-	var x = tmp.clientX - 100; ///window.innerWidth; // - myimageOffset.left + 0*$imgzoomresult.width()/2;
-	var y = (tmp.clientY-myimageOffset.top - 100 - window.innerHeight*0.04); // *(window.innerWidth/375); // - myimageOffset.top + 0*$imgzoomresult.height()/2;
-	console.log(x,y);
-	$imgzoomresult.find('img').css({top:-y, left:-x}).attr('src',$myimage.attr('src'));
-	window.is_handle_myimage_touching=false;
-});
 
-
- 		 $('#addsingle').click((event) => {
-			 
-    $.post({
-      url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
-      dataType: "json",
-      contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-		data: JSON.stringify({
-		username: $('#ajax-form input[name=fName]').val(),
-       evaluation: $('#evaluation').val(),
-	   description: $('#ajax-form2 input[name=dName]').val()
-      }), 
-      success: function (msg) {
-        console.log(msg);
-        if(msg.success){
-          console.log("success");        
-        }
-        else{
-          console.log("fail");
-          alert(msg.text);
-        }
-      },
-      error: function(data){
-        console.log("fail");
-        console.log(data);
-      }
-    })
-  })
+  $.ajax({
+    type: 'POST',
+    url: serverUrl + 'get_post_image',
+    dataType: 'json',
+    data: {
+      id: '5ef9bfcfbb4c462c15ababc8'
+    },
+    success: function (resData) {
+      console.log('resData => ', resData);
+      $('#myimage').attr('src', serverUrl + resData.url);
+    }
   });
- 
- //評價
 
-  
+  htmlItems += '<div id="original1" class="img-zoom-result mouseAxis" style="display: inline-block;"><img src="" /></div>';
+  $("#imgblock").html(htmlItems);
+
+  //找單品
+  window.is_myimage_touching = false;
+  var MYIMAGE_SELECTOR = '#myimage', $myimage = $(MYIMAGE_SELECTOR), myimageOffset = $myimage.offset();
+  $(document).on('touchstart touchend', MYIMAGE_SELECTOR, function (e) {
+    window.is_myimage_touching = e.type === 'touchstart';
+  });
+  //$('.img-zoom-result').css('background-image',$myimage.attr('src'));
+  window.is_handle_myimage_touching = false;
+
+  var $imgzoomresult = $('.mouseAxis');
+  $(document).on('touchmove', MYIMAGE_SELECTOR, function (e) {
+    //if(!window.is_myimage_touching){return;}
+    //if(window.is_handle_myimage_touching){return;}
+    window.is_handle_myimage_touching = true;
+    console.log(e.touches[0].clientX, e.touches[0].clientY, myimageOffset.top, myimageOffset.left);
+    var tmp = e.touches[0];
+    var x = tmp.clientX - 100; ///window.innerWidth; // - myimageOffset.left + 0*$imgzoomresult.width()/2;
+    var y = (tmp.clientY - myimageOffset.top - 100 - window.innerHeight * 0.04); // *(window.innerWidth/375); // - myimageOffset.top + 0*$imgzoomresult.height()/2;
+    console.log(x, y);
+    axisX = x;
+    axisY = y;
+    $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
+    window.is_handle_myimage_touching = false;
+  });
+
+  //新增圖片框
+  $("#addsingle").on('click', function () {
+    $("#original" + editNum).removeClass("mouseAxis");
+    htmlItems = $("#imgblock").html();
+    productData.push({
+      axisX: axisX,
+      axisY: axisY,
+      name: $("#productName").val(),
+      remark: $("#remark").val(),
+      rank: rank
+    });
+    $("#productName").val('');
+    $("#remark").val('');
+    $(".rating").rate("setValue", 0);
+    console.log(productData);
+    editNum += 1;
+    htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis" style="display: inline-block;"><img src="" /></div>';
+    $("#imgblock").html(htmlItems);
+
+    $(document).on('touchmove', MYIMAGE_SELECTOR, function (e) {
+      //if(!window.is_myimage_touching){return;}
+      //if(window.is_handle_myimage_touching){return;}
+      window.is_handle_myimage_touching = true;
+      console.log(e.touches[0].clientX, e.touches[0].clientY, myimageOffset.top, myimageOffset.left);
+      var tmp = e.touches[0];
+      var x = tmp.clientX - 100; ///window.innerWidth; // - myimageOffset.left + 0*$imgzoomresult.width()/2;
+      var y = (tmp.clientY - myimageOffset.top - 100 - window.innerHeight * 0.04); // *(window.innerWidth/375); // - myimageOffset.top + 0*$imgzoomresult.height()/2;
+      console.log(x, y);
+      axisX = x;
+      axisY = y;
+      $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
+      window.is_handle_myimage_touching = false;
+    });
+  });
+});
+
+// $('.submit_button').click((event) => {
+//   $.post({
+//     url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
+//     dataType: "json",
+//     contentType: "application/json",
+//     xhrFields: {
+//       withCredentials: true
+//     },
+//     data: JSON.stringify({
+//       username: $('#ajax-form input[name=fName]').val(),
+//       evaluation: $('#evaluation').val(),
+//       description: $('#ajax-form2 input[name=dName]').val()
+//     }),
+//     success: function (msg) {
+//       console.log(msg);
+//       if (msg.success) {
+//         console.log("success");
+//       }
+//       else {
+//         console.log("fail");
+//         alert(msg.text);
+//       }
+//     },
+//     error: function (data) {
+//       console.log("fail");
+//       console.log(data);
+//     }
+//   })
+// });
+
+//評價
+$(".rating").rate(options);
+
+$(".rating").on("change", function (ev, data) {
+  rank = data.to;
+});
