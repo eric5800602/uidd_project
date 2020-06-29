@@ -93,7 +93,7 @@ function like (id_click){
     console.log("btn_s" + btn_s)
     btn_s=!btn_s
     type="Source"
-    id_last=id_click.substring(12, id_click.length);
+    id_last=id_click.substring(11, id_click.length);
     if(btn_s==true){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -106,6 +106,7 @@ function like (id_click){
     btn_p=!btn_p
     console.log("btn_pr" + btn_p)
     type="Price"
+    id_last=id_click.substring(8, id_click.length);
     if(btn_p==true){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -113,10 +114,11 @@ function like (id_click){
       oper=0;
       $('#'+id_click).animate({"opacity":'1'})
     }
-  }else if(id_click.substring(4, 5)=='t'){
+  }else if(id_click.substring(10, 5)=='t'){
     btn_t=!btn_t
     console.log("btn_t" + btn_t)
     type="Texture"
+    id_last=id_click.substring(11, id_click.length);
     if(btn_t==true){
       oper=1
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -124,10 +126,11 @@ function like (id_click){
       oper=0
       $('#'+id_click).animate({"opacity":'1'})
     }
-  }else if(id_click.substring(4, 6)=='pu'){
+  }else if(id_click.substring(8, 6)=='pu'){
     btn_push=!btn_push
     console.log("btn_push" + btn_push)
     type="Push"
+    id_last=id_click.substring(11, id_click.length);
     if(btn_push==true){
       oper=1
       $('#'+id_click).animate({"opacity":'0.5'})
