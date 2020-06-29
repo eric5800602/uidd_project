@@ -77,8 +77,9 @@ $.ajax({
           <p class="content_hashtag_first content_hashtag_hashtag"> ${data.post.tags[i]}</p>\
         `
       }
-
+      $('#hashtag').html(html)
       hashtag_html+='</div>'
+
       console.log(hashtag_html)
     }
 });
