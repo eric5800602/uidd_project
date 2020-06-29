@@ -201,10 +201,11 @@ $('#btn_submit').click(function(){
     }),
       contentType: "application/json",
       success: function(data){
-        cut=data.url;
-        console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
+
         x=x+400;
         y=y+400;
+        cut=data.url;
+        console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
          $.ajax({
              url:"/add_request",
              type:'post',
@@ -222,7 +223,7 @@ $('#btn_submit').click(function(){
              contentType: "application/json",
              success: function(data){
                console.log(data);
-               location.reload();
+               //location.reload();
              }
          });
       }
