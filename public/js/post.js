@@ -154,7 +154,8 @@ function like (id_click){
     contentType: "application/json",
     success: function(data){
       console.log(data);
-      //location.reload();
+      console.log(id_click.substring(4, id_click.length));
+      //$('#'+id_click.substring(4, id_click.length)).text(data.count);
     }
   });
 
