@@ -89,11 +89,10 @@ function like (id_click){
   var oper=1;
   var type="";
   var id_last="";
+  var em = document.getElementById(id_click);
+  var temp = window.getComputedStyle(em).getPropertyValue("opacity");
   if(id_click.substring(4, 5)=='s'){
     console.log("btn_s" + btn_s)
-    //btn_s=!btn_s
-    var em = document.getElementById(id_click);
-    var temp = window.getComputedStyle(em).getPropertyValue("opacity");
     console.log("temp= "+temp)
     type="Source"
     id_last=id_click.substring(11, id_click.length);
