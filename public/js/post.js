@@ -203,7 +203,8 @@ $('#btn_submit').click(function(){
       success: function(data){
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
-
+        x=x+40;
+        y=y+40;
          $.ajax({
              url:"/add_request",
              type:'post',
@@ -215,8 +216,8 @@ $('#btn_submit').click(function(){
                Texture: t,
                Push: 1,
                img: cut,
-               x: x-40,
-               y: y-40,
+               x: x,
+               y: y,
              }),
              contentType: "application/json",
              success: function(data){
