@@ -136,7 +136,7 @@ function like (id_click){
   }else{
     console.log('wrong')
   }
-  console.log("request_id= "+id_clicked+"\ntype= "+type+"\noper= "+oper)
+  console.log("request_id= "+id_click+"\ntype= "+type+"\noper= "+oper)
   
 
 
