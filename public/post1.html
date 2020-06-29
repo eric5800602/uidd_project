@@ -2,112 +2,110 @@
 <html>
 
 <head>
-      <meta charset="utf-8">
-      <title>post1</title>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet"
-            type="text/css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">   
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-      <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">	  
-	 
-      <link rel="stylesheet" type="text/css" href="./css/post1.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>post1</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="https://use.typekit.net/mtr0qsx.css">
+  <link rel="stylesheet" type="text/css" href="./css/post1.css">
 
 </head>
+
 <body>
-
-<div  class=".container-fluid" id="id_header">
-  <div  class="row justify-content-between">
-    <div class="col-2">
-     <img class="img-responsive back" id="back" src="../image/footer/Back.svg">
-    </div>
-    <div class="col-7">
-            <h1 class="tetto">TETTO</h1>
-    </div>
-    <div  id="submitbutton" class="col-3">
-      <button  type="submit" class="submit_button"><b>完成</b></button>
-    </div>
-	</div>
-	</div>
-  
-<div class=".container-fluid" id="id_content">
-  <div  class="row">
-    <div class="col">
-		<img id="myimage" src="./res/pic.png"  class="img-thumbnail" data-target="image-preview">	
-    </div>
-	</div>
-	</div>
-	<div id="post1" class="container">
-  <div  class="row">
-    <div class="col">
-  
-    </div> 
-    <div class="col">  
-  <div  class="img-zoom-result">
-  <img src="" />
-  </div>
-    </div> 
-    <div class="col">
-
-	  <div id="addsingle" class="block">
-	  <label>
- 		 <span class="upload_icon"><img class="plus" src="./res/plus.svg"></span>
-        </label>
-		</div>
+  <!-- header bar -->
+  <div id="id_header">
+    <div class="row justify-content-between">
+      <div class="col-2">
+        <img class="img-responsive back" id="back" src="./image/footer/Back.svg">
       </div>
- 
-	</div>
-	</div>
-<div  id="post2" class="container custom-container-width">
-<div class="row">
-<div class="col-12">
-<div class="form-group">
-<label for="username" class="col control-label"><b>單品名稱</b></label>
-	<form id="ajax-form">
-                        <input type="text" name="fName" class="form-control">
-						</form>
-						</div></div></div>
-<div class="row">
-<div class="col-12">
-
-	<label for="evaluation" class="col control-label"><b>評價</b></label></div></div>	
-	<div class="row" id="evaluation">
-<div class="col-1" >
-  <input type="checkbox" checked="checked" value="1">
-</div>
-<div class="col-1">
-  <input type="checkbox" value="2">
-</div>
-<div class="col-1">
-  <input type="checkbox" value="3">
-</div>
-<div class="col-1">
-  <input type="checkbox" value="4">
-</div>
-<div class="col-1">
-  <input type="checkbox" value="5">
-</div>
+      <div class="col-7">
+        <h1 class="tetto">TETTO</h1>
+      </div>
+      <div id="submitbutton" class="col-3">
+        <button type="submit" class="submit_button"><b>完成</b></button>
+      </div>
+    </div>
   </div>
- 					
-<div class="row">
-<div class="col-12">
-<div class="form-group">
-<label for="description" class="col control-label"><b>說明</b></label>
- <form id="ajax-form2">
-                       <div class="textarea" contenteditable="true"></div></form>
-						</div>
-						</div></div></div>
-<!-------javascript----->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-			<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-            <script src="./js/post1.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- container -->
+  <div class="container">
+    <!-- 產品圖片 -->
+    <div id="id_content">
+      <div class="row">
+        <div>
+          <img id="myimage" src="./res/pic.png" class="img-thumbnail" data-target="image-preview">
+        </div>
+      </div>
+    </div>
+    <!-- <div style="width: 100%;">
+      <img id="myimage" src="./res/pic.png" style="width: 100%;">
+    </div> -->
+
+    <!-- 新增縮圖 -->
+    <div id="post1" class="d-flex justify-content-end align-items-center">
+      <div id="imgblock" class="img-block-area"></div>
+
+      <div id="addsingle" class="d-flex justify-content-center align-items-center"
+        style="background: #f7f7f7;width: 78px;height: 78px;">
+        <img src="./res/plus.svg" style="width: 50%;height: 50%;">
+      </div>
+    </div>
+
+    <!-- 縮圖說明內容 -->
+    <div id="post2">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="productName" class="control-label font-weight-bold">單品名稱</label>
+            <form id="ajax-form">
+              <input type="text" name="productName" id="productName" class="form-control">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 font-weight-bold">評價</div>
+        <div class="col-12">
+          <div class="rating" style="font-size: 38px;"></div>
+        </div>
+      </div>
+
+      <!-- <div class="row" id="evaluation">
+        <div class="col-1">
+          <input type="checkbox" checked="checked" value="1">
+        </div>
+        <div class="col-1">
+          <input type="checkbox" value="2">
+        </div>
+        <div class="col-1">
+          <input type="checkbox" value="3">
+        </div>
+        <div class="col-1">
+          <input type="checkbox" value="4">
+        </div>
+        <div class="col-1">
+          <input type="checkbox" value="5">
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <label class="font-weight-bold">說明</label>
+        <textarea class="form-control" id="remark" rows="5"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-------javascript----->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/rater.min.js"></script>
+  <script src="./js/post1.js"></script>
 </body>
+
 </html>
