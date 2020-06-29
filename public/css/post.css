@@ -185,6 +185,12 @@ header {
       box-shadow: 0 0.2rem 1rem #888888;
 
     }
+    .requests_request_nun{
+      text-align: right;
+      font-size: 2rem;
+      font-weight: 900;
+      padding-right: 0.7rem;
+    }
 
 .request {
   display: inline-block;
