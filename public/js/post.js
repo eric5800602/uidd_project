@@ -155,7 +155,7 @@ function like (id_click){
     success: function(data){
       console.log(data);
       console.log(id_click.substring(4, id_click.length));
-      //$('#'+id_click.substring(4, id_click.length)).text(data.count);
+      $('#'+id_click.substring(4, id_click.length)).text(data.count);
     }
   });
 
