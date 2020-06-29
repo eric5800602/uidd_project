@@ -25,7 +25,7 @@ $.ajax({
       img=data.post.post_icon;
       var html='<div class="requests"><p class="requests_title">Request</p>';
       for(i=0; i<data.requests.length; i++){
-        var id = "source"+data.requests[i]._id;
+        var id = ["source_"+data.requests[i]._id, "btn_source_"+data.requests[i]._id, "price_"+data.requests[i]._id, "btn_price_"+data.requests[i]._id, "texture_"+data.requests[i]._id, "btn_texture_"+data.requests[i]._id,];
         console.log("id= "+id)
         html=html+`
                 <div class="requests_request " id="${data.requests[i]._id}">\
@@ -33,8 +33,8 @@ $.ajax({
                   <div class="requests_request_data ">
                     
                     <div class="request_data data_source">
-                      <p class="request_data_num" id=source${data.requests[i]._id}> ${data.requests[i].Source}
-                      <p class="request_data_btn id=btnsource${data.requests[i]._id}> Source
+                      <p class="request_data_num" id=${id[0]}> ${data.requests[i].Source}
+                      <p class="request_data_btn id=${id[1]}> Source
                     </div>
                     <div class="request_data data_price">
                       <p class="request_data_num" id="price"^${data.requests[i]._id}> ${data.requests[i].Price}
