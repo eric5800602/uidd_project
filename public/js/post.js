@@ -91,13 +91,13 @@ function like (id_click){
   var id_last="";
   if(id_click.substring(4, 5)=='s'){
     console.log("btn_s" + btn_s)
-    btn_s=!btn_s
+    //btn_s=!btn_s
     var em = document.getElementById(id_click);
     var temp = window.getComputedStyle(em).getPropertyValue("opacity");
     console.log("temp= "+temp)
     type="Source"
     id_last=id_click.substring(11, id_click.length);
-    if(btn_s==true){
+    if(tmp==1){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
     }else{
