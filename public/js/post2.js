@@ -122,7 +122,6 @@ $('#file').change(function() {
     var formData = new FormData();
     formData.append('picture', e.target.result);
     console.log(formData.get('picture'));
-	  src= formData.get('picture');
     $.ajax({
         url: "/upload_image", 
         type: "POST", 
@@ -198,7 +197,7 @@ file.onclick = function() {
         withCredentials: true
       },
 		data: JSON.stringify({
-  url: img,
+post_icon:$(“#camara-output”).attr("src");
 		space: $("#sel1").val(),
 		room:$("#sel2").val(),
 		pings: $('#ajax-form4 input[name=pings]').val(),
