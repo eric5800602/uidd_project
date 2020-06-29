@@ -105,7 +105,7 @@ function like (id_click){
   }else if(id_click.substring(4, 6)=='pu'){
     btn_push=!btn_push
     console.log("btn_push" + btn_push)
-    if(btn_t==false) $('#'+id_click).animate({"opacity":'0.5'})
+    if(btn_push==false) $('#'+id_click).animate({"opacity":'0.5'})
     else $('#'+id_click).animate({"opacity":'1'})  
   }else{
     console.log('wrong')
