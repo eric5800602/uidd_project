@@ -105,7 +105,8 @@ $('#post_content').click(function(){
   console.log("sc= "+sc+"\npos= "+pos)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
-  $('#post_content').css("top", "20")
+  $('#post_content').css({"top", "20"})
+  
   console.log("off_left_mid"+$('#post_content').offset().top)
   //$("#post_content").css( "top", "679.063px",function(){
   //$("#post_content").hide( "slide", 10000)
