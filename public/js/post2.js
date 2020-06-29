@@ -197,7 +197,7 @@ file.onclick = function() {
         withCredentials: true
       },
 		data: JSON.stringify({
-		post_icon:formData.append('picture'),
+		post_icon:$("#camera--output").val,
 		space: $("#sel1").val(),
 		room:$("#sel2").val(),
 		pings: $('#ajax-form4 input[name=pings]').val(),
