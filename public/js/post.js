@@ -33,7 +33,7 @@ $.ajax({
                   "\"price_"+data.requests[i]._id+"\"", "\"btn_price_"+data.requests[i]._id+"\"",
                   "\"texture_"+data.requests[i]._id+"\"", "\"btn_texture_"+data.requests[i]._id+"\"",
                   "\"btn_push_"+data.requests[i]._id+"\"",  "\"push_"+data.requests[i]._id+"\""];
-        console.log("id= "+id)
+        //console.log("id= "+id)
         html=html+`
                 <div class="requests_request " id="${data.requests[i]._id}">\
                   <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
@@ -61,7 +61,7 @@ $.ajax({
         `
       }
       html+="</div>"
-      console.log("html=" + html)
+      //console.log("html=" + html)
       $('#requests').html(html)
 
       $('#full').attr("src", data.post.post_icon)
@@ -80,7 +80,7 @@ $.ajax({
       $('#hashtag').html(hashtag_html)
       hashtag_html+='</div>'
 
-      console.log(hashtag_html)
+      //console.log(hashtag_html)
     }
 });
 
