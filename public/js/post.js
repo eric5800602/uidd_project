@@ -100,8 +100,8 @@ $.ajax({
 
 $('#post_content').click(function(){
   console.log("outch!");
-  $( "#post_content" ).hide( "slide", 1000 );
-
+  //$( "#post_content" ).hide( "slide", 1000 );
+  $('#post_content').animate({"left":'120vw'})
 })
 
 
