@@ -39,8 +39,8 @@ $.ajax({
                       <p class="request_data_btn" id=btn_price_${data.requests[i]._id}> Price
                     </div>
                     <div class="request_data data_texture">
-                      <p class="request_data_num" id=texture_${data.requests[i]._id}> ${data.requests[i].Texture}
-                      <p class="request_data_btn" id=btn_texture_${data.requests[i]._id}> Texture
+                      <p class="request_data_num" id="texture"+${data.requests[i]._id}> ${data.requests[i].Texture}
+                      <p class="request_data_btn" id="btn_texture"+${data.requests[i]._id}> Texture
                     </div>
 
                   </div>
