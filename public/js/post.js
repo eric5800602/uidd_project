@@ -81,6 +81,7 @@ $.ajax({
 
 function like (id_click){
   console.log(id_click)
+  console.log(id_click.substring(4, 5))
   if(id_click.substring(4, 5)=='s'){
     console.log('s')
 
