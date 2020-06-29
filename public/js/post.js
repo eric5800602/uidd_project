@@ -202,8 +202,8 @@ $('#btn_submit').click(function(){
       contentType: "application/json",
       success: function(data){
 
-        x=x+400;
-        y=y+400;
+        x=x;
+        y=y;
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
          $.ajax({
