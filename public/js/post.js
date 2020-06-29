@@ -26,7 +26,7 @@ $.ajax({
       var html='<div class="requests"><p class="requests_title">Request</p>';
       for(i=0; i<data.requests.length; i++){
         var id = "source"+data.requests[i]._id;
-        console.log("id= "id)
+        console.log("id= "+id)
         html=html+`
                 <div class="requests_request " id="${data.requests[i]._id}">\
                   <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
