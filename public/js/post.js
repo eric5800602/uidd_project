@@ -80,24 +80,20 @@ $.ajax({
 });
 
 function like (id_click){
-    console.log(id_click)
+  console.log(id_click)
+  if(id_click.substring(3, 4)=='s'){
+    console.log('s')
 
+  }else if(id_click.substring(3, 4)=='p'){
+    console.log('p')
+  }else if(id_click.substring(3, 4)=='t'){
+    console.log('t')
+  }else{
+    console.log('wrong')
+  }
+  
 
 }
-
-// request 按讚
-$('.request_data_btn').on("click", function(){
-  alert("success");
-});
-
-$('.requset_data_btn').click(function(){
-  console.log("source"); 
-});
-
-$('.data_price').click(function(){ 
-  console.log("price"); 
-});
-
 
 $('.data_texture').click(function(){ 
   console.log("texture"); 
