@@ -25,7 +25,10 @@ $.ajax({
       img=data.post.post_icon;
       var html='<div class="requests"><p class="requests_title">Request</p>';
       for(i=0; i<data.requests.length; i++){
-        var id = ["\"source_"+data.requests[i]._id+"\"", "\"btn_source_"+data.requests[i]._id + "\"", "\"price_"+data.requests[i]._id+"\"", "\"btn_price_"+data.requests[i]._id+"\"", "\"texture_"+data.requests[i]._id+"\"", "\"btn_texture_"+data.requests[i]._id+"\""];
+        var id = ["\"source_"+data.requests[i]._id+"\"", "\"btn_source_"+data.requests[i]._id + "\"",
+                  "\"price_"+data.requests[i]._id+"\"", "\"btn_price_"+data.requests[i]._id+"\"",
+                  "\"texture_"+data.requests[i]._id+"\"", "\"btn_texture_"+data.requests[i]._id+"\"",
+                  "\"btn_push_"+data.requests[i]._id+"\"",  "\"push"+data.requests[i]._id+"\""];
         console.log("id= "+id)
         html=html+`
                 <div class="requests_request " id="${data.requests[i]._id}">\
@@ -38,17 +41,17 @@ $.ajax({
                     </div>
                     <div class="request_data data_price">
                       <p class="request_data_num" id=${id[2]}> ${data.requests[i].Price}
-                      <p class="request_data_btn" id=${id[3]}> Price
+                      <p class="request_data_btn" id=${id[3]} onclick="like(this.id)"> Price
                     </div>
                     <div class="request_data data_texture">
                       <p class="request_data_num" id=${id[4]}> ${data.requests[i].Texture}
-                      <p class="request_data_btn" id=${id[5]}> Texture
+                      <p class="request_data_btn" id=${id[5]} onclick="like(this.id)"> Texture
                     </div>
 
                   </div>
                   <div class="requests_request_push">
-                    <p class="requests_request_btn"> PUSH
-                    <p class="requests_request_num"> ${data.requests[i].Push}
+                    <p class="requests_request_btn" onclick="like(this.id)"> PUSH
+                    <p class="requests_request_num" id=${id[6]} onclick="like(this.id)"> ${data.requests[i].Push}
                   </div>
                 </div>
         `
