@@ -106,7 +106,7 @@ function slide(){
   console.log("sc= "+sc+"\npos= "+pos)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
-  $('#post_content').css({"top": newposition})
+  $('#post_content').css({"top": "682.5625px"})
   console.log("n" + newposition)
   console.log("off_left_mid"+$('#post_content').offset().top)
   //$("#post_content").css( "top", "679.063px",function(){
