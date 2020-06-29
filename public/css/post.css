@@ -103,6 +103,7 @@ header {
     letter-spacing: 0.1rem; }
   .content_category_title {
     margin: 0.5rem 0 0.85rem 0;
+    font-weight: 800;
     font-size: 1.17rem;
     color: #505050; }
   .content_category_content_content {
@@ -132,6 +133,7 @@ header {
       background-color: #FFFFFF;
       color: #707070; }
     .content_hashtag_title {
+      font-weight: 800;
       margin: 0.5rem 0 0.85rem 0;
       font-size: 1.17rem;
       color: #505050; }
