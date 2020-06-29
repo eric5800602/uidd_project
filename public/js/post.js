@@ -93,7 +93,7 @@ function like (id_click){
     console.log("btn_s" + btn_s)
     btn_s=!btn_s
     type="Source"
-    id_last=id_click.substring(12, id_click.length());
+    id_last=id_click.substring(12, id_click.length);
     if(btn_s==true){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
