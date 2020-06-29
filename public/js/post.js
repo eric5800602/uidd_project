@@ -98,6 +98,12 @@ $.ajax({
     }
 });
 
+$('#post_content').click(function(){
+  $( "#post_content" ).show( "slide", 1000 );
+
+})
+
+
 function like (id_click){
   // console.log(id_click)
   // console.log(id_click.substring(4, 5))
