@@ -89,7 +89,7 @@ $.ajax({
                         <p class="content_category_content_big">></p>\
                         <p class="content_category_content_third content_category_content_content"> ${data.post.pings}</p>\
                         `;
-      $('#hashtag').html(category_html)
+      $('#catagory').html(category_html)
       //console.log(category_html)
 
 
