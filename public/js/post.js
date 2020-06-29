@@ -87,9 +87,11 @@ function like (id_click){
   console.log(id_click)
   //console.log(id_click.substring(4, 5))
   var oper=1;
+  var type="";
   if(id_click.substring(4, 5)=='s'){
     console.log("btn_s" + btn_s)
     btn_s=!btn_s
+    type="Source"
     if(btn_s==true){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -101,6 +103,7 @@ function like (id_click){
   }else if(id_click.substring(4, 6)=='pr'){
     btn_p=!btn_p
     console.log("btn_pr" + btn_p)
+    type="Price"
     if(btn_p==true){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -111,6 +114,7 @@ function like (id_click){
   }else if(id_click.substring(4, 5)=='t'){
     btn_t=!btn_t
     console.log("btn_t" + btn_t)
+    type="Texture"
     if(btn_t==true){
       oper=1
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -121,6 +125,7 @@ function like (id_click){
   }else if(id_click.substring(4, 6)=='pu'){
     btn_push=!btn_push
     console.log("btn_push" + btn_push)
+    type="Push"
     if(btn_push==true){
       oper=1
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -131,7 +136,10 @@ function like (id_click){
   }else{
     console.log('wrong')
   }
-  console.log("oper= "+oper) 
+  console.log("request_id= "+id_clicked+"\ntype= "+type+"\noper= "+oper+")
+  
+
+
 
 }
 
