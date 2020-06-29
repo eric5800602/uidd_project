@@ -31,16 +31,16 @@ $.ajax({
                   <div class="requests_request_data ">
                     
                     <div class="request_data data_source">
-                      <p class="request_data_num" id="source"> ${data.requests[i].Source}
-                      <p class="request_data_btn"> Source
+                      <p class="request_data_num" id="source"+${data.request[i]._id}> ${data.requests[i].Source}
+                      <p class="request_data_btn id="btn_source"+${data.request[i]._id} > Source
                     </div>
                     <div class="request_data data_price">
-                      <p class="request_data_num" id="price"> ${data.requests[i].Price}
-                      <p class="request_data_btn"> Price
+                      <p class="request_data_num" id="price"+${data.request[i]._id}> ${data.requests[i].Price}
+                      <p class="request_data_btn" id="btn_price"+${data.request[i]._id}> Price
                     </div>
                     <div class="request_data data_texture">
-                      <p class="request_data_num" id="texture"> ${data.requests[i].Texture}
-                      <p class="request_data_btn"> Texture
+                      <p class="request_data_num" id="texture"+${data.request[i]._id}> ${data.requests[i].Texture}
+                      <p class="request_data_btn" id="btn_texture"+${data.request[i]._id}> Texture
                     </div>
 
                   </div>
@@ -76,10 +76,11 @@ $.ajax({
 
 
 // request 按讚
-$('.data_source').on("click",".deletelanguage", function(){
+$('.request_data_btn').on("click",".deletelanguage", function(){
   alert("success");
 });
-$('.data_source').click(function(){
+
+$('#source').click(function(){
   console.log("source"); 
 });
 
