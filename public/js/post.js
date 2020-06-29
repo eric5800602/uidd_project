@@ -70,6 +70,7 @@ $.ajax({
       }
 
       hashtag_html+='</div>'
+      console.log(hashtag_html)
     }
 });
 
