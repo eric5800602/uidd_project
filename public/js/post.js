@@ -101,7 +101,7 @@ $.ajax({
 function slide(){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('#post_content').offset().top
-  $("#post_content").hide( "slide", 1000)
+  $("#post_content").hide( "slide", 500)
   $('#post_content').css({"top": pos+sc+"px"})
 }
 
