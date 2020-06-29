@@ -79,10 +79,7 @@ opacity:0;
     object-fit: cover;
 	z-index:4;
 }
-#camera--view, #camera--view2, #camera--sensor, #camera--output{
-    transform: scaleX(-1);
-   
-}
+
 #camerasetting{
 	height:30vh;
 	background-color:#E9E9E9;
