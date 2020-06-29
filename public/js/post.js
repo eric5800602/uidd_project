@@ -97,7 +97,7 @@ function like (id_click){
     console.log("temp= "+temp)
     type="Source"
     id_last=id_click.substring(11, id_click.length);
-    if(tmp==1){
+    if(temp==1){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
     }else{
