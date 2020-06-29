@@ -101,12 +101,13 @@ $.ajax({
 function slide(){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('#post_content').offset().top
-  var newpos = 682.5625+sc
+  var newpos = pos+sc
+  var newposition = newpos+"px"
   console.log("sc= "+sc+"\npos= "+pos)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
-  $('#post_content').css({"top": newpos+"px!important"})
-  console.log("n" + newpos)
+  $('#post_content').css({"top": newposition})
+  console.log("n" + newposition)
   console.log("off_left_mid"+$('#post_content').offset().top)
   //$("#post_content").css( "top", "679.063px",function(){
   $("#post_content").hide( "slide", 10000)
