@@ -101,7 +101,7 @@ $.ajax({
 function slide(){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('#post_content').offset().top
-  var newpos = sc+pos
+  var newpos = 679.063+pos
   console.log("sc= "+sc+"\npos= "+pos)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
