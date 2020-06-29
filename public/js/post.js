@@ -195,7 +195,7 @@ $('#btn_submit').click(function(){
       y: yy,
       width: 375,
       height: 282,
-      target_w: 78,
+      target_w: 70,
       target_h: 78
 
     }),
