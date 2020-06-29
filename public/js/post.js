@@ -103,7 +103,7 @@ function slide(){
   var pos = $('.content_content').offset().top
   $("#post_content1").effect("slide",{direction: "left", mode:"hide"},10000)
   $('#post_content1').css({"top": pos+sc+"px"})
-  $("#post_content2").effect("slide",{direciton: "left", mode:"show"},10000)
+  $("#post_content2").effect("slide",{direciton: "right", mode:"show"},10000)
   $('#post_content2').css({"top": pos+sc+"px"})
 }
 
