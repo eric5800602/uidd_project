@@ -110,7 +110,8 @@ header {
     border: solid #707070 0.08rem;
     border-radius: 0.42rem;
     background-color: #FFFFFF;
-    color: #505050; }
+    color: #707070;
+    }
   .content_category_content_first {
     display: inline; }
   .content_category_content_big {
@@ -133,7 +134,7 @@ header {
     .content_hashtag_title {
       margin: 0.5rem 0 0.85rem 0;
       font-size: 1.17rem;
-      color: #707070; }
+      color: #505050; }
 
 .requests {
   padding: 1.2rem 1.42rem;
