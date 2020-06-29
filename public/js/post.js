@@ -102,13 +102,15 @@ $('#post_content').click(function(){
   var viewportOffset = el.getBoundingClientRect();
   // these are relative to the viewport, i.e. the window
   var top = viewportOffset.top;
-  console.log("topQQ"+top)
+  var test = $(document).scrollTop;
+  console.log("scrollTop"+test)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
   document.getElementById("post_content").style.top=$('#post_content').offset().top+"!important"
   console.log("off_left_mid"+$('#post_content').offset().top)
   $("#post_content").css( "top", "679.063px",function(){
-    $("#post_content").hide( "slide", 10000);
+    $("#post_content").hide( "slide", 10000,function(){
+    );
   });
   console.log("off_left_after"+$('#post_content').offset().top)
   //$('#post_content').animate({"position":'absolute', "left":'-10rem'})
