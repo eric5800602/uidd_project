@@ -101,7 +101,7 @@ $.ajax({
 $('#post_content').click(function(){
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
-  $( "#post_content" ).hide( "slide", 1000 );
+  //$( "#post_content" ).hide( "slide", 1000 );
   console.log("off_left_after"+$('#post_content').offset().top)
   $('#post_content').animate({"position":'absolute', "left":'-10rem'})
 })
