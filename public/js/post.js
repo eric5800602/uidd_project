@@ -88,10 +88,12 @@ function like (id_click){
   //console.log(id_click.substring(4, 5))
   var oper=1;
   var type="";
+  var id_last="";
   if(id_click.substring(4, 5)=='s'){
     console.log("btn_s" + btn_s)
     btn_s=!btn_s
     type="Source"
+    id_last=id_click.substring(12, id_click.length());
     if(btn_s==true){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
@@ -136,7 +138,7 @@ function like (id_click){
   }else{
     console.log('wrong')
   }
-  console.log("request_id= "+id_click+"\ntype= "+type+"\noper= "+oper)
+  console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)
   
 
 
