@@ -92,20 +92,23 @@ function like (id_click){
     if(btn_s==false) $('#'+id_click).animate({"opacity":'0.5'})
     else $('#'+id_click).animate({"opacity":'1'})  
 
-  }else if(id_click.substring(4, 5)=='p'){
+  }else if(id_click.substring(4, 6)=='pr'){
     btn_p=!btn_p
-    console.log('p')
+    console.log("btn_pr" + btn_p)
     if(btn_p==false) $('#'+id_click).animate({"opacity":'0.5'})
     else $('#'+id_click).animate({"opacity":'1'})  
   }else if(id_click.substring(4, 5)=='t'){
     btn_t=!btn_t
-    console.log('t')
+    console.log("btn_t" + btn_t)
+    if(btn_t==false) $('#'+id_click).animate({"opacity":'0.5'})
+    else $('#'+id_click).animate({"opacity":'1'})  
+  }else if(id_click.substring(4, 6)=='pu'){
+    btn_t=!btn_t
+    console.log("btn_push" + btn_push)
     if(btn_t==false) $('#'+id_click).animate({"opacity":'0.5'})
     else $('#'+id_click).animate({"opacity":'1'})  
   }else{
     console.log('wrong')
-    if(btn_push==false) $('#'+id_click).animate({"opacity":'0.5'})
-    else $('#'+id_click).animate({"opacity":'1'})  
   }
   
 
