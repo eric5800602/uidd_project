@@ -76,6 +76,9 @@ $.ajax({
 
 
 // request 按讚
+$('.data_source').on("click",".deletelanguage", function(){
+  alert("success");
+});
 $('.data_source').click(function(){
   console.log("source"); 
 });
@@ -86,7 +89,7 @@ $('.data_price').click(function(){
 
 
 $('.data_texture').click(function(){ 
-  console.log("teexture"); 
+  console.log("texture"); 
 });
 
 // 點擊貼文照片出現東西
