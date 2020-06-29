@@ -103,7 +103,7 @@ $('#post_content').click(function(){
   // these are relative to the viewport, i.e. the window
   var top = viewportOffset.top;
   var test = $('body').scrollTop;
-  console.log("scrollTop"+test)
+  console.log("scrollTop"+window.scrollY)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
   document.getElementById("post_content").style.top=$('#post_content').offset().top+"!important"
