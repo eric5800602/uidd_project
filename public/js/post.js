@@ -105,11 +105,10 @@ function like (id_click){
     }
 
   }else if(id_click.substring(4, 6)=='pr'){
-    btn_p=!btn_p
-    console.log("btn_pr" + btn_p)
+    console.log("temp= "+temp)
     type="Price"
     id_last=id_click.substring(10, id_click.length);
-    if(btn_p==true){
+    if(temp==1){
       oper=1;
       $('#'+id_click).animate({"opacity":'0.5'})
     }else{
@@ -117,11 +116,10 @@ function like (id_click){
       $('#'+id_click).animate({"opacity":'1'})
     }
   }else if(id_click.substring(4, 5)=='t'){
-    btn_t=!btn_t
-    console.log("btn_t" + btn_t)
+    console.log("temp= "+temp)
     type="Texture"
     id_last=id_click.substring(12, id_click.length);
-    if(btn_t==true){
+    if(temp==1){
       oper=1
       $('#'+id_click).animate({"opacity":'0.5'})
     }else{
@@ -129,11 +127,10 @@ function like (id_click){
       $('#'+id_click).animate({"opacity":'1'})
     }
   }else if(id_click.substring(4, 6)=='pu'){
-    btn_push=!btn_push
-    console.log("btn_push" + btn_push)
+    console.log("temp= "+temp)
     type="Push"
     id_last=id_click.substring(9, id_click.length);
-    if(btn_push==true){
+    if(temp==1){
       oper=1
       $('#'+id_click).animate({"opacity":'0.5'})
     }else{
