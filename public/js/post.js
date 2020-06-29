@@ -110,13 +110,13 @@ function slide(){
   console.log("n" + newposition)
   console.log("off_left_mid"+$('#post_content').offset().top)
   //$("#post_content").css( "top", "679.063px",function(){
-  $("#post_content").hide( "slide", 10000)
+  //$("#post_content").hide( "slide", 10000)
   //});
   console.log("off_left_after"+$('#post_content').offset().top)
   //$('#post_content').animate({"position":'absolute', "left":'-10rem'})
 }
 
- $('#post_content').css({"top": "20"})
+ //$('#post_content').css({"top": "20"})
 
 function like (id_click){
   // console.log(id_click)
