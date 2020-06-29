@@ -86,27 +86,48 @@ $.ajax({
 function like (id_click){
   console.log(id_click)
   //console.log(id_click.substring(4, 5))
+  var oper=1;
   if(id_click.substring(4, 5)=='s'){
     console.log("btn_s" + btn_s)
     btn_s=!btn_s
-    if(btn_s==true) $('#'+id_click).animate({"opacity":'0.5'})
-    else $('#'+id_click).animate({"opacity":'1'})  
+    if(btn_s==true){
+      oper=1;
+      $('#'+id_click).animate({"opacity":'0.5'})
+    }else{
+      oper=0;
+      $('#'+id_click).animate({"opacity":'1'})
+    }
 
   }else if(id_click.substring(4, 6)=='pr'){
     btn_p=!btn_p
     console.log("btn_pr" + btn_p)
-    if(btn_p==true) $('#'+id_click).animate({"opacity":'0.5'})
-    else $('#'+id_click).animate({"opacity":'1'})  
+    if(btn_p==true){
+      oper=1;
+      $('#'+id_click).animate({"opacity":'0.5'})
+    }else{
+      oper=0;
+      $('#'+id_click).animate({"opacity":'1'})
+    }
   }else if(id_click.substring(4, 5)=='t'){
     btn_t=!btn_t
     console.log("btn_t" + btn_t)
-    if(btn_t==true) $('#'+id_click).animate({"opacity":'0.5'})
-    else $('#'+id_click).animate({"opacity":'1'})  
+    if(btn_t==true){
+      oper=1
+      $('#'+id_click).animate({"opacity":'0.5'})
+    }else{
+      oper=0
+      $('#'+id_click).animate({"opacity":'1'})
+    }
   }else if(id_click.substring(4, 6)=='pu'){
     btn_push=!btn_push
     console.log("btn_push" + btn_push)
-    if(btn_push==true) $('#'+id_click).animate({"opacity":'0.5'})
-    else $('#'+id_click).animate({"opacity":'1'})  
+    if(btn_push==true){
+      oper=1
+      $('#'+id_click).animate({"opacity":'0.5'})
+    }else{
+      oper=0
+      $('#'+id_click).animate({"opacity":'1'})
+    }
   }else{
     console.log('wrong')
   }
