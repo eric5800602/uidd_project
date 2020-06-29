@@ -76,7 +76,7 @@ $.ajax({
 
 
 // request 按讚
-$('.request_data_btn').on("click",".deletelanguage", function(){
+$('.request_data_btn').on("click", function(){
   alert("success");
 });
 
