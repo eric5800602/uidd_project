@@ -81,12 +81,12 @@ $.ajax({
 
 function like (id_click){
   console.log(id_click)
-  if(id_click.substring(3, 4)=='s'){
+  if(id_click.substring(4, 5)=='s'){
     console.log('s')
 
-  }else if(id_click.substring(3, 4)=='p'){
+  }else if(id_click.substring(4, 5)=='p'){
     console.log('p')
-  }else if(id_click.substring(3, 4)=='t'){
+  }else if(id_click.substring(4, 5)=='t'){
     console.log('t')
   }else{
     console.log('wrong')
