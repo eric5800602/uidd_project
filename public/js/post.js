@@ -60,9 +60,9 @@ $.ajax({
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
       
-      var hashtag_html=`<div class="content_hashtag">\
+      var hashtag_html='<div class="content_hashtag">\
                         <p class="content_hashtag_title">Hashtag</p>\
-                        `;
+                        ';
       for(i=0; i<data.post.tags.length; i++){
         hashtag_html=hashtag_html + `\
           <p class="content_hashtag_first content_hashtag_hashtag"> ${data.post.tags[i]}</p>\
