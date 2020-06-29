@@ -204,26 +204,26 @@ $('#btn_submit').click(function(){
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
 
- //        $.ajax({
- //            url:"/add_request",
- //            type:'post',
- //            dataType: "json",
- //            data:JSON.stringify({
- //              postid:localStorage.getItem("post_id"),
- //              Source: s,
- //              Price: p,
- //              Texture: t,
- //              Push: 1,
- //              img: cut,
- //              x: x,
- //              y: y,
- //            }),
- //            contentType: "application/json",
- //            success: function(data){
- //              console.log(data);
- //              location.reload();
- //            }
- //        });
+         $.ajax({
+             url:"/add_request",
+             type:'post',
+             dataType: "json",
+             data:JSON.stringify({
+               postid:localStorage.getItem("post_id"),
+               Source: s,
+               Price: p,
+               Texture: t,
+               Push: 1,
+               img: cut,
+               x: x,
+               y: y,
+             }),
+             contentType: "application/json",
+             success: function(data){
+               console.log(data);
+               location.reload();
+             }
+         });
       }
   });
   
