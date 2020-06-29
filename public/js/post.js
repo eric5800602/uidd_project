@@ -184,7 +184,7 @@ $('#btn_submit').click(function(){
   if(source==true) s=1;
   if(price==true) p=1;
   if(texture==true) t=1;
-  console.log("Cropimage\nimg: " + img + "\nx: " + xpx + "\ny: " + ypx )
+  console.log("Cropimage\nimg: " + img + "\nx: " + x + "\ny: " + y )
   $.ajax({
     url:"/cropimage",
     type:'post',
@@ -203,8 +203,8 @@ $('#btn_submit').click(function(){
       success: function(data){
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
-        x=x+40;
-        y=y+40;
+        x=x+400;
+        y=y+400;
          $.ajax({
              url:"/add_request",
              type:'post',
