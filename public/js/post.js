@@ -100,9 +100,9 @@ $.ajax({
 
 $('#post_content').click(function(){
   console.log("outch!");
+  console.log("off_left_before"+$('#post_content').offset().top)
   $( "#post_content" ).hide( "slide", 1000 );
-  console.log("off_left"+$('#post_content').offset().left)
-  console.log("off_left"+$('#post_content').offset().top)
+  console.log("off_left_after"+$('#post_content').offset().top)
   //$('#post_content').animate({"left":'120px'})
 })
 
