@@ -3,9 +3,11 @@ var productData = [];
 var editNum = 1;
 var axisX = 0, axisY = 0, rank = 0;
 var options = {
+
   max_value: 5,
   step_size: 1,
   initial_value: rank
+
 };
 var serverUrl = 'https://luffy.ee.ncku.edu.tw:7575/'
 
@@ -17,7 +19,7 @@ $(document).ready(function () {
     url: serverUrl + 'get_post_image',
     dataType: 'json',
     data: {
-      id: '5ef9bfcfbb4c462c15ababc8'
+      id: '5efa0614bb4c462c15abad46'
     },
     success: function (resData) {
       console.log('resData => ', resData);
@@ -25,7 +27,7 @@ $(document).ready(function () {
     }
   });
 
-  htmlItems += '<div id="original1" class="img-zoom-result mouseAxis" style="display: inline-block;"><img src="" /></div>';
+  htmlItems += '<div id="original1" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
   $("#imgblock").html(htmlItems);
 
   //找單品
@@ -35,27 +37,31 @@ $(document).ready(function () {
     window.is_myimage_touching = e.type === 'touchstart';
   });
   //$('.img-zoom-result').css('background-image',$myimage.attr('src'));
-  window.is_handle_myimage_touching = false;
+  //window.is_handle_myimage_touching = false;
 
-  var $imgzoomresult = $('.mouseAxis');
+  
   $(document).on('touchmove', MYIMAGE_SELECTOR, function (e) {
     //if(!window.is_myimage_touching){return;}
     //if(window.is_handle_myimage_touching){return;}
-    window.is_handle_myimage_touching = true;
+    //window.is_handle_myimage_touching = true;
+    var $imgzoomresult = $('.mouseAxis' + editNum );
     console.log(e.touches[0].clientX, e.touches[0].clientY, myimageOffset.top, myimageOffset.left);
     var tmp = e.touches[0];
-    var x = tmp.clientX - 100; ///window.innerWidth; // - myimageOffset.left + 0*$imgzoomresult.width()/2;
-    var y = (tmp.clientY - myimageOffset.top - 100 - window.innerHeight * 0.04); // *(window.innerWidth/375); // - myimageOffset.top + 0*$imgzoomresult.height()/2;
+    var x = tmp.clientX - 50; ///window.innerWidth; // - myimageOffset.left + 0*$imgzoomresult.width()/2;
+    var y = (tmp.clientY - myimageOffset.top - 20 - window.innerHeight * 0.04); // *(window.innerWidth/375); // - myimageOffset.top + 0*$imgzoomresult.height()/2;
     console.log(x, y);
     axisX = x;
     axisY = y;
-    $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
-    window.is_handle_myimage_touching = false;
+    console.log("111");
+    var haha = $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
+    console.log(haha);
+    //window.is_handle_myimage_touching = false;
+    //新增圖片框
+   
   });
-
-  //新增圖片框
   $("#addsingle").on('click', function () {
-    $("#original" + editNum).removeClass("mouseAxis");
+    
+   // $("#original" + editNum).removeClass("mouseAxis");
     htmlItems = $("#imgblock").html();
     productData.push({
       axisX: axisX,
@@ -69,24 +75,14 @@ $(document).ready(function () {
     $(".rating").rate("setValue", 0);
     console.log(productData);
     editNum += 1;
-    htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis" style="display: inline-block;"><img src="" /></div>';
+  
+    htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
     $("#imgblock").html(htmlItems);
+    console.log("123");
 
-    $(document).on('touchmove', MYIMAGE_SELECTOR, function (e) {
-      //if(!window.is_myimage_touching){return;}
-      //if(window.is_handle_myimage_touching){return;}
-      window.is_handle_myimage_touching = true;
-      console.log(e.touches[0].clientX, e.touches[0].clientY, myimageOffset.top, myimageOffset.left);
-      var tmp = e.touches[0];
-      var x = tmp.clientX - 100; ///window.innerWidth; // - myimageOffset.left + 0*$imgzoomresult.width()/2;
-      var y = (tmp.clientY - myimageOffset.top - 100 - window.innerHeight * 0.04); // *(window.innerWidth/375); // - myimageOffset.top + 0*$imgzoomresult.height()/2;
-      console.log(x, y);
-      axisX = x;
-      axisY = y;
-      $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
-      window.is_handle_myimage_touching = false;
-    });
   });
+
+
 });
 
 // $('.submit_button').click((event) => {
