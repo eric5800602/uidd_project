@@ -28,7 +28,7 @@ $.ajax({
         var id = ["\"source_"+data.requests[i]._id+"\"", "\"btn_source_"+data.requests[i]._id + "\"",
                   "\"price_"+data.requests[i]._id+"\"", "\"btn_price_"+data.requests[i]._id+"\"",
                   "\"texture_"+data.requests[i]._id+"\"", "\"btn_texture_"+data.requests[i]._id+"\"",
-                  "\"btn_push_"+data.requests[i]._id+"\"",  "\"push"+data.requests[i]._id+"\""];
+                  "\"btn_push_"+data.requests[i]._id+"\"",  "\"push_"+data.requests[i]._id+"\""];
         console.log("id= "+id)
         html=html+`
                 <div class="requests_request " id="${data.requests[i]._id}">\
