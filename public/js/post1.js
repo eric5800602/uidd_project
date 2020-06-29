@@ -120,8 +120,8 @@ $(document).ready(function () {
 // });
 
 //評價
-$(".rating").rate(options);
+/*(".rating").rate(options);
 
 $(".rating").on("change", function (ev, data) {
   rank = data.to;
-});
+});*/
