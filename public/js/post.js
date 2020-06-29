@@ -87,7 +87,7 @@ function like (id_click){
   console.log(id_click)
   //console.log(id_click.substring(4, 5))
   if(id_click.substring(4, 5)=='s'){
-    console.log('s')
+    console.log("btn_s" + btn_s)
     btn_s=!btn_s
     if(btn_s==false) $('#'+id_click).animate({"opacity":'0.5'})
     else $('#'+id_click).animate({"opacity":'1'})  
