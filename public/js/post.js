@@ -116,7 +116,6 @@ function like (id_click){
       $('#'+id_click).animate({"opacity":'1'})
     }
   }else if(id_click.substring(4, 5)=='t'){
-    //console.log("temp= "+temp)
     type="Texture"
     id_last=id_click.substring(12, id_click.length);
     if(temp==1){
@@ -127,7 +126,6 @@ function like (id_click){
       $('#'+id_click).animate({"opacity":'1'})
     }
   }else if(id_click.substring(4, 6)=='pu'){
-    //console.log("temp= "+temp)
     type="Push"
     id_last=id_click.substring(9, id_click.length);
     if(temp==1){
@@ -141,22 +139,22 @@ function like (id_click){
     console.log('wrong')
   }
   console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)  
-  // $.ajax({
-  //   url:"/modify_request",
-  //   type:'post',
-  //   dataType: "json",
-  //   data:JSON.stringify({
-  //     requestid: id_last,
-  //     type: type,
-  //     plus: oper
-  //   }),
-  //   contentType: "application/json",
-  //   success: function(data){
-  //     console.log(data);
-  //     console.log(id_click.substring(4, id_click.length));
-  //     $('#'+id_click.substring(4, id_click.length)).text(data.count);
-  //   }
-  // });
+  $.ajax({
+    url:"/modify_request",
+    type:'post',
+    dataType: "json",
+    data:JSON.stringify({
+      requestid: id_last,
+      type: type,
+      plus: oper
+    }),
+    contentType: "application/json",
+    success: function(data){
+      console.log(data);
+      console.log(id_click.substring(4, id_click.length));
+      $('#'+id_click.substring(4, id_click.length)).text(data.count);
+    }
+  });
 
 }
 
