@@ -101,8 +101,10 @@ $.ajax({
 function slide(){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('#post_content').offset().top
-  $("#post_content").hide( "slide", 500)
-  $('#post_content').css({"top": pos+sc+"px"})
+  $("#post_content1").hide("slide", 500)
+  $('#post_content1').css({"top": pos+sc+"px"})
+  $("#post_content2").show("slide", 500)
+  $('#post_content2').css({"top": pos+sc+"px"})
 }
 
  //$('#post_content').css({"top": "20"})
@@ -227,6 +229,7 @@ $('.div_texture').click(function(){
 
 
 $(document).ready(function() {
+  $('#post_content2').hide()
   $('.requests_request_want').addClass("blue")
   var state=false
   $('#want_btn_0').click(function(){
