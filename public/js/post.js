@@ -221,7 +221,7 @@ $('#btn_submit').click(function(){
              contentType: "application/json",
              success: function(data){
                console.log(data);
-               //location.reload();
+               location.reload();
              }
          });
       }
