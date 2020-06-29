@@ -185,46 +185,46 @@ $('#btn_submit').click(function(){
   if(price==true) p=1;
   if(texture==true) t=1;
   console.log("Cropimage\nimg: " + img + "\nx: " + xpx + "\ny: " + ypx )
-  $.ajax({
-    url:"/cropimage",
-    type:'post',
-    dataType: "json",
-    data:JSON.stringify({
-      url: img,
-      x: x,
-      y: y,
-      width: 375,
-      height: 282,
-      target_w: 78,
-      target_h: 78
+ // $.ajax({
+ //   url:"/cropimage",
+ //   type:'post',
+ //   dataType: "json",
+ //   data:JSON.stringify({
+ //     url: img,
+ //     x: x,
+ //     y: y,
+ //     width: 375,
+ //     height: 282,
+ //     target_w: 78,
+ //     target_h: 78
 
-    }),
-      contentType: "application/json",
-      success: function(data){
-        cut=data.url;
-        console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
+ //   }),
+ //     contentType: "application/json",
+ //     success: function(data){
+ //       cut=data.url;
+ //       console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
 
-         $.ajax({
-             url:"/add_request",
-             type:'post',
-             dataType: "json",
-             data:JSON.stringify({
-               postid:localStorage.getItem("post_id"),
-               Source: s,
-               Price: p,
-               Texture: t,
-               img: cut,
-               x: x,
-               y: y,
-             }),
-             contentType: "application/json",
-             success: function(data){
-               console.log(data);
-               location.reload();
-             }
-         });
-      }
-  });
+ //        $.ajax({
+ //            url:"/add_request",
+ //            type:'post',
+ //            dataType: "json",
+ //            data:JSON.stringify({
+ //              postid:localStorage.getItem("post_id"),
+ //              Source: s,
+ //              Price: p,
+ //              Texture: t,
+ //              img: cut,
+ //              x: x,
+ //              y: y,
+ //            }),
+ //            contentType: "application/json",
+ //            success: function(data){
+ //              console.log(data);
+ //              location.reload();
+ //            }
+ //        });
+ //     }
+ // });
   
 
 
