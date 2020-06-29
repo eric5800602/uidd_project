@@ -102,7 +102,7 @@ $('#post_content').click(function(){
   var viewportOffset = el.getBoundingClientRect();
   // these are relative to the viewport, i.e. the window
   var top = viewportOffset.top;
-  var test = $(body).scrollTop;
+  var test = $('body').scrollTop;
   console.log("scrollTop"+test)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
