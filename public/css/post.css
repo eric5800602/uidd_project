@@ -212,3 +212,9 @@ header {
 body {
   overflow: auto;
   overflow-x: hidden; }
+
+#space{
+
+  width: 100%;
+  height: 10rem;
+}
