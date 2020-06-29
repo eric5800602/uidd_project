@@ -131,7 +131,7 @@ function like (id_click){
   }else{
     console.log('wrong')
   }
-  
+  console.log("oper= "+oper) 
 
 }
 
