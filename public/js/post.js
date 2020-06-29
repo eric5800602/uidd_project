@@ -6,6 +6,7 @@ var texture = false;
 var btn_s = false;
 var btn_p = false;
 var btn_t = false;
+var btn_push = false;
 var xpx=0, ypx=0, x=0, y=0, xx=0, yy=0;
 var img;
 $.ajax({
@@ -87,14 +88,24 @@ function like (id_click){
   //console.log(id_click.substring(4, 5))
   if(id_click.substring(4, 5)=='s'){
     console.log('s')
-    $('#'+id_click).animate({"opacity":'0.5'})
+    btn_s=!btn_s
+    if(btn_s==false) $('#'+id_click).animate({"opacity":'0.5'})
+    else $('#'+id_click).animate({"opacity":'1'})  
 
   }else if(id_click.substring(4, 5)=='p'){
+    btn_p=!btn_p
     console.log('p')
+    if(btn_p==false) $('#'+id_click).animate({"opacity":'0.5'})
+    else $('#'+id_click).animate({"opacity":'1'})  
   }else if(id_click.substring(4, 5)=='t'){
+    btn_t=!btn_t
     console.log('t')
+    if(btn_t==false) $('#'+id_click).animate({"opacity":'0.5'})
+    else $('#'+id_click).animate({"opacity":'1'})  
   }else{
     console.log('wrong')
+    if(btn_push==false) $('#'+id_click).animate({"opacity":'0.5'})
+    else $('#'+id_click).animate({"opacity":'1'})  
   }
   
 
