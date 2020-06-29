@@ -98,7 +98,7 @@ header {
       font-weight: 800;
       color: #505050; }
   .content_content {
-    position: relative;
+    position: relative!important;
     margin: 0 0 1.5rem 0;
     line-height: 1.5rem;
     letter-spacing: 0.1rem; }
