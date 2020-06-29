@@ -116,7 +116,7 @@ function slide(){
   //$('#post_content').animate({"position":'absolute', "left":'-10rem'})
 }
 
- // $('#post_content').css("position": "absolute", "top": "20"})
+ $('#post_content').css({"top": "20"})
 
 function like (id_click){
   // console.log(id_click)
