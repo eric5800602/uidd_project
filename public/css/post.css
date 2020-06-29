@@ -170,8 +170,20 @@ header {
       width: 5rem;
       text-align: center;
       color: white;
-      border-radius: 1rem;
+      border-radius: 0.5rem;
       display: inline-block;
+    }
+    .requests_request_btn{
+      background-color: #F17979;
+      color: white;
+      width: 6rem;
+      text-align: center;
+      border-radius: 0.5rem;
+      font-size: 1.3rem;
+      margin: 0.5rem 0.7rem;
+      padding: 0.2rem;
+      box-shadow: 0 0.2rem 1rem #888888;
+
     }
 
 .request {
