@@ -92,6 +92,9 @@ function like (id_click){
   if(id_click.substring(4, 5)=='s'){
     console.log("btn_s" + btn_s)
     btn_s=!btn_s
+    var em = document.getElementById(id_click);
+    var temp = window.getComputedStyle(em).getPropertyValue("opacity");
+    console.log("temp= "+temp)
     type="Source"
     id_last=id_click.substring(11, id_click.length);
     if(btn_s==true){
@@ -142,22 +145,22 @@ function like (id_click){
     console.log('wrong')
   }
   console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)  
-  $.ajax({
-    url:"/modify_request",
-    type:'post',
-    dataType: "json",
-    data:JSON.stringify({
-      requestid: id_last,
-      type: type,
-      plus: oper
-    }),
-    contentType: "application/json",
-    success: function(data){
-      console.log(data);
-      console.log(id_click.substring(4, id_click.length));
-      $('#'+id_click.substring(4, id_click.length)).text(data.count);
-    }
-  });
+  // $.ajax({
+  //   url:"/modify_request",
+  //   type:'post',
+  //   dataType: "json",
+  //   data:JSON.stringify({
+  //     requestid: id_last,
+  //     type: type,
+  //     plus: oper
+  //   }),
+  //   contentType: "application/json",
+  //   success: function(data){
+  //     console.log(data);
+  //     console.log(id_click.substring(4, id_click.length));
+  //     $('#'+id_click.substring(4, id_click.length)).text(data.count);
+  //   }
+  // });
 
 }
 
