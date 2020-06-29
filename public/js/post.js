@@ -3,7 +3,7 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 var source = false;
 var price = false;
 var texture = false;
-var xpx=0, ypx=0, x=0, y=0;
+var xpx=0, ypx=0, x=0, y=0, xx=0, yy=0;
 var img;
 $.ajax({
     url:"/get_post",
@@ -201,9 +201,6 @@ $('#btn_submit').click(function(){
     }),
       contentType: "application/json",
       success: function(data){
-
-        x=x;
-        y=y;
         cut=data.url;
         console.log("Addrequest\ns: " + s + "\np " + p + "\nt: " + t + "\nimg: "+ cut+"\n x: "+xpx+"\nypx: "+ypx )
          $.ajax({
@@ -272,6 +269,8 @@ function handleMove(evt) {
     evt.preventDefault();
     x = evt.pageX - $('#full').offset().left-40;
     y = evt.pageY - $('#full').offset().top-40;
+    xx = x+40
+    yy = y+40
     xpx = -x +'px'
     ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
