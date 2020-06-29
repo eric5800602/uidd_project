@@ -99,6 +99,7 @@ $.ajax({
 });
 
 $('#post_content').click(function(){
+  console.log("outch!");
   $( "#post_content" ).show( "slide", 1000 );
 
 })
