@@ -98,7 +98,7 @@ $.ajax({
     }
 });
 
-$('#post_content').click(function(){
+function slide(){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('#post_content').offset().top
   var newpos = sc+pos
@@ -113,9 +113,9 @@ $('#post_content').click(function(){
   //});
   console.log("off_left_after"+$('#post_content').offset().top)
   //$('#post_content').animate({"position":'absolute', "left":'-10rem'})
-})
+}
 
-  $('#post_content').css({"position": "absolute", "top": "20"})
+ // $('#post_content').css("position": "absolute", "top": "20"})
 
 function like (id_click){
   // console.log(id_click)
