@@ -79,8 +79,22 @@ $.ajax({
       }
       $('#hashtag').html(hashtag_html)
       hashtag_html+='</div>'
-
       //console.log(hashtag_html)
+      
+      var category_html=`<p class="content_category_title">Category</p>\
+                        <div class="content_category_content">\
+                        <p class="content_category_content_first content_category_content_content"> ${data.post.space} </p>\
+                        <p class="content_category_content_big">> </p>\
+                        <p class="content_category_content_second content_category_content_content"> ${data.post.room}</p>\
+                        <p class="content_category_content_big">></p>\
+                        <p class="content_category_content_third content_category_content_content"> ${data.post.pings}</p>\
+                        `;
+      $('#hashtag').html(category_html)
+      //console.log(category_html)
+
+
+
+
     }
 });
 
