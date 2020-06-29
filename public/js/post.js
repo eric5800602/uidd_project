@@ -25,7 +25,7 @@ $.ajax({
       img=data.post.post_icon;
       var html='<div class="requests"><p class="requests_title">Request</p>';
       for(i=0; i<data.requests.length; i++){
-        var id = ["\"source_"+data.requests[i]._id+"\"", "btn_source_"+data.requests[i]._id, "price_"+data.requests[i]._id, "btn_price_"+data.requests[i]._id, "texture_"+data.requests[i]._id, "btn_texture_"+data.requests[i]._id,];
+        var id = ["\"source_"+data.requests[i]._id+"\"", "\"btn_source_"+data.requests[i]._id + "\"", "\"price_"+data.requests[i]._id+"\"", "\"btn_price_"+data.requests[i]._id+"\"", "\"texture_"+data.requests[i]._id+"\"", "\"btn_texture_"+data.requests[i]._id+"\""];
         console.log("id= "+id)
         html=html+`
                 <div class="requests_request " id="${data.requests[i]._id}">\
