@@ -115,6 +115,7 @@ $('#post_content').click(function(){
   //$('#post_content').animate({"position":'absolute', "left":'-10rem'})
 })
 
+  $('#post_content').css({"position": "absolute", "top": "20"})
 
 function like (id_click){
   // console.log(id_click)
