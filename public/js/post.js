@@ -99,11 +99,13 @@ $.ajax({
 });
 
 $('#post_content').click(function(){
-  var scroll = document.getElementById("id_content").scrollTop
-  console.log("scrollTop"+scroll)
+  var sc = document.getElementById("id_content").scrollTop
+  var pos = $('#post_content').offset().top
+  var newpos = sc+pos
+  console.log("sc= "+sc+"\npos= "+pos)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
-  document.getElementById("post_content").style.top=$('#post_content').offset().top+"!important"
+  $('#post_content').css("top", newpos+"!important")
   console.log("off_left_mid"+$('#post_content').offset().top)
   //$("#post_content").css( "top", "679.063px",function(){
     $("#post_content").hide( "slide", 10000)
