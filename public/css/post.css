@@ -104,13 +104,13 @@ header {
   .content_category_title {
     margin: 0.5rem 0 0.85rem 0;
     font-size: 1.17rem;
-    color: #707070; }
+    color: #505050; }
   .content_category_content_content {
     padding: 0.15rem 1.1rem 0.15rem 1.1rem;
     border: solid #707070 0.08rem;
     border-radius: 0.42rem;
     background-color: #FFFFFF;
-    color: #707070; }
+    color: #505050; }
   .content_category_content_first {
     display: inline; }
   .content_category_content_big {
@@ -139,6 +139,8 @@ header {
   padding: 1.2rem 1.42rem;
   background-color: #E9E9E9}
   .requests_title {
+    color: #505050;
+    font-size: 1.17rem;
     font-weight: 800; }
   .requests_request {
     height: 6.5rem;

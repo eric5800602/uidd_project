@@ -84,16 +84,14 @@ $.ajax({
 });
 
 function like (id_click){
-  console.log(id_click)
-  //console.log(id_click.substring(4, 5))
+  // console.log(id_click)
+  // console.log(id_click.substring(4, 5))
   var oper=1;
   var type="";
   var id_last="";
   var em = document.getElementById(id_click);
   var temp = window.getComputedStyle(em).getPropertyValue("opacity");
   if(id_click.substring(4, 5)=='s'){
-    console.log("btn_s" + btn_s)
-    console.log("temp= "+temp)
     type="Source"
     id_last=id_click.substring(11, id_click.length);
     if(temp==1){
@@ -105,7 +103,6 @@ function like (id_click){
     }
 
   }else if(id_click.substring(4, 6)=='pr'){
-    console.log("temp= "+temp)
     type="Price"
     id_last=id_click.substring(10, id_click.length);
     if(temp==1){
@@ -138,7 +135,7 @@ function like (id_click){
   }else{
     console.log('wrong')
   }
-  console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)  
+  //console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)  
   $.ajax({
     url:"/modify_request",
     type:'post',
@@ -150,8 +147,8 @@ function like (id_click){
     }),
     contentType: "application/json",
     success: function(data){
-      console.log(data);
-      console.log(id_click.substring(4, id_click.length));
+      //console.log(data);
+      //console.log(id_click.substring(4, id_click.length));
       $('#'+id_click.substring(4, id_click.length)).text(data.count);
     }
   });
