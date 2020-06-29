@@ -46,7 +46,7 @@ $.ajax({
                   </div>
                   <div class="requests_request_push">
                     <p class="requests_request_btn"> PUSH
-                    <p class="requests_request_num"> 0
+                    <p class="requests_request_num"> ${data.requests[i].Push}
                   </div>
                 </div>
         `
@@ -193,8 +193,10 @@ $('#btn_submit').click(function(){
       url: img,
       x: x,
       y: y,
-      width: 230,
-      height: 180,
+      width: 375,
+      height: 282,
+      target_w: 78,
+      target_h: 78
 
     }),
       contentType: "application/json",
