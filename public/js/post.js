@@ -99,11 +99,8 @@ $.ajax({
 });
 
 $('#post_content').click(function(){
-  var viewportOffset = el.getBoundingClientRect();
-  // these are relative to the viewport, i.e. the window
-  var top = viewportOffset.top;
-  var test = $('body').scrollTop;
-  console.log("scrollTop"+document.getElementById("id_content").scrollTop)
+  var scroll = document.getElementById("id_content").scrollTop
+  console.log("scrollTop"+scroll)
   console.log("outch!");
   console.log("off_left_before"+$('#post_content').offset().top)
   document.getElementById("post_content").style.top=$('#post_content').offset().top+"!important"
