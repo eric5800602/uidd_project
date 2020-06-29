@@ -37,12 +37,12 @@ $.ajax({
                       <p class="request_data_btn" id=${id[1]}> Source
                     </div>
                     <div class="request_data data_price">
-                      <p class="request_data_num" id="price"^${data.requests[i]._id}> ${data.requests[i].Price}
-                      <p class="request_data_btn" id="btn_price"+${data.requests[i]._id}> Price
+                      <p class="request_data_num" id=${id[2]}> ${data.requests[i].Price}
+                      <p class="request_data_btn" id=${id[3]}> Price
                     </div>
                     <div class="request_data data_texture">
-                      <p class="request_data_num" id="texture"+${data.requests[i]._id}> ${data.requests[i].Texture}
-                      <p class="request_data_btn" id="btn_texture"+${data.requests[i]._id}> Texture
+                      <p class="request_data_num" id=${id[4]}> ${data.requests[i].Texture}
+                      <p class="request_data_btn" id=${id[5]}> Texture
                     </div>
 
                   </div>
