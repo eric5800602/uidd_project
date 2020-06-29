@@ -98,7 +98,7 @@ opacity:0;
     position: fixed;
     bottom: 7.5em;
     left: calc(50% - 100px);
-	
+	z-index:10;
 }
 .taken{
     height: 10vh!important;
