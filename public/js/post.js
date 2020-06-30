@@ -103,7 +103,7 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         var content="content_"+i
         single_html+=`</div>
-                      <div id=${content}>
+                      <div id=${content} class="content_static">
                       <div class="content_paragraph">
                         <p class="content_paragraph_title">${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
@@ -132,11 +132,8 @@ $.ajax({
 });
 
 function slide(thisid){
-  console.log("curr= "+content_current+"/nnum= "+num)
-
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
-  console.log("opacity= "+window.getComputedStyle(em).getPropertyValue("opacity"))
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     console.log("!")
     // 也可以在這邊寫以圖搜圖拉XD
@@ -145,10 +142,8 @@ function slide(thisid){
 
 
   }else{
-    console.log(thisid)
     $('#content_img_'+num).animate({"opacity":'1'}, 500)
     $('#content_img_'+content_current).animate({"opacity":'0.5'}, 500)
-    console.log("opacity= "+window.getComputedStyle(em).getPropertyValue("opacity"))
   }
   var sc = document.getElementById("id_content").scrollTop
   var pos = $("#content_"+content_current).offset().top
