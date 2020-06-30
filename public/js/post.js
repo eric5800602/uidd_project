@@ -95,8 +95,26 @@ $.ajax({
       var single_html=`<div id="single">\
                       <div class="content_image">`
       for(i=0; i<data.single.length; i++){
-        console.log(data.single[i].description)
-
+        single_html+=`<img class="content_image_1" src=${data.single[i].img}>`;
+      }
+      single_html+=`</div>\
+                    <div class="content_paragraph">
+                  `;
+      for(i=0; i<data.single.length; i++){
+        single_html+=`<div class="content_paragraph">
+                        <p class="content_paragraph_title">${data.single[i].name}</p>
+                        <div class="content_paragraph_stars">
+                      `;
+        for(j=0; j<data.single.evaluation; j++){
+          single_html+=`<img class="content_paragraph_star" src="./res/img/star.png">`;
+        }
+        single_html+=`</div>
+                      </div>
+                      `;
+      }
+      for(i=0; i<data.single.length; i++){
+        single_html+=`<p class="content_content" id="post_content1" onclick="slide()">${data.single[i].description}</p>
+                    `;
 
       }
 
