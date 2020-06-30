@@ -124,6 +124,7 @@ $.ajax({
           console.log("#content_title_"+i)
           $("#content_"+i).hide()
           $("#content_"+i).hide()
+          $("#content_img_"+i).css({"opacity":"0.5"})
         }
       }
     }
