@@ -157,6 +157,7 @@ function slide(thisid){
                       </div>
                     </div>
     `
+    console.log(modal_html)
     $('#modal_google').html=modal_html
     $('#exampleModalCenter-4').modal('show');
   }else{
