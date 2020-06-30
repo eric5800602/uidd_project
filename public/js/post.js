@@ -104,8 +104,8 @@ $.ajax({
                   `;
       for(i=0; i<data.single.length; i++){
         title="content_title_"+i;
-        content="content_content_"+i;
         stars="content_stars_"+i;
+
         single_html+=`<div class="content_paragraph">
                         <p class="content_paragraph_title" id=${title}}>${data.single[i].name}</p>
                         <div class="content_paragraph_stars" id=${stars}>
@@ -119,6 +119,7 @@ $.ajax({
                       `;
       }
       for(i=0; i<data.single.length; i++){
+        content="content_content_"+i;
         single_html+=`<p class="content_content" id=${content}>${data.single[i].description}</p>`;
       }
       single_html+=`</div>`
