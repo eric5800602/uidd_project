@@ -144,21 +144,21 @@ function slide(thisid){
     console.log("src=" + document.getElementById(thisid).src)
     src=document.getElementById(thisid).src
     // 以圖搜圖
-    var modal_html=`
-                    <div class="modal fade" id="exampleModalCenter-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-body">
-                            <img class="modal_photo_main" id="full" src=${src}></div>
-                          <div class="modal-footer">
-                            <button class="btn btn-secondary btn_next" type="button">Next</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-    `
+    // var modal_html=`
+    //                 <div class="modal fade" id="exampleModalCenter-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    //                   <div class="modal-dialog modal-dialog-centered" role="document">
+    //                     <div class="modal-content">
+    //                       <div class="modal-body">
+    //                         <img class="modal_photo_main" id="full" src=${src}></div>
+    //                       <div class="modal-footer">
+    //                         <button class="btn btn-secondary btn_next" type="button">Next</button>
+    //                       </div>
+    //                     </div>
+    //                   </div>
+    //                 </div>
+    // `
     console.log(modal_html)
-    $('#modal_google').html=modal_html
+    $('#modal_google').attr("src",src);
     $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
