@@ -151,7 +151,7 @@ html {
   height:13px;
   z-index:1;
   display: block;
-  position: absolute;
+  position: relative;
   border-radius: 100%;
 }
 input[type="text"] {
