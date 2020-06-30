@@ -107,7 +107,7 @@ $.ajax({
         stars="content_stars_"+i;
 
         single_html+=`<div class="content_paragraph">
-                        <p class="content_paragraph_title" id=${title}}>${data.single[i].name}</p>
+                        <p class="content_paragraph_title" id=${title}>${data.single[i].name}</p>
                         <div class="content_paragraph_stars" id=${stars}>
                       `;
         for(j=0; j<parseInt(data.single[i].evaluation); j++){
@@ -288,7 +288,6 @@ $('.div_texture').click(function(){
 
 
 $(document).ready(function() {
-  $('#post_content2').hide()
   $('.requests_request_want').addClass("blue")
   var state=false
   $('#want_btn_0').click(function(){
