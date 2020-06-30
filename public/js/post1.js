@@ -65,7 +65,7 @@ $(document).ready(function () {
     axisY = y;
     var haha = $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
     dot.style.top = `${-document.getElementById('myimage').clientHeight+y+8+39}px`;
-    dot.style.left = `${x+39}px`;
+    dot.style.left = `${x+34}px`;
     $imgzoomresult.find('img').css('max-height','50vh');
     console.log(haha);
     //window.is_handle_myimage_touching = false;
