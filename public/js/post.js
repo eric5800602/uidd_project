@@ -141,7 +141,7 @@ function slide(thisid){
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     console.log("!")
-    console.log("src="+$(thisid).src)
+    console.log("src=" + document.getElementById(thisid).src)
     // 以圖搜圖
     // var modal_html=`
     //                 <div class="modal fade" id="exampleModalCenter-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
