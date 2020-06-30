@@ -95,20 +95,22 @@ $.ajax({
       var single_html=`<div id="single">\
                       <div class="content_image">`
       for(i=0; i<data.single.length; i++){
-        single_html+=`<img class="content_image_1" src=${data.single[i].img}>`;
+        id="content_img_"+i
+        single_html+=`<img class="content_image_1" id=${id} src=${data.single[i].img}>`;
       }
       single_html+=`</div>\
                     <div class="content_paragraph">
                   `;
       for(i=0; i<data.single.length; i++){
-        title="content_title"+i;
-        content="content_content"+i;
+        title="content_title_"+i;
+        content="content_content_"+i;
         console.log(title+" "+content)
         single_html+=`<div class="content_paragraph">
-                        <p class="content_paragraph_title">${data.single[i].name}</p>
+                        <p class="content_paragraph_title" id=${title}}>${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
                       `;
         for(j=0; j<data.single.evaluation; j++){
+          console.log("star!")
           single_html+=`<img class="content_paragraph_star" src="./res/img/star.png">`;
         }
         single_html+=`</div>
@@ -116,7 +118,7 @@ $.ajax({
                       `;
       }
       for(i=0; i<data.single.length; i++){
-        single_html+=`<p class="content_content" id="post_content1" onclick="slide()">${data.single[i].description}</p>`;
+        single_html+=`<p class="content_content" id=${content} onclick="slide()">${data.single[i].description}</p>`;
       }
       single_html+=`</div>`
       $('#single').html(single_html)
