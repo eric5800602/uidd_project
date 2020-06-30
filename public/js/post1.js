@@ -111,6 +111,9 @@ $(document).ready(function () {
         success:function (msg) {
           if(msg.success){
             document.getElementById(`original${temp}`).childNodes[0].setAttribute('src',msg.url);
+            document.getElementById(`original${temp}`).childNodes[0].removeAttribute("style");
+            $(`original${temp}`).children().css("max-width","100%")
+            $(`original${temp}`).children().css("max-height","100%")
           }else{
             alert('切圖片錯誤了，請洽工作人員')
           }
