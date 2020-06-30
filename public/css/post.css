@@ -147,8 +147,8 @@ header {
       margin: 0.5rem 0 0.85rem 0;
       font-size: 1.17rem;
       color: #505050; }
-    .content_static{
-      height: 8rem;
+    #single{
+      height: 15rem;
     }
 .requests {
   padding: 1.2rem 1.42rem;
