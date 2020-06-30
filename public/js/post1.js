@@ -27,7 +27,7 @@ $(document).ready(function () {
     url: serverUrl + 'get_post_image',
     dataType: 'json',
     data: {
-      id: '5efa0614bb4c462c15abad46'
+      id: localStorage.getItem('add_post_id')
     },
     success: function (resData) {
       console.log('resData => ', resData);
