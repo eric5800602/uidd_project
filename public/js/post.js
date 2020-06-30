@@ -141,7 +141,7 @@ function slide(thisid){
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     console.log("!")
-    // console.log("src="+$('#thisid').src)
+    console.log("src="+$('#thisid').src)
     // 以圖搜圖
     // var modal_html=`
     //                 <div class="modal fade" id="exampleModalCenter-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -156,7 +156,7 @@ function slide(thisid){
     //                   </div>
     //                 </div>
     // `
-    $('#exampleModalCenter-4').modal('show');
+    // $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
     // $('#content_img_'+num).
