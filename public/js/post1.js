@@ -3,7 +3,7 @@ var productData = [];
 var editNum = 1;
 var axisX = 0, axisY = 0, rank = 0;
 var options = {
-selected_symbol_type: 'utf8_star', 
+  selected_symbol_type: 'utf8_star', // Must be a key from symbols
   max_value: 5,
   step_size: 1,
   initial_value: rank
@@ -78,42 +78,69 @@ $(document).ready(function () {
   
     htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
     $("#imgblock").html(htmlItems);
-    console.log("123");
+    
 
   });
-
+  $.post({
+    url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
+     dataType: "json",
+     contentType: "application/json",
+     xhrFields: {
+       withCredentials: true
+     },
+     data: JSON.stringify({
+       name: $("#productName").val(),
+       evaluation: $(".rating").val(),
+       description: $("#remark").val()
+     }),
+     success: function (msg) {
+       console.log(msg);
+       if (msg.success) {
+        console.log("success");
+       }
+       else {
+         console.log("fail");
+         alert(msg.text);
+       }
+     },
+     error: function (data) {
+       console.log("fail");
+       console.log(data);
+     }
+   })
 
 });
 
-// $('.submit_button').click((event) => {
-//   $.post({
-//     url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
-//     dataType: "json",
-//     contentType: "application/json",
-//     xhrFields: {
-//       withCredentials: true
-//     },
-//     data: JSON.stringify({
-//       username: $('#ajax-form input[name=fName]').val(),
-//       evaluation: $('#evaluation').val(),
-//       description: $('#ajax-form2 input[name=dName]').val()
-//     }),
-//     success: function (msg) {
-//       console.log(msg);
-//       if (msg.success) {
-//         console.log("success");
-//       }
-//       else {
-//         console.log("fail");
-//         alert(msg.text);
-//       }
-//     },
-//     error: function (data) {
-//       console.log("fail");
-//       console.log(data);
-//     }
-//   })
-// });
+/* $('.submit_button').click((event) => {
+   $.post({
+    url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
+     dataType: "json",
+     contentType: "application/json",
+     xhrFields: {
+       withCredentials: true
+     },
+     data: JSON.stringify({
+       username: $('#ajax-form input[name=fName]').val(),
+       evaluation: $('#evaluation').val(),
+       description: $('#ajax-form2 input[name=dName]').val()
+     }),
+     success: function (msg) {
+       console.log(msg);
+       if (msg.success) {
+        console.log("success");
+       }
+       else {
+         console.log("fail");
+         alert(msg.text);
+       }
+     },
+     error: function (data) {
+       console.log("fail");
+       console.log(data);
+     }
+   })
+ });
+ */
 
 //評價
 $(".rating").rate(options);
