@@ -110,6 +110,7 @@ $(document).ready(function () {
         },
         success:function (msg) {
           if(msg.success){
+            console.log(temp)
             document.getElementById(`original${temp}`).childNodes[0].setAttribute('src',msg.url);
             document.getElementById(`original${temp}`).childNodes[0].removeAttribute("style");
             $(`original${temp}`).children().css("max-width","100%")
