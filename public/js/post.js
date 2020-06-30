@@ -133,6 +133,7 @@ $.ajax({
 });
 
 function slide(thisid){
+  console.log(thisid)
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
@@ -144,7 +145,9 @@ function slide(thisid){
 
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 500)
+    // $('#content_img_'+num).
     $('#content_img_'+content_current).animate({"opacity":'0.5'}, 250)
+
   }
   var sc = document.getElementById("id_content").scrollTop
   var pos = $("#content_"+content_current).offset().top
