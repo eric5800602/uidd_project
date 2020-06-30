@@ -55,6 +55,7 @@ $(document).ready(function () {
     //window.is_handle_myimage_touching = true;
     document.body.style.overflowY = "hidden";
     var $imgzoomresult = $('.mouseAxis' + editNum );
+    var dot = document.getElementById(`dot${editNum}`);
     console.log(e.touches[0].clientX, e.touches[0].clientY, myimageOffset.top, myimageOffset.left);
     var tmp = e.touches[0];
     var x = tmp.clientX - 50; ///window.innerWidth; // - myimageOffset.left + 0*$imgzoomresult.width()/2;
@@ -63,6 +64,8 @@ $(document).ready(function () {
     axisX = x;
     axisY = y;
     var haha = $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
+    dot.top = y+parseInt(window.getComputedStyle(document.getElementById("myimage")).getPropertyValue("padding-top"))/2+39+$("#myimage").position().top;
+    dot.left = x+39;
     $imgzoomresult.find('img').css('max-height','50vh');
     console.log(haha);
     //window.is_handle_myimage_touching = false;
@@ -150,6 +153,10 @@ $(document).ready(function () {
                   editNum += 1;
                   htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
                   $("#imgblock").html(htmlItems);
+                  var a = document.createElement('div');
+                  a.id = `dot${editNum}`;
+                  a.className = "dot";
+                  document.getElementById('image_content').append(a);
                   if(complete){
                     localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
                     window.location= "./post.html";

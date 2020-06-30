@@ -145,14 +145,23 @@ html {
 .container.custom-container-width {
   max-width: 90vw;
 }
+.dot{
+  color: #ffffff;
+  width:13px;
+  height:13px;
+  z-index:1;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+}
 input[type="text"] {
   background: #f7f7f7;
-  height: 3vh;
   margin-top: 1vh;
   text-align: left;
   font-weight: 400;
   border-radius: 0%;
   border: none;
+  padding-top: 4px;
 }
 input[type="checkbox"] {
   -webkit-appearance: none;
