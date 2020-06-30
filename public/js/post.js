@@ -146,9 +146,9 @@ function slide(thisid){
     // 之前的比較大，往右滑
     console.log("之前的 is BIG")
     $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
-    $('#post_content1').css({"top": pos+sc+"px"})
+    $("#content_title_"+content_current).css({"top": pos+sc+"px"})
     $("#content_title_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
-    $('#post_content2').css({"top": pos+sc+"px"})
+    $("#content_title_"+num).css({"top": pos+sc+"px"})
   }else if(content_current<num){
     // 之前的比較小，往左滑
     console.log("現在的 is BIG")
@@ -157,10 +157,10 @@ function slide(thisid){
   }
 
   console.log("slide() click")
-  $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
-  $('#post_content1').css({"top": pos+sc+"px"})
-  $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
-  $('#post_content2').css({"top": pos+sc+"px"})
+  // $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
+  // $('#post_content1').css({"top": pos+sc+"px"})
+  // $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
+  // $('#post_content2').css({"top": pos+sc+"px"})
 
   content_current=num
 }
