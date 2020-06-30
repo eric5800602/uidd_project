@@ -151,7 +151,7 @@ function slide(thisid){
     console.log("opacity= "+window.getComputedStyle(em).getPropertyValue("opacity"))
   }
   var sc = document.getElementById("id_content").scrollTop
-  var pos = $(".content_paragraph").offset().top
+  var pos = $("#content_"+content_current).offset().top
 
   if(content_current==num){
     // 以圖搜圖
