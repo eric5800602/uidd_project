@@ -137,7 +137,7 @@ $.ajax({
 
 function slide(thisid){
   console.log(thisid)
-  $('#exampleModalCenter-4').modal('show');
+
   // $('#exampleModalCenter-4').show()
   // var html_modal="<p>test</p>";
   // $(thisid).html(html_modal);
@@ -145,6 +145,7 @@ function slide(thisid){
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     console.log("!")
+    $('#exampleModalCenter-4').modal('show');
     // 也可以在這邊寫以圖搜圖拉XD
     // $(thisid).animate({"opacity":'0.5'}, 500)
     // $('#content_img_'+content_current).animate({"opacity":'1'}, 500)
