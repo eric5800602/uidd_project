@@ -46,7 +46,7 @@
   border-radius: 10rem;
   padding: 0.8rem 1.2rem;
   border: none;
-  width: 5.5rem; 
+  width: 5.5rem;
   box-shadow: 0 0.2rem 1rem #888888;
   }
 .btn_a{
@@ -98,4 +98,9 @@
 .div_texeture{
   margin-top: 0.2rem;
   height: 2.3rem;
+}
+
+.modal_btn--google{
+  width: 17rem;
+  height: 5.5rem;
 }
