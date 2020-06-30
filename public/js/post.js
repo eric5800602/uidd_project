@@ -135,7 +135,7 @@ $.ajax({
 
 });
 
-$('#modal_btn--google').click(function(){
+$('.modal_btn--google').click(function(){
   console.log("!");
 
 
