@@ -100,6 +100,7 @@ $.ajax({
         id="content_img_"+i
         single_html+=`<img class="content_image_1" id=${id} src=${data.single[i].img} onclick="slide(this.id)">`;
       }
+      single_html+=`</div class="content_static">`
       for(i=0; i<data.single.length; i++){
         var content="content_"+i
         single_html+=`</div>
@@ -118,7 +119,7 @@ $.ajax({
 
                       `;
       }
-      single_html+=`</div></div>`
+      single_html+=`</div></div></div>`
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
         if(i!=0){
