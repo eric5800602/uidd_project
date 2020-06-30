@@ -152,7 +152,7 @@ function slide(thisid){
 
 
   }else{
-    $('#content_img_'+num).animate({"opacity":'1'}, 500)
+    $('#content_img_'+num).animate({"opacity":'1'}, 250)
     // $('#content_img_'+num).
     $('#content_img_'+content_current).animate({"opacity":'0.5'}, 250)
 
