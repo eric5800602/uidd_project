@@ -188,7 +188,6 @@ file.onclick = function() {
         }
 		        console.log(tags)
 	 $(document).ready(function () {
-		 $('#Submit_button').click((event) => {
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
       dataType: "json",
@@ -232,7 +231,6 @@ post_icon:$("#camera--output").attr("src"),
         console.log(data);
       }
     })
-  })
 	 })
 	 
 	 })
