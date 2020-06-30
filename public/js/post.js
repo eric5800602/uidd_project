@@ -135,12 +135,11 @@ $.ajax({
 
 });
 
-$('.modal_btn--google').click(function(){
-  console.log("!");
+function google(){
+  console.log("!")
 
 
-
-})
+}
 
 function slide(thisid){
   console.log(thisid)
