@@ -137,6 +137,7 @@ function slide(thisid){
 
   var sc = document.getElementById("id_content").scrollTop
   var pos = $(".content_paragraph").offset().top
+  var poss = $(".content_content").offset().top
 
   if(content_current==num){
     // 以圖搜圖
@@ -154,9 +155,9 @@ function slide(thisid){
     //content
     $("#content_content_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
     $("#content_content_"+content_current).css({"top": pos+sc+"px"})
-    $("#content_content_"+num).css({"top": pos+sc+"px"})
+    $("#content_content_"+num).css({"top": poss+sc+"px"})
     $("#content_content_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
-    $("#content_content_"+num).css({"top": pos+sc+"px"})
+    $("#content_content_"+num).css({"top": poss+sc+"px"})
   }else if(content_current<num){
     // 之前的比較小，往左滑
     console.log("現在的 is BIG")
@@ -168,9 +169,9 @@ function slide(thisid){
     //content
     $("#content_content_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
     $("#content_content_"+content_current).css({"top": pos+sc+"px"})
-    $("#content_content_"+num).css({"top": pos+sc+"px"})
+    $("#content_content_"+num).css({"top": poss+sc+"px"})
     $("#content_content_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
-    $("#content_content_"+num).css({"top": pos+sc+"px"})
+    $("#content_content_"+num).css({"top": poss+sc+"px"})
 
   }
   // $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
