@@ -147,8 +147,9 @@ function slide(thisid){
   }else if(content_current>num){
     // 之前的比較大，往右滑
     console.log("之前的 is BIG")
-    $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
-    $("#content_title_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
+    console.log()
+    $("#content_title_0").effect("slide",{direction: "right", mode:"hide", duration:500})
+    $("#content_title_1").effect("slide",{direction: "left", mode:"show", duration:500})
 
   }else if(content_current<num){
     // 之前的比較小，往左滑
