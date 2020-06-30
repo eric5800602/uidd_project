@@ -49,7 +49,7 @@ $(document).ready(function () {
   //window.is_handle_myimage_touching = false;
   document.getElementById('productName').addEventListener('change',function(){
     var dia = document.getElementById(`dialog${editNum}`);
-    dia.innerText = document.getElementById('productName').innerText;
+    dia.innerText = document.getElementById('productName').value;
   })
   
   $(document).on('touchmove', MYIMAGE_SELECTOR, function (e) {
@@ -167,7 +167,7 @@ $(document).ready(function () {
                   old_element.parentNode.replaceChild(new_element, old_element);
                   document.getElementById('productName').addEventListener('change',function(){
                     var dia = document.getElementById(`dialog${editNum}`);
-                    dia.value = document.getElementById('productName').value;
+                    dia.innerText = document.getElementById('productName').value;
                   })
                   if(complete){
                     localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
