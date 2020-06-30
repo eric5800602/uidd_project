@@ -98,7 +98,7 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         id="content_img_"+i
         cmodal="content_modal_"+i
-        single_html+=`<div id=${cmodal}>
+        single_html+=`<div id=${cmodal} style="display:inline">
                         <img class="content_image_1" id=${id} src=${data.single[i].img} onclick="slide(this.id)">
                       </div>`;
       }
