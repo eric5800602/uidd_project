@@ -127,7 +127,7 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         if(i!=0){
           console.log("#content_title_"+i)
-          $("#content_title_1").hide()
+          $("#content_title_"+i).hide()
           $("#content_stars_"+i).hide()
           $("#content_content_"+i).hide()
         }
@@ -147,8 +147,8 @@ function slide(thisid){
   }else if(content_current>num){
     // 之前的比較大，往右滑
     console.log("之前的 is BIG")
-
-
+    $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
+    $("#content_title_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
 
   }else if(content_current<num){
     // 之前的比較小，往左滑
