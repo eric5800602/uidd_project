@@ -187,7 +187,7 @@ $('#btn_google').click(function(){
   console.log("!!")
 })
 $('#exampleModalCenter-4').on('hidden.bs.modal', function () {
-
+  window.open("https://www.w3schools.com");
   console.log("!!!")
 })
 
