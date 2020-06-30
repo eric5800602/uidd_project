@@ -159,8 +159,7 @@ $(document).ready(function () {
                   var a = document.createElement('div'),dia = document.createElement('div');
                   a.id = `dot${editNum}`;dia.id = `dialog${editNum}`;
                   a.className = "dot";dia.className = "text_dialog";
-                  a.style.top = -document.getElementById('myimage').clientHeight;
-                  a.style.left = -document.getElementById('myimage').clientWidth;
+                  a.style.top = `-${document.getElementById('myimage').clientHeight-20}px`;
                   dia.innerText = "標註你想要描述的單品";
                   a.append(dia);
                   document.getElementById('image_content').append(a);
