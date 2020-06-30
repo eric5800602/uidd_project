@@ -62,6 +62,7 @@ $(document).ready(function () {
     axisX = x;
     axisY = y;
     var haha = $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
+    $imgzoomresult.find('img').css('max-height','50vh');
     console.log(haha);
     //window.is_handle_myimage_touching = false;
     //新增圖片框
