@@ -153,7 +153,11 @@ function slide(thisid){
   }else if(content_current<num){
     // 之前的比較小，往左滑
     console.log("現在的 is BIG")
-
+    $("#content_title_"+content_current).effect("slide",{direction: "left", mode:"hide", duration:500})
+    $("#content_title_"+content_current).css({"top": pos+sc+"px"})
+    $("#content_title_"+num).css({"top": pos+sc+"px"})
+    $("#content_title_"+num).effect("slide",{direction: "right", mode:"show", duration:500})
+    $("#content_title_"+num).css({"top": pos+sc+"px"})
 
   }
   // $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
