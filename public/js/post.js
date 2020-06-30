@@ -99,28 +99,42 @@ $.ajax({
         id="content_img_"+i
         single_html+=`<img class="content_image_1" id=${id} src=${data.single[i].img} onclick="slide(this.id)">`;
       }
-      single_html+=`</div>\
-                    <div class="content_paragraph">
-                  `;
       for(i=0; i<data.single.length; i++){
-        title="content_title_"+i;
-        single_html+=`<div class="content_paragraph" id=${title}>
+        var content="content_"+i
+        single_html+=`</div>
+                      <div class="content_paragraph" id=${content}>
                         <p class="content_paragraph_title">${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
-                      `;
+                    `;
         for(j=0; j<parseInt(data.single[i].evaluation); j++){
           single_html+=`<img class="content_paragraph_star" src="./res/img/star.png">`;
         }
         single_html+=`</div>
                       </div>
+                      <p class="content_content">${data.single[i].description}</p>
+                      </div>
                       `;
       }
-      for(i=0; i<data.single.length; i++){
-        content="content_content_"+i;
-        single_html+=`<p class="content_content" id=${content}>${data.single[i].description}</p>`;
-      }
-      single_html+=`</div>`
-      $('#single').html(single_html)
+
+    //   for(i=0; i<data.single.length; i++){
+    //     title="content_title_"+i;
+    //     single_html+=`<div class="content_paragraph" id=${title}>
+    //                     <p class="content_paragraph_title">${data.single[i].name}</p>
+    //                     <div class="content_paragraph_stars">
+    //                   `;
+    //     for(j=0; j<parseInt(data.single[i].evaluation); j++){
+    //       single_html+=`<img class="content_paragraph_star" src="./res/img/star.png">`;
+    //     }
+    //     single_html+=`</div>
+    //                   </div>
+    //                   `;
+    //   }
+    //   for(i=0; i<data.single.length; i++){
+    //     content="content_content_"+i;
+    //     single_html+=`<p class="content_content" id=${content}>${data.single[i].description}</p>`;
+    //   }
+    //   single_html+=`</div>`
+    //   $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
         if(i!=0){
           console.log("#content_title_"+i)
