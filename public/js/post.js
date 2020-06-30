@@ -157,7 +157,7 @@ function slide(thisid){
     //                   </div>
     //                 </div>
     // `
-    console.log(modal_html)
+    // console.log(modal_html)
     $('#modal_google').attr("src",src);
     $('#exampleModalCenter-4').modal('show');
   }else{
