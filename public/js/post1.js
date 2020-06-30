@@ -131,8 +131,6 @@ $(document).ready(function () {
           name: $("#productName").val(),
           evaluation:rank,
           description: $('#remark').val(),
-          postid:localStorage.getItem('add_post_id'),
-          img:document.getElementById('myimage').getAttribute('src').split(serverUrl)[1]
         },
         success: function (msg) {
           console.log(msg);
