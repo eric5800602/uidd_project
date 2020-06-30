@@ -154,6 +154,15 @@ html {
   position: relative;
   border-radius: 100%;
 }
+.text_dialog{
+  position: relative;
+  background: white;
+  width: 60px;
+  top: 15px;
+  left: 15px;
+  border-radius: 6px;
+  text-align: center;
+}
 input[type="text"] {
   background: #f7f7f7;
   margin-top: 1vh;
