@@ -161,7 +161,6 @@ function slide(thisid){
   }else if(content_current>num){
     // 之前的比較大，往右滑
     console.log("之前的 is BIG")
-    $("#content_"+content_current).css({"top": pos+sc+"px"})
     $("#content_"+content_current).effect("slide",{direction: "left", mode:"hide", duration:5000})
     $("#content_"+content_current).css({"top": pos+sc+"px"})
     $("#content_"+num).css({"top": pos+sc+"px"})
@@ -177,12 +176,6 @@ function slide(thisid){
     // $("#content_"+num).css({"top": pos+sc+"px"})
 
   }
-  $("#content_"+content_current).css({"top": pos+sc+"px"})
-  $("#content_"+content_current).effect("slide",{direction: "left", mode:"hide", duration:5000})
-  $("#content_"+content_current).css({"top": pos+sc+"px"})
-  $("#content_"+num).css({"top": pos+sc+"px"})
-  $("#content_"+num).effect("slide",{direction: "right", mode:"show", duration:5000})
-  $("#content_"+num).css({"top": pos+sc+"px"})
   // $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
   // $("#content_title_"+content_current).css({"top": pos+sc+"px"})
   // $("#content_title_"+num).css({"top": pos+sc+"px"})
