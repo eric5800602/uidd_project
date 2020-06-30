@@ -135,6 +135,13 @@ $.ajax({
 
 });
 
+$('#modal_btn--google').click(function(){
+  console.log("!");
+
+
+
+})
+
 function slide(thisid){
   console.log(thisid)
   var num = thisid.substring(12, thisid.length)
