@@ -157,11 +157,13 @@ html {
 .text_dialog{
   position: relative;
   background: white;
-  width: 60px;
+  width: 85px;
   top: 15px;
   left: 15px;
   border-radius: 6px;
   text-align: center;
+  color:#575757;
+  font-size: 1rem;
 }
 input[type="text"] {
   background: #f7f7f7;

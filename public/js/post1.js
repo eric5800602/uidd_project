@@ -47,7 +47,10 @@ $(document).ready(function () {
   });
   //$('.img-zoom-result').css('background-image',$myimage.attr('src'));
   //window.is_handle_myimage_touching = false;
-
+  document.getElementById('productName').addEventListener('change',function(){
+    var dia = document.getElementById(`dialog${editNum}`);
+    dia.innerText = document.getElementById('productName').innerText;
+  })
   
   $(document).on('touchmove', MYIMAGE_SELECTOR, function (e) {
     //if(!window.is_myimage_touching){return;}
@@ -153,9 +156,10 @@ $(document).ready(function () {
                   editNum += 1;
                   htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
                   $("#imgblock").html(htmlItems);
-                  var a = document.createElement('div');
-                  a.id = `dot${editNum}`;
-                  a.className = "dot";
+                  var a = document.createElement('div'),dia = document.createElement('div');
+                  a.id = `dot${editNum}`;dia.id = `dialog${editNum}`;
+                  a.className = "dot";dia.className = "text_dialog";
+                  a.append(dia);
                   document.getElementById('image_content').append(a);
                   if(complete){
                     localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
