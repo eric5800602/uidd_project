@@ -96,7 +96,7 @@ $.ajax({
                       <div class="content_image">`
       for(i=0; i<data.single.length; i++){
         id="content_img_"+i
-        single_html+=`<img class="content_image_1" id=${id} src=${data.single[i].img}>`;
+        single_html+=`<img class="content_image_1" id=${id} src=${data.single[i].img} onclick="slide(this.id)">`;
       }
       single_html+=`</div>\
                     <div class="content_paragraph">
@@ -104,7 +104,6 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         title="content_title_"+i;
         content="content_content_"+i;
-        console.log(title+" "+content)
         single_html+=`<div class="content_paragraph">
                         <p class="content_paragraph_title" id=${title}}>${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
@@ -118,7 +117,7 @@ $.ajax({
                       `;
       }
       for(i=0; i<data.single.length; i++){
-        single_html+=`<p class="content_content" id=${content} onclick="slide()">${data.single[i].description}</p>`;
+        single_html+=`<p class="content_content" id=${content}>${data.single[i].description}</p>`;
       }
       single_html+=`</div>`
       $('#single').html(single_html)
@@ -127,10 +126,11 @@ $.ajax({
 
 });
 
-function slide(){
+function slide(thisid){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('.content_content').offset().top
   console.log("slide() click")
+  console.log(thisid)
   $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
   $('#post_content1').css({"top": pos+sc+"px"})
   $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
