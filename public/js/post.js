@@ -137,8 +137,9 @@ $.ajax({
 
 function slide(thisid){
   console.log(thisid)
-  var html_modal="<p>test</p>";
-  $(thisid).html(html_modal);
+  $('#exampleModalCenter-4').show()
+  // var html_modal="<p>test</p>";
+  // $(thisid).html(html_modal);
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
