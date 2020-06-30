@@ -95,7 +95,7 @@ $(document).ready(function () {
         url: "https://luffy.ee.ncku.edu.tw:7575/cropimage",
         dataType: 'json',
         data:{
-          url:document.getElementById('myimage').getAttribute('src'),
+          url:document.getElementById('myimage').getAttribute('src').split(serverUrl)[1],
           x:axisX,
           y:axisY,
           width:document.getElementById('myimage').clientWidth,
