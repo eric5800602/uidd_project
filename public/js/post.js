@@ -146,7 +146,7 @@ function slide(thisid){
     console.log(thisid)
     $(thisid).animate({"opacity":'1'}, 500)
     $('#content_img_'+content_current).animate({"opacity":'0.5'}, 500)
-    console.log("opacity= "+window.getComputedStyle(em).getPropertyValue("?"))
+    console.log("opacity= "+window.getComputedStyle(em).getPropertyValue("opacity"))
   }
   var sc = document.getElementById("id_content").scrollTop
   var pos = $(".content_paragraph").offset().top
