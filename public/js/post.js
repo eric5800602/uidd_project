@@ -153,7 +153,6 @@ function slide(thisid){
 
   var sc = document.getElementById("id_content").scrollTop
   var pos = $(".content_paragraph").offset().top
-  var poss = $(".content_content").offset().top
 
   if(content_current==num){
     // 以圖搜圖
@@ -178,6 +177,7 @@ function slide(thisid){
     // $("#content_"+num).css({"top": pos+sc+"px"})
 
   }
+  $("#content_"+content_current).css({"top": pos+sc+"px"})
   $("#content_"+content_current).effect("slide",{direction: "left", mode:"hide", duration:500})
   $("#content_"+content_current).css({"top": pos+sc+"px"})
   $("#content_"+num).css({"top": pos+sc+"px"})
