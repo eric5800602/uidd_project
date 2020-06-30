@@ -119,35 +119,36 @@ $(document).ready(function () {
           }
         }
       }).done(function() {
-        
-      });
-      $.ajax({
-        type: 'POST',
-        url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
-        dataType: 'json',
-        data: {
-          x: targetx,
-          y: targety,
-          name: $("#productName").val(),
-          evaluation:rank,
-          description: $('#remark').val(),
-        },
-        success: function (msg) {
-          console.log(msg);
-          if (msg.success) {
-          console.log("success");
-          }
-            $("#productName").val('');
-            $("#remark").val('');
-            $(".rating").rate("setValue", 0);
-            editNum += 1;
-            htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
-            $("#imgblock").html(htmlItems);
+        $.ajax({
+          type: 'POST',
+          url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
+          dataType: 'json',
+          data: {
+            x: targetx,
+            y: targety,
+            name: $("#productName").val(),
+            evaluation:rank,
+            description: $('#remark').val(),
+            postid:localStorage.getItem('add_post_id'),
+            img:document.getElementById(`original${temp}`).childNodes[0].getAttribute('src')
           },
-        error: function(err){
-          console.log(err);
-          alert('發生錯誤，請洽工作人員');
-        }
+          success: function (msg) {
+            console.log(msg);
+            if (msg.success) {
+            console.log("success");
+            }
+              $("#productName").val('');
+              $("#remark").val('');
+              $(".rating").rate("setValue", 0);
+              editNum += 1;
+              htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
+              $("#imgblock").html(htmlItems);
+            },
+          error: function(err){
+            console.log(err);
+            alert('發生錯誤，請洽工作人員');
+          }
+        });
       });
     }
   });
