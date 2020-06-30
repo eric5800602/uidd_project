@@ -113,11 +113,9 @@ $.ajax({
                       `;
       }
       for(i=0; i<data.single.length; i++){
-        single_html+=`<p class="content_content" id="post_content1" onclick="slide()">${data.single[i].description}</p>
-                    `;
-
+        single_html+=`<p class="content_content" id="post_content1" onclick="slide()">${data.single[i].description}</p>`;
       }
-
+      single_html+=`</div>`
 
 
     }
