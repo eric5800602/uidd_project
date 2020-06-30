@@ -137,20 +137,27 @@ $.ajax({
 
 function slide(thisid){
   console.log(thisid)
-
-  // $('#exampleModalCenter-4').show()
-  // var html_modal="<p>test</p>";
-  // $(thisid).html(html_modal);
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
-    console.log("!")
+    console.log("src="+$('#thisid').src)
+    // 以圖搜圖
+    // var modal_html=`
+    //                 <div class="modal fade" id="exampleModalCenter-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    //                   <div class="modal-dialog modal-dialog-centered" role="document">
+    //                     <div class="modal-content">
+    //                       <div class="modal-body">
+    //                         <img class="modal_photo_main" id="full" src=${}></div>
+    //                       <div class="modal-footer">
+    //                         <button class="btn btn-secondary btn_next" type="button">Next</button>
+    //                       </div>
+    //                     </div>
+    //                   </div>
+    //                 </div>
+    // `
+
+
     $('#exampleModalCenter-4').modal('show');
-    // 也可以在這邊寫以圖搜圖拉XD
-    // $(thisid).animate({"opacity":'0.5'}, 500)
-    // $('#content_img_'+content_current).animate({"opacity":'1'}, 500)
-
-
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
     // $('#content_img_'+num).
