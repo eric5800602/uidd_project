@@ -38,8 +38,8 @@ $(document).ready(function () {
 
   htmlItems += '<div id="original1" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
   $("#imgblock").html(htmlItems);
-  document.getElementById('dot1').style.top = -document.getElementById('myimage').clientHeight;
-  document.getElementById('dot1').style.left = -document.getElementById('myimage').clientWidth;
+  document.getElementById('dot1').style.top = `-${document.getElementById('myimage').clientHeight}px`;
+  document.getElementById('dot1').style.left = `-${document.getElementById('myimage').clientWidth}px;
   //找單品
   window.is_myimage_touching = false;
   var MYIMAGE_SELECTOR = '#myimage', $myimage = $(MYIMAGE_SELECTOR), myimageOffset = $myimage.offset();
