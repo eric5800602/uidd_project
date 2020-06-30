@@ -18,7 +18,10 @@ function isNull( str ){
 }
 //單品敘述
 $(document).ready(function () {
-
+  if(!localStorage.getItem('add_post_id')){
+    alert("請從正常路徑進入此頁面");
+    window.location= "./home.html"
+  }
   $.ajax({
     type: 'POST',
     url: serverUrl + 'get_post_image',

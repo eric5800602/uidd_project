@@ -215,8 +215,9 @@ post_icon:$("#camera--output").attr("src"),
 				 window.location= "./home.html"
 			}
          else if($("#sel1").val()=="space"){
-			 console.log(" very good");
-		  window.location= "./post1.html"
+       console.log(" very good");
+      localStorage.setItem('add_post_id',msg.id);
+      window.location= "./post1.html"
 	 }
 		 
         }
