@@ -72,10 +72,10 @@ $(document).ready(function () {
       remark: $("#remark").val(),
       rank: rank
     });
+    console.log($("#productName").val());
     $("#productName").val('');
     $("#remark").val('');
     $(".rating").rate("setValue", 0);
-    console.log(productData);
     editNum += 1;
     $.ajax({
       type: 'POST',
