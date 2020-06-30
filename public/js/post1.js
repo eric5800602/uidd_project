@@ -10,7 +10,12 @@ var options = {
 
 };
 var serverUrl = 'https://luffy.ee.ncku.edu.tw:7575/'
-
+function isNull( str ){
+  if ( str == "" ||str == undefined) return true;
+  str = str.replace(/\s+/g, '');
+  if(str.length == 0) return true;
+  else return false;
+}
 //單品敘述
 $(document).ready(function () {
 
@@ -72,10 +77,15 @@ $(document).ready(function () {
       remark: $("#remark").val(),
       rank: rank
     });
-    console.log($("#productName").val());
-    $("#productName").val('');
-    $("#remark").val('');
-    $(".rating").rate("setValue", 0);
+    if(!axisX||!axisY){
+      alert('您還沒點選你想要新增的單品位置喔!');
+    }
+    if(isNull($("#productName").val())){
+      alert('單品名稱為空或有不可用字元')
+    }
+    if(isNull($('#remark').val())){
+      alert('說明為空或有不可用字元')
+    }
     editNum += 1;
     $.ajax({
       type: 'POST',
@@ -83,7 +93,7 @@ $(document).ready(function () {
       dataType: 'json',
       data: {
         x: axisX,
-      y: axisY,
+        y: axisY,
       name: $("#productName").val(),
        evaluation:rank,
        description: $('#remark').val()
@@ -95,6 +105,9 @@ $(document).ready(function () {
         }
       }
     });
+    $("#productName").val('');
+    $("#remark").val('');
+    $(".rating").rate("setValue", 0);
     htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
     $("#imgblock").html(htmlItems);
     
