@@ -1,6 +1,7 @@
 var htmlItems = '';
 var productData = [];
 var editNum = 1;
+var complete = false;
 var axisX = 0, axisY = 0, rank = 0;
 var options = {
   selected_symbol_type: 'utf8_star', // Must be a key from symbols
@@ -72,10 +73,13 @@ $(document).ready(function () {
   });
   document.getElementById('complete').addEventListener('click', function(){
     if(editNum == 1){
+      complete = true;
       $("#addsingle").click();
     }
-    localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
-    window.location= "./post.html";
+    else{
+      localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
+      window.location= "./post.html";
+    }
   })
   $("#addsingle").on('click', function () {
     
@@ -146,6 +150,10 @@ $(document).ready(function () {
                   editNum += 1;
                   htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
                   $("#imgblock").html(htmlItems);
+                  if(complete){
+                    localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
+                    window.location= "./post.html";
+                  }
                 },
               error: function(err){
                 console.log(err);
