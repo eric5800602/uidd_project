@@ -159,7 +159,7 @@ $(document).ready(function () {
                   var a = document.createElement('div'),dia = document.createElement('div');
                   a.id = `dot${editNum}`;dia.id = `dialog${editNum}`;
                   a.className = "dot";dia.className = "text_dialog";
-                  dia.value = "標註你想要描述的單品";
+                  dia.innerText = "標註你想要描述的單品";
                   a.append(dia);
                   document.getElementById('image_content').append(a);
                   var old_element = document.getElementById("productName");
