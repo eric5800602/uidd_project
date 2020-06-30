@@ -103,12 +103,10 @@ $.ajax({
                     <div class="content_paragraph">
                   `;
       for(i=0; i<data.single.length; i++){
-        title="content_title_"+i;
-        stars="content_stars_"+i;
-
-        single_html+=`<div class="content_paragraph">
+        title="content_title"+i;
+        single_html+=`<div class="content_paragraph" id=${title}>
                         <p class="content_paragraph_title" id=${title}>${data.single[i].name}</p>
-                        <div class="content_paragraph_stars" id=${stars}>
+                        <div class="content_paragraph_stars">
                       `;
         for(j=0; j<parseInt(data.single[i].evaluation); j++){
           console.log("star!")
@@ -128,7 +126,6 @@ $.ajax({
         if(i!=0){
           console.log("#content_title_"+i)
           $("#content_title_"+i).hide()
-          $("#content_stars_"+i).hide()
           $("#content_content_"+i).hide()
         }
       }
