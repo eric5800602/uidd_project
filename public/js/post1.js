@@ -129,7 +129,6 @@ $(document).ready(function () {
             name: $("#productName").val(),
             evaluation:rank,
             description: $('#remark').val(),
-            postid:localStorage.getItem('add_post_id'),
           },
           success: function (msg) {
             console.log(msg);
