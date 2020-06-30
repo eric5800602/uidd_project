@@ -119,6 +119,7 @@ $.ajax({
       $('#single').html(single_html)
 
     }
+
 });
 
 function slide(){
