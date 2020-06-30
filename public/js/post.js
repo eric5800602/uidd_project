@@ -191,8 +191,8 @@ $('#btn_google').click(function(){
 })
 
 $('#exampleModalCenter-4').on('hidden.bs.modal', function () {
-  var link="http://images.google.com/searchbyimage?image_url=https://luffy.ee.ncku.edu.tw:7575/"
-  window.open("https://www.w3schools.com");
+  var link="http://images.google.com/searchbyimage?image_url=https://luffy.ee.ncku.edu.tw:7575/"+imgsrc
+  window.open(link);
   console.log("!!!")
 })
 
