@@ -102,15 +102,19 @@ $(document).ready(function () {
           console.log(msg);
           if (msg.success) {
           console.log("success");
-          editNum += 1;
           }
+            $("#productName").val('');
+            $("#remark").val('');
+            $(".rating").rate("setValue", 0);
+            editNum += 1;
+            htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
+            $("#imgblock").html(htmlItems);
+          },
+        error: function(err){
+          console.log(err);
+          alert('發生錯誤，請洽工作人員');
         }
       });
-      $("#productName").val('');
-      $("#remark").val('');
-      $(".rating").rate("setValue", 0);
-      htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
-      $("#imgblock").html(htmlItems);
     }
   });
 
