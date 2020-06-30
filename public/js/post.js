@@ -109,6 +109,7 @@ $.ajax({
                         <p class="content_paragraph_title" id=${title}}>${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
                       `;
+        int j;
         for(j=0; j<parseInt(data.single.evaluation); j++){
           console.log("star!")
           single_html+=`<img class="content_paragraph_star" src="./res/img/star.png">`;
