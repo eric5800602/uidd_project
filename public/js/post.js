@@ -134,7 +134,7 @@ $.ajax({
     //     single_html+=`<p class="content_content" id=${content}>${data.single[i].description}</p>`;
     //   }
     //   single_html+=`</div>`
-    //   $('#single').html(single_html)
+      $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
         if(i!=0){
           console.log("#content_title_"+i)
