@@ -145,7 +145,7 @@ function slide(thisid){
 
   }else{
     console.log(thisid)
-    $(thisid).animate({"opacity":'1'}, 500)
+    $('#content_img_'+num).animate({"opacity":'1'}, 500)
     $('#content_img_'+content_current).animate({"opacity":'0.5'}, 500)
     console.log("opacity= "+window.getComputedStyle(em).getPropertyValue("opacity"))
   }
