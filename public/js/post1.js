@@ -125,7 +125,7 @@ $(document).ready(function () {
                 evaluation:rank,
                 description: $('#remark').val(),
                 postid:localStorage.getItem('add_post_id'),
-                img:document.getElementById(`original${temp}`).childNodes[0].getAttribute('src')
+                img:msg.url
               },
               success: function (msg) {
                 console.log(msg);
