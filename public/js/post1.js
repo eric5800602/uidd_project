@@ -81,34 +81,7 @@ $(document).ready(function () {
     
 
   });
-  $.post({
-    url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
-     dataType: "json",
-     contentType: "application/json",
-     xhrFields: {
-       withCredentials: true
-     },
-     data: JSON.stringify({
-       name: $("#productName").val(),
-       evaluation: $(".rating").val(),
-       description: $("#remark").val()
-     }),
-     success: function (msg) {
-       console.log(msg);
-       if (msg.success) {
-        console.log("success");
-       }
-       else {
-         console.log("fail");
-         alert(msg.text);
-       }
-     },
-     error: function (data) {
-       console.log("fail");
-       console.log(data);
-     }
-   })
-
+  
 });
 
 /* $('.submit_button').click((event) => {
