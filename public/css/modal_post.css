@@ -103,10 +103,11 @@
 .modal_btn--google{
   width: 17rem;
   height: 5.5rem;
-
+  margin: 0.9rem;
 }
 .modal-footer-4{
   display: flex;
+  justify-content: center;
   background-color: #E9E9E9;
 }
 .modal-content-4{
