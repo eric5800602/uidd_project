@@ -146,7 +146,7 @@ function slide(thisid){
     console.log("src=" + document.getElementById(thisid).src)
     src=document.getElementById(thisid).src
     $('#modal_google').attr("src",src);
-    $('#exampleModalCenter-4').modal('toggle');
+    // $('#exampleModalCenter-4').modal('toggle');
     $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
@@ -182,14 +182,13 @@ function slide(thisid){
 
 function google(){
   console.log("!")
-
-
 }
-
 $('#btn_google').click(function(){
   console.log("!!")
+})
+$('#exampleModalCenter-4').on('hidden.bs.modal', function () {
 
-
+  console.log("!!!")
 })
 
 // 點擊request
