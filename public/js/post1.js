@@ -92,14 +92,35 @@ $(document).ready(function () {
     else{
       $.ajax({
         type: 'POST',
+        url: "https://luffy.ee.ncku.edu.tw:7575/crop_image",
+        dataType: 'json',
+        data:{
+          url:document.getElementById('myimage').getAttribute('src'),
+          x:axisX,
+          y:axisY,
+          width:document.getElementById('myimage').clientWidth,
+          height:document.getElementById('myimage').clientHeight,
+          target_w:75,
+          target_h:75
+        },
+        success:function (msg) {
+          if(msg.success){
+            document.getElementById(`original${editNum}`).childNodes[0].setAttribute('src',msg.url);
+          }else{
+            alert('切圖片錯誤了，請洽工作人員')
+          }
+        }
+      })
+      $.ajax({
+        type: 'POST',
         url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
         dataType: 'json',
         data: {
           x: axisX,
           y: axisY,
-        name: $("#productName").val(),
-        evaluation:rank,
-        description: $('#remark').val()
+          name: $("#productName").val(),
+          evaluation:rank,
+          description: $('#remark').val()
         },
         success: function (msg) {
           console.log(msg);
