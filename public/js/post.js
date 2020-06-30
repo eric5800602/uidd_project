@@ -118,10 +118,10 @@ $.ajax({
                       <p class="content_content">${data.single[i].description}</p>
                       </div>
                       </div>
-                      </div>
+
                       `;
       }
-
+      single_html+=`</div>`
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
         if(i!=0){
