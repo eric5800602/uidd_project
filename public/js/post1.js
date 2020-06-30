@@ -91,14 +91,18 @@ $(document).ready(function () {
     }
     else{
       var temp = editNum;
+      targety = -parseInt(document.getElementById(`original${temp}`).childNodes[0].style.top)+39;
+      targetx = -parseInt(document.getElementById(`original${temp}`).childNodes[0].style.left)+39;
+      targety < 0 ? targety = 0 : targety = targety;
+      targetx < 0 ? targetx = 0 : targetx = targetx;
       $.ajax({
         type: 'POST',
         url: "https://luffy.ee.ncku.edu.tw:7575/cropimage",
         dataType: 'json',
         data:{
           url:document.getElementById('myimage').getAttribute('src').split(serverUrl)[1],
-          x:axisX,
-          y:axisY,
+          x:targetx,
+          y:targety,
           width:document.getElementById('myimage').clientWidth,
           height:document.getElementById('myimage').clientHeight,
           target_w:75,
@@ -117,8 +121,8 @@ $(document).ready(function () {
         url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
         dataType: 'json',
         data: {
-          x: axisX,
-          y: axisY,
+          x: targetx,
+          y: targety,
           name: $("#productName").val(),
           evaluation:rank,
           description: $('#remark').val()
