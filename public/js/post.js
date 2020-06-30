@@ -9,6 +9,7 @@ var btn_t = false;
 var btn_push = false;
 var xpx=0, ypx=0, x=0, y=0, xx=0, yy=0;
 var img;
+var content_current=0;
 $.ajax({
     url:"/get_post",
     type:'post',
@@ -104,9 +105,10 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         title="content_title_"+i;
         content="content_content_"+i;
+        stars="content_stars_"+i;
         single_html+=`<div class="content_paragraph">
                         <p class="content_paragraph_title" id=${title}}>${data.single[i].name}</p>
-                        <div class="content_paragraph_stars">
+                        <div class="content_paragraph_stars" id=${stars}>
                       `;
         for(j=0; j<parseInt(data.single[i].evaluation); j++){
           console.log("star!")
@@ -121,7 +123,13 @@ $.ajax({
       }
       single_html+=`</div>`
       $('#single').html(single_html)
-
+      for(i=0; i<data.single.length; i++){
+        if(i!=0){
+          $("#content_title_"+i).hide()
+          $("#content_stars_"+i).hide()
+          $("#content_content_"+i).hide()
+        }
+      }
     }
 
 });
@@ -130,11 +138,30 @@ function slide(thisid){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('.content_content').offset().top
   var num = thisid.substring(12, thisid.length)
+  if(content_current==num){
+    // 以圖搜圖
+    console.log("SAME")
+
+  }else if(content_current>num){
+    // 之前的比較大，往右滑
+    console.log("之前的 is BIG")
+
+
+
+  }else if(content_current<num){
+    // 之前的比較小，往左滑
+    console.log("現在的 is BIG")
+
+
+  }
+
   console.log("slide() click")
   $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
   $('#post_content1').css({"top": pos+sc+"px"})
   $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
   $('#post_content2').css({"top": pos+sc+"px"})
+
+  content_current=num
 }
 
 
