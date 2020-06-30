@@ -77,41 +77,41 @@ $(document).ready(function () {
       remark: $("#remark").val(),
       rank: rank
     });
-    if(!axisX||!axisY){
+    if(!axisX||!axisY||document.getElementById(`original${editNum}`).childNodes[0].getAttribute('src')){
       alert('您還沒點選你想要新增的單品位置喔!');
     }
-    if(isNull($("#productName").val())){
+    else if(isNull($("#productName").val())){
       alert('單品名稱為空或有不可用字元')
     }
-    if(isNull($('#remark').val())){
+    else if(isNull($('#remark').val())){
       alert('說明為空或有不可用字元')
     }
-    editNum += 1;
-    $.ajax({
-      type: 'POST',
-      url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
-      dataType: 'json',
-      data: {
-        x: axisX,
-        y: axisY,
-      name: $("#productName").val(),
-       evaluation:rank,
-       description: $('#remark').val()
-      },
-      success: function (msg) {
-        console.log(msg);
-        if (msg.success) {
-         console.log("success");
+    else{
+      $.ajax({
+        type: 'POST',
+        url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
+        dataType: 'json',
+        data: {
+          x: axisX,
+          y: axisY,
+        name: $("#productName").val(),
+        evaluation:rank,
+        description: $('#remark').val()
+        },
+        success: function (msg) {
+          console.log(msg);
+          if (msg.success) {
+          console.log("success");
+          editNum += 1;
+          }
         }
-      }
-    });
-    $("#productName").val('');
-    $("#remark").val('');
-    $(".rating").rate("setValue", 0);
-    htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
-    $("#imgblock").html(htmlItems);
-    
-
+      });
+      $("#productName").val('');
+      $("#remark").val('');
+      $(".rating").rate("setValue", 0);
+      htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
+      $("#imgblock").html(htmlItems);
+    }
   });
 
 
