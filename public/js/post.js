@@ -103,9 +103,9 @@ $.ajax({
                     <div class="content_paragraph">
                   `;
       for(i=0; i<data.single.length; i++){
-        title="content_title"+i;
+        title="content_title_"+i;
         single_html+=`<div class="content_paragraph" id=${title}>
-                        <p class="content_paragraph_title" id=${title}>${data.single[i].name}</p>
+                        <p class="content_paragraph_title">${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
                       `;
         for(j=0; j<parseInt(data.single[i].evaluation); j++){
