@@ -109,7 +109,7 @@ $.ajax({
                         <p class="content_paragraph_title" id=${title}}>${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
                       `;
-        for(j=0; j<data.single.evaluation; j++){
+        for(j=0; j<parseInt(data.single.evaluation); j++){
           console.log("star!")
           single_html+=`<img class="content_paragraph_star" src="./res/img/star.png">`;
         }
@@ -130,7 +130,7 @@ $.ajax({
 function slide(){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('.content_content').offset().top
-  console.log("click")
+  console.log("slide() click")
   $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
   $('#post_content1').css({"top": pos+sc+"px"})
   $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
