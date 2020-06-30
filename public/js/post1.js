@@ -95,7 +95,7 @@ $(document).ready(function () {
     }
     else{
       var temp = editNum;
-      targety = -parseInt(document.getElementById(`original${temp}`).childNodes[0].style.top)+39;
+      targety = -parseInt(document.getElementById(`original${temp}`).childNodes[0].style.top)+parseInt(window.getComputedStyle(document.getElementById("myimage")).getPropertyValue("padding-top"))/2+39;
       targetx = -parseInt(document.getElementById(`original${temp}`).childNodes[0].style.left)+39;
       targety < 0 ? targety = 0 : targety = targety;
       targetx < 0 ? targetx = 0 : targetx = targetx;
