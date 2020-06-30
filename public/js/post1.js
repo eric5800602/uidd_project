@@ -161,6 +161,13 @@ $(document).ready(function () {
                   a.className = "dot";dia.className = "text_dialog";
                   a.append(dia);
                   document.getElementById('image_content').append(a);
+                  var old_element = document.getElementById("productName");
+                  var new_element = old_element.cloneNode(true);
+                  old_element.parentNode.replaceChild(new_element, old_element);
+                  document.getElementById('productName').addEventListener('change',function(){
+                    var dia = document.getElementById(`dialog${editNum}`);
+                    dia.innerText = document.getElementById('productName').innerText;
+                  })
                   if(complete){
                     localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
                     window.location= "./post.html";
