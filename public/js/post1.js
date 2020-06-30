@@ -80,6 +80,8 @@ $(document).ready(function () {
       url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
       dataType: 'json',
       data: {
+        x: axisX,
+      y: axisY,
       name: $("#productName").val(),
        evaluation:rank,
        description: $('#remark').val()
