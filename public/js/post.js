@@ -91,7 +91,14 @@ $.ajax({
                         `;
       $('#category').html(category_html)
       //console.log(category_html)
+      
+      var single_html=`<div id="single">\
+                      <div class="content_image">`
+      for(i=0; i<post.single.length; i++){
+        console.log(post.single[i].description)
 
+
+      }
 
 
 
@@ -108,8 +115,8 @@ function slide(){
   $('#post_content2').css({"top": pos+sc+"px"})
 }
 
- //$('#post_content').css({"top": "20"})
 
+// 點擊request
 function like (id_click){
   // console.log(id_click)
   // console.log(id_click.substring(4, 5))
