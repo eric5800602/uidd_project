@@ -144,7 +144,7 @@ function slide(thisid){
 
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 500)
-    $('#content_img_'+content_current).animate({"opacity":'0.5'}, 500)
+    $('#content_img_'+content_current).animate({"opacity":'0.5'}, 250)
   }
   var sc = document.getElementById("id_content").scrollTop
   var pos = $("#content_"+content_current).offset().top
@@ -155,17 +155,17 @@ function slide(thisid){
 
   }else if(content_current>num){
     // 之前的比較大，往右滑
-    $("#content_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
+    $("#content_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:250})
     $("#content_"+content_current).css({"top": pos+sc+"px"})
     $("#content_"+num).css({"top": pos+sc+"px"})
-    $("#content_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
+    $("#content_"+num).effect("slide",{direction: "left", mode:"show", duration:250})
     $("#content_"+num).css({"top": pos+sc+"px"})
   }else if(content_current<num){
     // 之前的比較小，往左滑
-    $("#content_"+content_current).effect("slide",{direction: "left", mode:"hide", duration:500})
+    $("#content_"+content_current).effect("slide",{direction: "left", mode:"hide", duration:250})
     $("#content_"+content_current).css({"top": pos+sc+"px"})
     $("#content_"+num).css({"top": pos+sc+"px"})
-    $("#content_"+num).effect("slide",{direction: "right", mode:"show", duration:500})
+    $("#content_"+num).effect("slide",{direction: "right", mode:"show", duration:250})
     $("#content_"+num).css({"top": pos+sc+"px"})
 
   }
