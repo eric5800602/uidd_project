@@ -57,6 +57,8 @@ $(document).ready(function () {
     console.log(haha);
     //window.is_handle_myimage_touching = false;
     //新增圖片框
+  });
+  $(document).on('touchend', MYIMAGE_SELECTOR, function (e) {
     document.body.style.overflowY = "scroll";
   });
   $("#addsingle").on('click', function () {
