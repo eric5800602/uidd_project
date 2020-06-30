@@ -115,3 +115,7 @@
   box-shadow: 0px 0.8px 8px #00000029;
   background-color: #E9E9E9;
 }
+.modal-dialog{
+  display: flex;
+  justify-content: center;
+}
