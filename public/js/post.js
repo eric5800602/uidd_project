@@ -132,6 +132,7 @@ $.ajax({
 });
 
 function slide(thisid){
+  console.log("curr= "+content_current+"/nnum= "+num)
 
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
@@ -185,7 +186,7 @@ function slide(thisid){
   // $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
   // $('#post_content2').css({"top": pos+sc+"px"})
 
-  // content_current=num
+  content_current=num
 }
 
 
