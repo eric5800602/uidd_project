@@ -89,6 +89,7 @@ $(document).ready(function () {
         if (msg.success) {
          console.log("success");
         }
+      }
     });
     htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
     $("#imgblock").html(htmlItems);
