@@ -159,6 +159,7 @@ $(document).ready(function () {
                   var a = document.createElement('div'),dia = document.createElement('div');
                   a.id = `dot${editNum}`;dia.id = `dialog${editNum}`;
                   a.className = "dot";dia.className = "text_dialog";
+                  dia.value = "標註你想要描述的單品";
                   a.append(dia);
                   document.getElementById('image_content').append(a);
                   var old_element = document.getElementById("productName");
@@ -166,7 +167,7 @@ $(document).ready(function () {
                   old_element.parentNode.replaceChild(new_element, old_element);
                   document.getElementById('productName').addEventListener('change',function(){
                     var dia = document.getElementById(`dialog${editNum}`);
-                    dia.innerText = document.getElementById('productName').innerText;
+                    dia.value = document.getElementById('productName').value;
                   })
                   if(complete){
                     localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
