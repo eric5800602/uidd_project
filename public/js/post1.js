@@ -77,7 +77,7 @@ $(document).ready(function () {
       remark: $("#remark").val(),
       rank: rank
     });
-    if(!axisX||!axisY||document.getElementById(`original${editNum}`).childNodes[0].getAttribute('src')){
+    if(!axisX||!axisY||!document.getElementById(`original${editNum}`).childNodes[0].getAttribute('src')){
       alert('您還沒點選你想要新增的單品位置喔!');
     }
     else if(isNull($("#productName").val())){
