@@ -134,12 +134,14 @@ function slide(thisid){
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
+    console.log("!")
     // 也可以在這邊寫以圖搜圖拉XD
     // $(thisid).animate({"opacity":'0.5'}, 500)
     // $('#content_img_'+content_current).animate({"opacity":'1'}, 500)
 
 
   }else{
+    console.log("!!")
     $(thisid).animate({"opacity":'1'}, 500)
     $('#content_img_'+content_current).animate({"opacity":'0.5'}, 500)
   }
