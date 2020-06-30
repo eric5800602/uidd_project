@@ -71,6 +71,9 @@ $(document).ready(function () {
     document.body.style.overflowY = "scroll";
   });
   document.getElementById('complete').addEventListener('click', function(){
+    if(editNum == 1){
+      $("#addsingle").click();
+    }
     localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
     window.location= "./post.html";
   })
