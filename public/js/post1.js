@@ -69,6 +69,9 @@ $(document).ready(function () {
   $(document).on('touchend', MYIMAGE_SELECTOR, function (e) {
     document.body.style.overflowY = "scroll";
   });
+  document.getElementById('complete').addEventListener('click', function(){
+    window.location= "./home.html";
+  })
   $("#addsingle").on('click', function () {
     
    // $("#original" + editNum).removeClass("mouseAxis");
