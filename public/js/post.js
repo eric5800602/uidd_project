@@ -135,17 +135,7 @@ $.ajax({
 
 });
 
-function google(){
-  console.log("!")
 
-
-}
-
-$('#btn_google').click(function(){
-  console.log("!!")
-
-
-})
 
 function slide(thisid){
   console.log(thisid)
@@ -156,6 +146,7 @@ function slide(thisid){
     console.log("src=" + document.getElementById(thisid).src)
     src=document.getElementById(thisid).src
     $('#modal_google').attr("src",src);
+    $('#exampleModalCenter-4').modal('toggle');
     $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
@@ -189,6 +180,17 @@ function slide(thisid){
   content_current=num
 }
 
+function google(){
+  console.log("!")
+
+
+}
+
+$('#btn_google').click(function(){
+  console.log("!!")
+
+
+})
 
 // 點擊request
 function like (id_click){
