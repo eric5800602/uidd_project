@@ -146,7 +146,7 @@ html {
   max-width: 90vw;
 }
 .dot{
-  color: #ffffff;
+  background-color: #ffffff;
   width:13px;
   height:13px;
   z-index:1;
