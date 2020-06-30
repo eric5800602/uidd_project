@@ -133,6 +133,7 @@ function slide(thisid){
 
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
+  console.log("opacity= "+window.getComputedStyle(em).getPropertyValue("opacity"))
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     console.log("!")
     // 也可以在這邊寫以圖搜圖拉XD
