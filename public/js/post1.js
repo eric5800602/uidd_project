@@ -78,7 +78,7 @@ $(document).ready(function () {
     document.body.style.overflowY = "scroll";
   });
   document.getElementById('complete').addEventListener('click', function(){
-    if(editNum == 1){
+    if(!document.getElementById(`original${editNum}`).childNodes[0].getAttribute('src')){
       complete = true;
       $("#addsingle").click();
     }
