@@ -10,6 +10,7 @@ var btn_push = false;
 var xpx=0, ypx=0, x=0, y=0, xx=0, yy=0;
 var img;
 var content_current=0;
+var imgsrc;
 $.ajax({
     url:"/get_post",
     type:'post',
@@ -145,8 +146,10 @@ function slide(thisid){
     console.log("!")
     console.log("src=" + document.getElementById(thisid).src)
     src=document.getElementById(thisid).src
+    imgsrc=src
+    console.log("yeah!"+imgsrc)
     $('#modal_google').attr("src",src);
-    // $('#exampleModalCenter-4').modal('toggle');
+
     $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
@@ -186,7 +189,9 @@ function google(){
 $('#btn_google').click(function(){
   console.log("!!")
 })
+
 $('#exampleModalCenter-4').on('hidden.bs.modal', function () {
+  var link="http://images.google.com/searchbyimage?image_url=https://luffy.ee.ncku.edu.tw:7575/"
   window.open("https://www.w3schools.com");
   console.log("!!!")
 })
