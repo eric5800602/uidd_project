@@ -90,6 +90,7 @@ $(document).ready(function () {
       alert('說明為空或有不可用字元')
     }
     else{
+      var temp = editNum;
       $.ajax({
         type: 'POST',
         url: "https://luffy.ee.ncku.edu.tw:7575/cropimage",
@@ -105,7 +106,7 @@ $(document).ready(function () {
         },
         success:function (msg) {
           if(msg.success){
-            document.getElementById(`original${editNum}`).childNodes[0].setAttribute('src',msg.url);
+            document.getElementById(`original${temp}`).childNodes[0].setAttribute('src',msg.url);
           }else{
             alert('切圖片錯誤了，請洽工作人員')
           }
