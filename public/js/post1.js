@@ -3,7 +3,7 @@ var productData = [];
 var editNum = 1;
 var axisX = 0, axisY = 0, rank = 0;
 var options = {
-
+selected_symbol_type: 'utf8_star', 
   max_value: 5,
   step_size: 1,
   initial_value: rank
