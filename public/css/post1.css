@@ -8,6 +8,7 @@ html {
   width: 100%;
   font-family: Microsoft JhengHei;
   font-size: 4vw;
+  -webkit-overflow-scrolling: touch;
 }
 #id_header {
   position: fixed;
