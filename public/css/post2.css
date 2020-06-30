@@ -144,7 +144,7 @@ bottom: 7.5em;
 
 #posting{
 position:absolute;
-z-index:8;
+z-index:0;
 opacity:0;
 padding-top:12vh;
 }
