@@ -112,43 +112,41 @@ $(document).ready(function () {
           if(msg.success){
             document.getElementById(`original${temp}`).childNodes[0].setAttribute('src',msg.url);
             document.getElementById(`original${temp}`).childNodes[0].removeAttribute("style");
-            $(`#original${temp}`).children().css("max-width","100%")
-            $(`#original${temp}`).children().css("max-height","100%")
+            $(`#original${temp}`).children().css("max-width","100%");
+            $(`#original${temp}`).children().css("max-height","100%");
+            $.ajax({
+              type: 'POST',
+              url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
+              dataType: 'json',
+              data: {
+                x: targetx,
+                y: targety,
+                name: $("#productName").val(),
+                evaluation:rank,
+                description: $('#remark').val(),
+                postid:localStorage.getItem('add_post_id'),
+                img:document.getElementById(`original${temp}`).childNodes[0].getAttribute('src')
+              },
+              success: function (msg) {
+                console.log(msg);
+                if (msg.success) {
+                console.log("success");
+                }
+                  $("#productName").val('');
+                  $("#remark").val('');
+                  $(".rating").rate("setValue", 0);
+                  editNum += 1;
+                  htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
+                  $("#imgblock").html(htmlItems);
+                },
+              error: function(err){
+                console.log(err);
+                alert('發生錯誤，請洽工作人員');
+              }
+            });
           }else{
             alert('圖片錯誤了，請洽工作人員')
           }
-        }
-      }).done(function() {
-        
-      });
-      $.ajax({
-        type: 'POST',
-        url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
-        dataType: 'json',
-        data: {
-          x: targetx,
-          y: targety,
-          name: $("#productName").val(),
-          evaluation:rank,
-          description: $('#remark').val(),
-          postid:localStorage.getItem('add_post_id'),
-          img:document.getElementById(`original${temp}`).childNodes[0].getAttribute('src')
-        },
-        success: function (msg) {
-          console.log(msg);
-          if (msg.success) {
-          console.log("success");
-          }
-            $("#productName").val('');
-            $("#remark").val('');
-            $(".rating").rate("setValue", 0);
-            editNum += 1;
-            htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
-            $("#imgblock").html(htmlItems);
-          },
-        error: function(err){
-          console.log(err);
-          alert('發生錯誤，請洽工作人員');
         }
       });
     }
