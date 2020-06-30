@@ -92,7 +92,7 @@ $(document).ready(function () {
     else{
       $.ajax({
         type: 'POST',
-        url: "https://luffy.ee.ncku.edu.tw:7575/crop_image",
+        url: "https://luffy.ee.ncku.edu.tw:7575/cropimage",
         dataType: 'json',
         data:{
           url:document.getElementById('myimage').getAttribute('src'),
