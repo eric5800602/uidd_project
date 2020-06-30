@@ -103,7 +103,7 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         title="content_title"+i;
         content="content_content"+i;
-        console.log(titile+" "+content)
+        console.log(title+" "+content)
         single_html+=`<div class="content_paragraph">
                         <p class="content_paragraph_title">${data.single[i].name}</p>
                         <div class="content_paragraph_stars">
