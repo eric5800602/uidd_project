@@ -38,7 +38,8 @@ $(document).ready(function () {
 
   htmlItems += '<div id="original1" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
   $("#imgblock").html(htmlItems);
-
+  document.getElementById('dot1').style.top = -document.getElementById('myimage').clientHeight;
+  document.getElementById('dot1').style.left = -document.getElementById('myimage').clientWidth;
   //找單品
   window.is_myimage_touching = false;
   var MYIMAGE_SELECTOR = '#myimage', $myimage = $(MYIMAGE_SELECTOR), myimageOffset = $myimage.offset();
@@ -159,6 +160,8 @@ $(document).ready(function () {
                   var a = document.createElement('div'),dia = document.createElement('div');
                   a.id = `dot${editNum}`;dia.id = `dialog${editNum}`;
                   a.className = "dot";dia.className = "text_dialog";
+                  a.style.top = -document.getElementById('myimage').clientHeight;
+                  a.style.left = -document.getElementById('myimage').clientWidth;
                   dia.innerText = "標註你想要描述的單品";
                   a.append(dia);
                   document.getElementById('image_content').append(a);
