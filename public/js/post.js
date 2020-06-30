@@ -137,7 +137,7 @@ $.ajax({
 
 function slide(thisid){
   console.log(thisid)
-  $('#exampleModalCenter-4').modal('toggle');
+  $('#exampleModalCenter-4').modal('show');
   // $('#exampleModalCenter-4').show()
   // var html_modal="<p>test</p>";
   // $(thisid).html(html_modal);
