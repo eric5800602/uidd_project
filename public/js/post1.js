@@ -70,7 +70,8 @@ $(document).ready(function () {
     document.body.style.overflowY = "scroll";
   });
   document.getElementById('complete').addEventListener('click', function(){
-    window.location= "./home.html";
+    localStorage.setItem('post_id',localStorage.getItem('add_post_id'));
+    window.location= "./post.html";
   })
   $("#addsingle").on('click', function () {
     
