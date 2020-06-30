@@ -38,7 +38,7 @@ $.ajax({
                 <div class="requests_request " id="${data.requests[i]._id}">\
                   <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
                   <div class="requests_request_data ">
-                    
+
                     <div class="request_data data_source">
                       <p class="request_data_num" id=${id[0]}> ${data.requests[i].Source}
                       <p class="request_data_btn" id=${id[1]} onclick="like(this.id)"> Source
@@ -68,7 +68,7 @@ $.ajax({
       $('#image').attr("src", data.post.post_icon)
         // $("#post_img").attr("src",data.object[0].post_icon)
         // $("#user_img").attr("src",data.object[0].user_icon)
-      
+
       var hashtag_html='<div class="content_hashtag">\
                         <p class="content_hashtag_title">Hashtag</p>\
                         ';
@@ -80,7 +80,7 @@ $.ajax({
       $('#hashtag').html(hashtag_html)
       hashtag_html+='</div>'
       //console.log(hashtag_html)
-      
+
       var category_html=`<p class="content_category_title">Category</p>\
                         <div class="content_category_content">\
                         <p class="content_category_content_first content_category_content_content"> ${data.post.space} </p>\
@@ -91,7 +91,7 @@ $.ajax({
                         `;
       $('#category').html(category_html)
       //console.log(category_html)
-      
+
       var single_html=`<div id="single">\
                       <div class="content_image">`
       for(i=0; i<data.single.length; i++){
@@ -129,8 +129,8 @@ $.ajax({
 function slide(thisid){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('.content_content').offset().top
+  var num = thisid.substring(12, thisid.length)
   console.log("slide() click")
-  console.log(thisid.substring(12, thisid.length))
   $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
   $('#post_content1').css({"top": pos+sc+"px"})
   $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
@@ -191,7 +191,7 @@ function like (id_click){
   }else{
     console.log('wrong')
   }
-  //console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)  
+  //console.log("request_id= "+id_last+"\ntype= "+type+"\noper= "+oper)
   $.ajax({
     url:"/modify_request",
     type:'post',
@@ -211,8 +211,8 @@ function like (id_click){
 
 }
 
-$('.data_texture').click(function(){ 
-  console.log("texture"); 
+$('.data_texture').click(function(){
+  console.log("texture");
 });
 
 // 點擊貼文照片出現東西
@@ -243,7 +243,7 @@ $('.div_price').click(function(){
 
 })
 
-$('.div_texture').click(function(){ 
+$('.div_texture').click(function(){
   texture=!texture;
   console.log("texture= "+texture)
   if(texture==true){
@@ -312,7 +312,7 @@ $(document).ready(function() {
           document.getElementById("heart").src = "./res/img/heart8.png"
       },400)
     }else{
-      
+
 
     }
   })
