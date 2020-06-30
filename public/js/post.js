@@ -94,8 +94,8 @@ $.ajax({
       
       var single_html=`<div id="single">\
                       <div class="content_image">`
-      for(i=0; i<post.single.length; i++){
-        console.log(post.single[i].description)
+      for(i=0; i<data.single.length; i++){
+        console.log(data.single[i].description)
 
 
       }
