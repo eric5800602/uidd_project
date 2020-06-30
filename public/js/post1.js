@@ -44,6 +44,7 @@ $(document).ready(function () {
     //if(!window.is_myimage_touching){return;}
     //if(window.is_handle_myimage_touching){return;}
     //window.is_handle_myimage_touching = true;
+    document.body.style.overflowY = "hidden";
     var $imgzoomresult = $('.mouseAxis' + editNum );
     console.log(e.touches[0].clientX, e.touches[0].clientY, myimageOffset.top, myimageOffset.left);
     var tmp = e.touches[0];
@@ -52,12 +53,11 @@ $(document).ready(function () {
     console.log(x, y);
     axisX = x;
     axisY = y;
-    console.log("111");
     var haha = $imgzoomresult.find('img').css({ top: -y, left: -x }).attr('src', $myimage.attr('src'));
     console.log(haha);
     //window.is_handle_myimage_touching = false;
     //新增圖片框
-   
+    document.body.style.overflowY = "scroll";
   });
   $("#addsingle").on('click', function () {
     
