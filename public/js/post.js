@@ -100,10 +100,11 @@ $.ajax({
         id="content_img_"+i
         single_html+=`<img class="content_image_1" id=${id} src=${data.single[i].img} onclick="slide(this.id)">`;
       }
+      single_html+=`</div class="content_static">`
       for(i=0; i<data.single.length; i++){
         var content="content_"+i
-        single_html+=`</div>
-                      <div class="content_static">
+
+
                       <div id=${content}>
                       <div class="content_paragraph">
                         <p class="content_paragraph_title">${data.single[i].name}</p>
@@ -117,10 +118,10 @@ $.ajax({
                       <p class="content_content">${data.single[i].description}</p>
                       </div>
                       </div>
-
+                      </div>
                       `;
       }
-      single_html+=`</div>`
+
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
         if(i!=0){
