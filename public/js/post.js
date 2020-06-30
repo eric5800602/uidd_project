@@ -130,7 +130,7 @@ function slide(thisid){
   var sc = document.getElementById("id_content").scrollTop
   var pos = $('.content_content').offset().top
   console.log("slide() click")
-  console.log(thisid.substring(12, this.id.length))
+  console.log(thisid.substring(12, thisid.length))
   $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
   $('#post_content1').css({"top": pos+sc+"px"})
   $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
