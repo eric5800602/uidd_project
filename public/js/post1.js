@@ -75,13 +75,28 @@ $(document).ready(function () {
     $(".rating").rate("setValue", 0);
     console.log(productData);
     editNum += 1;
-  
+    $.ajax({
+      type: 'POST',
+      url: "https://luffy.ee.ncku.edu.tw:7575/add_single",
+      dataType: 'json',
+      data: {
+      name: $("#productName").val(),
+       evaluation:rank,
+       description: $('#remark').val()
+      },
+      success: function (msg) {
+        console.log(msg);
+        if (msg.success) {
+         console.log("success");
+        }
+    });
     htmlItems += '<div id="original' + editNum + '" class="img-zoom-result mouseAxis' + editNum + '" style="display: inline-block;"><img src="" /></div>';
     $("#imgblock").html(htmlItems);
     
 
   });
-  
+
+
 });
 
 /* $('.submit_button').click((event) => {
