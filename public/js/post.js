@@ -176,7 +176,17 @@ function slide(thisid){
     // $("#content_"+num).css({"top": pos+sc+"px"})
 
   }
+  // $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
+  // $("#content_title_"+content_current).css({"top": pos+sc+"px"})
+  // $("#content_title_"+num).css({"top": pos+sc+"px"})
+  // $("#content_title_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
+  // $("#content_title_"+num).css({"top": pos+sc+"px"})
   console.log("slide() click")
+  // $("#post_content1").effect("slide",{direction: "right", mode:"hide", duration:500})
+  // $('#post_content1').css({"top": pos+sc+"px"})
+  // $("#post_content2").effect("slide",{direction: "left", mode:"show", duration:500})
+  // $('#post_content2').css({"top": pos+sc+"px"})
+
   content_current=num
 }
 
