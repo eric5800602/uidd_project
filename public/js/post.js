@@ -126,7 +126,7 @@ $.ajax({
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
         if(i!=0){
-          $("#content_title_"+i).css({"display":"none"})
+          $("#content_title_"+i).hide()
           $("#content_stars_"+i).hide()
           $("#content_content_"+i).hide()
         }
