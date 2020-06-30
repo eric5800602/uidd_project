@@ -133,9 +133,11 @@ $.ajax({
 });
 
 function slide(thisid){
-  var sc = document.getElementById("id_content").scrollTop
-  var pos = $('.content_content').offset().top
   var num = thisid.substring(12, thisid.length)
+
+  var sc = document.getElementById("id_content").scrollTop
+  var pos = $("#content_title_"+content_current).offset().top
+
   if(content_current==num){
     // 以圖搜圖
     console.log("SAME")
@@ -143,10 +145,10 @@ function slide(thisid){
   }else if(content_current>num){
     // 之前的比較大，往右滑
     console.log("之前的 is BIG")
-    console.log()
-    $("#content_title_0").effect("slide",{direction: "right", mode:"hide", duration:500})
-    $("#content_title_1").effect("slide",{direction: "left", mode:"show", duration:500})
-
+    $("#content_title_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:500})
+    $('#post_content1').css({"top": pos+sc+"px"})
+    $("#content_title_"+num).effect("slide",{direction: "left", mode:"show", duration:500})
+    $('#post_content2').css({"top": pos+sc+"px"})
   }else if(content_current<num){
     // 之前的比較小，往左滑
     console.log("現在的 is BIG")
