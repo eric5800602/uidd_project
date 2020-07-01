@@ -295,7 +295,7 @@ body {
   height: 23.5rem;
   position: absolute;
   opacity: 0;
-  background-color:#000000
+  /* background-color:#000000 */
   /* border: solid #00000085;
   background-clip: padding-box; */
 }
