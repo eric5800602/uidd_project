@@ -2,36 +2,7 @@ var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 $('#cube').click()
 $(document).ready(function() {
-  var cat_first = localStorage.getItem("first");
-  var cat_second = localStorage.getItem("second");
-  var change = localStorage.getItem("change");
-  var clickwhich = localStorage.getItem("clickwhich");
-  console.log(cat_first+"\n"+cat_second+"\n"+change)
-  if(change==1){
-    localStorage.setItem("change", 0)
-    if(clickwhich==1){
-      if(cat_first=="空間"){
-        console.log("!!!!")
-        $('#cube').click()
-        $('#two').click()
-      }
-      if(cat_first=="單品"){
-        console.log("?????")
-        $('#cube').click()
-        $('#two').click()
-      }
-    }else if(clickwhich==2){
-      console.log("clickwhich==2")
-      if(cat_second=="臥室"||cat_second=="廚房"||cat_second=="客廳"||cat_second=="書房"||cat_second=="浴室"||cat_second=="套房"||cat_second=="雅房"||cat_second=="餐廚"||cat_second=="玄關"||cat_second=="戶外空間"){
-        console.log("空間second"+cat_second)
-        $('#'+cat_second).click()
-      }else if(cat_second=="桌子"||cat_second=="椅子"||cat_second=="沙發"||cat_second=="燈具"||cat_second=="收納櫃"||cat_second=="寢具"||cat_second=="衛浴用品"||cat_second=="窗簾"){
-        console.log("單品second"+cat_second)
-        $('#'+cat_second).click()
-      }
 
-    }
-  }
 
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
@@ -57,6 +28,38 @@ $(document).ready(function() {
     var myposts = document.getElementById('myposts');
     if(myposts.classList.contains("clicked"))
       myposts.classList.remove("clicked");
+
+    // While click
+    var cat_first = localStorage.getItem("first");
+    var cat_second = localStorage.getItem("second");
+    var change = localStorage.getItem("change");
+    var clickwhich = localStorage.getItem("clickwhich");
+    console.log(cat_first+"\n"+cat_second+"\n"+change)
+    if(change==1){
+      localStorage.setItem("change", 0)
+      if(clickwhich==1){
+        if(cat_first=="空間"){
+          console.log("!!!!")
+          $('#cube').click()
+          $('#two').click()
+        }
+        if(cat_first=="單品"){
+          console.log("?????")
+          $('#cube').click()
+          $('#two').click()
+        }
+      }else if(clickwhich==2){
+        console.log("clickwhich==2")
+        if(cat_second=="臥室"||cat_second=="廚房"||cat_second=="客廳"||cat_second=="書房"||cat_second=="浴室"||cat_second=="套房"||cat_second=="雅房"||cat_second=="餐廚"||cat_second=="玄關"||cat_second=="戶外空間"){
+          console.log("空間second"+cat_second)
+          $('#'+cat_second).click()
+        }else if(cat_second=="桌子"||cat_second=="椅子"||cat_second=="沙發"||cat_second=="燈具"||cat_second=="收納櫃"||cat_second=="寢具"||cat_second=="衛浴用品"||cat_second=="窗簾"){
+          console.log("單品second"+cat_second)
+          $('#'+cat_second).click()
+        }
+
+      }
+    }
   };
   /* Cube animate */
   $(document).on("click",".cube", function(){
