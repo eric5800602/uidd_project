@@ -175,6 +175,16 @@ function mask(){
   }
 }
 
+$('#category_1').click(function(){
+  console.log("category_1");
+})
+$('#category_2').click(function(){
+  console.log("category_2");
+})
+$('#category_3').click(function(){
+  console.log("category_3");
+})
+
 function slide(thisid){
   console.log(thisid)
   var num = thisid.substring(12, thisid.length)
