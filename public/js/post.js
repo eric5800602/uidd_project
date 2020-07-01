@@ -139,10 +139,10 @@ $.ajax({
 // 點擊貼文照片出現東西
 function shadow(thisid){
   console.log(thisid)
-  // var em = document.getElementById(thisid);
-  // if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
-
-  // }
+  var em = document.getElementById(thisid);
+  if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
+    $(thisid).animate({"opacity": '0'})
+  }
 
 
 
