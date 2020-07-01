@@ -141,6 +141,7 @@ $.ajax({
           $("#content_img_"+i).css({"opacity":"0.5"})
         }
       }
+      console.log("max="+max)
       var dot_html=``
       for(i=0; i<data.single.length; i++){
         dot_html+=`<img class="dot" src="./res/img/circle.png">`
