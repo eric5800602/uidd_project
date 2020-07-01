@@ -217,12 +217,14 @@ function mask(){
     $('.dot').animate({"opacity": '1'})
     $('.dot_color').animate({"opacity": '1'})
     $('.bubble').animate({"opacity": '1'})
+    $('.bubble_s').animate({"opacity": '1'})
 
   }else{
     $('#shadow').animate({"opacity": '0'})
     $('.dot').animate({"opacity": '0.5'})
     $('.dot_color').animate({"opacity": '0'})
     $('.bubble').animate({"opacity": '0'})
+    $('.bubble_s').animate({"opacity": '0'})
   }
 }
 
