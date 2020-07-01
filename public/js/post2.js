@@ -3,6 +3,13 @@ var constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
 
 $(document).ready(function () {
+  const cameraView = document.querySelector("#camera--view"),
+    cameraView2 = document.querySelector("#camera--view2"),
+    cameraOutput = document.querySelector("#camera--output"),
+    cameraSensor = document.querySelector("#camera--sensor"),
+    cameraturn = document.querySelector("#cameraturn"),
+    cameraTrigger = document.querySelector("#camera--trigger")
+  // Access the device camera and stream to cameraView
   //select
   var sel1 = document.querySelector('#sel1');
   var sel2 = document.querySelector('#sel2');
@@ -57,144 +64,145 @@ $(document).ready(function () {
       })
     })(i);
   }
-})
-const cameraView = document.querySelector("#camera--view"),
-  cameraView2 = document.querySelector("#camera--view2"),
-  cameraOutput = document.querySelector("#camera--output"),
-  cameraSensor = document.querySelector("#camera--sensor"),
-  cameraturn = document.querySelector("#cameraturn"),
-  cameraTrigger = document.querySelector("#camera--trigger")
-// Access the device camera and stream to cameraView
-function cameraStart(m) { //alert(m+ '    '+window.mode);
-  m = m || 'user';
-  if (m == 'env') { m = 'environment'; }
-  window.mode = m;
-  cameraStop();
-  navigator.mediaDevices
-    .getUserMedia({ video: { facingMode: m }, audio: false })
-    .then(function (stream) {
-      // track = stream.getTracks()[0];
-      cameraView.srcObject = stream;
-    }).catch(function (error) { alert(error); });
-}
-function cameraStop() {
-  if (cameraView.srcObject) {
-    cameraView.srcObject.getTracks().forEach(t => t.stop());
-  }
-}
-function cameraStart__(m) {
-  m = m || 'user';
-  if (m == 'env') { m = 'environment'; }
-  cameraView.style.display = 'none';
-  cameraView2.style.display = 'none';
-  if (m == 'user') {
-    navigator.mediaDevices
-      .getUserMedia({ video: { facingMode: m }, audio: false })
-      .then(function (stream) {
-        track = stream.getTracks()[0];
-        cameraView2.srcObject = stream;
-        cameraView2.style.display = 'block';
-      })
-      .catch(function (error) {
-        alert(error);
-        console.error("Oops. Something is broken.", error);
-      });
-
-
-  } else {
-    navigator.mediaDevices
-      .getUserMedia({ video: { facingMode: m }, audio: false })
-      .then(function (stream) {
-        track = stream.getTracks()[0];
-        cameraView.srcObject = stream;
-        cameraView.style.display = 'block';
-      })
-      .catch(function (error) {
-        alert(error);
-        console.error("Oops. Something is broken.", error);
-      });
-  } // end of else
-};
-// Take a picture when cameraTrigger is tapped
-if (localStorage.getItem("post2_url")) {
-  cameraOutput.src = localStorage.getItem("post2_url");
-  cameraOutput.classList.add("taken");
-  setTimeout(function () {
-    $("#div1").css('display', 'none');
-  }, 1000);
-  setTimeout(function () {
-    $("#posting").css('opacity', '1');
-  }, 1000);
-  setTimeout(function () {
-    $("#tag").css('opacity', '1');
-  }, 1000);
-  setTimeout(function () {
-    $("#Submit_button").css('opacity', '1');
-  }, 100);
-  cameraView.srcObject.getTracks().forEach(function (track) {
-    track.stop();
-  });
-}
-cameraTrigger.onclick = function () {
-  cameraSensor.width = cameraView.videoWidth;
-  cameraSensor.height = cameraView.videoHeight;
-  cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-  var formData = new FormData();
-  formData.append('picture', cameraSensor.toDataURL("image/webp"));
-  $.ajax({
-    url: "/upload_image",
-    type: "POST",
-    cache: false,
-    contentType: false,
-    processData: false,
-    data: formData,
-    success: function (msg) {
-      cameraOutput.src = msg.url;
-      localStorage.setItem("post2_url", msg.url);
-      cameraOutput.classList.add("taken");
-      setTimeout(function () {
-        $("#div1").css('display', 'none');
-      }, 1000);
-      setTimeout(function () {
-        $("#posting").css('opacity', '1');
-      }, 1000);
-      setTimeout(function () {
-        $("#tag").css('opacity', '1');
-      }, 1000);
-      setTimeout(function () {
-        $("#Submit_button").css('opacity', '1');
-      }, 100);
-      cameraView.srcObject.getTracks().forEach(function (track) {
-        track.stop();
-      });
-    },
-    error: function (err) {
-      cameraOutput.src = cameraSensor.toDataURL("image/webp");
+  var confirm = document.getElementById('Submit_button');
+  confirm.addEventListener("click", function () {
+    var tags = new Array();
+    var tmp = document.getElementsByClassName('tags_click');
+    for (var i = 0; i < tmp.length; i++) {
+      (function (index) {
+        tags.push(tmp[i].textContent);
+      })(i);
     }
-  })
-};
-// Start the video stream when the window loads
-window.mode = 'env';
-window.addEventListener("load", function () {
-  cameraStart(window.mode);
-}, false);
-cameraturn.addEventListener("click", function () {
-  cameraStart(window.mode == 'user' ? 'env' : 'user');
-}, false);
-/*
-cameraTrigger.addEventListener("click",function(){
-	
-})
-*/
-//上傳照片
-$('#file').change(function () {
-  var file = $('#file')[0].files[0];
-  var reader = new FileReader;
-  reader.onload = function (e) {
+    console.log(tags)
+    $(document).ready(function () {
+      $.post({
+        url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
+        dataType: "json",
+        contentType: "application/json",
+        xhrFields: {
+          withCredentials: true
+        },
+        data: JSON.stringify({
+          post_icon: $("#camera--output").attr("src"),
+          space: $("#sel1").val() == "space" ? "空間" : "單品",
+          room: $("#sel2").val(),
+          pings: $('#ajax-form4 input[name=pings]').val(),
+          title: $('#ajax-form input[name=fName]').val(),
+          explanation: $('#explanation').val(),
+          tags: $('#ajax-form3 input[name=tName]').val(),
+          tags: tags,
+        }),
 
+        success: function (msg) {
+          console.log(msg);
+          if (msg.success) {
+            if ($("#sel1").val() == "single") {
+
+              console.log("good");
+              window.location = "./home.html"
+            }
+            else if ($("#sel1").val() == "space") {
+
+              console.log(" very good");
+              localStorage.setItem('add_post_id', msg.id);
+              window.location = "./post1.html"
+            }
+
+          }
+          else {
+            console.log("fail");
+            //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
+            alert(msg.text);
+          }
+        },
+        error: function (data) {
+          console.log("fail");
+          console.log(data);
+        }
+      })
+    })
+
+  })
+  $('#back').click(function () {
+    localStorage.removeItem('post2_url');
+    window.location = "./home.html"
+  })
+  function cameraStart(m) { //alert(m+ '    '+window.mode);
+    m = m || 'user';
+    if (m == 'env') { m = 'environment'; }
+    window.mode = m;
+    cameraStop();
+    navigator.mediaDevices
+      .getUserMedia({ video: { facingMode: m }, audio: false })
+      .then(function (stream) {
+        // track = stream.getTracks()[0];
+        cameraView.srcObject = stream;
+      }).catch(function (error) { alert(error); });
+  }
+  function cameraStop() {
+    if (cameraView.srcObject) {
+      cameraView.srcObject.getTracks().forEach(t => t.stop());
+    }
+  }
+  function cameraStart__(m) {
+    m = m || 'user';
+    if (m == 'env') { m = 'environment'; }
+    cameraView.style.display = 'none';
+    cameraView2.style.display = 'none';
+    if (m == 'user') {
+      navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: m }, audio: false })
+        .then(function (stream) {
+          track = stream.getTracks()[0];
+          cameraView2.srcObject = stream;
+          cameraView2.style.display = 'block';
+        })
+        .catch(function (error) {
+          alert(error);
+          console.error("Oops. Something is broken.", error);
+        });
+
+
+    } else {
+      navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: m }, audio: false })
+        .then(function (stream) {
+          track = stream.getTracks()[0];
+          cameraView.srcObject = stream;
+          cameraView.style.display = 'block';
+        })
+        .catch(function (error) {
+          alert(error);
+          console.error("Oops. Something is broken.", error);
+        });
+    } // end of else
+  };
+  // Take a picture when cameraTrigger is tapped
+  if (localStorage.getItem("post2_url")) {
+    cameraOutput.src = localStorage.getItem("post2_url");
+    cameraOutput.classList.add("taken");
+    setTimeout(function () {
+      $("#div1").css('display', 'none');
+    }, 1000);
+    setTimeout(function () {
+      $("#posting").css('opacity', '1');
+    }, 1000);
+    setTimeout(function () {
+      $("#tag").css('opacity', '1');
+    }, 1000);
+    setTimeout(function () {
+      $("#Submit_button").css('opacity', '1');
+    }, 100);
+    cameraView.srcObject.getTracks().forEach(function (track) {
+      track.stop();
+    });
+  }
+  cameraTrigger.onclick = function () {
+    cameraSensor.width = cameraView.videoWidth;
+    cameraSensor.height = cameraView.videoHeight;
+    cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     var formData = new FormData();
-    formData.append('picture', e.target.result);
-    console.log(formData.get('picture'));
+    formData.append('picture', cameraSensor.toDataURL("image/webp"));
     $.ajax({
       url: "/upload_image",
       type: "POST",
@@ -203,9 +211,9 @@ $('#file').change(function () {
       processData: false,
       data: formData,
       success: function (msg) {
-        cameraOutput.classList.add("taken");
         cameraOutput.src = msg.url;
         localStorage.setItem("post2_url", msg.url);
+        cameraOutput.classList.add("taken");
         setTimeout(function () {
           $("#div1").css('display', 'none');
         }, 1000);
@@ -213,83 +221,75 @@ $('#file').change(function () {
           $("#posting").css('opacity', '1');
         }, 1000);
         setTimeout(function () {
-          $("#Submit_button").css('opacity', '1');
-        }, 100);
-        setTimeout(function () {
           $("#tag").css('opacity', '1');
         }, 1000);
+        setTimeout(function () {
+          $("#Submit_button").css('opacity', '1');
+        }, 100);
         cameraView.srcObject.getTracks().forEach(function (track) {
           track.stop();
         });
       },
       error: function (err) {
-        cameraOutput.src = e.target.result;
+        cameraOutput.src = cameraSensor.toDataURL("image/webp");
       }
     })
   };
-  reader.readAsDataURL(file);
-});
-//tags
-var confirm = document.getElementById('Submit_button');
-confirm.addEventListener("click", function () {
-  var tags = new Array();
-  var tmp = document.getElementsByClassName('tags_click');
-  for (var i = 0; i < tmp.length; i++) {
-    (function (index) {
-      tags.push(tmp[i].textContent);
-    })(i);
-  }
-  console.log(tags)
-  $(document).ready(function () {
-    $.post({
-      url: "https://luffy.ee.ncku.edu.tw:7575/add_post",
-      dataType: "json",
-      contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      data: JSON.stringify({
-        post_icon: $("#camera--output").attr("src"),
-        space: $("#sel1").val() == "space" ? "空間" : "單品",
-        room: $("#sel2").val(),
-        pings: $('#ajax-form4 input[name=pings]').val(),
-        title: $('#ajax-form input[name=fName]').val(),
-        explanation: $('#explanation').val(),
-        tags: $('#ajax-form3 input[name=tName]').val(),
-        tags: tags,
-      }),
-
-      success: function (msg) {
-        console.log(msg);
-        if (msg.success) {
-          if ($("#sel1").val() == "single") {
-
-            console.log("good");
-            window.location = "./home.html"
-          }
-          else if ($("#sel1").val() == "space") {
-
-            console.log(" very good");
-            localStorage.setItem('add_post_id', msg.id);
-            window.location = "./post1.html"
-          }
-
-        }
-        else {
-          console.log("fail");
-          //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/html/home.html";
-          alert(msg.text);
-        }
-      },
-      error: function (data) {
-        console.log("fail");
-        console.log(data);
-      }
-    })
+  // Start the video stream when the window loads
+  window.mode = 'env';
+  window.addEventListener("load", function () {
+    cameraStart(window.mode);
+  }, false);
+  cameraturn.addEventListener("click", function () {
+    cameraStart(window.mode == 'user' ? 'env' : 'user');
+  }, false);
+  /*
+  cameraTrigger.addEventListener("click",function(){
+  	
   })
+  */
+  //上傳照片
+  $('#file').change(function () {
+    var file = $('#file')[0].files[0];
+    var reader = new FileReader;
+    reader.onload = function (e) {
 
-})
-$('#back').click(function () {
-  localStorage.removeItem('post2_url');
-  window.location = "./home.html"
+      var formData = new FormData();
+      formData.append('picture', e.target.result);
+      console.log(formData.get('picture'));
+      $.ajax({
+        url: "/upload_image",
+        type: "POST",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function (msg) {
+          cameraOutput.classList.add("taken");
+          cameraOutput.src = msg.url;
+          localStorage.setItem("post2_url", msg.url);
+          setTimeout(function () {
+            $("#div1").css('display', 'none');
+          }, 1000);
+          setTimeout(function () {
+            $("#posting").css('opacity', '1');
+          }, 1000);
+          setTimeout(function () {
+            $("#Submit_button").css('opacity', '1');
+          }, 100);
+          setTimeout(function () {
+            $("#tag").css('opacity', '1');
+          }, 1000);
+          cameraView.srcObject.getTracks().forEach(function (track) {
+            track.stop();
+          });
+        },
+        error: function (err) {
+          cameraOutput.src = e.target.result;
+        }
+      })
+    };
+    reader.readAsDataURL(file);
+  });
+  //tags
 })
