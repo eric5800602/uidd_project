@@ -156,9 +156,18 @@ $.ajax({
         var numy = y+1;
         console.log("scale: "+scale)
         dot_html+=`
-                    <div class="dot_color" style="background-image: url('./res/img/circle_color.png');position:absolute; top:${x}px; left:${y}px; transform:scale(${scale}) background-repeat: no-repeat; background-attachment: fixed;
-                    background-size: 100% 100%;">
-                      <p class="dot_number" style="font-size: 0.7rem;">${data.requests[i].Push}</p>
+                    <div class="dot_color" style="    display: flex;
+                    background-image: url(./res/img/circle_color.png);
+                    position: absolute;
+                    top: 209.609px;
+                    left: 257.094px;
+                    background-attachment: fixed;
+                    background-size: 100% 100%;
+                    opacity: 0.5;
+                    border-radius: 1rem;
+                    justify-content: center;
+                    vertical-align: middle;">
+                      <p class="dot_number" style="font-size: 0.7rem; color:white;">${data.requests[i].Push}</p>
                     </div>
                   `
       }
