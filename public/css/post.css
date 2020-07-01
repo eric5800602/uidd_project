@@ -280,7 +280,7 @@ body {
 #shadow{
   width: 100vw;
   height: 23.5rem;
-  background-color: #FF9A9A;
+  opacity: 0;
   position: absolute;
   border: solid #00000085;
   border-width: 2rem 3rem 10rem 15rem;
