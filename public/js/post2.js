@@ -1,3 +1,5 @@
+const { loadavg } = require("os");
+
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
@@ -289,5 +291,6 @@ $( "#sel1" ).change(function() {
 	}
 });
 $('#back').click(function(){
+    localStorage.removeItem('post2_url');
     window.location= "./home.html"
   })
