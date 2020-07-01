@@ -276,8 +276,20 @@ body {
   height: 1.1rem;
   opacity: 0;
   background-color: rgba(255, 154, 154, 0.5);
+  position:absolute;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  border-radius: 1rem;
+  justify-content: center;
+  vertical-align: middle;
+  display:flex;
 }
-
+.dotnumber{
+  font-size: 0.7rem;
+  color: white;
+  font-weight: 800;
+}
 #shadow{
   width: 100vw;
   height: 23.5rem;
