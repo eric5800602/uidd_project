@@ -142,7 +142,7 @@ $.ajax({
         }
       }
       console.log("max="+max)
-      console.log(document.getElementsByClassName('content_image').clientHeight)
+      console.log(document.getElementsByClassName('content_image'))
       // $('#single').css({height: })
       var dot_html=``
       for(i=0; i<data.single.length; i++){
