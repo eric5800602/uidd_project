@@ -173,7 +173,7 @@ $.ajax({
       var border_b = img_width-x-box_width/2
       var border_c = img_height-y-box_width/2
       var border_d = x-box_width/2
-      var temp = border_a+" "+border_b+" "+border_c+" "+border_d
+      var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
       $('#shadow').css({"border-width": temp})
       console.log(temp)
     }
