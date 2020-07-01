@@ -21,6 +21,8 @@ $(document).ready(function() {
       }
     }else if(clickwhich==2){
       console.log("clickwhich==2")
+      $('#cube').click()
+      $('#two').click()
     }
   }
 
