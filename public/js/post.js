@@ -145,15 +145,7 @@ function shadow(thisid){
   }else{
     $('#'+thisid).animate({"opacity": '1'})
   }
-
-
-
 }
-// $('.photo').click(function(){
-//   if()
-//   $('#shodow').animate({"opacity": '0.5'})
-//   console.log("hi")
-// });
 
 function slide(thisid){
   console.log(thisid)
