@@ -226,6 +226,7 @@ $(document).ready(function() {
         if(data.success){
           window.location= "./post2.html"
         }else{
+          alert('您還未登入，將導向登入頁面');
           window.location= "./login.html"
         }
       },
