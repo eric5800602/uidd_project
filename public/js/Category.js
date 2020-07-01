@@ -2,13 +2,13 @@ var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 
 $(document).ready(function() {
-  var c = localStorage.getItem("c");
-  console.log(c)
-  if(c=="空間"){
+  var cat_first = localStorage.getItem("first");
+  console.log(cat_first)
+  if(cat_first=="空間"){
     console.log("!")
     $('#cube').click()
     $('#two').click()
-  }else if(c=="單品"){
+  }else if(cat_first=="單品"){
     console.log("?")
     $('#cube').click()
     $('#two').click()
