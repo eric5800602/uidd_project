@@ -20,7 +20,7 @@ $(document).ready(function () {
   var myTarget = document.getElementById('sel1');
   var myTargetValue = myTarget.value;
   $("#sel1").change(function () {
-    giveSelection($("#sel1").value);
+    giveSelection($("#sel1").val());
     if ($("#sel1").val() == "single") {
 
       $("#pings").css('opacity', '0');
