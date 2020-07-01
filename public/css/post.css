@@ -278,16 +278,9 @@ body {
 }
 
 #shadow{
-  position:absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index:1;
-  width: 5rem;
-  height: 5rem;
-  background-color: #3D5EAA;
-  box-shadow: 60px -16px 0px 10px #00000085;
-  top: 123.1px;
-  left: 123.5px;
+  opacity: 0;
+  width: 100vw;
+  height: 23.5rem;
+  background-color: #00000085;
+  position: absolute;
 }
