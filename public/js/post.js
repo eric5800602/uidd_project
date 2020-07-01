@@ -153,8 +153,10 @@ $.ajax({
         var x=data.requests[i].position.coordinates[1]+1
         var y=data.requests[i].position.coordinates[0]+1
         console.log("scale: "+scale)
-        dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale})">
-                  <p>21</p>
+        dot_html+=`<div>
+                    <img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale})">
+                    <p>21</p>
+                  </div>
                   `
       }
       $('#mask').html(dot_html)
