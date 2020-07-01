@@ -229,11 +229,11 @@ file.onclick = function() {
       success: function (msg) {
         console.log(msg);
         if(msg.success){
-			if($("#sel1").val()=="single"){
+			if($("#sel1").val()=="單品"){
 			console.log("good");
 				 window.location= "./home.html"
 			}
-         else if($("#sel1").val()=="space"){
+         else if($("#sel1").val()=="空間"){
        console.log(" very good");
       localStorage.setItem('add_post_id',msg.id);
       window.location= "./post1.html"
@@ -271,7 +271,7 @@ function giveSelection(selValue) {
 var myTarget = document.getElementById('sel1');
 var myTargetValue = myTarget.value;
 $( "#sel1" ).change(function() {
-	if($("#sel1").val()=="single"){
+	if($("#sel1").val()=="單品"){
 		 $("#pings").css('opacity','0');
 		  $("#next").css('opacity','0');
 		  $("#nexticon").css('opacity','0');		
@@ -279,7 +279,7 @@ $( "#sel1" ).change(function() {
 		  $("#finishicon").css('z-index','3');
 		  
 	}
-   else if($("#sel1").val()=="space"){
+   else if($("#sel1").val()=="空間"){
 		 $("#pings").css('opacity','1');
 		  $("#next").css('opacity','1');
 		   $("#nexticon").css('opacity','1');
@@ -289,5 +289,5 @@ $( "#sel1" ).change(function() {
 	}
 });
 $('#back').click(function(){
-    window.location= "./post2.html"
+    window.location= "./home.html"
   })
