@@ -11,7 +11,7 @@ body, html{
 #id_header {
    width: 100%;
   position: fixed;
-  height: 5.2rem;
+  height: 5rem;
   top: 0;
   background-color: #ECECEC;
   overflow:hidden;
@@ -31,9 +31,9 @@ body, html{
 .back {
   position: absolute;
   top: 3rem;
-  left: 1.7rem;
-  width: 0.9rem;
-  height: 1.8rem;
+  left: 1.5rem;
+  width: 0.7rem;
+  height: 1.6rem;
   opacity: 1;
 }
 #Submit_button{
