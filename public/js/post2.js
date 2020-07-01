@@ -251,14 +251,15 @@ file.onclick = function() {
     })
 	 })
 	 
-	 })
-//select
+   })
+$(document).ready(function () {
+  //select
 var sel1 = document.querySelector('#sel1');
 var sel2 = document.querySelector('#sel2');
 var options1 = sel1.querySelectorAll('option');
 var options2 = sel2.querySelectorAll('option');
 function giveSelection(selValue) {
-  sel2.innerHTML = '';
+  sel2.innerHTML = "";
   for(var i = 0; i < options2.length; i++) {
     if(options2[i].dataset.option === selValue) {
       sel2.appendChild(options2[i]);
@@ -288,6 +289,7 @@ $( "#sel1" ).change(function() {
 		
 	}
 });
+})
 $('#back').click(function(){
     localStorage.removeItem('post2_url');
     window.location= "./home.html"
