@@ -177,6 +177,17 @@ function mask(){
 
 function category(thisid){
   console.log(thisid);
+  if(thisid=="category_1"){
+    console.log("1");
+    console.log(thisid.textContent)
+  }else if(thisid=="category_2"){
+    console.log("2");
+    console.log(thisid.textContent)
+  }else if(thidid=="category_3"){
+    console.log("3");
+    console.log(thisid.textContent)
+
+  }
 }
 
 function slide(thisid){
