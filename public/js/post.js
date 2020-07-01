@@ -136,7 +136,22 @@ $.ajax({
 
 });
 
+// 點擊貼文照片出現東西
+function shadow(thisid){
+  console.log(thisid)
+  // var em = document.getElementById(thisid);
+  // if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
 
+  // }
+
+
+
+}
+// $('.photo').click(function(){
+//   if()
+//   $('#shodow').animate({"opacity": '0.5'})
+//   console.log("hi")
+// });
 
 function slide(thisid){
   console.log(thisid)
@@ -195,6 +210,8 @@ $('#exampleModalCenter-4').on('hidden.bs.modal', function () {
   window.open(link);
   console.log("!!!")
 })
+
+
 
 // 點擊request
 function like (id_click){
@@ -271,12 +288,6 @@ function like (id_click){
 
 $('.data_texture').click(function(){
   console.log("texture");
-});
-
-// 點擊貼文照片出現東西
-$('.photo').click(function(){
-
-  console.log("hi")
 });
 
 
