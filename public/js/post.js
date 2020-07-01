@@ -156,7 +156,7 @@ $.ajax({
                     <div class="dot_color" style=" top:${x}px; left:${y}px; transform:scale(${scale}) ">
                       <p class="dot_number" style="transform:scale(${1/scale})">${data.requests[i].Push}</p>
                     </div>
-                    <div class="bubble bubble-bottom-left" style=" top:${x}px; left:${y}px;">
+                    <div class="bubble bubble-bottom-left" style=" top:${x-25}px; left:${y-10}px;">
                       Request!
                     </div>
 
