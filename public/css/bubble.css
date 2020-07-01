@@ -20,3 +20,26 @@
     left: 32px;
     bottom: -0.6rem;
 }
+
+.bubble_s {
+	position: absolute;
+    font-size: 0.8rem;
+    background: #D28B8B;
+    border-radius: 1rem;
+    padding: 0rem 0.5rem;
+    text-align: center;
+    color: white;
+}
+
+.bubble-bottom-left_s:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 0.6rem solid #D28B8B;
+    border-right: 0.3rem solid transparent;
+    border-top: 0.3rem solid #D28B8B;
+    border-bottom: 0.5rem solid transparent;
+    left: 32px;
+    bottom: -0.6rem;
+}
