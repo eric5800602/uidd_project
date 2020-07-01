@@ -183,6 +183,7 @@ $.ajax({
                       `
       }
       $('#shadow').html(shadow_html)
+      $('.shadow').css({"border": "solid "+opa})
     }
 
 });
