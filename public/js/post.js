@@ -449,7 +449,7 @@ $('#btn_submit').click(function(){
     data:JSON.stringify({
       url: img,
       x: xx,
-      y: yy,
+      y: yy+5,
       width: 375,
       height: 282,
       target_w: 60,
@@ -474,7 +474,7 @@ $('#btn_submit').click(function(){
                Push: 1,
                img: cut,
                x: xx,
-               y: yy,
+               y: yy+5,
              }),
              contentType: "application/json",
              success: function(data){
