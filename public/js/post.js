@@ -123,9 +123,8 @@ $.ajax({
                       `;
       }
 
-      for(i=0; i<data.single.length; i++){
-        console.log(document.getElementById('content_'+i).clientHeight)
-      }
+
+
       single_html+=`</div></div>`
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
@@ -146,7 +145,9 @@ $.ajax({
       }
       $('#mask').html(dot_html)
 
-
+      for(i=0; i<data.single.length; i++){
+        console.log(document.getElementById('content_'+i).clientHeight)
+      }
 
 
     }
