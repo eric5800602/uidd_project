@@ -151,7 +151,7 @@ $.ajax({
       for(i=0; i<data.requests.length; i++){
         var width=data.requests[i].Push*5+18
         console.log("width: "+width)
-        dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${data.requests[i].position.coordinates[1]}px; left:${data.requests[i].position.coordinates[0]}px; width: ${width}; height: ${width}">`
+        dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${data.requests[i].position.coordinates[1]}px; left:${data.requests[i].position.coordinates[0]}px; width: ${width}px; height: ${width}px">`
       }
       $('#mask').html(dot_html)
       localStorage.setItem("first", data.post.space)
