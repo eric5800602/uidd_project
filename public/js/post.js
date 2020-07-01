@@ -174,9 +174,7 @@ function slide(thisid){
     imgsrc=src
     console.log("yeah!"+imgsrc)
     $('#modal_google').attr("src",src);
-    $('#exampleModalCenter-4').modal('toggle')
-    $('#exampleModalCenter-4').modal('focus')
-    // $('#exampleModalCenter-4').addClass('show');
+    $('#exampleModalCenter-4').addClass('show');
     // $('#exampleModalCenter-4').css({"display": "block"});
     // $('#exampleModalCenter-4').modal('show');
   }else{
