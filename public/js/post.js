@@ -275,6 +275,7 @@ $('.data_texture').click(function(){
 
 // 點擊貼文照片出現東西
 $('.photo').click(function(){
+
   console.log("hi")
 });
 

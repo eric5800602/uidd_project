@@ -247,3 +247,6 @@ body {
   display: flex;
   background-color: #E9E9E9;
 }
+#shadow{
+  background-color: #00000085;
+}
