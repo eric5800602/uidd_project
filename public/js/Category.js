@@ -16,6 +16,11 @@ $(document).ready(function() {
     $('#one').click()
     $(category).click()
   }
+  if(category=="浴室"){
+    console.log("> <!")
+    // $('#one').click()
+    // $(category).click()
+  }
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
   /* Function for remove the class added in activity page */
