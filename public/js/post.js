@@ -164,21 +164,24 @@ $.ajax({
       localStorage.setItem("first", data.post.space)
       localStorage.setItem("second", data.post.room)
 
-      var shadow_html = ``
+      var shadow_html=``;
+      for(i=0; i<data.single.length; i++){
+        var x=data.single[i].position.coordinates[1]+1
+        var y=data.single[i].position.coordinates[0]+1
+        var img_width = document.getElementById('post_icon').offsetWidth
+        var img_height = document.getElementById('post_icon').offsetHeight
+        var box_width = 80;
+        var border_a = y-box_width/2+5
+        var border_b = img_width-x-box_width/2-5
+        var border_c = img_height-y-box_width/2-5
+        var border_d = x-box_width/2+5
+        var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
+        shadow_html+=`<div id="shadow"+${i} style="border-width: ${temp}">
 
+                      </div>
+                      `
+      }
 
-      var x=data.single[1].position.coordinates[1]+1
-      var y=data.single[1].position.coordinates[0]+1
-      var img_width = document.getElementById('post_icon').offsetWidth
-      var img_height = document.getElementById('post_icon').offsetHeight
-      var box_width = 80;
-      var border_a = y-box_width/2+5
-      var border_b = img_width-x-box_width/2-5
-      var border_c = img_height-y-box_width/2-5
-      var border_d = x-box_width/2+5
-      var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
-      $('#shadow').css({"border-width": temp})
-      console.log(temp)
     }
 
 });
