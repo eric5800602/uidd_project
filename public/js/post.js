@@ -448,7 +448,7 @@ $('#btn_submit').click(function(){
     dataType: "json",
     data:JSON.stringify({
       url: img,
-      x: xx+25,
+      x: xx+250,
       y: yy+8,
       width: 375,
       height: 282,
