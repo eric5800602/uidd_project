@@ -176,12 +176,8 @@ function mask(){
 }
 
 function category(thisid){
-  console.log("?????");
+  console.log(thisid);
 }
-
-$('#category_1').click(function(){
-  console.log("Ahhh");
-})
 
 function slide(thisid){
   console.log(thisid)
