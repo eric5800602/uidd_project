@@ -6,6 +6,7 @@ $(document).ready(function() {
   var cat_second = localStorage.getItem("second");
   var change = localStorage.getItem("change");
   var clickwhich = localStorage.getItem("clickwhich");
+  console.log(cat_first+"\n"+cat_second+"\n"+change)
   if(change==1){
     localStorage.setItem("change", 0)
     if(clickwhich==1){
