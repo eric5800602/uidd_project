@@ -152,11 +152,11 @@ $.ajax({
         var scale=data.requests[i].Push*0.02+1
         var x=data.requests[i].position.coordinates[1]+1
         var y=data.requests[i].position.coordinates[0]+1
-        var numx = x;
-        var numy = y;
+        var numx = x+0.5;
+        var numy = y+0.5;
         console.log("scale: "+scale)
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale})">
-                  <p class="dot_number" style="position:absolute; top:${numx}px; left:${numy}px; font-size: 0.75rem;
+                  <p class="dot_number" style="position:absolute; top:${numx}px; left:${numy}px; font-size: 0.5rem;
                   color: white; opacity: 0"> 21 </p>
                   `
       }
