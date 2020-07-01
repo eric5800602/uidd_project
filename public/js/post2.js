@@ -213,7 +213,7 @@ file.onclick = function() {
       },
 		data: JSON.stringify({
     post_icon:$("#camera--output").attr("src"),
-		space: $("#sel1").val(),
+		space: $("#sel1").val() == "space" ? "空間" : "單品",
 		room:$("#sel2").val(),
 		pings: $('#ajax-form4 input[name=pings]').val(),
         title: $('#ajax-form input[name=fName]').val(),
