@@ -150,8 +150,8 @@ $.ajax({
       }
       for(i=0; i<data.requests.length; i++){
         var width=data.requests[i].Push*0.1+18
-        var x=data.requests[i].position.coordinates[1]-9
-        var y=data.requests[i].position.coordinates[0]-9
+        var x=data.requests[i].position.coordinates[1]
+        var y=data.requests[i].position.coordinates[0]
         console.log("width: "+width)
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${x}px; left:${y}px; width: ${width}px; height: ${width}px">`
       }
