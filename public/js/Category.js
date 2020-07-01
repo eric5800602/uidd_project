@@ -3,21 +3,27 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 
 $(document).ready(function() {
   var cat_first = localStorage.getItem("first");
-  console.log(cat_first)
-  if(cat_first=="空間"){
-    console.log("!")
-    $('#cube').click()
-    $('#two').click()
-  }else if(cat_first=="單品"){
-    console.log("?")
-    $('#cube').click()
-    $('#two').click()
+  var cat_second = localStorage.getItem("second");
+  var change = localStorage.getItem("change");
+  var clickwhich = localStorage.getItem("clickwhich");
+  if(change==1){
+    localStorage.setItem("change", 0)
+    if(clickwhich==1)
+      if(cat_first=="空間"){
+        console.log("!")
+        $('#cube').click()
+        $('#two').click()
+      }
+      if(cat_first=="單品"){
+        console.log("?")
+        $('#cube').click()
+        $('#two').click()
+      }
+    }else if(clickwhich==2){
+
+    }
   }
-  // if(category=="臥室"||category=="廚房"||category=="客廳"||category=="書房"||category=="浴室"||category=="套房"||category=="雅房"||category=="餐廚"||category=="玄關"||category=="戶外空間"){
-  //   console.log("> <")
-  //   $('#one').click()
-  //   $(category).click()
-  // }
+
 
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;

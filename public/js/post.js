@@ -156,6 +156,7 @@ $.ajax({
       $('#mask').html(dot_html)
       localStorage.setItem("first", data.post.space)
       localStorage.setItem("second", data.post.room)
+
     }
 
 });
@@ -176,7 +177,13 @@ function mask(){
 }
 
 function category(thisid){
+  if(thisid==category_1){
+    localStorage.setItem("clickwhich", 1)
+  }else if(thisid==category_2){
+    localStorage.setItem("clickwhich", 2)
+  }
   window.location= "./Category.html"
+
 }
 
 function slide(thisid){
