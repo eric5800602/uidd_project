@@ -189,7 +189,7 @@ $.ajax({
 function mask(){
   var op=0.65/singles
   console.log("mask")
-  var em = document.getElementById("shadow");
+  var em = document.getElementById("shadow_0");
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     $('.shadow').animate({"opacity": '0'})
     $('.dot').animate({"opacity": '0.5'})
