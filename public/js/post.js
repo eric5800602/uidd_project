@@ -130,6 +130,7 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         if(i!=0){
           console.log("#content_title_"+i)
+          console.log(document.getElementById('content_'+i).clientHeight)
           $("#content_"+i).hide()
           $("#content_"+i).hide()
           $("#content_img_"+i).css({"opacity":"0.5"})
@@ -144,10 +145,6 @@ $.ajax({
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
-
-      for(i=0; i<data.single.length; i++){
-        console.log(document.getElementById('content_'+i).clientHeight)
-      }
 
 
     }
