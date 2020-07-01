@@ -137,7 +137,7 @@ $.ajax({
       for(i=0; i<data.single.length; i++){
         dot_html+=`<img class="dot" src="./res/img/circle.png">`
       }
-      for(i=0; i<data.request.length; i++){
+      for(i=0; i<data.requests.length; i++){
         dot_html+=`<img class="dot" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
