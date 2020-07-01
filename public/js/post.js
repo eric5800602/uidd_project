@@ -141,6 +141,9 @@ $.ajax({
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
+      for(i=0; i<data.single.length; i++){
+        console.log(document.getElementById('content'+i).clientHeight)
+      }
 
 
 
@@ -189,7 +192,7 @@ function slide(thisid){
   if(content_current==num){
     // 以圖搜圖
     console.log("SAME!")
-    console.log(document.getElementById('single').clientHeight)
+
   }else if(content_current>num){
     // 之前的比較大，往右滑
     $("#content_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:250})
