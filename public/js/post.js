@@ -177,8 +177,6 @@ function mask(){
 
 function loadcat(thisid){
   console.log("loadcat");
-
-
 }
 $('#category_1').click(function(){
   console.log("Ahhh");
