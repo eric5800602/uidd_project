@@ -285,5 +285,5 @@ body {
   width: 20rem;
   height: 20rem;
   background-color: #3D5EAA;
-  box-shadow: 60px -16px rgba(0,0,0,0.8);
+  box-shadow: 60px -16px #00000085;
 }
