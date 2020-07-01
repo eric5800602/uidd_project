@@ -10,12 +10,12 @@ $(document).ready(function() {
     console.log("?")
     $('#cube').click()
     $('#two').click()
-  }else if(category=="臥室"||category=="廚房"||category=="客廳"||category=="書房"||category=="浴室"||category=="套房"||category=="雅房"||category=="餐廚"||category=="玄關"||category=="戶外空間"){
+  }
+  if(category=="臥室"||category=="廚房"||category=="客廳"||category=="書房"||category=="浴室"||category=="套房"||category=="雅房"||category=="餐廚"||category=="玄關"||category=="戶外空間"){
     console.log("> <")
     $('#one').click()
     $(category).click()
   }
-  if(category=="浴室") console.log("浴室!")
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
   /* Function for remove the class added in activity page */
