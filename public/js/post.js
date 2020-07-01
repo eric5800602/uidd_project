@@ -133,6 +133,11 @@ $.ajax({
         }
       }
 
+      var dot_html=``
+      for(i=0; i<data.single.length; i++){
+        dot_html+=`<img class="dot" src="./res/img/circle.png">`
+      }
+      $('#mask').html(dot_html)
     }
 
 });
