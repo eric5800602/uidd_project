@@ -448,8 +448,8 @@ $('#btn_submit').click(function(){
     dataType: "json",
     data:JSON.stringify({
       url: img,
-      x: xx+15,
-      y: yy+7,
+      x: xx+12,
+      y: yy+8,
       width: 375,
       height: 282,
       target_w: 60,
@@ -473,8 +473,8 @@ $('#btn_submit').click(function(){
                Texture: t,
                Push: 1,
                img: cut,
-               x: xx+15,
-               y: yy+7,
+               x: xx+12,
+               y: yy+8,
              }),
              contentType: "application/json",
              success: function(data){
