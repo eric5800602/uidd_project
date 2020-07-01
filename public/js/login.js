@@ -152,11 +152,11 @@ $(document).ready(function () {
         username: window.sign_username,
         password: window.sign_password ,
         email: window.sign_email,
-        designer: undefined,
-        room: undefined,
-        hall: undefined,
-        bath: undefined,
-        suite: undefined
+        designer: false,
+        room: 0,
+        hall: 0,
+        bath: 0,
+        suite: false
       }),
       success: function (msg) {
         console.log(msg);
