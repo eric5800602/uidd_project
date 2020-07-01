@@ -138,7 +138,7 @@ $.ajax({
         dot_html+=`<img class="dot" src="./res/img/circle.png">`
       }
       for(i=0; i<data.requests.length; i++){
-        dot_html+=`<img class="dot" src="./res/img/circle_color.png">`
+        dot_html+=`<img class="dot_circle" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
     }
@@ -152,9 +152,11 @@ function mask(){
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     $('#shadow').animate({"opacity": '0'})
     $('.dot').animate({"opacity": '0.5'})
+    $('.dot_circle').animate({"opacity": '0'})
   }else{
     $('#shadow').animate({"opacity": '1'})
     $('.dot').animate({"opacity": '1'})
+    $('.dot_circle').animate({"opacity": '0.5'})
   }
 }
 
