@@ -175,7 +175,7 @@ $.ajax({
         var border_d = y-box_width/2+5
         var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
         var op=0.65/data.single.length
-        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp}; opacity=${op}>
+        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp}; opacity="${op}">
                       </div>
                       `
       }
