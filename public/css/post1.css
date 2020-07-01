@@ -11,41 +11,44 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 #id_header {
+   width: 100%;
   position: fixed;
-  height: 10vh;
+  height: 5rem;
   top: 0;
-  background-color: #ececec;
-  overflow: hidden;
+  background-color: #ECECEC;
+  overflow:hidden;
   z-index: 199;
-  width: 100%;
 }
 .tetto {
-  padding-top: 6.4vh;
+  padding-top:2.95rem ;
   text-align: center;
   font-family: Roboto_Bold, sans-serif !important;
-  padding-left: 10vw;
+  padding-left: 2.4rem;
   font-weight: 700;
-  font-size: 5.5vw;
-  letter-spacing: 3.1vw;
+  font-size: 1.3rem;
+  letter-spacing: 0.6rem;
   color: #000000;
   opacity: 1;
 }
 .back {
   position: absolute;
-  top: 7vh;
-  left: 3.58vw;
-  width: 5.01vw;
-  height: 2.35vh;
+  top: 2.8rem;
+  left: 1.5rem;
+  width: 0.7rem;
+  height: 1.7rem;
   opacity: 1;
 }
 .submit_button {
-  color: black;
-  background-color: #e9e9e9;
-  font-size: 4vw;
-  margin-top: 6vh;
-  margin-right: 2vw;
-  border: none;
-  font-weight: bold;
+  color:black;
+	background-color:#E9E9E9;
+	font-size:4vw;
+	margin-top:-2.4em;
+	margin-left:0.5em;
+	margin-right:0.5em;
+	border:none;
+	font-weight:bold;
+	z-index:20;
+	opacity: 0;
 }
 #id_content {
   padding-top: 10vh;
