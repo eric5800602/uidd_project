@@ -103,6 +103,8 @@ $(document).ready(function() {
       <li id='magic-line'></li>`
     $('#Menu').html(html)
     $('#All').click();
+    var cat_second = localStorage.getItem("second");
+    var change = localStorage.getItem("change");
     if(change==2){
       localStorage.setItem("change", 0)
       $('#'+cat_second).click()
