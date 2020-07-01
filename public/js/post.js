@@ -175,7 +175,7 @@ function slide(thisid){
     console.log("yeah!"+imgsrc)
     $('#modal_google').attr("src",src);
 
-    $('#exampleModalCenter-4').modal('show');
+    $('#exampleModalCenter-4').modal('toggle');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
     // $('#content_img_'+num).
@@ -212,7 +212,7 @@ function google(){
   console.log("!")
 }
 $('#btn_google').click(function(){
-  console.log("!!")
+  console.log("!!");
 })
 
 $('#exampleModalCenter-4').on('hidden.bs.modal', function () {
