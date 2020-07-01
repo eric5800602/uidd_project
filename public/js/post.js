@@ -158,7 +158,7 @@ $.ajax({
         dot_html+=`
                     <div class="dot_color" style="background-image: url('./res/img/circle_color.png');position:absolute; top:${x}px; left:${y}px; transform:scale(${scale}) background-repeat: no-repeat; background-attachment: fixed;
                     background-size: 100% 100%; border-radius: 1rem; justify-content: center; vertical-align: middle; display:flex;">
-                      <p class="dot_number" style="font-size: 0.7rem; color: white;">${data.requests[i].Push}</p>
+                      <p class="dot_number" style="font-size: 0.7rem; color: white; font-weight: 600;">${data.requests[i].Push}</p>
                     </div>
                   `
       }
