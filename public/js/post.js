@@ -180,7 +180,8 @@ function category(thisid){
   if(thisid=="category_1"){
     console.log("1");
     console.log(document.getElementById(thisid).textContent)
-    localStorage.setItem("c", 456)
+    var a =document.getElementById(thisid).textContent
+    localStorage.setItem("c", a)
     window.location= "./Category.html"
   }else if(thisid=="category_2"){
     console.log("2");
