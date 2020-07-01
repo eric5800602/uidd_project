@@ -211,7 +211,9 @@ $(document).ready(function() {
     window.location= "./post.html" 
   });
   
-
+  $('#back').click(function(){
+    window.history.back();
+  })
 
   $('.addpost').click(function(){
     window.location= "./post2.html" 
