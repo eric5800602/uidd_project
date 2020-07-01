@@ -11,9 +11,9 @@ $(document).ready(function() {
     localStorage.setItem("change", 0)
     if(clickwhich==1){
       if(cat_first=="空間"){
-        console.log(document.getElementById("cube").click())
+        console.log(document.getElementById("cube"))
         console.log("!!!!!")
-        document.getElementById("cube").click()
+        // document.getElementById("cube").click()
         document.getElementById("two").click()
       }
       if(cat_first=="單品"){
