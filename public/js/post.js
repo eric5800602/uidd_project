@@ -142,7 +142,7 @@ $.ajax({
         }
       }
       console.log("max="+max)
-      console.log(document.getElementById('content_modal_0').clientHeight)
+      console.log(document.getElementById('ah').offsetHeight)
       max+=document.getElementById('content_modal_0').clientHeight
       console.log("max="+max)
       $('#single').css({height:max})
