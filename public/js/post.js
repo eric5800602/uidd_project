@@ -175,7 +175,7 @@ $.ajax({
       var border_d = x-box_width/2
       var temp = border_a+" "+border_b+" "+border_c+" "+border_d
       $('#shadow').css({"border-width": temp})
-      console.log("1: "+document.getElementById('shadow').offsetWidth)
+      console.log(temp)
     }
 
 });
