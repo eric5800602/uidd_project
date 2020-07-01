@@ -126,9 +126,13 @@ $.ajax({
 
 
       single_html+=`</div></div>`
+      var max=0;
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
         console.log(document.getElementById('content_'+i).clientHeight)
+        if(max<document.getElementById('content_'+i).clientHeight){
+          max=document.getElementById('content_'+i).clientHeight
+        }
         if(i!=0){
           console.log("#content_title_"+i)
 
@@ -137,7 +141,6 @@ $.ajax({
           $("#content_img_"+i).css({"opacity":"0.5"})
         }
       }
-
       var dot_html=``
       for(i=0; i<data.single.length; i++){
         dot_html+=`<img class="dot" src="./res/img/circle.png">`
