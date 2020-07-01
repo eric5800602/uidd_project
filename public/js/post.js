@@ -164,9 +164,16 @@ $.ajax({
       localStorage.setItem("first", data.post.space)
       localStorage.setItem("second", data.post.room)
 
-      img_width = document.getElementById('post_icon').offsetWidth
-      img_height = document.getElementById('post_icon').offsetHeight
-
+      var x=data.requests[i].position.coordinates[1]+1
+      var y=data.requests[i].position.coordinates[0]+1
+      var img_width = document.getElementById('post_icon').offsetWidth
+      var img_height = document.getElementById('post_icon').offsetHeight
+      var box_width = 20;
+      var border_a = y-box_width/2
+      var border_b = img_width-x-box_width/2
+      var border_c = img_height-y-box_width/2
+      var border_d = x-box_width/2
+      $('#shadow').css({"border-width": border_a+" "+border_b+" "+border_c+" "+border_d})
       console.log("1: "+document.getElementById('shadow').offsetWidth)
     }
 
