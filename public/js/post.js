@@ -215,11 +215,12 @@ $('#btn_google').click(function(){
   console.log("!!")
 })
 
-$('#exampleModalCenter-4').on('hidden.bs.modal', function () {
-  var link="http://images.google.com/searchbyimage?image_url="+imgsrc
-  window.open(link);
-  console.log("!!!")
-})
+
+// $('#exampleModalCenter-4').on('hidden.bs.modal', function () {
+//   var link="http://images.google.com/searchbyimage?image_url="+imgsrc
+//   window.open(link);
+//   console.log("!!!")
+// })
 
 
 
