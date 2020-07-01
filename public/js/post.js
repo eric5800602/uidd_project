@@ -11,6 +11,7 @@ var xpx=0, ypx=0, x=0, y=0, xx=0, yy=0;
 var img;
 var content_current=0;
 var imgsrc;
+var singles;
 $.ajax({
     url:"/get_post",
     type:'post',
@@ -174,10 +175,9 @@ $.ajax({
         var border_c = img_height-y-box_width/2-5
         var border_d = x-box_width/2+5
         var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
-        var opacity_val =85/data.single.length
+        singles=data.single.length
         console.log(opacity_val)
-        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp}; border: solid #000000${float2int(opacity_val)}">
-
+        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp}; border: solid #000000${float2int(opacity_val)}; ">
                       </div>
                       `
       }
@@ -188,6 +188,7 @@ $.ajax({
 
 // 點擊貼文照片出現東西
 function mask(){
+  var op=0.65/singles
   console.log("mask")
   var em = document.getElementById("shadow");
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
@@ -195,7 +196,7 @@ function mask(){
     $('.dot').animate({"opacity": '0.5'})
     $('.dot_color').animate({"opacity": '0'})
   }else{
-    $('#shadow').animate({"opacity": '1'})
+    $('#shadow').animate({"opacity": op})
     $('.dot').animate({"opacity": '1'})
     $('.dot_color').animate({"opacity": '1'})
   }
