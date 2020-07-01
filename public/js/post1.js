@@ -80,6 +80,17 @@ $(document).ready(function () {
   document.getElementById('complete').addEventListener('click', function(){
     if(document.getElementById(`original${editNum}`).childNodes[0].getAttribute('src')){
       complete = true;
+      $.ajax({
+        type: 'POST',
+        url: 'https://luffy.ee.ncku.edu.tw:7575/deploy_post',
+        dataType: 'json',
+        data: {
+          id: localStorage.getItem('add_post_id')
+        },
+        success: function (resData) {
+          alert('已成功發文')
+        }
+      });
       localStorage.removeItem('post2_url');
       $("#addsingle").click();
     }
