@@ -155,9 +155,10 @@ $.ajax({
         var numx = x+1;
         var numy = y+1;
         console.log("scale: "+scale)
-        dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale})">
-                  <p class="dot_number" style="position:absolute; top:${numx}px; left:${numy}px; font-size: 0.7rem;
-                  color: white; opacity: 0"> 21 </p>
+        dot_html+=`
+                    <div class="dot_color" style="background-image: url('./res/img/circle_color.png');style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale})">
+                      <p class="dot_number" style="font-size: 0.7rem;">${data.requests[i].Push}</p>
+                    </div>
                   `
       }
       $('#mask').html(dot_html)
