@@ -141,7 +141,6 @@ $(document).ready(function () {
   })
   /* Modal2 Skip button*/
   $('#modal2_button span[id="skip_button"]').click((event) => {
-    console.log(window.sign_username, window.sign_password, window.sign_email);
     $.post({
       url: "https://luffy.ee.ncku.edu.tw:7575/register",
       dataType: "json",
@@ -152,7 +151,12 @@ $(document).ready(function () {
       data:  JSON.stringify({
         username: window.sign_username,
         password: window.sign_password ,
-        email: window.sign_email
+        email: window.sign_email,
+        designer: undefined,
+        room: undefined,
+        hall: undefined,
+        bath: undefined,
+        suite: undefined
       }),
       success: function (msg) {
         console.log(msg);
