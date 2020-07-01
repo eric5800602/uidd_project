@@ -152,12 +152,12 @@ $.ajax({
         var scale=data.requests[i].Push*0.02+1
         var x=data.requests[i].position.coordinates[1]+1
         var y=data.requests[i].position.coordinates[0]+1
-        var numx = x+2;
-        var numy = y+2;
+        var numx = x+2.5;
+        var numy = y+2.5;
         console.log("scale: "+scale)
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale})">
-                  <p style="position:absolute; top:${numx}px; left:${numy}px; font-size: 0.834rem;
-                  color: white;"> 21 </p>
+                  <p class="dot_number" style="position:absolute; top:${numx}px; left:${numy}px; font-size: 0.834rem;
+                  color: white; opacity: 0"> 21 </p>
                   `
       }
       $('#mask').html(dot_html)
@@ -176,10 +176,12 @@ function mask(){
     $('#shadow').animate({"opacity": '0'})
     $('.dot').animate({"opacity": '0.5'})
     $('.dot_color').animate({"opacity": '0'})
+    $('.dot_number').animate({"opacity": '0'})
   }else{
     $('#shadow').animate({"opacity": '1'})
     $('.dot').animate({"opacity": '1'})
     $('.dot_color').animate({"opacity": '0.5'})
+    $('.dot_number').animate({"opacity": '1'})
   }
 }
 
