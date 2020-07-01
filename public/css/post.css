@@ -282,7 +282,7 @@ body {
   top: 0;right: 0;left: 0;bottom: 0;
   margin:auto;
   z-index:1;
-  width: 100px;
-  height: 100px;
-  box-shadow: 0 0 0 50vmax rgba(0,0,0,0.8);
+  width: 100vw;
+  height: 23.5rem;
+  box-shadow: 0 0 0 10px rgba(0,0,0,0.8);
 }
