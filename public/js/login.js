@@ -177,7 +177,8 @@ $(document).ready(function () {
   });
   /* Back to home page */
   $('#back').click(function(){
-    window.location.href = "https://luffy.ee.ncku.edu.tw:7575/home.html";
+    //window.location.href = "https://luffy.ee.ncku.edu.tw:7575/home.html";
+    window.history.back();
   })
     
   
