@@ -4,6 +4,7 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 $(document).ready(function() {
   var category = localStorage.getItem("c");
   console.log(category)
+  console.log("!!")
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
   /* Function for remove the class added in activity page */
