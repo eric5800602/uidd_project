@@ -212,7 +212,7 @@ function google(){
   console.log("!")
 }
 $('#btn_google').click(function(){
-  console.log("!!")
+  console.log("!!");
 })
 
 
