@@ -203,6 +203,7 @@ $.ajax({
         $('.shadow').addClass('s_6')
       }
       $('.bubble').css({"opacity":"0"})
+      $('.bubble_s').css({"opacity":"0"})
     }
 
 });
