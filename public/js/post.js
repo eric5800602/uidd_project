@@ -156,7 +156,7 @@ $.ajax({
         var numy = y+1;
         console.log("scale: "+scale)
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale})">
-                  <p style="position:absolute; top:${numx}px; left:${numy}px;> 21 </p>
+                  <p style="position:absolute; top:${numx}px; left:${numy}px;"> 21 </p>
                   `
       }
       $('#mask').html(dot_html)
