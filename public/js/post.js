@@ -186,6 +186,8 @@ function category(thisid){
   }else if(thisid=="category_2"){
     console.log("2");
     console.log(document.getElementById(thisid).textContent)
+    var a =document.getElementById(thisid).textContent
+    localStorage.setItem("c", a)
     window.location= "./Category.html"
   }else if(thisid=="category_3"){
     console.log("3");

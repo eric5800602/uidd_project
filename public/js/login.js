@@ -49,8 +49,9 @@ $('#SignModal2').on('show.bs.modal', function (e) {
 
 
 $(document).ready(function () {
-
-  /* Login button*/ 
+  var c = localStorage.getItem("c");
+  console.log(c)
+  /* Login button*/
   $('#ajax_login_signup button[id="login"]').click((event) => {
     event.preventDefault();
     $.post({
@@ -59,7 +60,7 @@ $(document).ready(function () {
       data: JSON.stringify({
         username: $('#ajax_login_input input[name=fName]').val(),
         password: $('#ajax_login_input input[name=lName]').val()
-      }), 
+      }),
       contentType: "application/json",
       crossDomain: true,
       xhrFields: {
@@ -87,13 +88,13 @@ $(document).ready(function () {
   })
 
 
-  
-  
+
+
 
   /* Modal1 Next button*/
   $('#modal1_input button[id="Next_button"]').click((event) => {
     event.preventDefault(); /* close html defalt setting*/
-    
+
     window.sign_password = $('#modal1_input input[name=Password]').val();
     window.sign_username = $('#modal1_input input[name=Username]').val();
     window.sign_email = $('#modal1_input input[name=Email]').val();
@@ -123,7 +124,7 @@ $(document).ready(function () {
         hall: $('#modal2_input input[name=modal2_hall]').val(),
         bath: $('#modal2_input input[name=modal2_bath]').val(),
         suite: suite_count
-      }), 
+      }),
       success: function (msg) {
         if(msg.success){
           window.location.href = "https://luffy.ee.ncku.edu.tw:7575/tags.html";
@@ -183,8 +184,8 @@ $(document).ready(function () {
   $('#back').click(function(){
     window.location.href = "https://luffy.ee.ncku.edu.tw:7575/home.html";
   })
-    
-  
+
+
 });
 var LocationHerf = function () {
   window.location.href = "https://luffy.ee.ncku.edu.tw:7575/home.html";
