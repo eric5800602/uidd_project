@@ -6,8 +6,6 @@ $(document).ready(function() {
   console.log(category)
   if(category=="空間"){
     console.log("!")
-
-
   }else if(category=="單品"){
     console.log("?")
     $('#cube').click()
@@ -17,6 +15,7 @@ $(document).ready(function() {
     $('#one').click()
     $(category).click()
   }
+  if(category=="浴室") console.log("浴室!")
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
   /* Function for remove the class added in activity page */
