@@ -7,9 +7,14 @@ $(document).ready(function() {
   if(category=="空間"){
     console.log("!")
 
+
   }else if(category=="單品"){
     console.log("?")
-
+    $('#cube').click()
+    $('#two').click()
+  }else if(category=="臥室"||category=="廚房"||category=="客廳"||category=="書房"||category=="浴室"||category=="套房"||category=="雅房"||category=="餐廚"||category=="玄關"||category=="戶外空間"||){
+    $('#one').click()
+    $(category).click()
   }
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
