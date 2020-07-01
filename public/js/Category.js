@@ -8,22 +8,8 @@ $(document).ready(function() {
   var clickwhich = localStorage.getItem("clickwhich");
   if(change==1){
     localStorage.setItem("change", 0)
-    if(clickwhich==1)
-      if(cat_first=="空間"){
-        console.log("!")
-        $('#cube').click()
-        $('#two').click()
-      }
-      if(cat_first=="單品"){
-        console.log("?")
-        $('#cube').click()
-        $('#two').click()
-      }
-    }else if(clickwhich==2){
 
-    }
   }
-
 
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
