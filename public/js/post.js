@@ -176,6 +176,10 @@ function mask(){
 }
 
 $('#category_1').click(function(){
+  console.log("#category_1");
+});
+
+$('#category_1').click(function(){
   console.log("category_1");
 })
 $('#category_2').click(function(){
