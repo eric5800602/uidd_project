@@ -178,7 +178,7 @@ $.ajax({
         console.log("opa"+op)
         var opa="#000000"+Math.floor(op)
         console.log("opa"+opa)
-        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp}; border: solid">
+        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp}; border: solid ${opa}">
                       </div>
                       `
       }
