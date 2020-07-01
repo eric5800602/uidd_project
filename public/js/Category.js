@@ -41,7 +41,7 @@ $(document).ready(function() {
         if(cat_first=="空間"){
           console.log("!!!!")
           $('#cube').click()
-          $('#two').click()
+          $('#one').click()
         }
         if(cat_first=="單品"){
           console.log("?????")
