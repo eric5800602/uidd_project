@@ -254,6 +254,7 @@ file.onclick = function() {
    })
 $(document).ready(function () {
   //select
+  console.log("123");
 var sel1 = document.querySelector('#sel1');
 var sel2 = document.querySelector('#sel2');
 var options1 = sel1.querySelectorAll('option');
@@ -266,7 +267,7 @@ function giveSelection(selValue) {
     }
 }
   }
-  giveSelection(sel1.value);
+giveSelection(sel1.value);
 var myTarget = document.getElementById('sel1');
 var myTargetValue = myTarget.value;
 $( "#sel1" ).change(function() {
