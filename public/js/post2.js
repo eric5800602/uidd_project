@@ -1,5 +1,3 @@
-const { loadavg } = require("os");
-
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
