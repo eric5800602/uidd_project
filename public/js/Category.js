@@ -14,7 +14,8 @@ $(document).ready(function() {
         console.log(document.getElementById("cube"))
         console.log("!!!!!")
         // document.getElementById("cube").click()
-        document.getElementById("two").click()
+        $('.cube').click()
+        $('#two').click()
       }
       if(cat_first=="單品"){
         console.log("?????")
