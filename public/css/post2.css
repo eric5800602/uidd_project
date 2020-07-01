@@ -21,7 +21,7 @@ body, html{
   padding-top:3rem ;
   text-align: center;
   font-family: Roboto_Bold, sans-serif !important;
-  padding-left: 1.9rem;
+  padding-left: 2.1rem;
   font-weight: 700;
   font-size: 1.3rem;
   letter-spacing: 0.73rem;
@@ -33,7 +33,7 @@ body, html{
   top: 2.8rem;
   left: 1.5rem;
   width: 0.7rem;
-  height: 1.6rem;
+  height: 1.7rem;
   opacity: 1;
 }
 #Submit_button{
@@ -43,7 +43,7 @@ opacity:0;
 	color:black;
 	background-color:#E9E9E9;
 	font-size:4vw;
-	margin-top:3.2em;
+	margin-top:2.8em;
 	margin-right:2vw;
 	border:none;
 	font-weight:bold;
