@@ -11,9 +11,7 @@ $(document).ready(function() {
     localStorage.setItem("change", 0)
     if(clickwhich==1){
       if(cat_first=="空間"){
-        console.log(document.getElementById("cube"))
-        console.log("!!!!!")
-
+        $('#cube').click()
         $('#two').click()
       }
       if(cat_first=="單品"){
@@ -22,7 +20,7 @@ $(document).ready(function() {
         $('#two').click()
       }
     }else if(clickwhich==2){
-
+      console.log("clickwhich==2")
     }
   }
 
