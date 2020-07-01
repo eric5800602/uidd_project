@@ -1,6 +1,45 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
+$(document).ready(function () {
+  //select
+  console.log("123");
+var sel1 = document.querySelector('#sel1');
+var sel2 = document.querySelector('#sel2');
+var options1 = sel1.querySelectorAll('option');
+var options2 = sel2.querySelectorAll('option');
+function giveSelection(selValue) {
+  sel2.innerHTML = "";
+  for(var i = 0; i < options2.length; i++) {
+    if(options2[i].dataset.option === selValue) {
+      sel2.appendChild(options2[i]);
+    }
+}
+  }
+giveSelection(sel1.value);
+var myTarget = document.getElementById('sel1');
+var myTargetValue = myTarget.value;
+$( "#sel1" ).change(function() {
+	if($("#sel1").val()=="single"){
+	
+		 $("#pings").css('opacity','0');
+		  $("#next").css('opacity','0');
+		  $("#nexticon").css('opacity','0');		
+		  $("#finishicon").css('opacity','1');
+		  $("#finishicon").css('z-index','3');
+
+	}
+   else if($("#sel1").val()=="space"){
+  
+		 $("#pings").css('opacity','1');
+		  $("#next").css('opacity','1');
+		   $("#nexticon").css('opacity','1');
+		   $("#nexticon").css('z-index','3');
+		   $("#finishicon").css('opacity','0');
+		
+	}
+});
+})
 const cameraView = document.querySelector("#camera--view"),
        cameraView2 = document.querySelector("#camera--view2"),
     cameraOutput = document.querySelector("#camera--output"),
@@ -252,45 +291,6 @@ file.onclick = function() {
 	 })
 	 
    })
-$(document).ready(function () {
-  //select
-  console.log("123");
-var sel1 = document.querySelector('#sel1');
-var sel2 = document.querySelector('#sel2');
-var options1 = sel1.querySelectorAll('option');
-var options2 = sel2.querySelectorAll('option');
-function giveSelection(selValue) {
-  sel2.innerHTML = "";
-  for(var i = 0; i < options2.length; i++) {
-    if(options2[i].dataset.option === selValue) {
-      sel2.appendChild(options2[i]);
-    }
-}
-  }
-giveSelection(sel1.value);
-var myTarget = document.getElementById('sel1');
-var myTargetValue = myTarget.value;
-$( "#sel1" ).change(function() {
-	if($("#sel1").val()=="single"){
-	
-		 $("#pings").css('opacity','0');
-		  $("#next").css('opacity','0');
-		  $("#nexticon").css('opacity','0');		
-		  $("#finishicon").css('opacity','1');
-		  $("#finishicon").css('z-index','3');
-
-	}
-   else if($("#sel1").val()=="space"){
-  
-		 $("#pings").css('opacity','1');
-		  $("#next").css('opacity','1');
-		   $("#nexticon").css('opacity','1');
-		   $("#nexticon").css('z-index','3');
-		   $("#finishicon").css('opacity','0');
-		
-	}
-});
-})
 $('#back').click(function(){
     localStorage.removeItem('post2_url');
     window.location= "./home.html"
