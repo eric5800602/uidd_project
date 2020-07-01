@@ -191,11 +191,11 @@ function mask(){
   console.log("mask")
   var em = document.getElementById("shadow");
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
-    $('#shadow').animate({"opacity": '0'})
+    $('.shadow').animate({"opacity": '0'})
     $('.dot').animate({"opacity": '0.5'})
     $('.dot_color').animate({"opacity": '0'})
   }else{
-    $('#shadow').animate({"opacity": op})
+    $('.shadow').animate({"opacity": op})
     $('.dot').animate({"opacity": '1'})
     $('.dot_color').animate({"opacity": '1'})
   }
