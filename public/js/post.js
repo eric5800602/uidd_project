@@ -174,7 +174,7 @@ $.ajax({
         var border_c = img_height-x-box_width/2-5
         var border_d = y-box_width/2+5
         var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
-        var op=0.65/data.single.length
+        var op=85/data.single.length
         console.log("opa"+op)
         var opa="#000000"+Math.floor(op)
         console.log("opa"+opa)
