@@ -6,6 +6,8 @@ $(document).ready(function() {
   console.log(category)
   if(category=="空間"){
     console.log("!")
+    $('#cube').click()
+    $('#two').click()
   }else if(category=="單品"){
     console.log("?")
     $('#cube').click()
