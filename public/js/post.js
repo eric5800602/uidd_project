@@ -156,7 +156,7 @@ $.ajax({
         var numy = y+1;
         console.log("scale: "+scale)
         dot_html+=`
-                    <div class="dot_color" style="background-image: url('./res/img/circle_color.png');style="position:absolute; top:${x}px; left:${y}px; transform:scale(${scale}) background-repeat: no-repeat; background-attachment: fixed;
+                    <div class="dot_color" style="background-image: url('./res/img/circle_color.png');position:absolute; top:${x}px; left:${y}px; transform:scale(${scale}) background-repeat: no-repeat; background-attachment: fixed;
                     background-size: 100% 100%;">
                       <p class="dot_number" style="font-size: 0.7rem;">${data.requests[i].Push}</p>
                     </div>
