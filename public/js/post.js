@@ -145,7 +145,7 @@ $.ajax({
       console.log(document.getElementById('ah').offsetHeight)
       // max+=document.getElementById('content_modal_0').clientHeight
       console.log("max="+max)
-      $('#single').css({height:max+62})
+      $('#single').css({height:max+80})
       var dot_html=``
       for(i=0; i<data.single.length; i++){
         dot_html+=`<img class="dot" src="./res/img/circle.png">`
