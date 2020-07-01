@@ -25,7 +25,6 @@ function cameraStop(){
 	  cameraView.srcObject.getTracks().forEach(t=>t.stop());
 	}
 }
-
 function cameraStart__(m) {
     m = m||'user';
     if(m=='env'){m='environment';}
@@ -122,7 +121,6 @@ window.mode='env';
 window.addEventListener("load", function(){
   cameraStart(window.mode);
 }, false);
-
 cameraturn.addEventListener("click", function(){
   cameraStart(window.mode=='user' ? 'env' : 'user');
 }, false);
@@ -131,7 +129,6 @@ cameraTrigger.addEventListener("click",function(){
 	
 })
 */
-
 //上傳照片
 $('#file').change(function() {
   var file = $('#file')[0].files[0];
@@ -178,7 +175,6 @@ $('#file').change(function() {
 file.onclick = function() {
 	
 };
-
 //tags
  var tags = document.getElementsByClassName('tags')
     for(var i = 0; i < tags.length; i++) {
@@ -230,10 +226,12 @@ file.onclick = function() {
         console.log(msg);
         if(msg.success){
 			if($("#sel1").val()=="single"){
+			
 			console.log("good");
 				 window.location= "./home.html"
 			}
          else if($("#sel1").val()=="space"){
+         
        console.log(" very good");
       localStorage.setItem('add_post_id',msg.id);
       window.location= "./post1.html"
@@ -272,14 +270,16 @@ var myTarget = document.getElementById('sel1');
 var myTargetValue = myTarget.value;
 $( "#sel1" ).change(function() {
 	if($("#sel1").val()=="single"){
+	
 		 $("#pings").css('opacity','0');
 		  $("#next").css('opacity','0');
 		  $("#nexticon").css('opacity','0');		
 		  $("#finishicon").css('opacity','1');
 		  $("#finishicon").css('z-index','3');
-		  
+
 	}
    else if($("#sel1").val()=="space"){
+  
 		 $("#pings").css('opacity','1');
 		  $("#next").css('opacity','1');
 		   $("#nexticon").css('opacity','1');
@@ -289,5 +289,6 @@ $( "#sel1" ).change(function() {
 	}
 });
 $('#back').click(function(){
+    
     window.location= "./home.html"
   })
