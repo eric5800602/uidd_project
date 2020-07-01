@@ -69,7 +69,7 @@ $(document).ready(function () {
         console.log(msg);
         if(msg.success){
           if(msg.first_time == true){
-            window.location.href = "./html/tags.html";
+            window.location.href = "./tags.html";
           }
           else{
             LocationHerf();
