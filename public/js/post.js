@@ -148,8 +148,10 @@ function shadow(thisid){
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
     $('#'+thisid).animate({"opacity": '0'})
+    $('.dot').animate({"opacity": '0.5'})
   }else{
     $('#'+thisid).animate({"opacity": '1'})
+    $('.dot').animate({"opacity": '1'})
   }
 }
 
