@@ -141,6 +141,9 @@ $.ajax({
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
+
+
+
     }
 
 });
