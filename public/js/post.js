@@ -76,7 +76,7 @@ $.ajax({
                         ';
       for(i=0; i<data.post.tags.length; i++){
         hashtag_html=hashtag_html + `\
-          <p class="content_hashtag_first content_hashtag_hashtag" id="hashtag_"+i> ${data.post.tags[i]}</p>\
+          <p class="content_hashtag_first content_hashtag_hashtag"> ${data.post.tags[i]}</p>\
         `
       }
       $('#hashtag').html(hashtag_html)
@@ -85,11 +85,11 @@ $.ajax({
 
       var category_html=`<p class="content_category_title">Category</p>\
                         <div class="content_category_content">\
-                        <p class="content_category_content_first content_category_content_content"> ${data.post.space} </p>\
+                        <p class="content_category_content_first content_category_content_content"  id="category_1"> ${data.post.space} </p>\
                         <p class="content_category_content_big">> </p>\
-                        <p class="content_category_content_second content_category_content_content"> ${data.post.room}</p>\
+                        <p class="content_category_content_second content_category_content_content" id="category_2"> ${data.post.room}</p>\
                         <p class="content_category_content_big">></p>\
-                        <p class="content_category_content_third content_category_content_content"> ${data.post.pings}</p>\
+                        <p class="content_category_content_third content_category_content_content" id="category_3"> ${data.post.pings}</p>\
                         `;
       $('#category').html(category_html)
       //console.log(category_html)
