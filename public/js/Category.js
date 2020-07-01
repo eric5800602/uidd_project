@@ -21,8 +21,10 @@ $(document).ready(function() {
       }
     }else if(clickwhich==2){
       console.log("clickwhich==2")
-      $('#cube').click()
-      $('#two').click()
+      if(cat_second=="臥室"||cat_second=="廚房"||cat_second=="客廳"||cat_second=="書房"||cat_second=="浴室"||cat_second=="套房"||cat_second=="雅房"||cat_second=="餐廚"||cat_second=="玄關"||cat_second=="戶外空間"){
+        $('#'+cat_second).click()
+      }
+
     }
   }
 
