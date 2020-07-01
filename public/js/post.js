@@ -180,13 +180,14 @@ function category(thisid){
   if(thisid=="category_1"){
     console.log("1");
     console.log(document.getElementById(thisid).textContent)
+    window.location= "./Category"
   }else if(thisid=="category_2"){
     console.log("2");
     console.log(document.getElementById(thisid).textContent)
+    window.location= "./Category"
   }else if(thisid=="category_3"){
     console.log("3");
     console.log(document.getElementById(thisid).textContent)
-
   }
 }
 
