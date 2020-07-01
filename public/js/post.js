@@ -209,10 +209,10 @@ function slide(thisid){
 }
 
 function google(){
-  console.log("!")
+  console.log("google")
 }
 $('#btn_google').click(function(){
-  console.log("!!");
+  console.log("google!!");
 })
 
 
