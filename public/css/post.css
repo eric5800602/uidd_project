@@ -267,12 +267,12 @@ body {
   position: absolute;
 }
 .dot{
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   opacity: 0.5;
 }
 .dot_color{
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   opacity: 0;
 }
