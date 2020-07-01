@@ -282,6 +282,5 @@ body {
   height: 23.5rem;
   position: absolute;
   border: solid #00000085;
-  border-width: 2rem 3rem 10rem 15rem;
   background-clip: padding-box;
 }

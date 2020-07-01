@@ -164,6 +164,9 @@ $.ajax({
       localStorage.setItem("first", data.post.space)
       localStorage.setItem("second", data.post.room)
 
+      var shadow_html = ``
+
+
       var x=data.single[1].position.coordinates[1]+1
       var y=data.single[1].position.coordinates[0]+1
       var img_width = document.getElementById('post_icon').offsetWidth
@@ -185,18 +188,18 @@ function mask(){
   console.log("mask")
 
 
-  // var em = document.getElementById("shadow");
-  // if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
-  //   $('#shadow').animate({"opacity": '0'})
-  //   $('.dot').animate({"opacity": '0.5'})
-  //   $('.dot_color').animate({"opacity": '0'})
-  //   $('.dot_number').animate({"opacity": '0'})
-  // }else{
-  //   $('#shadow').animate({"opacity": '1'})
-  //   $('.dot').animate({"opacity": '1'})
-  //   $('.dot_color').animate({"opacity": '0.5'})
-  //   $('.dot_number').animate({"opacity": '1'})
-  // }
+  var em = document.getElementById("shadow");
+  if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
+    $('#shadow').animate({"opacity": '0'})
+    $('.dot').animate({"opacity": '0.5'})
+    $('.dot_color').animate({"opacity": '0'})
+    $('.dot_number').animate({"opacity": '0'})
+  }else{
+    $('#shadow').animate({"opacity": '1'})
+    $('.dot').animate({"opacity": '1'})
+    $('.dot_color').animate({"opacity": '0.5'})
+    $('.dot_number').animate({"opacity": '1'})
+  }
 }
 
 function category(thisid){
