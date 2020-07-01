@@ -132,6 +132,7 @@ $.ajax({
           $("#content_img_"+i).css({"opacity":"0.5"})
         }
       }
+
     }
 
 });

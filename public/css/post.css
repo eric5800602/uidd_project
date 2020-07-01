@@ -254,3 +254,13 @@ body {
   background-color: #00000085;
   position: absolute;
 }
+#mask{
+  width: 100vw;
+  height: 23.5rem;
+  position: absolute;
+}
+.dot{
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.5;
+}
