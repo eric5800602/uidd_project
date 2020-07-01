@@ -190,14 +190,15 @@ function mask(){
   var op=0.65/singles
   console.log("mask")
   var em = document.getElementById("shadow");
-  if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
-    $('#shadow').animate({"opacity": '0'})
-    $('.dot').animate({"opacity": '0.5'})
-    $('.dot_color').animate({"opacity": '0'})
-  }else{
+  if(window.getComputedStyle(em).getPropertyValue("opacity")=='0'){
     $('#shadow').animate({"opacity": op})
     $('.dot').animate({"opacity": '1'})
     $('.dot_color').animate({"opacity": '1'})
+
+  }else{
+    $('#shadow').animate({"opacity": '0'})
+    $('.dot').animate({"opacity": '0.5'})
+    $('.dot_color').animate({"opacity": '0'})
   }
 }
 
