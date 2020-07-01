@@ -283,4 +283,6 @@ body {
   height: 23.5rem;
   background-color: #00000085;
   position: absolute;
+  border: 5px solid #00000085;
+  background-clip: padding-box;
 }
