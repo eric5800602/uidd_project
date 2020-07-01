@@ -12,8 +12,8 @@ $(document).ready(function() {
     if(clickwhich==1){
       if(cat_first=="空間"){
         console.log("!!!!!")
-        $('#cube').click()
-        $('#two').click()
+        document.getElementById("cube").click()
+        document.getElementById("two").click()
       }
       if(cat_first=="單品"){
         console.log("?????")
