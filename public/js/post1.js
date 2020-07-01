@@ -228,3 +228,7 @@ $(".rating").rate(options);
 $(".rating").on("change", function (ev, data) {
   rank = data.to;
 });
+//返回
+$('#back').click(function(){
+    window.location= "./home.html"
+  })
