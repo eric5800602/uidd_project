@@ -201,6 +201,7 @@ $.ajax({
       if(data.single.length==6){
         $('.shadow').addClass('s_6')
       }
+      $('.bubble').css({"opacity":"0"})
     }
 
 });
