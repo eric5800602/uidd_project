@@ -277,12 +277,12 @@ body {
   opacity: 0;
 }
 
-#shadow{
+#test{
   opacity: 0;
   width: 100vw;
   height: 23.5rem;
   background-color: #00000085;
   position: absolute;
-  border: 5px solid #00000085;
+  border: solid #00000085;
   background-clip: padding-box;
 }
