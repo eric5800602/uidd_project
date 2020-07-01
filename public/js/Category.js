@@ -2,7 +2,8 @@ var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 
 $(document).ready(function() {
-
+  var category = localStorage.getItem("c");
+  console.log(category)
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
   /* Function for remove the class added in activity page */
@@ -12,18 +13,18 @@ $(document).ready(function() {
       scrollbar[0].classList.remove("activity_menu");
       scrollbar[0].classList.remove("actclicked");
     }
-    
+
     var activity_space = document.getElementsByClassName('activity_space');
     if(activity_space[0].classList.contains("clicked"))
       activity_space[0].classList.remove("clicked");
     var Theme = document.getElementsByClassName('Theme');
     if(Theme[0].classList.contains("Theme_hidden"))
       Theme[0].classList.remove("Theme_hidden");
-    
+
     $('#Activity_tags_img').remove();
     $('#slogan').remove();
     $('#comment').remove();
-    
+
     var myposts = document.getElementById('myposts');
     if(myposts.classList.contains("clicked"))
       myposts.classList.remove("clicked");
@@ -122,7 +123,7 @@ $(document).ready(function() {
     $('#Menu').html(html)
     $('#All').click();
   });
-  
+
   $(document).on("click",".square_four", function(){
     $('.page_title').toggleClass('clicked');
     $('.activity_space').toggleClass('clicked');
@@ -142,7 +143,7 @@ $(document).ready(function() {
     $('.Theme').addClass('Theme_hidden');
     $('#myposts').addClass('clicked');
     $('.page_title').addClass('activity_clicked');
-    
+
     var html = ""
     html = html+ `
       <p class="activity slogan changing" id="slogan">2020代表色<br>&emsp;&emsp;&emsp;經典藍</p>\
@@ -151,7 +152,7 @@ $(document).ready(function() {
     $('#activity_text_space').html(html);
     $('#myposts').html("");
   });
-  
+
 
   $(document).on("click",".scrollmenu li a", function(){
     var $magicLine = $("#magic-line");
@@ -199,7 +200,7 @@ $(document).ready(function() {
               </div>\
             </div>`
         }
-        
+
         $('#myposts').html(html)
       }
     });
@@ -208,9 +209,9 @@ $(document).ready(function() {
 
   $(document).on("click",".single_post", function(){
     localStorage.setItem("post_id",this.id);
-    window.location= "./post.html" 
+    window.location= "./post.html"
   });
-  
+
   $('#back').click(function(){
     window.history.back();
   })
@@ -235,7 +236,7 @@ $(document).ready(function() {
       }
     });
   });
-  
+
   document.getElementById("cube").click();
   document.getElementById("one").click();
 });

@@ -49,8 +49,7 @@ $('#SignModal2').on('show.bs.modal', function (e) {
 
 
 $(document).ready(function () {
-  var c = localStorage.getItem("c");
-  console.log(c)
+
   /* Login button*/
   $('#ajax_login_signup button[id="login"]').click((event) => {
     event.preventDefault();
