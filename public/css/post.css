@@ -279,11 +279,13 @@ body {
 
 #shadow{
   position:absolute;
-  top: 0;right: 0;left: 0;bottom: 0;
-  margin:auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   z-index:1;
-  width: 20rem;
-  height: 20rem;
+  width: 5rem;
+  height: 5rem;
   background-color: #3D5EAA;
   box-shadow: 60px -16px 0px 10px #00000085;
 }
