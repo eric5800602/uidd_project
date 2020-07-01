@@ -95,7 +95,7 @@ $.ajax({
       //console.log(category_html)
 
 
-      var single_html=`<div class="content_image">`
+      var single_html=`<div class="content_image" id="ah">`
       for(i=0; i<data.single.length; i++){
         id="content_img_"+i
         cmodal="content_modal_"+i
