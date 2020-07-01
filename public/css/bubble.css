@@ -24,11 +24,11 @@
 .bubble_s {
 	position: absolute;
     font-size: 0.8rem;
-    background: #D28B8B;
+    background: white;
     border-radius: 1rem;
     padding: 0rem 0.5rem;
     text-align: center;
-    color: white;
+    color: #2D57CC;
 }
 
 .bubble-bottom-left_s:before {
@@ -36,9 +36,9 @@
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 0.6rem solid #D28B8B;
+    border-left: 0.6rem solid white;
     border-right: 0.3rem solid transparent;
-    border-top: 0.3rem solid #D28B8B;
+    border-top: 0.3rem solid white;
     border-bottom: 0.5rem solid transparent;
     left: 32px;
     bottom: -0.6rem;
