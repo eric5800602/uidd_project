@@ -129,7 +129,7 @@ $.ajax({
       var max=0;
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
-        console.log(document.getElementById('content_'+i).clientHeight)
+        // console.log(document.getElementById('content_'+i).clientHeight)
         if(max<document.getElementById('content_'+i).clientHeight){
           max=document.getElementById('content_'+i).clientHeight
         }
@@ -142,6 +142,8 @@ $.ajax({
         }
       }
       console.log("max="+max)
+      console.log(document.getElementByClassName('content_image').clientHeight)
+      // $('#single').css({height: })
       var dot_html=``
       for(i=0; i<data.single.length; i++){
         dot_html+=`<img class="dot" src="./res/img/circle.png">`
