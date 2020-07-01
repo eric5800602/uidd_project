@@ -142,7 +142,7 @@ $.ajax({
       }
       $('#mask').html(dot_html)
       for(i=0; i<data.single.length; i++){
-        console.log(document.getElementById('content'+i).clientHeight)
+        // console.log(document.getElementById('content'+i).clientHeight)
       }
 
 
