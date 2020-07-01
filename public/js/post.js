@@ -152,10 +152,9 @@ $.ajax({
         var y=data.requests[i].position.coordinates[0]+1
         var numx = x+1;
         var numy = y+1;
-        console.log("scale: "+scale)
         dot_html+=`
                     <div class="dot_color" style=" top:${x}px; left:${y}px; transform:scale(${scale}) ">
-                      <p class="dot_number" style="">${data.requests[i].Push}</p>
+                      <p class="dot_number" style="transform:scale(1/${scale})">${data.requests[i].Push}</p>
                     </div>
                   `
       }
