@@ -1,25 +1,26 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
-function giveSelection(selValue) {
-  sel2.innerHTML = "";
-  for (var i = 0; i < options2.length; i++) {
-    if (options2[i].dataset.option === selValue) {
-      sel2.appendChild(options2[i]);
-    }
-  }
-}
+
 $(document).ready(function () {
   //select
   var sel1 = document.querySelector('#sel1');
   var sel2 = document.querySelector('#sel2');
   var options1 = sel1.querySelectorAll('option');
   var options2 = sel2.querySelectorAll('option');
-
+  function giveSelection(selValue) {
+    sel2.innerHTML = "";
+    for (var i = 0; i < options2.length; i++) {
+      if (options2[i].dataset.option === selValue) {
+        sel2.appendChild(options2[i]);
+      }
+    }
+  }
   giveSelection(sel1.value);
   var myTarget = document.getElementById('sel1');
   var myTargetValue = myTarget.value;
   $("#sel1").change(function () {
+    giveSelection($("#sel1").value);
     if ($("#sel1").val() == "single") {
 
       $("#pings").css('opacity', '0');
