@@ -1,6 +1,6 @@
 var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
-
+$('#cube').click()
 $(document).ready(function() {
   var cat_first = localStorage.getItem("first");
   var cat_second = localStorage.getItem("second");
@@ -13,8 +13,7 @@ $(document).ready(function() {
       if(cat_first=="空間"){
         console.log(document.getElementById("cube"))
         console.log("!!!!!")
-        // document.getElementById("cube").click()
-        $('.cube').click()
+
         $('#two').click()
       }
       if(cat_first=="單品"){
