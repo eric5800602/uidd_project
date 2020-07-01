@@ -128,9 +128,10 @@ $.ajax({
       single_html+=`</div></div>`
       $('#single').html(single_html)
       for(i=0; i<data.single.length; i++){
+        console.log(document.getElementById('content_'+i).clientHeight)
         if(i!=0){
           console.log("#content_title_"+i)
-          console.log(document.getElementById('content_'+i).clientHeight)
+
           $("#content_"+i).hide()
           $("#content_"+i).hide()
           $("#content_img_"+i).css({"opacity":"0.5"})
