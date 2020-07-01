@@ -2,13 +2,13 @@ var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 
 $(document).ready(function() {
-  var category = localStorage.getItem("c");
+  var c = localStorage.getItem("c");
   console.log(category)
-  if(category=="空間"){
+  if(c=="空間"){
     console.log("!")
     $('#cube').click()
     $('#two').click()
-  }else if(category=="單品"){
+  }else if(c=="單品"){
     console.log("?")
     $('#cube').click()
     $('#two').click()
@@ -18,11 +18,7 @@ $(document).ready(function() {
     $('#one').click()
     $(category).click()
   }
-  if(category=="浴室"){
-    console.log("> <!")
-    // $('#one').click()
-    // $(category).click()
-  }
+
   /* Magicline for scrollMenu */
   var $el, leftPos, newWidth, ori_new;
   /* Function for remove the class added in activity page */
