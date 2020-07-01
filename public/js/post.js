@@ -118,8 +118,6 @@ $.ajax({
         single_html+=`</div>
                       </div>
                       <p class="content_content">${data.single[i].description}</p>
-
-
                       `;
       }
 
@@ -148,10 +146,10 @@ $.ajax({
       $('#single').css({height:max+80})
       var dot_html=``
       for(i=0; i<data.single.length; i++){
-        dot_html+=`<img class="dot" src="./res/img/circle.png">`
+        dot_html+=`<img class="dot" src="./res/img/circle.png" position:"absolute" top=${data.single[i].position.coordinates[1]} left=${data.single[i].position.coordinates[0]}>`
       }
       for(i=0; i<data.requests.length; i++){
-        dot_html+=`<img class="dot_color" src="./res/img/circle_color.png">`
+        dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" position:"absolute" top="" left="">`
       }
       $('#mask').html(dot_html)
       localStorage.setItem("first", data.post.space)
