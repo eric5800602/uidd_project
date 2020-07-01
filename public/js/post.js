@@ -144,7 +144,7 @@ $.ajax({
       console.log("max="+max)
 
 
-      console.log(document.getElementById('ah').clientHeight)
+
       // $('#single').css({height: })
       var dot_html=``
       for(i=0; i<data.single.length; i++){
@@ -154,7 +154,7 @@ $.ajax({
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
-
+      console.log(document.getElementById('ah').clientHeight)
 
     }
 
