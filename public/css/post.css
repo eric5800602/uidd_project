@@ -283,6 +283,6 @@ body {
   background-color: #FF9A9A;
   position: absolute;
   border: solid #00000085;
-  border-radius: 2rem 3rem 10rem 15rem;
+  border-width: 2rem 3rem 10rem 15rem;
   background-clip: padding-box;
 }
