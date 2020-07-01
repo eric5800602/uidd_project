@@ -40,6 +40,23 @@ $(document).ready(function () {
 
     }
   });
+  var tags = document.getElementsByClassName('tags')
+  for (var i = 0; i < tags.length; i++) {
+    (function (index) {
+      console.log(i);
+      tags[index].addEventListener("click", function () {
+        if (this.classList.contains("tags_click")) {
+          this.classList.add("tags_double_click");
+          this.classList.remove("tags_click");
+        } else {
+          this.classList.add("tags_click");
+          if (this.classList.contains("tags_double_click")) {
+            this.classList.remove("tags_double_click");
+          }
+        }
+      })
+    })(i);
+  }
 })
 const cameraView = document.querySelector("#camera--view"),
   cameraView2 = document.querySelector("#camera--view2"),
@@ -212,27 +229,7 @@ $('#file').change(function () {
   };
   reader.readAsDataURL(file);
 });
-file.onclick = function () {
-
-};
 //tags
-var tags = document.getElementsByClassName('tags')
-for (var i = 0; i < tags.length; i++) {
-  (function (index) {
-    console.log(i);
-    tags[index].addEventListener("click", function () {
-      if (this.classList.contains("tags_click")) {
-        this.classList.add("tags_double_click");
-        this.classList.remove("tags_click");
-      } else {
-        this.classList.add("tags_click");
-        if (this.classList.contains("tags_double_click")) {
-          this.classList.remove("tags_double_click");
-        }
-      }
-    })
-  })(i);
-}
 var confirm = document.getElementById('Submit_button');
 confirm.addEventListener("click", function () {
   var tags = new Array();
