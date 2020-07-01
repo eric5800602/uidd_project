@@ -176,12 +176,12 @@ $.ajax({
         var border_c = img_height-y-box_width/2-5
         var border_d = x-box_width/2+5
         var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
-        shadow_html+=`<div id="shadow"+${i} style="border-width: ${temp}">
+        shadow_html+=`<div class="shadow" id="shadow_"+${i} style="border-width: ${temp}">
 
                       </div>
                       `
       }
-
+      $('#shadow').html(shadow_html)
     }
 
 });
