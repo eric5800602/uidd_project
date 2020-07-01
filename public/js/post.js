@@ -188,8 +188,8 @@ function slide(thisid){
 
   if(content_current==num){
     // 以圖搜圖
-    console.log("SAME")
-
+    console.log("SAME!")
+    console.log(document.getElementById('single').clientHeight)
   }else if(content_current>num){
     // 之前的比較大，往右滑
     $("#content_"+content_current).effect("slide",{direction: "right", mode:"hide", duration:250})
