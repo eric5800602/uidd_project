@@ -154,7 +154,7 @@ $.ajax({
         var numy = y+1;
         dot_html+=`
                     <div class="dot_color" style=" top:${x}px; left:${y}px; transform:scale(${scale}) ">
-                      <p class="dot_number" style="transform:scale(1/${scale})">${data.requests[i].Push}</p>
+                      <p class="dot_number" style="transform:scale(${1/scale})">${data.requests[i].Push}</p>
                     </div>
                   `
       }
