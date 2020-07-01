@@ -80,6 +80,7 @@ $(document).ready(function () {
   document.getElementById('complete').addEventListener('click', function(){
     if(document.getElementById(`original${editNum}`).childNodes[0].getAttribute('src')){
       complete = true;
+      localStorage.removeItem('post2_url');
       $("#addsingle").click();
     }
     else{

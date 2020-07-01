@@ -364,7 +364,6 @@ name: String,
   title:String
 */
 app.post('/add_post', (req, res) => {
-    req.session.username = "test_without_login";//need fix
     if (req.session.username === undefined) {
         res.send(JSON.parse(`{
             "success": false,
