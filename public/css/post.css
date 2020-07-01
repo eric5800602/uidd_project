@@ -125,14 +125,14 @@ header {
     color: #707070;
     }
   .content_category_content_first {
-    font-weight: 600;
+    font-weight: 500;
     display: inline; }
   .content_category_content_big {
-    font-weight: 600;
+    font-weight: 500;
     display: inline;
     margin: 0 0.2rem; }
   .content_category_content_second {
-    font-weight: 600;
+    font-weight: 500;
     display: inline; }
   .content_category_content_third {
     font-weight: 500;
@@ -140,6 +140,7 @@ header {
   .content_hashtag {
     margin: 1.5rem 0 1rem 0; }
     .content_hashtag_hashtag {
+      font-weight: 500;
       display: inline;
       margin: 0 0.8rem 0 0;
       padding: 0.15rem 0.35rem;
