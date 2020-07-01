@@ -144,7 +144,8 @@ $.ajax({
       $('#single').css({height:max+80})
       var dot_html=``
       for(i=0; i<data.single.length; i++){
-        dot_html+=`<img class="dot" src="./res/img/circle.png" style="position:absolute; top:${data.single[i].position.coordinates[1]}px; left:${data.single[i].position.coordinates[0]}px">`
+        dot_html+=`<img class="dot" src="./res/img/circle.png" style="position:absolute; top:${data.single[i].position.coordinates[1]}px; left:${data.single[i].position.coordinates[0]}px">
+                  <div class="bubble_s bubble-bottom-left_s">${data.single[i].name}</div>`
       }
       for(i=0; i<data.requests.length; i++){
         var scale=data.requests[i].Push*0.02+1
