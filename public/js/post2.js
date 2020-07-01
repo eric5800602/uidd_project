@@ -61,6 +61,25 @@ function cameraStart__(m) {
 	} // end of else
 };
 // Take a picture when cameraTrigger is tapped
+if(localStorage.getItem("post2_url")){
+  cameraOutput.src = localStorage.getItem("post2_url");
+  cameraOutput.classList.add("taken");
+  setTimeout(function () {
+      $("#div1").css('display','none');
+  }, 1000);
+  setTimeout(function () {
+  $("#posting").css('opacity','1');
+  }, 1000);
+  setTimeout(function () {
+  $("#tag").css('opacity','1');
+  }, 1000);
+setTimeout(function () {
+  $("#Submit_button").css('opacity','1');
+  }, 100);		
+  cameraView.srcObject.getTracks().forEach(function(track) {
+      track.stop();
+    });
+}
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
@@ -76,6 +95,7 @@ cameraTrigger.onclick = function() {
         data: formData,
         success: function(msg){
             cameraOutput.src = msg.url;
+            localStorage.setItem("post2_url",msg.url);
             cameraOutput.classList.add("taken");
             setTimeout(function () {
                 $("#div1").css('display','none');
@@ -132,6 +152,7 @@ $('#file').change(function() {
         success: function(msg){
             cameraOutput.classList.add("taken");
             cameraOutput.src = msg.url;
+            localStorage.setItem("post2_url",msg.url);
             setTimeout(function () {
                 $("#div1").css('display','none');
             }, 1000);
@@ -196,7 +217,7 @@ file.onclick = function() {
         withCredentials: true
       },
 		data: JSON.stringify({
-post_icon:$("#camera--output").attr("src"),
+    post_icon:$("#camera--output").attr("src"),
 		space: $("#sel1").val(),
 		room:$("#sel2").val(),
 		pings: $('#ajax-form4 input[name=pings]').val(),
