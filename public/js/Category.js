@@ -3,7 +3,7 @@ var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty23
 
 $(document).ready(function() {
   var c = localStorage.getItem("c");
-  console.log(category)
+  console.log(c)
   if(c=="空間"){
     console.log("!")
     $('#cube').click()
