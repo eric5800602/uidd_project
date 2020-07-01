@@ -174,16 +174,17 @@ $.ajax({
         var border_c = img_height-x-box_width/2-5
         var border_d = y-box_width/2+5
         var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
-        var op=85/data.single.length
-        console.log("opa"+op)
-        var opa="#000000"+Math.floor(op)
-        console.log("opa"+opa)
-        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp}; border: solid ${opa}">
+        shadow_html+=`<div class="shadow" id="shadow_${i}" style="border-width: ${temp};">
                       </div>
                       `
       }
       $('#shadow').html(shadow_html)
-      $('.shadow').css({"border": "solid "+opa})
+      if(data.single.length==1){
+        $('.shadow').addClass('s_1')
+      }
+      if(data.single.length==2){
+        $('.shadow').addClass('s_2')
+      }
     }
 
 });

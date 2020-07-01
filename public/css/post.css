@@ -303,6 +303,21 @@ body {
   width: 100vw;
   height: 23.5rem;
   position: absolute;
-  border: solid #00000085;
+  /* border: solid #00000085; */
   background-clip: padding-box;
+}
+.s_1{
+  border: solid #00000085
+}
+.s_2{
+  border: solid #00000042
+}
+.s_3{
+  border: solid #00000028
+}
+.s_4{
+  border: solid #00000021
+}
+.s_5{
+  border: solid #00000017
 }
