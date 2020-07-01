@@ -85,11 +85,11 @@ $.ajax({
 
       var category_html=`<p class="content_category_title">Category</p>\
                         <div class="content_category_content">\
-                        <p class="content_category_content_first content_category_content_content"  id="category_1" click="category(this.id)"> ${data.post.space} </p>\
+                        <p class="content_category_content_first content_category_content_content"  id="category_1" onclick="category(this.id)"> ${data.post.space} </p>\
                         <p class="content_category_content_big">> </p>\
-                        <p class="content_category_content_second content_category_content_content" id="category_2" click="category(this.id)"> ${data.post.room}</p>\
+                        <p class="content_category_content_second content_category_content_content" id="category_2" onclick="category(this.id)"> ${data.post.room}</p>\
                         <p class="content_category_content_big">></p>\
-                        <p class="content_category_content_third content_category_content_content" id="category_3" click="category(this.id)"> ${data.post.pings}</p>\
+                        <p class="content_category_content_third content_category_content_content" id="category_3" onclick="category(this.id)"> ${data.post.pings}</p>\
                         `;
       $('#category').html(category_html)
       //console.log(category_html)
@@ -176,8 +176,9 @@ function mask(){
 }
 
 function category(thisid){
-  console.log("loadcat");
+  console.log("?????");
 }
+
 $('#category_1').click(function(){
   console.log("Ahhh");
 })
