@@ -175,7 +175,7 @@ function slide(thisid){
     console.log("yeah!"+imgsrc)
     $('#modal_google').attr("src",src);
 
-    $('#exampleModalCenter-4').modal('toggle');
+    $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
     // $('#content_img_'+num).
