@@ -154,7 +154,7 @@ $.ajax({
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
-      console.log(document.getElementById('ah').clientHeight)
+      console.log(document.getElementById('content_img_1').clientHeight)
 
     }
 
