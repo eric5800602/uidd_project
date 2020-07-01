@@ -85,11 +85,11 @@ $.ajax({
 
       var category_html=`<p class="content_category_title">Category</p>\
                         <div class="content_category_content">\
-                        <p class="content_category_content_first content_category_content_content"  id="category_1"> ${data.post.space} </p>\
+                        <p class="content_category_content_first content_category_content_content"  id="category_1" click="loadcat"> ${data.post.space} </p>\
                         <p class="content_category_content_big">> </p>\
-                        <p class="content_category_content_second content_category_content_content" id="category_2"> ${data.post.room}</p>\
+                        <p class="content_category_content_second content_category_content_content" id="category_2" click="loadcat"> ${data.post.room}</p>\
                         <p class="content_category_content_big">></p>\
-                        <p class="content_category_content_third content_category_content_content" id="category_3"> ${data.post.pings}</p>\
+                        <p class="content_category_content_third content_category_content_content" id="category_3" click="loadcat"> ${data.post.pings}</p>\
                         `;
       $('#category').html(category_html)
       //console.log(category_html)
@@ -134,17 +134,17 @@ $.ajax({
           max=document.getElementById('content_'+i).clientHeight
         }
         if(i!=0){
-          console.log("#content_title_"+i)
+          // console.log("#content_title_"+i)
 
           $("#content_"+i).hide()
           $("#content_"+i).hide()
           $("#content_img_"+i).css({"opacity":"0.5"})
         }
       }
-      console.log("max="+max)
-      console.log(document.getElementById('ah').offsetHeight)
+      // console.log("max="+max)
+      // console.log(document.getElementById('ah').offsetHeight)
       // max+=document.getElementById('content_modal_0').clientHeight
-      console.log("max="+max)
+      // console.log("max="+max)
       $('#single').css({height:max+80})
       var dot_html=``
       for(i=0; i<data.single.length; i++){
@@ -175,18 +175,13 @@ function mask(){
   }
 }
 
-$('#category_1').click(function(){
-  console.log("#category_1");
-});
+function loadcat(){
+  console.log("loadcat");
 
+
+}
 $('#category_1').click(function(){
-  console.log("category_1");
-})
-$('#category_2').click(function(){
-  console.log("category_2");
-})
-$('#category_3').click(function(){
-  console.log("category_3");
+  console.log("Ahhh");
 })
 
 function slide(thisid){
