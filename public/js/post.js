@@ -143,14 +143,14 @@ $.ajax({
 });
 
 // 點擊貼文照片出現東西
-function shadow(thisid){
-  console.log(thisid)
-  var em = document.getElementById(thisid);
+function mask(){
+  console.log("mask")
+  var em = document.getElementById(shadow);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
-    $('#'+thisid).animate({"opacity": '0'})
+    $('#shadow').animate({"opacity": '0'})
     $('.dot').animate({"opacity": '0.5'})
   }else{
-    $('#'+thisid).animate({"opacity": '1'})
+    $('#shadow').animate({"opacity": '1'})
     $('.dot').animate({"opacity": '1'})
   }
 }
