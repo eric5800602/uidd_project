@@ -173,7 +173,8 @@ $.ajax({
       var border_b = img_width-x-box_width/2
       var border_c = img_height-y-box_width/2
       var border_d = x-box_width/2
-      $('#shadow').css({"border-width": border_a+" "+border_b+" "+border_c+" "+border_d})
+      var temp = border_a+" "+border_b+" "+border_c+" "+border_d
+      $('#shadow').css({"border-width": temp})
       console.log("1: "+document.getElementById('shadow').offsetWidth)
     }
 
