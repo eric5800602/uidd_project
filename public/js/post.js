@@ -164,8 +164,10 @@ $.ajax({
       localStorage.setItem("first", data.post.space)
       localStorage.setItem("second", data.post.room)
 
-      console.log("1: "+document.getElementById('post_icon').offsetWidth)
-      console.log("2: "+document.getElementById('post_icon').offsetHeight)
+      img_width = document.getElementById('post_icon').offsetWidth
+      img_height = document.getElementById('post_icon').offsetHeight
+
+      console.log("1: "+document.getElementById('shadow').offsetWidth)
     }
 
 });
