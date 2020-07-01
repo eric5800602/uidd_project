@@ -144,7 +144,7 @@ $.ajax({
       console.log("max="+max)
 
 
-      console.log(document.getElementById('ah'))
+      console.log(document.getElementById('ah').clientHeight)
       // $('#single').css({height: })
       var dot_html=``
       for(i=0; i<data.single.length; i++){
