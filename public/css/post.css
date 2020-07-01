@@ -254,13 +254,13 @@ body {
   display: flex;
   background-color: #E9E9E9;
 }
-#shadow{
+/* #shadow{
   opacity: 0;
   width: 100vw;
   height: 23.5rem;
   background-color: #00000085;
   position: absolute;
-}
+} */
 #mask{
   width: 100vw;
   height: 23.5rem;
@@ -275,4 +275,14 @@ body {
   width: 1.1rem;
   height: 1.1rem;
   opacity: 0;
+}
+
+#shadow{
+  position:absolute;
+  top: 0;right: 0;left: 0;bottom: 0;
+  margin:auto;
+  z-index:1;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 0 50vmax rgba(0,0,0,0.8);
 }

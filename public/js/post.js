@@ -173,6 +173,8 @@ $.ajax({
 // 點擊貼文照片出現東西
 function mask(){
   console.log("mask")
+
+
   // var em = document.getElementById("shadow");
   // if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
   //   $('#shadow').animate({"opacity": '0'})
