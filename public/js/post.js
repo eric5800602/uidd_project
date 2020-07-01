@@ -142,10 +142,10 @@ $.ajax({
         }
       }
       console.log("max="+max)
-
-
-
-      // $('#single').css({height: })
+      console.log(document.getElementById('ah').offsetHeight)
+      max+=document.getElementById('content_modal_0').clientHeight
+      console.log("max="+max)
+      $('#single').css({height:max})
       var dot_html=``
       for(i=0; i<data.single.length; i++){
         dot_html+=`<img class="dot" src="./res/img/circle.png">`
@@ -154,7 +154,7 @@ $.ajax({
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png">`
       }
       $('#mask').html(dot_html)
-      console.log(document.getElementById('content_img_1').clientHeight)
+
 
     }
 
