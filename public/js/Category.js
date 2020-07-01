@@ -103,6 +103,18 @@ $(document).ready(function() {
       <li id='magic-line'></li>`
     $('#Menu').html(html)
     $('#All').click();
+    if(change==2){
+      localStorage.setItem("change", 0)
+      $('#'+cat_second).click()
+      // if(cat_second=="臥室"||cat_second=="廚房"||cat_second=="客廳"||cat_second=="書房"||cat_second=="浴室"||cat_second=="套房"||cat_second=="雅房"||cat_second=="餐廚"||cat_second=="玄關"||cat_second=="戶外空間"){
+      //   console.log("空間second"+cat_second)
+      //   $('#浴室').click()
+      //   $('#'+cat_second).click()
+      // }else if(cat_second=="桌子"||cat_second=="椅子"||cat_second=="沙發"||cat_second=="燈具"||cat_second=="收納櫃"||cat_second=="寢具"||cat_second=="衛浴用品"||cat_second=="窗簾"){
+      //   console.log("單品second"+cat_second)
+
+      // }
+    }
   });
   $(document).on("click",".square_two", function(){
     $('.page_title').toggleClass('clicked');
@@ -135,14 +147,16 @@ $(document).ready(function() {
     var cat_second = localStorage.getItem("second");
     var change = localStorage.getItem("change");
     if(change==2){
-      if(cat_second=="臥室"||cat_second=="廚房"||cat_second=="客廳"||cat_second=="書房"||cat_second=="浴室"||cat_second=="套房"||cat_second=="雅房"||cat_second=="餐廚"||cat_second=="玄關"||cat_second=="戶外空間"){
-        console.log("空間second"+cat_second)
-        $('#浴室').click()
-        $('#'+cat_second).click()
-      }else if(cat_second=="桌子"||cat_second=="椅子"||cat_second=="沙發"||cat_second=="燈具"||cat_second=="收納櫃"||cat_second=="寢具"||cat_second=="衛浴用品"||cat_second=="窗簾"){
-        console.log("單品second"+cat_second)
-        $('#'+cat_second).click()
-      }
+      localStorage.setItem("change", 0)
+      $('#'+cat_second).click()
+      // if(cat_second=="臥室"||cat_second=="廚房"||cat_second=="客廳"||cat_second=="書房"||cat_second=="浴室"||cat_second=="套房"||cat_second=="雅房"||cat_second=="餐廚"||cat_second=="玄關"||cat_second=="戶外空間"){
+      //   console.log("空間second"+cat_second)
+      //   $('#浴室').click()
+      //   $('#'+cat_second).click()
+      // }else if(cat_second=="桌子"||cat_second=="椅子"||cat_second=="沙發"||cat_second=="燈具"||cat_second=="收納櫃"||cat_second=="寢具"||cat_second=="衛浴用品"||cat_second=="窗簾"){
+      //   console.log("單品second"+cat_second)
+
+      // }
     }
   });
 
