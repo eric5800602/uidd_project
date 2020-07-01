@@ -8,7 +8,6 @@ const cameraView = document.querySelector("#camera--view"),
       cameraturn = document.querySelector("#cameraturn"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
-
 function cameraStart(m){ //alert(m+ '    '+window.mode);
     m = m||'user';
     if(m=='env'){m='environment';}
@@ -290,5 +289,5 @@ $( "#sel1" ).change(function() {
 	}
 });
 $('#back').click(function(){
-    window.location= "./home.html"
+    window.location= "./post2.html"
   })
