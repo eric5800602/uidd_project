@@ -175,18 +175,18 @@ function mask(){
   console.log("mask")
 
 
-  var em = document.getElementById("shadow");
-  if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
-    $('#shadow').animate({"opacity": '0'})
-    $('.dot').animate({"opacity": '0.5'})
-    $('.dot_color').animate({"opacity": '0'})
-    $('.dot_number').animate({"opacity": '0'})
-  }else{
-    $('#shadow').animate({"opacity": '1'})
-    $('.dot').animate({"opacity": '1'})
-    $('.dot_color').animate({"opacity": '0.5'})
-    $('.dot_number').animate({"opacity": '1'})
-  }
+  // var em = document.getElementById("shadow");
+  // if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
+  //   $('#shadow').animate({"opacity": '0'})
+  //   $('.dot').animate({"opacity": '0.5'})
+  //   $('.dot_color').animate({"opacity": '0'})
+  //   $('.dot_number').animate({"opacity": '0'})
+  // }else{
+  //   $('#shadow').animate({"opacity": '1'})
+  //   $('.dot').animate({"opacity": '1'})
+  //   $('.dot_color').animate({"opacity": '0.5'})
+  //   $('.dot_number').animate({"opacity": '1'})
+  // }
 }
 
 function category(thisid){
