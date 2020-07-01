@@ -87,6 +87,7 @@ header {
     margin: 0.7rem 0 0.4rem 0; }
     .content_image_1 {
       width: 5.1rem;
+      border-radius: 0.5rem;
       margin: 0 0.42rem 0 0; }
     .content_image_2 {
       width: 5.1rem;

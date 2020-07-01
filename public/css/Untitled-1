@@ -2,13 +2,6 @@ http://images.google.com/searchbyimage?image_url=https://luffy.ee.ncku.edu.tw:75
 http://images.google.com/searchbyimage?image_url=https://luffy.ee.ncku.edu.tw:7575/image/post/page_im_156291941711@3x.png
 http://images.google.com/searchbyimage?image_url=https://luffy.ee.ncku.edu.tw:7575/
 
-      <div class="modal fade" id="exampleModalCenter-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-body"><img class="modal_photo_main" id="full" src="./res/img/main.png"></div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary btn_next" type="button">Next</button>
-            </div>
-          </div>
-        </div>
-      </div>
+data.requests[0].position.coordinates[0] x
+data.requests[0].position.coordinates[0] y
+data.requests[0].push
