@@ -12,7 +12,7 @@ $(document).ready(function() {
     console.log("?")
     $('#cube').click()
     $('#two').click()
-  }else if(category=="臥室"||category=="廚房"||category=="客廳"||category=="書房"||category=="浴室"||category=="套房"||category=="雅房"||category=="餐廚"||category=="玄關"||category=="戶外空間"||){
+  }else if(category=="臥室"||category=="廚房"||category=="客廳"||category=="書房"||category=="浴室"||category=="套房"||category=="雅房"||category=="餐廚"||category=="玄關"||category=="戶外空間"){
     console.log("> <")
     $('#one').click()
     $(category).click()
