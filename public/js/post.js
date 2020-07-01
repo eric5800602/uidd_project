@@ -169,10 +169,10 @@ $.ajax({
       var img_width = document.getElementById('post_icon').offsetWidth
       var img_height = document.getElementById('post_icon').offsetHeight
       var box_width = 80;
-      var border_a = y-box_width/2+2
-      var border_b = img_width-x-box_width/2-2
-      var border_c = img_height-y-box_width/2-2
-      var border_d = x-box_width/2+2
+      var border_a = y-box_width/2+5
+      var border_b = img_width-x-box_width/2-5
+      var border_c = img_height-y-box_width/2-5
+      var border_d = x-box_width/2+5
       var temp = border_a+"px "+border_b+"px "+border_c+"px "+border_d+"px"
       $('#shadow').css({"border-width": temp})
       console.log(temp)
