@@ -164,8 +164,8 @@ $.ajax({
       localStorage.setItem("first", data.post.space)
       localStorage.setItem("second", data.post.room)
 
-      var x=data.requests[i].position.coordinates[1]+1
-      var y=data.requests[i].position.coordinates[0]+1
+      var x=data.single[i].position.coordinates[1]+1
+      var y=data.single[i].position.coordinates[0]+1
       var img_width = document.getElementById('post_icon').offsetWidth
       var img_height = document.getElementById('post_icon').offsetHeight
       var box_width = 20;
