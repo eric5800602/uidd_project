@@ -9,33 +9,31 @@ body, html{
 	position:relative;
 }
 #id_header {
-    position: fixed;
-  height: 10vh;
+   width: 100%;
+  position: fixed;
+  height: 5.2rem;
   top: 0;
-  background-color: #ececec;
-  overflow: hidden;
+  background-color: #ECECEC;
+  overflow:hidden;
   z-index: 199;
-  width: 100%;
 }
-
-.tetto{
-padding-top: 6.4vh;
+.tetto {
+  padding-top:3rem ;
   text-align: center;
   font-family: Roboto_Bold, sans-serif !important;
-  padding-left: 10vw;
+  padding-left: 1rem;
   font-weight: 700;
-  font-size: 5.5vw;
-  letter-spacing: 3.1vw;
+  font-size: 1.5rem;
+  letter-spacing: 0.84rem;
   color: #000000;
   opacity: 1;
-	
 }
-.back{
-	position: absolute;
-  top: 7vh;
-  left: 3.58vw;
-  width: 5.01vw;
-  height: 2.35vh;
+.back {
+  position: absolute;
+  top: 3.5rem;
+  left: 1.4rem;
+  width: 1rem;
+  height: 2.05rem;
   opacity: 1;
 }
 #Submit_button{
