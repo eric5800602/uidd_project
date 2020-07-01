@@ -216,7 +216,23 @@ $(document).ready(function() {
   })
 
   $('.addpost').click(function(){
-    window.location= "./post2.html" 
+    $.ajax({
+      url:"https://luffy.ee.ncku.edu.tw:7575/check_login",
+      type:'get',
+      dataType: "json",
+      contentType: "application/json",
+      success: function(data){
+        console.log(data);
+        if(data.success){
+          window.location= "./post2.html"
+        }else{
+          window.location= "./login.html"
+        }
+      },
+      error:function(data){
+        console.log(data)
+      }
+    });
   });
   
   document.getElementById("cube").click();
