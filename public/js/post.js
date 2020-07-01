@@ -185,6 +185,18 @@ $.ajax({
       if(data.single.length==2){
         $('.shadow').addClass('s_2')
       }
+      if(data.single.length==3){
+        $('.shadow').addClass('s_3')
+      }
+      if(data.single.length==4){
+        $('.shadow').addClass('s_4')
+      }
+      if(data.single.length==5){
+        $('.shadow').addClass('s_5')
+      }
+      if(data.single.length==6){
+        $('.shadow').addClass('s_6')
+      }
     }
 
 });
