@@ -93,8 +93,6 @@ $.ajax({
                         `;
       $('#category').html(category_html)
       //console.log(category_html)
-
-
       var single_html=`<div class="content_image" id="ah">`
       for(i=0; i<data.single.length; i++){
         id="content_img_"+i
@@ -166,6 +164,8 @@ $.ajax({
       localStorage.setItem("first", data.post.space)
       localStorage.setItem("second", data.post.room)
 
+      console.log("1: "+document.getElementById('post_icon').offsetWidth)
+      console.log("2: "+document.getElementById('post_icon').offsetHeight)
     }
 
 });
