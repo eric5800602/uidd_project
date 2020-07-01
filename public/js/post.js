@@ -149,7 +149,7 @@ $.ajax({
         dot_html+=`<img class="dot" src="./res/img/circle.png" style="position:absolute; top:${data.single[i].position.coordinates[1]}px; left:${data.single[i].position.coordinates[0]}px">`
       }
       for(i=0; i<data.requests.length; i++){
-        var width=data.requests[i].Push*0.1+18
+        var width=data.requests[i].Push*5+18
         dot_html+=`<img class="dot_color" src="./res/img/circle_color.png" style="position:absolute; top:${data.requests[i].position.coordinates[1]}px; left:${data.requests[i].position.coordinates[0]}px; width: ${width}; height: ${width}">`
       }
       $('#mask').html(dot_html)
