@@ -636,16 +636,16 @@ var timeout ;
 
 $('#content_img_0').mousedown(function() {
     timeout = setTimeout(function() {
-
+      $('#exampleModalCenter-4').modal('show');
     }, 2000);
 });
 
 $('#content_img_0').mouseup(function() {
     clearTimeout(timeout);
-
+    $('#exampleModalCenter-4').modal('show');
 });
 
 $('#content_img_0').mouseout(function() {
     clearTimeout(timeout);
-
+    $('#exampleModalCenter-4').modal('show');
 });
