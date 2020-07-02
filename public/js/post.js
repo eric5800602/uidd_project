@@ -306,8 +306,12 @@ $('#modal_custom_out').click(function(){
 
 function google1 (id){
   console.log("googleeee?");
+  var src=document.getElementById(id).src
+  imgsrc=src
+  console.log("imgsrc"+imgsrc)
+  $('#modal_google').attr("src",src);
+  $('#modal_custom_out').css({"display":"flex"})
   console.log(src)
-  src=document.getElementById(id).src
 }
 
 // 點擊request
