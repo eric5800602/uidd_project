@@ -292,7 +292,7 @@ function slide(thisid){
 
 function google(){
   console.log("google")
-  $('#google').css({"display":"none"})
+  $('#modal_custom_out').css({"display":"none"})
   var link="http://images.google.com/searchbyimage?image_url="+imgsrc
   window.open(link);
   console.log("!!!")
