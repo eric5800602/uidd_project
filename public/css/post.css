@@ -331,6 +331,11 @@ body {
   border-radius: 0.5rem;
   border: solid 0.5px #707070;
   box-shadow: 3px 3px 1rem #00000029;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
 }
 .modal_google{
   margin: auto;
