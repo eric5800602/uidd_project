@@ -631,3 +631,9 @@ box1.addEventListener('touchstart', function(e){
   starty = parseInt(touchobj.clientY);
   // console.log("event start done", startx,starty)
 }, false);
+
+$('#content_img_0').mousedown(function() {
+  timeout = setTimeout(function() {
+      console.log("hi")
+  }, 2000);
+});
