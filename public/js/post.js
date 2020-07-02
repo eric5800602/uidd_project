@@ -567,17 +567,17 @@ function handleStart(evt) {
     evt.preventDefault();
     x = evt.pageX - $('#full').offset().left-40;
     y = evt.pageY - $('#full').offset().top-40;
-    console.log("x= " + x + "y= "+y)
+
     //document.getElementById("x").innerHTML = x;
     //document.getElementById("y").innerHTML = y;
     xpx = -x +'px'
     ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
     document.getElementById('image').style.top = ypx;
+    console.log("x= " + x + "y= "+y)
 }
 
 function handleMove(evt) {
-    console.log("x="+x+", y="+y)
     evt.preventDefault();
     x = evt.pageX - $('#full').offset().left-40;
     y = evt.pageY - $('#full').offset().top-40;
@@ -587,15 +587,41 @@ function handleMove(evt) {
     ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
     document.getElementById('image').style.top = ypx;
+    console.log("x="+x+", y="+y)
 }
 
 
 function handleEnd(evt) {
   evt.preventDefault();
-  console.log("touchend");
+  x = evt.pageX - $('#full').offset().left-40;
+  y = evt.pageY - $('#full').offset().top-40;
+  xx = x+40
+  yy = y+40
+  xpx = -x +'px'
+  ypx = -y +'px'
+  document.getElementById('image').style.left = xpx;
+  document.getElementById('image').style.top = ypx;
+  console.log("x="+x+", y="+y)
 }
 
 function handleCancel(evt) {
   evt.preventDefault();
-  console.log("touchcancel.");
+  x = evt.pageX - $('#full').offset().left-40;
+  y = evt.pageY - $('#full').offset().top-40;
+  xx = x+40
+  yy = y+40
+  xpx = -x +'px'
+  ypx = -y +'px'
+  document.getElementById('image').style.left = xpx;
+  document.getElementById('image').style.top = ypx;
+  console.log("x="+x+", y="+y)
 }
+
+var box1 = document.querySelector('.nav');
+box1.addEventListener('touchstart', function(e){
+  console.log("event start")
+  var touchobj = e.changedTouches[0];
+  startx = parseInt(touchobj.clientX);
+  starty = parseInt(touchobj.clientY);
+  console.log("event start done", startx,starty)
+}, false);
