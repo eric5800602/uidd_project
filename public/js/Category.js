@@ -283,7 +283,7 @@ $(document).ready(function() {
   });
 
   $('#back').click(function(){
-    window.history.back();
+    window.history.go(-1);
   })
 
   $('.addpost').click(function(){
