@@ -300,6 +300,7 @@ function google(){
 
 $('#modal_custom_out').click(function(){
   console.log("bye");
+  $('#modal_custom_out').css({"display":"none"})
 });
 
 // 點擊request
