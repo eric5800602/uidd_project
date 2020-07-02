@@ -189,7 +189,7 @@ $(document).ready(function() {
     $('#myposts').html("");
   });
 
-  $(document).on("click","#Activity", function(){
+  $(document).on("click","#four", function(){
     $.ajax({
       url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
       type:'post',
