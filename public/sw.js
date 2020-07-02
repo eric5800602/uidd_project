@@ -14,7 +14,7 @@ const cachedFiles = [
   ]
   
   // edit this to force re-cache
-  const cacheKey = 'tetto-sw-v2'
+  const cacheKey = 'tetto-sw-v3'
   
   // install, a good time to preload cache
   self.addEventListener('install', event => {

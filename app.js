@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const config = require('./config')
 const path = require('path')
 const crypto = require('crypto')
-const cmd=require('node-cmd');
+const cmd = require('node-cmd');
 var Jimp = require('jimp');
-var webp=require('webp-converter');
+var webp = require('webp-converter');
 const url = `mongodb://${config.mongodb.user}:${config.mongodb.password}@${config.mongodb.host}/${config.mongodb.database}`
 const conn = mongoose.createConnection(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     if (err) console.log('fail to connect:', err)
@@ -35,7 +35,7 @@ var storage = multer.diskStorage({
         })
     }
 });
-var upload = multer({ storage: storage, limits: { fileSize: 25*1024*1024*1024,fieldSize: 25 * 1024 * 1024 } });
+var upload = multer({ storage: storage, limits: { fileSize: 25 * 1024 * 1024 * 1024, fieldSize: 25 * 1024 * 1024 } });
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }))
 app.use(bodyParser.json({ limit: '100mb' }))
 app.use(session({
@@ -88,40 +88,40 @@ const postSchema = new mongoose.Schema({
     user_icon: String,
     post_icon: String,
     title: String,
-    explanation:String,
-    space:String,
-    room:String,
-    pings:String,
-    tags:[{
+    explanation: String,
+    space: String,
+    room: String,
+    pings: String,
+    tags: [{
         type: String
-    }], 
-    like:Number,
-    pen:Number,
-    object:[mongoose.SchemaTypes.ObjectId],
+    }],
+    like: Number,
+    pen: Number,
+    object: [mongoose.SchemaTypes.ObjectId],
     published: Boolean
 }, { collection: postCollectionName });
 const postModel = conn.model(postCollectionName, postSchema);
 
 const pointSchema = new mongoose.Schema({
     type: {
-      type: String,
-      enum: ['Point']
+        type: String,
+        enum: ['Point']
     },
     coordinates: {
-      type: [Number]
+        type: [Number]
     }
-  });
+});
 
 const singleCollectionName = 'single'
 const singleSchema = new mongoose.Schema({
-    postid:mongoose.SchemaTypes.ObjectId,
+    postid: mongoose.SchemaTypes.ObjectId,
     name: String,
     evaluation: Number,
     description: String,
-    img:String,
-    position:{
+    img: String,
+    position: {
         type: pointSchema
-      }
+    }
 }, { collection: singleCollectionName });
 const singleModel = conn.model(singleCollectionName, singleSchema);
 
@@ -134,15 +134,15 @@ const tagsModel = conn.model(tagsCollectionName, tagsSchema);
 
 const requestsCollectionName = 'requests'
 const requestsSchema = new mongoose.Schema({
-    position:{
+    position: {
         type: pointSchema
-      },
-    img:String,
-    Source:Number,
-    Price:Number,
-    Texture:Number,
-    Push:Number,
-    postid:mongoose.SchemaTypes.ObjectId
+    },
+    img: String,
+    Source: Number,
+    Price: Number,
+    Texture: Number,
+    Push: Number,
+    postid: mongoose.SchemaTypes.ObjectId
 }, { collection: requestsCollectionName });
 const requestsModel = conn.model(requestsCollectionName, requestsSchema);
 
@@ -179,18 +179,18 @@ app.get('/step1', (req, res) => {
     res.send('hello world')
 })
 
-app.get('/gitpull',(req,res)=>{
+app.get('/gitpull', (req, res) => {
     cmd.get(
         `
             git pull
         `,
-        function(err, data, stderr){
+        function (err, data, stderr) {
             if (!err) {
                 res.send(data);
             } else {
                 res.send(err);
             }
- 
+
         }
     );
 })
@@ -208,7 +208,7 @@ app.post('/login', async (req, res) => {
                         return;
                     }
                     else {
-                        if(!res) {
+                        if (!res) {
                             resolve(false)
                             return;
                         }
@@ -373,6 +373,7 @@ app.post('/add_post', (req, res) => {
             "text": "session username is undefined"
           }`))
     } else {
+        console.log(req.session.username);
         const query = async function () {
             return new Promise(async (resolve, reject) => {
                 try {
@@ -391,22 +392,24 @@ app.post('/add_post', (req, res) => {
                 }
             })
         };
-        query().then(r=>{
+        query().then(r => {
             console.log(req.body.space)
-            data = { 'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': req.body.post_icon,
-            'title': req.body.title ,'explanation':req.body.explanation,'space':req.body.space,'room':req.body.room,
-            'pings':req.body.pings,'tags':req.body.tags,'object':req.body.id,'like':0,'pen':0,
-            'published':req.body.space == "空間" ? false : true}
+            data = {
+                'name': req.session.username, 'user_icon': r.user_icon, 'post_icon': req.body.post_icon,
+                'title': req.body.title, 'explanation': req.body.explanation, 'space': req.body.space, 'room': req.body.room,
+                'pings': req.body.pings, 'tags': req.body.tags, 'object': req.body.id, 'like': 0, 'pen': 0,
+                'published': req.body.space == "空間" ? false : true
+            }
             const m = new postModel(data)
-            m.save((err,result) => {
-                if (err) { 
+            m.save((err, result) => {
+                if (err) {
                     console.log('fail to insert:', err)
                     res.send(
-                    {
-                        'success':false,
-                        "text": err,
-                        "id": undefined
-                    })
+                        {
+                            'success': false,
+                            "text": err,
+                            "id": undefined
+                        })
                 } else {
                     // Response
                     res.send(JSON.parse(`{
@@ -462,7 +465,7 @@ app.get('/recommend', (req, res) => {
         }
         else if (r === false) {
             res.send({
-                'success':false,
+                'success': false,
                 "text": err,
                 "object": undefined
             })
@@ -473,33 +476,33 @@ app.get('/recommend', (req, res) => {
 app.post('/upload', upload.single('file'), function (req, res, next) {
     //拼接檔案上傳後的網路路徑，
     var url = __dirname + '/public/image/post/' + req.file.filename;
-    fs.rename(req.file.path, url, function(err) {
+    fs.rename(req.file.path, url, function (err) {
         if (err) {
-          console.log(err);
-          res.send(500);
+            console.log(err);
+            res.send(500);
         } else {
             res.json({
                 success: true,
-                data: 'image/post/'+req.file.filename
+                data: 'image/post/' + req.file.filename
             });
         }
-      });
+    });
     //將其發回客戶端
 });
 
 app.post('/add_single', (req, res) => {
-    try{
+    try {
         data = {
-            'postid':req.body.postid,
-            'name': req.body.name, 'evaluation': Number(req.body.evaluation), 'description': String(req.body.description),'img':req.body.img,
-            'position':{"type" : "Point","coordinates" : [Number(req.body.x),Number(req.body.y)]}
+            'postid': req.body.postid,
+            'name': req.body.name, 'evaluation': Number(req.body.evaluation), 'description': String(req.body.description), 'img': req.body.img,
+            'position': { "type": "Point", "coordinates": [Number(req.body.x), Number(req.body.y)] }
         }
         const m = new singleModel(data)
-        m.save((err,result) => {
+        m.save((err, result) => {
             if (err) {
                 console.log('fail to insert:', err)
                 res.send({
-                    'success':false,
+                    'success': false,
                     "text": err,
                     "url": undefined
                 })
@@ -521,27 +524,27 @@ app.post('/add_single', (req, res) => {
         }`))
     }
 })
-async function query(r){
+async function query(r) {
     return new Promise(async (resolve, reject) => {
-        await singleModel.findById(mongoose.Types.ObjectId(r)).exec(async(err, res) => {
+        await singleModel.findById(mongoose.Types.ObjectId(r)).exec(async (err, res) => {
             if (err) {
                 console.log('fail to query:', err)
             }
-            else{
+            else {
                 resolve(res);
             }
         })
     })
 }
 app.post('/get_post', (req, res) => {
-    postModel.findOne({ 'published': true , '_id': req.body.id }).exec(async (err, r) => {
+    postModel.findOne({ 'published': true, '_id': req.body.id }).exec(async (err, r) => {
         if (err) {
             console.log('fail to query:', err)
             res.send({
                 "success": false,
                 "text": "Get post fail",
                 "post": undefined,
-                "single":undefined
+                "single": undefined
             })
         }
         else {
@@ -552,7 +555,7 @@ app.post('/get_post', (req, res) => {
                         "success": false,
                         "text": "Get request fail",
                         "post": undefined,
-                        "single":undefined
+                        "single": undefined
                     })
                 }
                 else {
@@ -563,7 +566,7 @@ app.post('/get_post', (req, res) => {
                                 "success": false,
                                 "text": "Get request fail",
                                 "post": undefined,
-                                "single":undefined
+                                "single": undefined
                             })
                         }
                         else {
@@ -572,95 +575,94 @@ app.post('/get_post', (req, res) => {
                                 "text": "Get post success",
                                 "post": r,
                                 'single': singles,
-                                "requests":requests,
+                                "requests": requests,
                             })
                         }
                     });
                 }
             });
-            
+
         }
     });
 
 })
 
-app.post('/cropimage',function(req,res){
+app.post('/cropimage', function (req, res) {
     store = `./public/${req.body.url}`;
-    try{
+    try {
         Jimp.read(`./public/${req.body.url}`)
-        .then(image => {
-            var rx = parseFloat(req.body.width)/image.bitmap.width;
-            var ry = parseFloat(req.body.height)/image.bitmap.height;
-            var target_w = Number(req.body.target_w)/rx;
-            var target_h = Number(req.body.target_h)/ry;
-            target_w = Math.max(target_w,target_h);
-            target_h = Math.max(target_w,target_h);
-            var x = req.body.x/rx-(target_w/2);
-            var y = req.body.y/ry-(target_h/2);
-            if(x < 0) x = 0;
-            if(y < 0) y = 0;
-            if(x + target_w > image.bitmap.width) x = image.bitmap.width-target_w;
-            if(y + target_h > image.bitmap.height) y = image.bitmap.height-target_h;
-            console.log(x,y,target_w,target_h);
-            var store = crypto.randomBytes(16).toString('hex');
-            var extension = image.getExtension();
-            return image
-            .crop(x,y,target_w,target_h)
-            .write(`./public/image/post/${store}.${extension}`,function(){
-                res.send({
-                    'success':true,
-                    "text": "Success to crop image",
-                    "url": `image/post/${store}.${extension}`
-                })
-            });
-        })
-        .catch(err => {
-            console.error(err);
-            webp.dwebp(`./public/${req.body.url}`,"./public/image/post/output.jpg","-o",function(status,error)
-            {
-                console.log(status,error);
-                if(status == 100){
-                    Jimp.read(`./public/image/post/output.jpg`)
-                    .then(image => {
-                        console.log(image.bitmap.width);
-                        var rx = parseFloat(req.body.width)/image.bitmap.width;
-                        var ry = parseFloat(req.body.height)/image.bitmap.height;
-                        var target_w = Number(req.body.target_w)/rx;
-                        var target_h = Number(req.body.target_h)/ry;
-                        target_w = Math.max(target_w,target_h);
-                        target_h = Math.max(target_w,target_h);
-                        var x = req.body.x/rx-(target_w/2);
-                        var y = req.body.y/ry-(target_h/2);
-                        if(x < 0) x = 0;
-                        if(y < 0) y = 0;
-                        if(x + target_w > image.bitmap.width) x = image.bitmap.width-target_w;
-                        if(y + target_h > image.bitmap.height) y = image.bitmap.height-target_h;
-                        console.log(x,y,target_w,target_h);
-                        var store = crypto.randomBytes(16).toString('hex');
-                        var extension = image.getExtension();
-                        return image
-                        .crop(x,y,target_w,target_h)
-                        .write(`./public/image/post/${store}.${extension}`,function(){
-                            res.send({
-                                'success':true,
-                                "text": "Success to crop image",
-                                "url": `image/post/${store}.${extension}`
+            .then(image => {
+                var rx = parseFloat(req.body.width) / image.bitmap.width;
+                var ry = parseFloat(req.body.height) / image.bitmap.height;
+                var target_w = Number(req.body.target_w) / rx;
+                var target_h = Number(req.body.target_h) / ry;
+                target_w = Math.max(target_w, target_h);
+                target_h = Math.max(target_w, target_h);
+                var x = req.body.x / rx - (target_w / 2);
+                var y = req.body.y / ry - (target_h / 2);
+                if (x < 0) x = 0;
+                if (y < 0) y = 0;
+                if (x + target_w > image.bitmap.width) x = image.bitmap.width - target_w;
+                if (y + target_h > image.bitmap.height) y = image.bitmap.height - target_h;
+                console.log(x, y, target_w, target_h);
+                var store = crypto.randomBytes(16).toString('hex');
+                var extension = image.getExtension();
+                return image
+                    .crop(x, y, target_w, target_h)
+                    .write(`./public/image/post/${store}.${extension}`, function () {
+                        res.send({
+                            'success': true,
+                            "text": "Success to crop image",
+                            "url": `image/post/${store}.${extension}`
+                        })
+                    });
+            })
+            .catch(err => {
+                console.error(err);
+                webp.dwebp(`./public/${req.body.url}`, "./public/image/post/output.jpg", "-o", function (status, error) {
+                    console.log(status, error);
+                    if (status == 100) {
+                        Jimp.read(`./public/image/post/output.jpg`)
+                            .then(image => {
+                                console.log(image.bitmap.width);
+                                var rx = parseFloat(req.body.width) / image.bitmap.width;
+                                var ry = parseFloat(req.body.height) / image.bitmap.height;
+                                var target_w = Number(req.body.target_w) / rx;
+                                var target_h = Number(req.body.target_h) / ry;
+                                target_w = Math.max(target_w, target_h);
+                                target_h = Math.max(target_w, target_h);
+                                var x = req.body.x / rx - (target_w / 2);
+                                var y = req.body.y / ry - (target_h / 2);
+                                if (x < 0) x = 0;
+                                if (y < 0) y = 0;
+                                if (x + target_w > image.bitmap.width) x = image.bitmap.width - target_w;
+                                if (y + target_h > image.bitmap.height) y = image.bitmap.height - target_h;
+                                console.log(x, y, target_w, target_h);
+                                var store = crypto.randomBytes(16).toString('hex');
+                                var extension = image.getExtension();
+                                return image
+                                    .crop(x, y, target_w, target_h)
+                                    .write(`./public/image/post/${store}.${extension}`, function () {
+                                        res.send({
+                                            'success': true,
+                                            "text": "Success to crop image",
+                                            "url": `image/post/${store}.${extension}`
+                                        })
+                                    });
                             })
-                        });
-                    })
-                }
-                else{
-                    res.send({
-                        'success':false,
-                        "text": err,
-                        "url": undefined
-                    })
-                }
+                    }
+                    else {
+                        res.send({
+                            'success': false,
+                            "text": err,
+                            "url": undefined
+                        })
+                    }
+                });
             });
-        });
-    }catch{
+    } catch{
         res.send({
-            'success':false,
+            'success': false,
             "text": err,
             "url": undefined
         })
@@ -668,58 +670,58 @@ app.post('/cropimage',function(req,res){
 })
 function decodeBase64Image(dataString) {
     var matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
-      response = {};
-  
+        response = {};
+
     if (matches.length !== 3) {
-      return new Error('Invalid input string');
+        return new Error('Invalid input string');
     }
-  
+
     response.type = matches[1];
     response.data = new Buffer(matches[2], 'base64');
-  
+
     return response;
-  }
-app.post('/upload_image',upload.single(),function(req,res){
-    var image = req.body.picture.replace(/^data:image\/(png|jpg|jepg|webp);base64,/,"");
+}
+app.post('/upload_image', upload.single(), function (req, res) {
+    var image = req.body.picture.replace(/^data:image\/(png|jpg|jepg|webp);base64,/, "");
     var imageBuffer = decodeBase64Image(req.body.picture);
     var type = req.body.picture.match(/\/.*;/)[0];
     var store = crypto.randomBytes(16).toString('hex');
-    if(type == "/jpeg;" ||type == "/jpg;"){
-        fs.writeFile(`./public/image/post/${store}.jpeg`,imageBuffer.data, function (err) {
-            if (err){
+    if (type == "/jpeg;" || type == "/jpg;") {
+        fs.writeFile(`./public/image/post/${store}.jpeg`, imageBuffer.data, function (err) {
+            if (err) {
                 res.send({
-                    'success':false,
+                    'success': false,
                     "text": "Fail to crop image",
                     "url": 'undefined'
                 })
                 return next(err)
-            } 
+            }
             res.send({
-                'success':true,
+                'success': true,
                 "text": "Success to upload image",
                 "url": `image/post/${store}.jpeg`
             })
-          })
-    }else if(type == "/png;" ||type == "/webp;"){
-        fs.writeFile(`./public/image/post/${store}.png`, image,'base64', function (err) {
-            if (err){
+        })
+    } else if (type == "/png;" || type == "/webp;") {
+        fs.writeFile(`./public/image/post/${store}.png`, image, 'base64', function (err) {
+            if (err) {
                 res.send({
-                    'success':false,
+                    'success': false,
                     "text": "Fail to crop image",
                     "url": 'undefined'
                 })
                 return next(err)
-            } 
+            }
             res.send({
-                'success':true,
+                'success': true,
                 "text": "Success to upload image",
                 "url": `image/post/${store}.png`
             })
-          })
+        })
     }
-    else{
+    else {
         res.send({
-            'success':false,
+            'success': false,
             "text": "Unknown type",
             "url": 'undefined'
         })
@@ -733,15 +735,15 @@ app.post('/new_tag', (req, res) => {
             res.send({
                 "success": false,
                 "text": "Fail to create tag",
-                "reference":undefined
+                "reference": undefined
             })
         }
         else {
-            if(!r){
-                data = { 'name': req.body.tag, 'reference':1}
+            if (!r) {
+                data = { 'name': req.body.tag, 'reference': 1 }
                 const m = new tagsModel(data)
-                m.save((err,result) => {
-                    if (err) { 
+                m.save((err, result) => {
+                    if (err) {
                         console.log('fail to insert:', err)
                         res.send({
                             "success": false,
@@ -753,11 +755,11 @@ app.post('/new_tag', (req, res) => {
                         res.send({
                             "success": true,
                             "text": `${req.body.tag} is success to be created`,
-                            "reference":1
+                            "reference": 1
                         })
                     }
                 })
-            }else{
+            } else {
                 r.reference++;
                 r.save(function (err) {
                     if (err) {
@@ -767,7 +769,7 @@ app.post('/new_tag', (req, res) => {
                 res.send({
                     "success": true,
                     "text": `${req.body.tag} had been created`,
-                    "reference":r.reference
+                    "reference": r.reference
                 })
             }
         }
@@ -785,34 +787,34 @@ app.get('/new_tag', (req, res) => {
     res.send("success")
 })
 */
-app.get('/hot_tag',(req,res) => {
-    tagsModel.find({}).sort({reference:-1}).limit(20).exec(async (err, r) => {
-        if (err){
+app.get('/hot_tag', (req, res) => {
+    tagsModel.find({}).sort({ reference: -1 }).limit(20).exec(async (err, r) => {
+        if (err) {
             console.log(err)
             res.send({
-                'success':false,
-                "tags":[]
+                'success': false,
+                "tags": []
             })
             return next(err)
-        } 
+        }
         res.send({
-            'success':true,
-            "tags":r
+            'success': true,
+            "tags": r
         })
     })
 })
 
-app.post('/add',(req,res) => {
+app.post('/add', (req, res) => {
     res.send({
-        "fisrt":Number(req.body.first) + Number(req.body.third),
-        "second":Number(req.body.second) + Number(req.body.third),
+        "fisrt": Number(req.body.first) + Number(req.body.third),
+        "second": Number(req.body.second) + Number(req.body.third),
     })
 })
 
-app.post('/get_post_with_tag',(req,res) => {
+app.post('/get_post_with_tag', (req, res) => {
     data = new Array;
     var recommend;
-    if(req.body.tag == "All"){
+    if (req.body.tag == "All") {
         recommend = async function () {
             return new Promise(async (resolve, reject) => {
                 try {
@@ -842,11 +844,11 @@ app.post('/get_post_with_tag',(req,res) => {
             })
         };
     }
-    else{
+    else {
         recommend = async function () {
             return new Promise(async (resolve, reject) => {
                 try {
-                    await postModel.find({'published': true ,tags:req.body.tag}).limit(10).exec(async (err, r) => {
+                    await postModel.find({ 'published': true, tags: req.body.tag }).limit(10).exec(async (err, r) => {
                         if (err) {
                             console.log('fail to query:', err)
                             resolve(false)
@@ -911,14 +913,14 @@ data:{
 }
 */
 app.post('/add_request', (req, res) => {
-    try{
+    try {
         data = {
-            'postid':req.body.postid,
+            'postid': req.body.postid,
             'Source': Number(req.body.Source), 'Price': Number(req.body.Price), 'Texture': Number(req.body.Texture),
-            'Push':Number(req.body.Push),'img':String(req.body.img),'position':{"type" : "Point","coordinates" : [Number(req.body.x),Number(req.body.y)]}
+            'Push': Number(req.body.Push), 'img': String(req.body.img), 'position': { "type": "Point", "coordinates": [Number(req.body.x), Number(req.body.y)] }
         }
         const m = new requestsModel(data)
-        m.save((err,result) => {
+        m.save((err, result) => {
             if (err) {
                 console.log('fail to insert:', err)
                 res.send(JSON.parse(`{
@@ -935,7 +937,7 @@ app.post('/add_request', (req, res) => {
                 }`))
             }
         })
-    }catch{
+    } catch{
         res.send(JSON.parse(`{
             "success": false,
             "text": "Sorry, post request fail",
@@ -950,18 +952,18 @@ data:{
 }
 */
 app.post('/modify_request', (req, res) => {
-    try{
-        requestsModel.findOne({'_id': req.body.requestid }).exec(async (err, r) => {
+    try {
+        requestsModel.findOne({ '_id': req.body.requestid }).exec(async (err, r) => {
             if (err) {
                 console.log('Fail to find request:', err)
                 res.send({
                     "success": false,
                     "text": "Fail to find request",
-                    "reference":undefined
+                    "reference": undefined
                 })
             }
             else {
-                switch(req.body.type){
+                switch (req.body.type) {
                     case 'Source':
                         req.body.plus == 1 ? r.Source++ : r.Source--;
                         r.save(function (err) {
@@ -972,7 +974,7 @@ app.post('/modify_request', (req, res) => {
                         res.send({
                             "success": true,
                             "text": `${req.body.type} had been increased`,
-                            "count":r.Source
+                            "count": r.Source
                         })
                         break;
                     case 'Price':
@@ -985,7 +987,7 @@ app.post('/modify_request', (req, res) => {
                         res.send({
                             "success": true,
                             "text": `${req.body.type} had been increased`,
-                            "count":r.Price
+                            "count": r.Price
                         })
                         break;
                     case 'Texture':
@@ -998,7 +1000,7 @@ app.post('/modify_request', (req, res) => {
                         res.send({
                             "success": true,
                             "text": `${req.body.type} had been increased`,
-                            "count":r.Texture
+                            "count": r.Texture
                         })
                         break;
                     case 'Push':
@@ -1011,25 +1013,25 @@ app.post('/modify_request', (req, res) => {
                         res.send({
                             "success": true,
                             "text": `${req.body.type} had been increased`,
-                            "count":r.Push
+                            "count": r.Push
                         })
                         break;
                 }
             }
         });
-    }catch{
+    } catch{
         res.send({
             "success": false,
             "text": "Fail to find request",
-            "reference":undefined
+            "reference": undefined
         })
     }
 })
 
-app.post('/get_post_with_space',(req,res) => {
+app.post('/get_post_with_space', (req, res) => {
     var data = new Array;
     var recommend;
-    if(req.body.space == "All"){
+    if (req.body.space == "All") {
         recommend = async function () {
             return new Promise(async (resolve, reject) => {
                 try {
@@ -1059,11 +1061,11 @@ app.post('/get_post_with_space',(req,res) => {
             })
         };
     }
-    else{
+    else {
         recommend = async function () {
             return new Promise(async (resolve, reject) => {
                 try {
-                    await postModel.find({ 'published': true ,room:req.body.space}).limit(10).exec(async (err, r) => {
+                    await postModel.find({ 'published': true, room: req.body.space }).limit(10).exec(async (err, r) => {
                         if (err) {
                             console.log('fail to query:', err)
                             resolve(false)
@@ -1111,23 +1113,64 @@ app.post('/get_post_with_space',(req,res) => {
 
 app.post('/get_post_image', (req, res) => {
     console.log(req.body.id);
-    postModel.findOne({ 'published': true , '_id': req.body.id }).exec(async (err, r) => {
-        if (err) {
-            console.log('fail to query:', err)
-            res.send({
-                "success": false,
-                "text": "Get post fail",
-                "post": undefined,
-                "single":undefined
-            })
-        }
-        else {
-            res.send({
-                "success": true,
-                "text": "Get post success",
-                "url": r.post_icon,
-            })
-        }
-    });
-
+    try {
+        postModel.findOne({'_id': req.body.id }).exec(async (err, r) => {
+            if (err) {
+                console.log('fail to query:', err)
+                res.send({
+                    "success": false,
+                    "text": "Get post fail",
+                    "url": undefined,
+                })
+            }
+            else {
+                res.send({
+                    "success": true,
+                    "text": "Get post success",
+                    "url": r.post_icon,
+                })
+            }
+        });
+    } catch{
+        res.send({
+            "success": false,
+            "text": "Get post fail",
+            "url": undefined,
+        })
+    }
+})
+app.post('/deploy_post', (req, res) => {
+    console.log(req.body.id);
+    try {
+        postModel.findOne({'_id': req.body.id }).exec(async (err, r) => {
+            if (err) {
+                console.log('fail to query:', err)
+                res.send({
+                    "success": false,
+                    "text": "Send post fail"
+                })
+            }
+            else {
+                r.published = true;
+                r.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                        res.send({
+                            "success": false,
+                            "text": "Send post fail"
+                        })
+                    }
+                });
+                res.send({
+                    "success": true,
+                    "text": "Send post success"
+                })
+            }
+        });
+    } catch{
+        res.send({
+            "success": false,
+            "text": "Send post fail"
+        })
+    }
 })
