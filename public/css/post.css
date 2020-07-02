@@ -345,7 +345,7 @@ body {
   margin: 1rem auto;
 }
 #modal_custom_out{
-  display: flex;
+  display: none;
   position: fixed;
   width: 100vw;
   height: 100vh;
