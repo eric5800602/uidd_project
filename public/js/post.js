@@ -254,7 +254,7 @@ function slide(thisid){
     $('#modal_google').attr("src",src);
     // $('#exampleModalCenter-4').addClass('show');
     // $('#exampleModalCenter-4').css({"display": "block"});
-    // $('#exampleModalCenter-4').modal('show');
+    $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
     // $('#content_img_'+num).
@@ -634,18 +634,18 @@ box1.addEventListener('touchstart', function(e){
 
 var timeout ;
 
-$('#content_img_0').mousedown(function() {
-    timeout = setTimeout(function() {
-      $('#exampleModalCenter-4').modal('show');
-    }, 2000);
-});
+// $('#content_img_0').mousedown(function() {
+//     timeout = setTimeout(function() {
+//       $('#exampleModalCenter-4').modal('show');
+//     }, 2000);
+// });
 
-$('#content_img_0').mouseup(function() {
-    clearTimeout(timeout);
-    $('#exampleModalCenter-4').modal('show');
-});
+// $('#content_img_0').mouseup(function() {
+//     clearTimeout(timeout);
+//     $('#exampleModalCenter-4').modal('show');
+// });
 
-$('#content_img_0').mouseout(function() {
-    clearTimeout(timeout);
-    $('#exampleModalCenter-4').modal('show');
-});
+// $('#content_img_0').mouseout(function() {
+//     clearTimeout(timeout);
+//     $('#exampleModalCenter-4').modal('show');
+// });
