@@ -328,9 +328,13 @@ body {
   flex-direction: column;
   width: 28.5rem;
   margin: auto;
+  border-radius: 0.5rem;
+  border: solid 0.5px #707070;
+  box-shadow: 3px 3px 1rem #00000029;
 }
 .modal_google{
   margin: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 .modal_btn--google{
   margin: auto;
