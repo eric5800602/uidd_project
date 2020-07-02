@@ -284,6 +284,7 @@ $(document).ready(function() {
 
   $('#back').click(function(){
     window.history.go(-1);
+    return false;
   })
 
   $('.addpost').click(function(){
