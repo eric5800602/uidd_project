@@ -564,6 +564,7 @@ el.addEventListener("mousemove", handleMove, false);
 var ongoingTouches = [];
 
 function handleStart(evt) {
+    console.log("handle start")
     evt.preventDefault();
     x = evt.pageX - $('#full').offset().left-40;
     y = evt.pageY - $('#full').offset().top-40;
@@ -578,20 +579,22 @@ function handleStart(evt) {
 }
 
 function handleMove(evt) {
-    evt.preventDefault();
-    x = evt.pageX - $('#full').offset().left-40;
-    y = evt.pageY - $('#full').offset().top-40;
-    xx = x+40
-    yy = y+40
-    xpx = -x +'px'
-    ypx = -y +'px'
-    document.getElementById('image').style.left = xpx;
-    document.getElementById('image').style.top = ypx;
-    console.log("x="+x+", y="+y)
+  console.log("handle move")
+  evt.preventDefault();
+  x = evt.pageX - $('#full').offset().left-40;
+  y = evt.pageY - $('#full').offset().top-40;
+  xx = x+40
+  yy = y+40
+  xpx = -x +'px'
+  ypx = -y +'px'
+  document.getElementById('image').style.left = xpx;
+  document.getElementById('image').style.top = ypx;
+  console.log("x="+x+", y="+y)
 }
 
 
 function handleEnd(evt) {
+  console.log("handle end")
   evt.preventDefault();
   x = evt.pageX - $('#full').offset().left-40;
   y = evt.pageY - $('#full').offset().top-40;
@@ -605,6 +608,7 @@ function handleEnd(evt) {
 }
 
 function handleCancel(evt) {
+  console.log("handle cancel")
   evt.preventDefault();
   x = evt.pageX - $('#full').offset().left-40;
   y = evt.pageY - $('#full').offset().top-40;
