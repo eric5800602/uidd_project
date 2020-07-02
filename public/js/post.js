@@ -298,13 +298,9 @@ function google(){
   console.log("!!!")
 }
 
-$('#exampleModalCenter-4').on('hidden.bs.modal', function () {
-  var link="http://images.google.com/searchbyimage?image_url="+imgsrc
-  window.open(link);
-  console.log("!!!")
-})
-
-
+$('#modal_custom_out').click(function(){
+  console.log("bye");
+});
 
 // 點擊request
 function like (id_click){
