@@ -344,3 +344,7 @@ body {
 .modal_btn--google{
   margin: 1rem auto;
 }
+#modal_custom_out{
+  width: 100vw;
+  height: 100vh;
+}
