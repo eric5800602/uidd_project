@@ -1,3 +1,4 @@
+$('#modal_custom_out').css({"display":"none"})
 var invocation = new XMLHttpRequest();
 var url = 'https://cors-anywhere.herokuapp.com/?fbclid=IwAR2U6gg_Vp2555f3PM1Ty236RfzOUpAO6UBBE9nFE-3RvMqj4BAIvuKRPPs';
 var source = false;
@@ -20,6 +21,7 @@ $.ajax({
     }),
     contentType: "application/json",
     success: function(data){
+
       console.log(data);
       $('#post_title').text(data.post.title);
       $('#post_id').text(data.post.name);
@@ -204,7 +206,7 @@ $.ajax({
       }
       $('.bubble').css({"opacity":"0"})
       $('.bubble_s').css({"opacity":"0"})
-      $('#modal_custom_out').css({"display":"none"})
+
     }
 
 });
