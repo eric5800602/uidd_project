@@ -564,7 +564,7 @@ el.addEventListener("mousemove", handleMove, false);
 var ongoingTouches = [];
 
 function handleStart(evt) {
-    console.log("handle start")
+    // console.log("handle start")
     evt.preventDefault();
     x = event.changedTouches[0].pageX - $('#full').offset().left-40;
     y = event.changedTouches[0].pageY - $('#full').offset().top-40;
@@ -575,11 +575,11 @@ function handleStart(evt) {
     ypx = -y +'px'
     document.getElementById('image').style.left = xpx;
     document.getElementById('image').style.top = ypx;
-    console.log("x= " + x + "y= "+y)
+    // console.log("x= " + x + "y= "+y)
 }
 
 function handleMove(evt) {
-  console.log("handle move")
+  // console.log("handle move")
   evt.preventDefault();
   x = event.changedTouches[0].pageX - $('#full').offset().left-40;
   y = event.changedTouches[0].pageY - $('#full').offset().top-40;
@@ -589,14 +589,14 @@ function handleMove(evt) {
   ypx = -y +'px'
   document.getElementById('image').style.left = xpx;
   document.getElementById('image').style.top = ypx;
-  console.log("x="+x+", y="+y)
-  console.log("evt.pageX="+evt.pageX+", evt.pageX="+evt.pageX)
-  console.log("$('#full').offset().left="+$('#full').offset().left+", $('#full').offset().left="+$('#full').offset().left)
+  // console.log("x="+x+", y="+y)
+  // console.log("evt.pageX="+evt.pageX+", evt.pageX="+evt.pageX)
+  // console.log("$('#full').offset().left="+$('#full').offset().left+", $('#full').offset().left="+$('#full').offset().left)
 }
 
 
 function handleEnd(evt) {
-  console.log("handle end")
+  // console.log("handle end")
   evt.preventDefault();
   x = event.changedTouches[0].pageX - $('#full').offset().left-40;
   y = event.changedTouches[0].pageY - $('#full').offset().top-40;
@@ -606,11 +606,11 @@ function handleEnd(evt) {
   ypx = -y +'px'
   document.getElementById('image').style.left = xpx;
   document.getElementById('image').style.top = ypx;
-  console.log("x="+x+", y="+y)
+  // console.log("x="+x+", y="+y)
 }
 
 function handleCancel(evt) {
-  console.log("handle cancel")
+  // console.log("handle cancel")
   evt.preventDefault();
   x = evt.pageX - $('#full').offset().left-40;
   y = evt.pageY - $('#full').offset().top-40;
@@ -620,14 +620,14 @@ function handleCancel(evt) {
   ypx = -y +'px'
   document.getElementById('image').style.left = xpx;
   document.getElementById('image').style.top = ypx;
-  console.log("x="+x+", y="+y)
+  // console.log("x="+x+", y="+y)
 }
 
 var box1 = document.querySelector('.nav');
 box1.addEventListener('touchstart', function(e){
-  console.log("event start")
+  // console.log("event start")
   var touchobj = e.changedTouches[0];
   startx = parseInt(touchobj.clientX);
   starty = parseInt(touchobj.clientY);
-  console.log("event start done", startx,starty)
+  // console.log("event start done", startx,starty)
 }, false);
