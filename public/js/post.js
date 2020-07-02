@@ -256,7 +256,7 @@ function slide(thisid){
     $('#modal_google').attr("src",src);
     // $('#google').hide()
     // $('#exampleModalCenter-4').addClass('show');
-    $('#modal_google').css({"display": "block"});
+    $('#modal_google').show();
     // $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
