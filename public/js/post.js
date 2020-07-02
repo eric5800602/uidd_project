@@ -213,7 +213,6 @@ $.ajax({
 
 // 點擊貼文照片出現東西
 function mask(){
-
   console.log("mask")
   var em = document.getElementById("shadow");
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='0'){
@@ -305,6 +304,9 @@ $('#modal_custom_out').click(function(){
   $('#modal_custom_out').css({"display":"none"})
 });
 
+$('.requests_request_image').click(function(){
+  console.log("googleeee");
+});
 // 點擊request
 function like (id_click){
   // console.log(id_click)
