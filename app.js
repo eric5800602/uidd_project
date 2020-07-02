@@ -268,7 +268,8 @@ app.post('/register', (req, res) => {
     console.log("123")
     data = {
         'name': req.body.username, 'password': req.body.password, 'email': req.body.email, 'designer': Boolean(req.body.designer),
-        'room': Number(req.body.room), 'hall': Number(req.body.hall), 'bath': Number(req.body.bath), 'suite': Boolean(req.body.suite)
+        'room': Number(req.body.room), 'hall': Number(req.body.hall), 'bath': Number(req.body.bath), 'suite': Boolean(req.body.suite),
+        'user_icon':'image/user/tetto-144x144.png'
     }
     console.log(`${req.session.username} login`)
     req.session.username = req.body.username;

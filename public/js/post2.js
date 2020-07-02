@@ -73,6 +73,7 @@ $(document).ready(function () {
         tags.push(tmp[i].textContent);
       })(i);
     }
+    tags.push($('#ajax-form3 input[name=tName]').val());
     console.log(tags)
     $(document).ready(function () {
       $.post({
@@ -89,7 +90,6 @@ $(document).ready(function () {
           pings: $('#ajax-form4 input[name=pings]').val(),
           title: $('#ajax-form input[name=fName]').val(),
           explanation: $('#explanation').val(),
-          tags: $('#ajax-form3 input[name=tName]').val(),
           tags: tags,
         }),
 
