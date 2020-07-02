@@ -566,8 +566,8 @@ var ongoingTouches = [];
 function handleStart(evt) {
     console.log("handle start")
     evt.preventDefault();
-    x = evt.pageX - $('#full').offset().left-40;
-    y = evt.pageY - $('#full').offset().top-40;
+    x = event.changedTouches[0].pageX - $('#full').offset().left-40;
+    y = event.changedTouches[0].pageY - $('#full').offset().top-40;
 
     //document.getElementById("x").innerHTML = x;
     //document.getElementById("y").innerHTML = y;
