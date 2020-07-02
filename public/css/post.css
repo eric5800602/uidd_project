@@ -321,3 +321,17 @@ body {
 .s_5{
   border: solid #00000017
 }
+.modal_custom{
+  background-color: #E9E9E9;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30rem;
+  margin: auto;
+}
+.modal_google{
+  margin: auto;
+}
+.modal_btn--google{
+  margin: auto;
+}
