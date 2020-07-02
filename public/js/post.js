@@ -257,7 +257,6 @@ function slide(thisid){
     $('#google').css({"display":"flex"})
     // $('#google').hide()
     // $('#exampleModalCenter-4').addClass('show');
-    $('#modal_google').show();
     // $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
@@ -293,6 +292,7 @@ function slide(thisid){
 
 function google(){
   console.log("google")
+  $('#google').css({"display":"none"})
   var link="http://images.google.com/searchbyimage?image_url="+imgsrc
   window.open(link);
   console.log("!!!")
