@@ -40,7 +40,7 @@ $.ajax({
         //console.log("id= "+id)
         html=html+`
                 <div class="requests_request " id="${data.requests[i]._id}">\
-                  <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0">\
+                  <img class="requests_request_image" src="${data.requests[i].img}" id="want_img_0" onclick="google1(this.id)">\
                   <div class="requests_request_data ">
 
                     <div class="request_data data_source">
@@ -307,6 +307,10 @@ $('#modal_custom_out').click(function(){
 $('.requests_request_image').click(function(){
   console.log("googleeee");
 });
+function google1 (id_click){
+  console.log("googleeee?");
+}
+
 // 點擊request
 function like (id_click){
   // console.log(id_click)
