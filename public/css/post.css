@@ -345,6 +345,12 @@ body {
   margin: 1rem auto;
 }
 #modal_custom_out{
+  display: flex;
+  position: fixed;
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.5);
 }
