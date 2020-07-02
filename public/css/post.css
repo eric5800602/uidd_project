@@ -321,9 +321,3 @@ body {
 .s_5{
   border: solid #00000017
 }
-div.modal div.modal-backdrop {
-  z-index: 0;
-}
-body.modal-open div.modal-backdrop {
-  z-index: 0;
-}

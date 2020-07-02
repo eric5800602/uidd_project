@@ -254,7 +254,7 @@ function slide(thisid){
     $('#modal_google').attr("src",src);
     // $('#exampleModalCenter-4').addClass('show');
     // $('#exampleModalCenter-4').css({"display": "block"});
-    $('#exampleModalCenter-4').modal('show');
+    // $('#exampleModalCenter-4').modal('show');
   }else{
     $('#content_img_'+num).animate({"opacity":'1'}, 250)
     // $('#content_img_'+num).
