@@ -632,8 +632,20 @@ box1.addEventListener('touchstart', function(e){
   // console.log("event start done", startx,starty)
 }, false);
 
+var timeout ;
+
 $('#content_img_0').mousedown(function() {
-  timeout = setTimeout(function() {
-    $('#exampleModalCenter-4').modal('show');
-  }, 2000);
+    timeout = setTimeout(function() {
+
+    }, 2000);
+});
+
+$('#content_img_0').mouseup(function() {
+    clearTimeout(timeout);
+
+});
+
+$('#content_img_0').mouseout(function() {
+    clearTimeout(timeout);
+
 });
