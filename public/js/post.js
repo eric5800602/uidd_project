@@ -306,7 +306,8 @@ $('#modal_custom_out').click(function(){
 
 function google1 (id){
   console.log("googleeee?");
-  console.log(id)
+  console.log(src)
+  src=document.getElementById(id).src
 }
 
 // 點擊request
