@@ -204,7 +204,7 @@ $.ajax({
       }
       $('.bubble').css({"opacity":"0"})
       $('.bubble_s').css({"opacity":"0"})
-      $('#google').hide()
+      $('#google').css({"display":"none"})
     }
 
 });
@@ -254,6 +254,7 @@ function slide(thisid){
     imgsrc=src
     console.log("yeah!"+imgsrc)
     $('#modal_google').attr("src",src);
+    $('#google').css({"display":"flex"})
     // $('#google').hide()
     // $('#exampleModalCenter-4').addClass('show');
     $('#modal_google').show();
