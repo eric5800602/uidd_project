@@ -204,6 +204,7 @@ $.ajax({
       }
       $('.bubble').css({"opacity":"0"})
       $('.bubble_s').css({"opacity":"0"})
+      $('#google').hide()
     }
 
 });
@@ -246,12 +247,14 @@ function slide(thisid){
   var num = thisid.substring(12, thisid.length)
   var em = document.getElementById(thisid);
   if(window.getComputedStyle(em).getPropertyValue("opacity")=='1'){
+    // 以圖搜圖
     console.log("!")
     console.log("src=" + document.getElementById(thisid).src)
     src=document.getElementById(thisid).src
     imgsrc=src
     console.log("yeah!"+imgsrc)
     $('#modal_google').attr("src",src);
+    $('#google').hide()
     // $('#exampleModalCenter-4').addClass('show');
     // $('#exampleModalCenter-4').css({"display": "block"});
     // $('#exampleModalCenter-4').modal('show');
