@@ -48,7 +48,7 @@ html {
 	border:none;
 	font-weight:bold;
 	z-index:20;
-	opacity: 0;
+	opacity: 1;
 }
 #id_content {
   padding-top: 10vh;
