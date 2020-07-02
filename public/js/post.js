@@ -590,6 +590,8 @@ function handleMove(evt) {
   document.getElementById('image').style.left = xpx;
   document.getElementById('image').style.top = ypx;
   console.log("x="+x+", y="+y)
+  console.log("evt.pageX="+evt.pageX+", evt.pageX="+evt.pageX)
+  console.log("$('#full').offset().left="+$('#full').offset().left+", $('#full').offset().left="+$('#full').offset().left)
 }
 
 
