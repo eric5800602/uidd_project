@@ -581,8 +581,8 @@ function handleStart(evt) {
 function handleMove(evt) {
   console.log("handle move")
   evt.preventDefault();
-  x = evt.pageX - $('#full').offset().left-40;
-  y = evt.pageY - $('#full').offset().top-40;
+  x = event.changedTouches[0].pageX - $('#full').offset().left-40;
+  y = event.changedTouches[0].pageY - $('#full').offset().top-40;
   xx = x+40
   yy = y+40
   xpx = -x +'px'
