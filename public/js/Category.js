@@ -189,7 +189,41 @@ $(document).ready(function() {
     $('#myposts').html("");
   });
 
+  $(document).on("click","#Activity", function(){
+    $.ajax({
+      url:"https://luffy.ee.ncku.edu.tw:7575/get_post_with_tag",
+      type:'post',
+      dataType: "json",
+      contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      data: JSON.stringify({tag:"經典藍"}),
+      success: function(data){
+        var html = ""
+        for(i=0; i<data.object.length; i++){
+            if(!data.object[i].post_icon){
+              data.object[i].post_icon = 'image/user/c006ca7fd14cb00b74ca03b7977019b8.png';
+            }
+            html = html+ `
+            <div class="col-6 h-100 single_post" id="${data.object[i].id}">\
+              <div class="img_of_post">\
+                <img class="tags_img" alt="..." src="${data.object[i].post_icon}">\
+              </div>\
+              <div class="row no-gutters intro align-items-center">\
+                <div class="col-6 intro_title">${data.object[i].title}</div>\
+                <div class="col-4 intro_account_id">${data.object[i].name}</div>\
+                <div class="col-2">\
+                  <img class="intro_account_img" alt="..."src="${data.object[i].user_icon}"></img>\
+                </div>\
+              </div>\
+            </div>`
+        }
 
+        $('#myposts').html(html)
+      }
+    });
+  })
   $(document).on("click",".scrollmenu li a", function(){
     var $magicLine = $("#magic-line");
     $('.scrollmenu li a').data('bgcolor', $('.scrollmenu li a').css('color')).css('color', '#5F5F5F');
