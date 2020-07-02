@@ -304,11 +304,9 @@ $('#modal_custom_out').click(function(){
   $('#modal_custom_out').css({"display":"none"})
 });
 
-$('.requests_request_image').click(function(){
-  console.log("googleeee");
-});
-function google1 (id_click){
+function google1 (id){
   console.log("googleeee?");
+  console.log(id)
 }
 
 // 點擊request
