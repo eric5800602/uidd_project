@@ -4,7 +4,7 @@
   "description": "uidd_project_groupK",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.1",
     "jimp": "^0.14.0",
     "jquery": "^3.5.1",
